@@ -25,5 +25,20 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 ## Season  
 <a name="team_all_season_summary"></a>
 ### Get all season statistic summary(except for the current season)
+- **Endpoint:** `/team_all_season_summary/`
+- **Method:** GET
+- **Description:** Retrieves aggregated statistics for all teams across all seasons they participated in the NHL.
+- **Parameters:** No
+- **Request Parameters:**
+  - **`/team_all_season_summary/{abbreviation}`** (query, string, optional) - General statistics of a specific team for all seasons (except for the current season). Three-letter team abbreviation (e.g., "TOR", "MTL").
+- **Response:** JSON format
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_all_season_summary/
+```
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_all_season_summary/TOR
+```
 ---
 ## Game
