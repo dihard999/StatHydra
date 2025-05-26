@@ -1,8 +1,8 @@
-# CrashCrab API
+# :crab:CrashCrab API
 This application is a powerful API for sports analytics and match prediction, leveraging state-of-the-art machine learning algorithms. Designed for enthusiasts, analysts, and developers. With its robust and scalable architecture, the API offers seamless integration and real-time predictions, making it an essential tool for anyone seeking data-driven insights into the world of sports.  
 ---
 ---
-# Table of Contents
+# Table of Data
 1. [Base URL](#base-url)
 2. [Player](#player)
 3. [Team](#team)
@@ -23,6 +23,7 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 ## Team
 ---
 ## Season  
-### <u>Get all season statistic summary(except for the current season)</u>
+<a name="team_all_season_summary"></a>
+### Get all season statistic summary(except for the current season)
 ---
 ## Game
