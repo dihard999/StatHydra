@@ -1,111 +1,28 @@
 # CrashCrab API
-This application is a powerful API for sports analytics and match prediction, leveraging state-of-the-art machine learning algorithms. Designed for enthusiasts, analysts, and developers. With its robust and scalable architecture, the API offers seamless integration and real-time predictions, making it an essential tool for anyone seeking data-driven insights into the world of sports.
+This application is a powerful API for sports analytics and match prediction, leveraging state-of-the-art machine learning algorithms. Designed for enthusiasts, analysts, and developers. With its robust and scalable architecture, the API offers seamless integration and real-time predictions, making it an essential tool for anyone seeking data-driven insights into the world of sports.  
+---
+---
 # Table of Contents
 1. [Base URL](#base-url)
-2. [Баскетбол](#баскетбол)
-3. [Баскетбол](#баскетбол)
-4. [Баскетбол](#баскетбол)
-5. [Баскетбол](#баскетбол)
-6. [Баскетбол](#баскетбол)
-7. [Баскетбол](#баскетбол)
-8. [Баскетбол](#баскетбол)
-9. [Баскетбол](#баскетбол)
-10. [Баскетбол](#баскетбол)
-11. [Баскетбол](#баскетбол)
-12. [Баскетбол](#баскетбол)
-13. [Баскетбол](#баскетбол)
-14. [Баскетбол](#баскетбол)
-15. [Баскетбол](#баскетбол)
-16. [Баскетбол](#баскетбол)
-17. [Баскетбол](#баскетбол)
-18. [Баскетбол](#баскетбол)
-19. [Баскетбол](#баскетбол)
-20. [Баскетбол](#баскетбол)
-21. [Баскетбол](#баскетбол)
-22. [Баскетбол](#баскетбол)
-23. [Баскетбол](#баскетбол)
-24. [Баскетбол](#баскетбол)
-25. [Баскетбол](#баскетбол)
-26. [Баскетбол](#баскетбол)
-27. [Баскетбол](#баскетбол)
-28. [Баскетбол](#баскетбол)
-29. [Баскетбол](#баскетбол)
-30. [Баскетбол](#баскетбол)
-31. [Баскетбол](#баскетбол)
-32. [Баскетбол](#баскетбол)
-33. [Баскетбол](#баскетбол)
-34. [Баскетбол](#баскетбол)
-35. [Баскетбол](#баскетбол)
-36. [Баскетбол](#баскетбол)
-37. [Баскетбол](#баскетбол)
-38. [Баскетбол](#баскетбол)
-39. [Баскетбол](#баскетбол)
-40. [Баскетбол](#баскетбол)
-41. [Баскетбол](#баскетбол)
-42. [Баскетбол](#баскетбол)
-43. [Баскетбол](#баскетбол)
-44. [Баскетбол](#баскетбол)
-45. [Баскетбол](#баскетбол)
+2. [Player](#player)
+3. [Team](#team)
+4. [Season](#season)  
+   4.1 [Get all season statistic summary(except for the current season)](#team_all_season_summary)
+5. [Game](#game)
+---
+## Base URL
+All endpoints referenced in this section are relative to the following base URL:  
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/
+```
+Your unique API Key required for accessing the API endpoints. Substitute YOUR_API_KEY with your actual key in the URL path.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Base URL
+---
+## Player
+---
+## Team
+---
+## Season  
+### <u>Get all season statistic summary(except for the current season)</u>
+---
+## Game
