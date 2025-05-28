@@ -423,7 +423,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_statistics_now/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_statistics_now/{abbreviation}/
+crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_statistics_now/TOR/
 ```
 <a name="league_average_{year}"></a>
 ### 4.9 Get league average by year
@@ -461,7 +461,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_statistics_now/{abbreviation}/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_average_{year}/
+crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_average_2022/
 ```
 <a name="league_average_now"></a>
 ### 4.10 Get league average for the current season
