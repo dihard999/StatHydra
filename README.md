@@ -434,13 +434,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_statistics_now/{abbreviation}/
    - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "2012", "2018", "2024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
-  - average_age (number, decimal) - Average Age (AvAge). Average age of team weighted by time on ice. Expressed as a decimal (e.g., 27.4).
-  - games (integer) - Games Played (GP). Total number of games played by the team during the regular season.
-  - wins (integer) - Wins. Total number of games won by the team in regulation, overtime, or shootout.
-  - losses (integer) - Losses. Total number of games lost by the team in regulation, overtime, or shootout.
-  - losses_ot (integer) - Overtime/Shootout Losses (OL). Total number of games lost by the team in overtime or shootout (relevant from 2000 season onward).
-  - points (integer) - Points (PTS). Total points accumulated by the team during the regular season. Teams earn 2 points for a win, 1 point for an overtime/shootout loss, and 0 points for a regulation loss.
-  - points_pct (number, decimal) - Points Percentage (PTS%). The percentage of total possible points earned by the team. Calculated as PTS / (GP * 2). Useful for comparing teams with different numbers of games played. Expressed as a decimal (e.g., 0.671).
+  - **`average_age`** (number, decimal) - Average Age (AvAge). Average age of team weighted by time on ice. Expressed as a decimal (e.g., 27.4).
+  - **`games`** (integer) - Games Played (GP). Total number of games played by the team during the regular season.
+  - **`wins`** (integer) - Wins. Total number of games won by the team in regulation, overtime, or shootout.
+  - **`losses`** (integer) - Losses. Total number of games lost by the team in regulation, overtime, or shootout.
+  - **`losses_ot`** (integer) - Overtime/Shootout Losses (OL). Total number of games lost by the team in overtime or shootout (relevant from 2000 season onward).
+  - **`points`** (integer) - Points (PTS). Total points accumulated by the team during the regular season. Teams earn 2 points for a win, 1 point for an overtime/shootout loss, and 0 points for a regulation loss.
+  - **`points_pct`** (number, decimal) - Points Percentage (PTS%). The percentage of total possible points earned by the team. Calculated as PTS / (GP * 2). Useful for comparing teams with different numbers of games played. Expressed as a decimal (e.g., 0.671).
   - **`goals`** (integer) - Goals For (GF). Total number of goals scored by the team during the season. Reflects the team's offensive performance.
   - **`goals_against`** (integer) - Goals Against (GL). Total number of goals conceded by the team during the season. Reflects the team's defensive performance.
   - **`goals_pp`** (integer) - Power Play Goals (PP). Total number of goals scored by the team during power play situations. Indicates power play effectiveness.
@@ -471,13 +471,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_average_{year}/
 - **Parameters:** No
 - **Response:** JSON format
 - **Schema table:**
-  - average_age (number, decimal) - Average Age (AvAge). Average age of team weighted by time on ice. Expressed as a decimal (e.g., 27.4).
-  - games (integer) - Games Played (GP). Total number of games played by the team during the regular season.
-  - wins (integer) - Wins. Total number of games won by the team in regulation, overtime, or shootout.
-  - losses (integer) - Losses. Total number of games lost by the team in regulation, overtime, or shootout.
-  - losses_ot (integer) - Overtime/Shootout Losses (OL). Total number of games lost by the team in overtime or shootout (relevant from 2000 season onward).
-  - points (integer) - Points (PTS). Total points accumulated by the team during the regular season. Teams earn 2 points for a win, 1 point for an overtime/shootout loss, and 0 points for a regulation loss.
-  - points_pct (number, decimal) - Points Percentage (PTS%). The percentage of total possible points earned by the team. Calculated as PTS / (GP * 2). Useful for comparing teams with different numbers of games played. Expressed as a decimal (e.g., 0.671).
+  - **`average_age`** (number, decimal) - Average Age (AvAge). Average age of team weighted by time on ice. Expressed as a decimal (e.g., 27.4).
+  - **`games`** (integer) - Games Played (GP). Total number of games played by the team during the regular season.
+  - **`wins`** (integer) - Wins. Total number of games won by the team in regulation, overtime, or shootout.
+  - **`losses`** (integer) - Losses. Total number of games lost by the team in regulation, overtime, or shootout.
+  - **`losses_ot`** (integer) - Overtime/Shootout Losses (OL). Total number of games lost by the team in overtime or shootout (relevant from 2000 season onward).
+  - **`points`** (integer) - Points (PTS). Total points accumulated by the team during the regular season. Teams earn 2 points for a win, 1 point for an overtime/shootout loss, and 0 points for a regulation loss.
+  - **`points_pct`** (number, decimal) - Points Percentage (PTS%). The percentage of total possible points earned by the team. Calculated as PTS / (GP * 2). Useful for comparing teams with different numbers of games played. Expressed as a decimal (e.g., 0.671).
   - **`goals`** (integer) - Goals For (GF). Total number of goals scored by the team during the season. Reflects the team's offensive performance.
   - **`goals_against`** (integer) - Goals Against (GL). Total number of goals conceded by the team during the season. Reflects the team's defensive performance.
   - **`goals_pp`** (integer) - Power Play Goals (PP). Total number of goals scored by the team during power play situations. Indicates power play effectiveness.
