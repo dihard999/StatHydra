@@ -1,7 +1,8 @@
-# :crab:CrashCrab API
+# :crab:CrashCrab | Sports API and Machine Learning for Match Prediction
 **This application is a powerful API for sports analytics and match prediction, leveraging state-of-the-art machine learning algorithms. Designed for enthusiasts, analysts, and developers. With its robust and scalable architecture, the API offers seamless integration and real-time predictions, making it an essential tool for anyone seeking data-driven insights into the world of sports.**
 > [!NOTE]
-> **Development is only available for NHL, development of other sports is in progress....**
+> **Development is only available for NHL, development of other sports is in progress....**  
+> **The data starts from 2017. Of course, if most people need years earlier, we will consider this possibility.**
 ---
 ---
 # NHL
@@ -37,7 +38,7 @@
 ## 1. Base URL
 All endpoints referenced in this section are relative to the following base URL:  
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/
+crashcrab.ddns.net/{YOUR_API_KEY}/
 ```
 Your unique API Key required for accessing the API endpoints. Substitute YOUR_API_KEY with your actual key in the URL path.
 
@@ -75,7 +76,7 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_all_season_summary/
+crashcrab.ddns.net/{YOUR_API_KEY}/team_all_season_summary/
 ```
 <a name="team_all_season_summary/{abbreviation}"></a>
 ### 3.2 Get all season teams statistics summary by specific team(except for the current season)
@@ -106,7 +107,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_all_season_summary/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_all_season_summary/TOR
+crashcrab.ddns.net/{YOUR_API_KEY}/team_all_season_summary/TOR/
 ```
 <a name="team_analytics_5_on_5_{year}"></a>
 ### 3.3 Get teams analytics 5 on 5 by year
@@ -114,7 +115,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_all_season_summary/TOR
 - **Method:** GET
 - **Description:** Table presents advanced statistics for NHL teams , focusing on 5-on-5 play for specific season.
 - **Parameters:**
-   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "2012", "2018", "2024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`ranker`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
@@ -144,7 +145,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_all_season_summary/TOR
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_analytics_5_on_5_2022/
+crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_2022/
 ```
 <a name="team_analytics_5_on_5_{year}/{abbreviation}"></a>
 ### 3.4 Get teams analytics 5 on 5 by year and specific team
@@ -152,7 +153,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_analytics_5_on_5_2022/
 - **Method:** GET
 - **Description:** Table presents advanced statistics for NHL teams , focusing on 5-on-5 play of a specific team for specific season
 - **Parameters:**
-   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "2012", "2018", "2024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
    - **`{abbreviation}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
 - **Response:** JSON format
 - **Schema table:**
@@ -183,7 +184,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_analytics_5_on_5_2022/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_analytics_5_on_5_2022/TOR/
+crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_2022/TOR/
 ```
 <a name="team_analytics_5_on_5_now"></a>
 ### 3.5 Get teams analytics 5 on 5 for the current season
@@ -220,7 +221,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_analytics_5_on_5_2022/TOR/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_analytics_5_on_5_now/
+crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_now/
 ```
 <a name="team_analytics_5_on_5_now/{abbreviation}"></a>
 ### 3.6 Get teams analytics 5 on 5 for the current season and specific team
@@ -258,7 +259,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_analytics_5_on_5_now/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_analytics_5_on_5_now/TOR/
+crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_now/TOR/
 ```
 ---
 <a name="season"></a>
@@ -269,7 +270,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_analytics_5_on_5_now/TOR/
 - **Method:** GET
 - **Description:** Get summary statistics for all teams for a specific season years
 - **Parameters:**
-   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "2012", "2018", "2024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`team_name`** (string) - Full team name. The name of the NHL team.
@@ -294,7 +295,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/team_analytics_5_on_5_now/TOR/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_summary_2021/
+crashcrab.ddns.net/{YOUR_API_KEY}/season_summary_2021/
 ```
 <a name="season_summary_{year}/{abbreviation}"></a>
 ### 4.2 Get summary statistic season by year and specific team 
@@ -302,7 +303,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_summary_2021/
 - **Method:** GET
 - **Description:** Get summary statistics for a specific team for a specific season year
 - **Parameters:**
-   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "2012", "2018", "2024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
    - **`{abbreviation}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
 - **Response:** JSON format
 - **Schema table:**
@@ -328,7 +329,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_summary_2021/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_summary_2021/TOR
+crashcrab.ddns.net/{YOUR_API_KEY}/season_summary_2021/TOR/
 ```
 <a name="season_summary_now"></a>
 ### 4.3 Get summary statistic for the current season 
@@ -360,7 +361,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_summary_2021/TOR
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_summary_now/
+crashcrab.ddns.net/{YOUR_API_KEY}/season_summary_now/
 ```
 <a name="season_summary_now/{abbreviation}"></a>
 ### 4.4 Get summary statistic for the current season and specific team
@@ -393,7 +394,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_summary_now/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_summary_now/TOR/
+crashcrab.ddns.net/{YOUR_API_KEY}/season_summary_now/TOR/
 ```
 <a name="season_statistics_{year}"></a>
 ### 4.5 Get detail statistic season by year
@@ -401,7 +402,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_summary_now/TOR/
 - **Method:** GET
 - **Description:** Detail statistics of all teams for the specific season
 - **Parameters:**
-   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "2012", "2018", "2024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`ranker`** (integer) - Rank. The ranking of the team in the league based on their performance. A lower number (e.g., 1) indicates a higher-ranked team.
@@ -441,16 +442,15 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_summary_now/TOR/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_statistics_2022/
+crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_2022/
 ```
-
 <a name="season_statistics_{year}/{abbreviation}"></a>
 ### 4.6 Get detail statistic season by year and specific team
 - **Endpoint:** `/season_statistics_{year}/{abbreviation}/`
 - **Method:** GET
 - **Description:** Detail statistics of a specific team for specific season
 - **Parameters:**
-   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "2012", "2018", "2024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
    - **`{abbreviation}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
 - **Response:** JSON format
 - **Schema table:**
@@ -491,7 +491,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_statistics_2022/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_statistics_2022/TOR/
+crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_2022/TOR/
 ```
 <a name="season_statistics_now"></a>
 ### 4.7 Get detail statistic season for the current season
@@ -538,9 +538,8 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_statistics_2022/TOR/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_statistics_now/
+crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_now/
 ```
-
 <a name="season_statistics_now/{abbreviation}"></a>
 ### 4.8 Get detail statistic season for the current season and specific team
 - **Endpoint:** `/season_statistics_now/{abbreviation}/`
@@ -587,7 +586,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_statistics_now/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_statistics_now/TOR/
+crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_now/TOR/
 ```
 <a name="league_average_{year}"></a>
 ### 4.9 Get league average by year
@@ -595,7 +594,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_statistics_now/TOR/
 - **Method:** GET
 - **Description:** League average for the specific season
 - **Parameters:**
-   - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "2012", "2018", "2024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`average_age`** (number, decimal) - Average Age (AvAge). Average age of team weighted by time on ice. Expressed as a decimal (e.g., 27.4).
@@ -625,7 +624,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/season_statistics_now/TOR/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_average_2022/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_average_2022/
 ```
 <a name="league_average_now"></a>
 ### 4.10 Get league average for the current season
@@ -662,7 +661,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_average_2022/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_average_now/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_average_now/
 ```
 ---
 <a name="playoff"></a>
@@ -673,7 +672,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_average_now/
 - **Method:** GET
 - **Description:** Table with results of games in playoff series. 
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "2012", "2018", "2024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`season_id`** (integer) – Season ID. Unique identifier for the NHL season (e.g., 20212022).
@@ -695,7 +694,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_average_now/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_playoff_series_result_2022/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_2022/
 ```
 <a name="league_playoff_series_result_{year}/{game_id}"></a>
 ### 5.2 Get playoff result by year and specific game
@@ -703,7 +702,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_playoff_series_result_2022/
 - **Method:** GET
 - **Description:** Table with results of playoff series games for a specific game. 
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "2012", "2018", "2024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
      - **`game_id`** (string) - Game ID. Unique identifier for each playoff game (e.g. "202008020VAN").
 - **Response:** JSON format
 - **Schema table:**
@@ -726,7 +725,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_playoff_series_result_2022/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_playoff_series_result_2022/202205040LAK/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_2022/202205040LAK/
 ```
 <a name="league_playoff_series_result_{year}/date/{game_date}"></a>
 ### 5.3 Get playoff result by year and specific date
@@ -734,7 +733,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_playoff_series_result_2022/20220
 - **Method:** GET
 - **Description:** Table with results of playoff series games for a specific date.
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "2012", "2018", "2024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
      - **`game_date`** (date) - Game Date. The date on which the playoff game was played (e.g., "2021-08-21").
 - **Response:** JSON format
 - **Schema table:**
@@ -757,7 +756,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_playoff_series_result_2022/20220
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_playoff_series_result_2022/date/2022-05-04/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_2022/date/2022-05-04/
 ```
 <a name="league_playoff_series_result_now"></a>
 ### 5.4 Get playoff result for the current season
@@ -786,7 +785,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_playoff_series_result_2022/date/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_playoff_series_result_now/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/
 ```
 <a name="league_playoff_series_result_now/{game_id}"></a>
 ### 5.5 Get playoff result for the current season and specific game
@@ -816,7 +815,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_playoff_series_result_now/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_playoff_series_result_now/202205040LAK/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/202205040LAK/
 ```
 <a name="league_playoff_series_result_now/date/{game_date}"></a>
 ### 5.6 Get playoff result for the current season and specific date
@@ -846,5 +845,5 @@ crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_playoff_series_result_now/202205
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/api/v1/league_playoff_series_result_now/date/2021-08-21/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/date/2021-08-21/
 ```
