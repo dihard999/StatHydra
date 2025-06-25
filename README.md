@@ -11,7 +11,7 @@
    2.1 [Get player leaders by year and all category](#league_leaders_{year})  
    2.2 [Get player leaders by year and specific category](#league_leaders_{year}/category/{leader_id_abbrev})  
    2.3 [Get player leaders by year and specific category and rank](#league_leaders_{year}/category/{leader_id_abbrev}/rank/{rank})  
-   2.4 [Get player leaders by year and specific category and player ID](#league_leaders_{year}/category/{leader_id_abbrev}/player/{player_id})
+   2.4 [Get player leaders by year and specific category and player ID](#league_leaders_{year}/category/{leader_id_abbrev}/player/{player_id})  
    2.5 [Get player leaders by year and specific category and team](#league_leaders_{year}/category/{leader_id_abbrev}/team/{team_abbrev})
 4. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
