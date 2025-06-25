@@ -12,6 +12,7 @@
    2.2 [Get player leaders by year and specific category](#league_leaders_{year}/category/{leader_id_abbrev})  
    2.3 [Get player leaders by year and specific category and rank](#league_leaders_{year}/category/{leader_id_abbrev}/rank/{rank})  
    2.4 [Get player leaders by year and specific category and player ID](#league_leaders_{year}/category/{leader_id_abbrev}/player/{player_id})
+   2.5 [Get player leaders by year and specific category and team](#league_leaders_{year}/category/{leader_id_abbrev}/team/{team_abbrev})
 4. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/{abbreviation})  
@@ -321,6 +322,75 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/rank/3/
 ##### Example using
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/player/vasilan02/
+```
+<a name="league_leaders_{year}/category/{leader_id_abbrev}/team/{team_abbrev}"></a>
+### 2.5 Get player leaders by year and specific category and team
+- **Endpoint:** `/league_leaders_{year}/category/{leader_id_abbrev}/team/{team_abbrev}`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (league leaders) by key indicators for the specified season and specified category.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{leader_id_abbrev}`** (string) - Short abbreviation of categories.
+   - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+- **Response:** JSON format
+- **Schema table:**
+  - **`season_id`** (integer) - Unique identifier for the sports season.
+  - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
+```  
+╔════════════════════════════════════════╦══════════════╗  
+║ Category                               ║ Short code   ║  
+╠════════════════════════════════════════╬══════════════╣  
+║ Assists                                ║ A            ║  
+║ Assists Per Game                       ║ APG          ║  
+║ Defensive Point Shares                 ║ DPS          ║  
+║ Even Strength Goals                    ║ EVSG         ║  
+║ Expected +/-                           ║ XPM          ║  
+║ Game-Winning Goals                     ║ GWG          ║  
+║ Games Played (Goalie)                  ║ GPG          ║  
+║ Goalie Point Shares                    ║ GPS          ║  
+║ Goals                                  ║ G            ║  
+║ Goals Against                          ║ GA           ║  
+║ Goals Against Average                  ║ GAA          ║  
+║ Goals Allowed Adjusted                 ║ GAAJ         ║  
+║ Goals Created                          ║ GCR          ║  
+║ Goals Created Per Game                 ║ GCPG         ║  
+║ Goals Per Game                         ║ GPGM         ║  
+║ Goals Saved Above Average              ║ GSAA         ║  
+║ Hat Tricks                             ║ HTR          ║  
+║ Losses                                 ║ L            ║  
+║ Minutes                                ║ MIN          ║  
+║ Offensive Point Shares                 ║ OPS          ║  
+║ Penalties in Minutes                   ║ PIM          ║  
+║ Plus/Minus                             ║ PLM          ║  
+║ Point Shares                           ║ PTS          ║  
+║ Points                                 ║ P            ║  
+║ Points Per Game                        ║ PPG          ║  
+║ Power Play Goals                       ║ PPGL         ║  
+║ Power Play Goals On-Ice Against        ║ PGAI         ║  
+║ Power Play Goals On-Ice For            ║ PGFI         ║  
+║ Save Percentage                        ║ SVP          ║  
+║ Saves                                  ║ SAV          ║  
+║ Shooting Percentage                    ║ SHP          ║  
+║ Short-Handed Goals                     ║ SHG          ║  
+║ Shots                                  ║ S            ║  
+║ Shots Against                          ║ SAG          ║  
+║ Shutouts                               ║ SHO          ║  
+║ Ties plus OT/SO Losses                 ║ TOL          ║  
+║ Total Goals On-Ice Against             ║ TGAI         ║  
+║ Total Goals On-Ice For                 ║ TGFI         ║  
+║ Wins                                   ║ W            ║  
+╚════════════════════════════════════════╩══════════════╝  
+```  
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/team/TBL/
 ```
 ---
 <a name="team"></a>
