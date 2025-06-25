@@ -8,14 +8,15 @@
 # NHL
 1. [Base URL](#base-url)
 2. [Player](#player)
-3. [Team](#team)  
+   2.1 [Get player leaders by year and all category](#league_leaders_{year})  
+4. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/{abbreviation})  
    3.3 [Get teams analytics 5 on 5 by year](#team_analytics_5_on_5_{year})  
    3.4 [Get teams analytics 5 on 5 by year and specific team](#team_analytics_5_on_5_{year}/{abbreviation})  
    3.5 [Get teams analytics 5 on 5 for the current season](#team_analytics_5_on_5_now)  
    3.6 [Get teams analytics 5 on 5 for the current season and specific team](#team_analytics_5_on_5_now/{abbreviation})
-4. [Season](#season)  
+5. [Season](#season)  
    4.1 [Get summary statistic season by year](#season_summary_{year})  
    4.2 [Get summary statistic season by year and specific team](#season_summary_{year}/{abbreviation})  
    4.3 [Get summary statistic for the current season](#season_summary_now)  
@@ -26,7 +27,7 @@
    4.8 [Get detail statistic season for the current season and specific team](#season_statistics_now/{abbreviation})  
    4.9 [Get league average by year](#league_average_{year})  
    4.10 [Get league average for the current season](#league_average_now)
-5. [Playoff](#playoff)  
+6. [Playoff](#playoff)  
    5.1 [Get playoff result by year](#league_playoff_series_result_{year})  
    5.2 [Get playoff result by year and specific game](#league_playoff_series_result_{year}/game/{game_id})  
    5.3 [Get playoff result by year and specific date](#league_playoff_series_result_{year}/date/{game_date})  
@@ -45,6 +46,79 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 ---
 <a name="player"></a>
 ## 2. Player
+<a name="league_leaders_{year}"></a>
+### 2.1 Get player leaders by year and all category
+- **Endpoint:** `/league_leaders_{year}/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (league leaders) by key indicators for the specified season.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`season_id`** (integer) - Unique identifier for the sports season.
+  - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    | Наименование                           | Сокращение |  
+|----------------------------------------|:----------:|  
+| Assists                                | A          |  
+| Assists Per Game                       | APG        |  
+| Defensive Point Shares                 | DPS        |  
+| Even Strength Goals                    | EVSG       |  
+| Expected PlusMinus                     | XPM        |  
+| Game Winning Goals                     | GWG        |  
+| Games Played (Goalie)                  | GPG        |  
+| Goalie Point Shares                    | GPS        |  
+| Goals                                  | G          |  
+| Goals Against                          | GA         |  
+| Goals Against Average                  | GAA        |  
+| Goals Allowed Adjusted                 | GAAJ       |  
+| Goals Created                          | GCR        |  
+| Goals Created Per Game                 | GCPG       |  
+| Goals Per Game                         | GPGM       |  
+| Goals Saved Above Average              | GSAA       |  
+| Hat Tricks                             | HTR        |  
+| Losses                                 | L          |  
+| Minutes                                | MIN        |  
+| Offensive Point Shares                 | OPS        |  
+| Penalties in Minutes                   | PIM        |  
+| PlusMinus                              | PLM        |  
+| Point Shares                           | PTS        |  
+| Points                                 | P          |  
+| Points Per Game                        | PPG        |  
+| Power Play Goals                       | PPGL       |  
+| Power Play Goals On Ice Against        | PGAI       |  
+| Power Play Goals On Ice For            | PGFI       |  
+| Save Percentage                        | SVP        |  
+| Saves                                  | SAV        |  
+| Shooting Percentage                    | SHP        |  
+| Short Handed Goals                     | SHG        |  
+| Shots                                  | S          |  
+| Shots Against                          | SAG        |  
+| Shutouts                               | SHO        |  
+| Ties Overtime Shootout Losses          | TOL        |  
+| Total Goals On Ice Against             | TGAI       |  
+| Total Goals On Ice For                 | TGFI       |  
+| Wins                                   | W          | 
+  - **`year_min`** (integer) - First year of NHL career.
+  - **`year_max`** (integer) - Last year of NHL career.
+  - **`years`** (integer) - Total number of years the team has spent in the NHL.
+  - **`games`** (integer) - Games Played. Total number of games played by the team during the regular season (all season). (except current season).
+  - **`wins`** (integer) - Wins. Total number of games won by the team in regulation, overtime, or shootout (all season). (except current season).
+  - **`losses`** (integer) - Losses. Total number of games lost by the team in regulation, overtime, or shootout (all season). (except current season).
+  - **`ties`** (integer) - Ties. The number of games that ended with an equal score for both teams at the end of regulation time, resulting in no winner. (all season). (except current season).
+  - **`losses_ot`** (integer) - Overtime/Shootout Losses. Total number of games lost by the team in overtime or shootout for all season (relevant from 2000 season onward).
+  - **`points`** (integer) - Points. Total points accumulated by the team during the regular season. (except current season).
+  - **`points_pct`** (number, decimal) - Points percentage (i.e., points divided by maximum points). Expressed as a decimal (e.g., 0.523) (except current season).
+  - **`years_playoffs`** (integer) - Number of years team made the playoffs.
+  - **`years_division_champion`** (integer) - Number of years team finished first (or tied for first) in the division.
+  - **`years_conference_champion`** (integer) - Years team won the playoff conference championship. This begins in 1981-82.
+  - **`years_league_champion`** (integer) - Years team won the league championship.
+  - **`years_cup_champion`** (integer) - Years team won the Stanley Cup.
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/team_all_season_summary/
+```
 ---
 <a name="team"></a>
 ## 3.Team  
