@@ -103,25 +103,15 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 ║ Wins                                   ║ W            ║  
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
-  - **`year_min`** (integer) - First year of NHL career.
-  - **`year_max`** (integer) - Last year of NHL career.
-  - **`years`** (integer) - Total number of years the team has spent in the NHL.
-  - **`games`** (integer) - Games Played. Total number of games played by the team during the regular season (all season). (except current season).
-  - **`wins`** (integer) - Wins. Total number of games won by the team in regulation, overtime, or shootout (all season). (except current season).
-  - **`losses`** (integer) - Losses. Total number of games lost by the team in regulation, overtime, or shootout (all season). (except current season).
-  - **`ties`** (integer) - Ties. The number of games that ended with an equal score for both teams at the end of regulation time, resulting in no winner. (all season). (except current season).
-  - **`losses_ot`** (integer) - Overtime/Shootout Losses. Total number of games lost by the team in overtime or shootout for all season (relevant from 2000 season onward).
-  - **`points`** (integer) - Points. Total points accumulated by the team during the regular season. (except current season).
-  - **`points_pct`** (number, decimal) - Points percentage (i.e., points divided by maximum points). Expressed as a decimal (e.g., 0.523) (except current season).
-  - **`years_playoffs`** (integer) - Number of years team made the playoffs.
-  - **`years_division_champion`** (integer) - Number of years team finished first (or tied for first) in the division.
-  - **`years_conference_champion`** (integer) - Years team won the playoff conference championship. This begins in 1981-82.
-  - **`years_league_champion`** (integer) - Years team won the league championship.
-  - **`years_cup_champion`** (integer) - Years team won the Stanley Cup.
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/team_all_season_summary/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
 ```
 ---
 <a name="team"></a>
