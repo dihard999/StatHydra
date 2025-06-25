@@ -61,6 +61,11 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
   - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 ```  
 ╔════════════════════════════════════════╦══════════════╗  
@@ -107,12 +112,6 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 ║ Wins                                   ║ W            ║  
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
-  -- **`rank`** (integer) - Rank in the leaderboard, first place is the best.
-  - **`player`** (string) - Player's full name.
-  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
-  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-
 ##### Example using
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
