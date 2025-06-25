@@ -107,7 +107,7 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 ║ Wins                                   ║ W            ║  
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
-   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  -- **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
