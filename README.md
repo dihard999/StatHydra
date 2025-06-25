@@ -59,7 +59,7 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
   - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 +-------------------------------------------+-------------+  
-| Category                                 | Short code  |  
+| Category                             | Short code  |  
 +-------------------------------------------+-------------+  
 | Assists                                  | A           |  
 | Assists Per Game                         | APG         |  
