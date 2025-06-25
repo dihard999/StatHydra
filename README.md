@@ -128,6 +128,11 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
   - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 ```  
 ╔════════════════════════════════════════╦══════════════╗  
@@ -173,12 +178,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
 ║ Total Goals On-Ice For                 ║ TGFI         ║  
 ║ Wins                                   ║ W            ║  
 ╚════════════════════════════════════════╩══════════════╝  
-```    
-  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
-  - **`player`** (string) - Player's full name.
-  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
-  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+```  
 
 ##### Example using
 ```bash
@@ -197,6 +197,11 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
   - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 ```  
 ╔════════════════════════════════════════╦══════════════╗  
@@ -243,11 +248,6 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/
 ║ Wins                                   ║ W            ║  
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
-  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
-  - **`player`** (string) - Player's full name.
-  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
-  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
 
 ##### Example using
 ```bash
@@ -266,6 +266,11 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/rank/3/
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
   - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 ```  
 ╔════════════════════════════════════════╦══════════════╗  
@@ -312,11 +317,6 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/rank/3/
 ║ Wins                                   ║ W            ║  
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
-  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
-  - **`player`** (string) - Player's full name.
-  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
-  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
 
 ##### Example using
 ```bash
@@ -335,6 +335,11 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/player/va
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
   - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 ```  
 ╔════════════════════════════════════════╦══════════════╗  
@@ -381,11 +386,6 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/player/va
 ║ Wins                                   ║ W            ║  
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
-  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
-  - **`player`** (string) - Player's full name.
-  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
-  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
 
 ##### Example using
 ```bash
