@@ -7,7 +7,7 @@
 ---
 # NHL
 1. [Base URL](#base-url)
-2. [Player](#player)
+2. [Player](#player)  
    2.1 [Get player leaders by year and all category](#league_leaders_{year})  
 4. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
