@@ -69,8 +69,8 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 ║ Assists Per Game                       ║ APG          ║  
 ║ Defensive Point Shares                 ║ DPS          ║  
 ║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected PlusMinus                     ║ XPM          ║  
-║ Game Winning Goals                     ║ GWG          ║  
+║ Expected +/-                           ║ XPM          ║  
+║ Game-Winning Goals                     ║ GWG          ║  
 ║ Games Played (Goalie)                  ║ GPG          ║  
 ║ Goalie Point Shares                    ║ GPS          ║  
 ║ Goals                                  ║ G            ║  
@@ -86,23 +86,23 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 ║ Minutes                                ║ MIN          ║  
 ║ Offensive Point Shares                 ║ OPS          ║  
 ║ Penalties in Minutes                   ║ PIM          ║  
-║ PlusMinus                              ║ PLM          ║  
+║ Plus/Minus                             ║ PLM          ║  
 ║ Point Shares                           ║ PTS          ║  
 ║ Points                                 ║ P            ║  
 ║ Points Per Game                        ║ PPG          ║  
 ║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On Ice Against        ║ PGAI         ║  
-║ Power Play Goals On Ice For            ║ PGFI         ║  
+║ Power Play Goals On-Ice Against        ║ PGAI         ║  
+║ Power Play Goals On-Ice For            ║ PGFI         ║  
 ║ Save Percentage                        ║ SVP          ║  
 ║ Saves                                  ║ SAV          ║  
 ║ Shooting Percentage                    ║ SHP          ║  
-║ Short Handed Goals                     ║ SHG          ║  
+║ Short-Handed Goals                     ║ SHG          ║  
 ║ Shots                                  ║ S            ║  
 ║ Shots Against                          ║ SAG          ║  
 ║ Shutouts                               ║ SHO          ║  
-║ Ties Overtime Shootout Losses          ║ TOL          ║  
-║ Total Goals On Ice Against             ║ TGAI         ║  
-║ Total Goals On Ice For                 ║ TGFI         ║  
+║ Ties plus OT/SO Losses                 ║ TOL          ║  
+║ Total Goals On-Ice Against             ║ TGAI         ║  
+║ Total Goals On-Ice For                 ║ TGFI         ║  
 ║ Wins                                   ║ W            ║  
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
@@ -137,8 +137,8 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
 ║ Assists Per Game                       ║ APG          ║  
 ║ Defensive Point Shares                 ║ DPS          ║  
 ║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected PlusMinus                     ║ XPM          ║  
-║ Game Winning Goals                     ║ GWG          ║  
+║ Expected +/-                           ║ XPM          ║  
+║ Game-Winning Goals                     ║ GWG          ║  
 ║ Games Played (Goalie)                  ║ GPG          ║  
 ║ Goalie Point Shares                    ║ GPS          ║  
 ║ Goals                                  ║ G            ║  
@@ -154,26 +154,26 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
 ║ Minutes                                ║ MIN          ║  
 ║ Offensive Point Shares                 ║ OPS          ║  
 ║ Penalties in Minutes                   ║ PIM          ║  
-║ PlusMinus                              ║ PLM          ║  
+║ Plus/Minus                             ║ PLM          ║  
 ║ Point Shares                           ║ PTS          ║  
 ║ Points                                 ║ P            ║  
 ║ Points Per Game                        ║ PPG          ║  
 ║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On Ice Against        ║ PGAI         ║  
-║ Power Play Goals On Ice For            ║ PGFI         ║  
+║ Power Play Goals On-Ice Against        ║ PGAI         ║  
+║ Power Play Goals On-Ice For            ║ PGFI         ║  
 ║ Save Percentage                        ║ SVP          ║  
 ║ Saves                                  ║ SAV          ║  
 ║ Shooting Percentage                    ║ SHP          ║  
-║ Short Handed Goals                     ║ SHG          ║  
+║ Short-Handed Goals                     ║ SHG          ║  
 ║ Shots                                  ║ S            ║  
 ║ Shots Against                          ║ SAG          ║  
 ║ Shutouts                               ║ SHO          ║  
-║ Ties Overtime Shootout Losses          ║ TOL          ║  
-║ Total Goals On Ice Against             ║ TGAI         ║  
-║ Total Goals On Ice For                 ║ TGFI         ║  
+║ Ties plus OT/SO Losses                 ║ TOL          ║  
+║ Total Goals On-Ice Against             ║ TGAI         ║  
+║ Total Goals On-Ice For                 ║ TGFI         ║  
 ║ Wins                                   ║ W            ║  
 ╚════════════════════════════════════════╩══════════════╝  
-```  
+```    
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
@@ -206,8 +206,8 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/
 ║ Assists Per Game                       ║ APG          ║  
 ║ Defensive Point Shares                 ║ DPS          ║  
 ║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected PlusMinus                     ║ XPM          ║  
-║ Game Winning Goals                     ║ GWG          ║  
+║ Expected +/-                           ║ XPM          ║  
+║ Game-Winning Goals                     ║ GWG          ║  
 ║ Games Played (Goalie)                  ║ GPG          ║  
 ║ Goalie Point Shares                    ║ GPS          ║  
 ║ Goals                                  ║ G            ║  
@@ -223,23 +223,23 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/
 ║ Minutes                                ║ MIN          ║  
 ║ Offensive Point Shares                 ║ OPS          ║  
 ║ Penalties in Minutes                   ║ PIM          ║  
-║ PlusMinus                              ║ PLM          ║  
+║ Plus/Minus                             ║ PLM          ║  
 ║ Point Shares                           ║ PTS          ║  
 ║ Points                                 ║ P            ║  
 ║ Points Per Game                        ║ PPG          ║  
 ║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On Ice Against        ║ PGAI         ║  
-║ Power Play Goals On Ice For            ║ PGFI         ║  
+║ Power Play Goals On-Ice Against        ║ PGAI         ║  
+║ Power Play Goals On-Ice For            ║ PGFI         ║  
 ║ Save Percentage                        ║ SVP          ║  
 ║ Saves                                  ║ SAV          ║  
 ║ Shooting Percentage                    ║ SHP          ║  
-║ Short Handed Goals                     ║ SHG          ║  
+║ Short-Handed Goals                     ║ SHG          ║  
 ║ Shots                                  ║ S            ║  
 ║ Shots Against                          ║ SAG          ║  
 ║ Shutouts                               ║ SHO          ║  
-║ Ties Overtime Shootout Losses          ║ TOL          ║  
-║ Total Goals On Ice Against             ║ TGAI         ║  
-║ Total Goals On Ice For                 ║ TGFI         ║  
+║ Ties plus OT/SO Losses                 ║ TOL          ║  
+║ Total Goals On-Ice Against             ║ TGAI         ║  
+║ Total Goals On-Ice For                 ║ TGFI         ║  
 ║ Wins                                   ║ W            ║  
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
@@ -275,8 +275,8 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/rank/3/
 ║ Assists Per Game                       ║ APG          ║  
 ║ Defensive Point Shares                 ║ DPS          ║  
 ║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected PlusMinus                     ║ XPM          ║  
-║ Game Winning Goals                     ║ GWG          ║  
+║ Expected +/-                           ║ XPM          ║  
+║ Game-Winning Goals                     ║ GWG          ║  
 ║ Games Played (Goalie)                  ║ GPG          ║  
 ║ Goalie Point Shares                    ║ GPS          ║  
 ║ Goals                                  ║ G            ║  
@@ -292,23 +292,23 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/rank/3/
 ║ Minutes                                ║ MIN          ║  
 ║ Offensive Point Shares                 ║ OPS          ║  
 ║ Penalties in Minutes                   ║ PIM          ║  
-║ PlusMinus                              ║ PLM          ║  
+║ Plus/Minus                             ║ PLM          ║  
 ║ Point Shares                           ║ PTS          ║  
 ║ Points                                 ║ P            ║  
 ║ Points Per Game                        ║ PPG          ║  
 ║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On Ice Against        ║ PGAI         ║  
-║ Power Play Goals On Ice For            ║ PGFI         ║  
+║ Power Play Goals On-Ice Against        ║ PGAI         ║  
+║ Power Play Goals On-Ice For            ║ PGFI         ║  
 ║ Save Percentage                        ║ SVP          ║  
 ║ Saves                                  ║ SAV          ║  
 ║ Shooting Percentage                    ║ SHP          ║  
-║ Short Handed Goals                     ║ SHG          ║  
+║ Short-Handed Goals                     ║ SHG          ║  
 ║ Shots                                  ║ S            ║  
 ║ Shots Against                          ║ SAG          ║  
 ║ Shutouts                               ║ SHO          ║  
-║ Ties Overtime Shootout Losses          ║ TOL          ║  
-║ Total Goals On Ice Against             ║ TGAI         ║  
-║ Total Goals On Ice For                 ║ TGFI         ║  
+║ Ties plus OT/SO Losses                 ║ TOL          ║  
+║ Total Goals On-Ice Against             ║ TGAI         ║  
+║ Total Goals On-Ice For                 ║ TGFI         ║  
 ║ Wins                                   ║ W            ║  
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
