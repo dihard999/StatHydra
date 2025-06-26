@@ -63,60 +63,6 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
-    
-```  
-╔════════════════════════════════════════╦══════════════╗  
-║ Category                               ║ Short code   ║  
-╠════════════════════════════════════════╬══════════════╣  
-║ Assists                                ║ A            ║  
-║ Assists Per Game                       ║ APG          ║  
-║ Defensive Point Shares                 ║ DPS          ║  
-║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected +/-                           ║ XPM          ║  
-║ Game-Winning Goals                     ║ GWG          ║  
-║ Games Played (Goalie)                  ║ GPG          ║  
-║ Goalie Point Shares                    ║ GPS          ║  
-║ Goals                                  ║ G            ║  
-║ Goals Against                          ║ GA           ║  
-║ Goals Against Average                  ║ GAA          ║  
-║ Goals Allowed Adjusted                 ║ GAAJ         ║  
-║ Goals Created                          ║ GCR          ║  
-║ Goals Created Per Game                 ║ GCPG         ║  
-║ Goals Per Game                         ║ GPGM         ║  
-║ Goals Saved Above Average              ║ GSAA         ║  
-║ Hat Tricks                             ║ HTR          ║  
-║ Losses                                 ║ L            ║  
-║ Minutes                                ║ MIN          ║  
-║ Offensive Point Shares                 ║ OPS          ║  
-║ Penalties in Minutes                   ║ PIM          ║  
-║ Plus/Minus                             ║ PLM          ║  
-║ Point Shares                           ║ PTS          ║  
-║ Points                                 ║ P            ║  
-║ Points Per Game                        ║ PPG          ║  
-║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On-Ice Against        ║ PGAI         ║  
-║ Power Play Goals On-Ice For            ║ PGFI         ║  
-║ Save Percentage                        ║ SVP          ║  
-║ Saves                                  ║ SAV          ║  
-║ Shooting Percentage                    ║ SHP          ║  
-║ Short-Handed Goals                     ║ SHG          ║  
-║ Shots                                  ║ S            ║  
-║ Shots Against                          ║ SAG          ║  
-║ Shutouts                               ║ SHO          ║  
-║ Ties plus OT/SO Losses                 ║ TOL          ║  
-║ Total Goals On-Ice Against             ║ TGAI         ║  
-║ Total Goals On-Ice For                 ║ TGFI         ║  
-║ Wins                                   ║ W            ║  
-╚════════════════════════════════════════╩══════════════╝  
-```  
-##### Example using by specific year
-```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
-```
-##### Example using for the current year
-```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/
-```
 | Category                                   | Short code |  
 |---------------------------------------------|------------|  
 | Assists                                    | A          |  
@@ -158,8 +104,14 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/
 | Total Goals On-Ice Against                 | TGAI       |  
 | Total Goals On-Ice For                     | TGFI       |  
 | Wins                                       | W          |  
-
-|
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/
+```
 <a name="league_leaders_{year}/category/{leader_id_abbrev}"></a>
 ### 2.2 Get player leaders by year and specific category
 - **Endpoint:** `/league_leaders_{year}/category/{leader_id_abbrev}`
