@@ -62,7 +62,8 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
+  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    
 ```  
 ╔════════════════════════════════════════╦══════════════╗  
 ║ Category                               ║ Short code   ║  
@@ -109,7 +110,7 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
 ##### Example using by specific year
-```bash
+```HTTP
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
 ```
 ##### Example using for the current year
