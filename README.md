@@ -18,8 +18,8 @@
    2.8 [Get player leaders by year and specific rank and team](#league_leaders_{year}/rank/{rank}/team/{team_abbrev})  
    2.9 [Get player leaders by year and specific player ID](#league_leaders_{year}/player/{player_id})  
    2.10 [Get player leaders by year and specific team](#league_leaders_{year}/team/{team_abbrev})  
-   2.11 [Get player leaders by year and specific team and player ID](#league_leaders_{year}/team/{team_abbrev}/player/{player_id})
-4. [Team](#team)  
+   2.11 [Get player leaders by year and specific team and player ID](#league_leaders_{year}/team/{team_abbrev}/player/{player_id})  
+3. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/{abbreviation})  
    3.3 [Get teams analytics 5 on 5 by year](#team_analytics_5_on_5_{year})  
@@ -118,9 +118,13 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 ║ Wins                                   ║ W            ║  
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
-##### Example using
+##### Example using by year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
+```
+##### Example using for the current
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/
 ```
 <a name="league_leaders_{year}/category/{leader_id_abbrev}"></a>
 ### 2.2 Get player leaders by year and specific category
