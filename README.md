@@ -1030,7 +1030,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_now/TOR/
   - **`sos`** (number, decimal) - Strength of Schedule. A rating of strength of schedule. The rating is denominated in goals above/below average, where zero is average. Expressed as a decimal (e.g., -0.04).
   - **`reg_wins`** (integer) - Wins in Regulation.
   - **`points_pct_old`** (number, decimal) - Points percentage counting no points for OT loss, and any shootout game as a tie. i.e. pre-2000 situation. Expressed as a decimal (e.g., 0.488).
-  - **`reg_rec`** (string) - Regulation time record (W-L-T format likely) in regulation time only. W(reg_wins)- L(losses)- T(wins - reg_wins + losses_ot).
+  - **`reg_rec`** (string) - Regulation time record (W-L-T/O format likely) in regulation time only. W(reg_wins)- L(losses)- T/O(wins - reg_wins + losses_ot).
   - **`points_pct_reg`** (number, decimal) - Points percentage based only on regulation time results. Expressed as a decimal (e.g., 0.598).
 
 ##### Example using by specific year
@@ -1068,7 +1068,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/season_summary_now/
   - **`sos`** (number, decimal) - Strength of Schedule. A rating of strength of schedule. The rating is denominated in goals above/below average, where zero is average. Expressed as a decimal (e.g., -0.04).
   - **`reg_wins`** (integer) - Wins in Regulation.
   - **`points_pct_old`** (number, decimal) - Points percentage counting no points for OT loss, and any shootout game as a tie. i.e. pre-2000 situation. Expressed as a decimal (e.g., 0.488).
-  - **`reg_rec`** (string) - Regulation time record (W-L-T format likely) in regulation time only. W(reg_wins)- L(losses)- T(wins - reg_wins + losses_ot).
+  - **`reg_rec`** (string) - Regulation time record (W-L-T/O format likely) in regulation time only. W(reg_wins)- L(losses)- T/O(wins - reg_wins + losses_ot).
   - **`points_pct_reg`** (number, decimal) - Points percentage based only on regulation time results. Expressed as a decimal (e.g., 0.598).
 
 ##### Example using by specific year
