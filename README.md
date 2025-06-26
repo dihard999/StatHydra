@@ -108,7 +108,7 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 ║ Wins                                   ║ W            ║  
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
-##### Example using by year
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
 ```
@@ -180,9 +180,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/
 ```
 <a name="league_leaders_{year}/category/{leader_id_abbrev}/rank/{rank}"></a>
 ### 2.3 Get player leaders by year and specific category and rank
@@ -249,9 +253,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
 
-##### Example using
+##### Example by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/rank/3/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/rank/3/
 ```
 <a name="league_leaders_{year}/category/{leader_id_abbrev}/player/{player_id}"></a>
 ### 2.4 Get player leaders by year and specific category and player ID
@@ -318,9 +326,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/rank/3/
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/player/vasilan02/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/player/vasilan02/
 ```
 <a name="league_leaders_{year}/category/{leader_id_abbrev}/team/{team_abbrev}"></a>
 ### 2.5 Get player leaders by year and specific category and team
@@ -387,9 +399,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/player/va
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/team/TBL/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/team/TBL/
 ```
 <a name="league_leaders_{year}/rank/{rank}"></a>
 ### 2.6 Get player leaders by year and specific rank
@@ -455,9 +471,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/team/TBL/
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/rank/3/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/
 ```
 <a name="league_leaders_{year}/rank/{rank}/player/{player_id}"></a>
 ### 2.7 Get player leaders by year and specific rank and player ID
@@ -524,9 +544,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/rank/3/
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/rank/3/player/marksja02/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/player/marksja02/
 ```
 <a name="league_leaders_{year}/rank/{rank}/team/{team_abbrev}"></a>
 ### 2.8 Get player leaders by year and specific rank and team
@@ -593,9 +617,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/rank/3/player/marksja0
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/rank/3/team/TBL/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/team/TBL/
 ```
 <a name="league_leaders_{year}/player/{player_id}"></a>
 ### 2.9 Get player leaders by year and specific player ID
@@ -661,9 +689,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/rank/3/team/TBL/
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/player/kreidch01/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/player/kreidch01/
 ```
 <a name="league_leaders_{year}/team/{team_abbrev}"></a>
 ### 2.10 Get player leaders by year and specific team
@@ -729,9 +761,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/player/kreidch01/
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/team/TOR/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team/TOR/
 ```
 <a name="league_leaders_{year}/team/{team_abbrev}/player/{player_id}"></a>
 ### 2.11 Get player leaders by year and specific team and player ID
@@ -798,9 +834,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/team/TOR/
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/team/TOR/player/matthau01/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team/TOR/player/matthau01/
 ```
 ---
 <a name="team"></a>
@@ -906,9 +946,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_all_season_summary/TOR/
   - **`hdscgoal_against`** (integer) - High-danger scoring chances against that lead to goals.
   - **`hdsc_opp_shot_pct`** (number, decimal) - Percentage of high-danger scoring chances that are converted to goals, for this team's opponents. Expressed as a decimal (e.g., 14.9).
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_now/
 ```
 <a name="team_analytics_5_on_5_{year}/{abbreviation}"></a>
 ### 3.4 Get teams analytics 5 on 5 by year and specific team
@@ -949,9 +993,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_20212022/
   - **`hdscgoal_against`** (integer) - High-danger scoring chances against that lead to goals.
   - **`hdsc_opp_shot_pct`** (number, decimal) - Percentage of high-danger scoring chances that are converted to goals, for this team's opponents. Expressed as a decimal (e.g., 14.9).
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_20212022/TOR/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_now/TOR/
 ```
 ---
 <a name="season"></a>
@@ -985,9 +1033,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_20212022/TOR/
   - **`reg_rec`** (string) - Regulation time record (W-L-T format likely) in regulation time only. W(reg_wins)- L(losses)- T(wins - reg_wins + losses_ot).
   - **`points_pct_reg`** (number, decimal) - Points percentage based only on regulation time results. Expressed as a decimal (e.g., 0.598).
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/season_summary_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/season_summary_now/
 ```
 <a name="season_summary_{year}/{abbreviation}"></a>
 ### 4.2 Get summary statistic season by year and specific team 
@@ -1019,9 +1071,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/season_summary_20212022/
   - **`reg_rec`** (string) - Regulation time record (W-L-T format likely) in regulation time only. W(reg_wins)- L(losses)- T(wins - reg_wins + losses_ot).
   - **`points_pct_reg`** (number, decimal) - Points percentage based only on regulation time results. Expressed as a decimal (e.g., 0.598).
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/season_summary_20212022/TOR/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/season_summary_now/TOR/
 ```
 <a name="season_statistics_{year}"></a>
 ### 4.3 Get detail statistic season by year
@@ -1067,9 +1123,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/season_summary_20212022/TOR/
   - **`save_pct`** (number, decimal) - Save Percentage. Percentage of shots on goal stopped by the team's goaltenders. Higher values mean better goaltending. Expressed as a decimal (e.g., 0.901).
   - **`shutouts`** (integer) - Shutouts. Total number of games in which the team did not allow any goals. Reflects strong defensive and goaltending performances.
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_now/
 ```
 <a name="season_statistics_{year}/{abbreviation}"></a>
 ### 4.4 Get detail statistic season by year and specific team
@@ -1116,9 +1176,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_20212022/
   - **`save_pct`** (number, decimal) - Save Percentage. Percentage of shots on goal stopped by the team's goaltenders. Higher values mean better goaltending. Expressed as a decimal (e.g., 0.901).
   - **`shutouts`** (integer) - Shutouts. Total number of games in which the team did not allow any goals. Reflects strong defensive and goaltending performances.
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_20212022/TOR/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_now/TOR/
 ```
 <a name="league_average_{year}"></a>
 ### 4.5 Get league average by year
@@ -1154,9 +1218,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_20212022/TOR/
   - **`save_pct`** (number, decimal) - Save Percentage. Percentage of shots on goal stopped by the team's goaltenders. Higher values mean better goaltending. Expressed as a decimal (e.g., 0.905). (average value)
   - **`shutouts`** (integer) - Shutouts. Total number of games in which the team did not allow any goals. Reflects strong defensive and goaltending performances. (average value)
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_average_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_average_now/
 ```
 ---
 <a name="playoff"></a>
@@ -1187,9 +1255,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_average_20212022/
   - **`loser_team_abbrev`** (string) – Loser Team Abbreviation. Three-letter abbreviation for the team that lost the game (e.g., "BOS").
   - **`overtime`** (string) – Overtime. Indicates whether the game went to overtime, and may include additional info such as the number of overtime periods (e.g., "OT", "2OT", or NULL if decided in regulation).
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/
 ```
 <a name="league_playoff_series_result_{year}/game/{game_id}"></a>
 ### 5.2 Get playoff result by year and specific game
@@ -1218,9 +1290,13 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_20212022/
   - **`loser_team_abbrev`** (string) – Loser Team Abbreviation. Three-letter abbreviation for the team that lost the game.
   - **`overtime`** (string) – Overtime. Indicates whether the game went to overtime, and may include additional info such as the number of overtime periods (e.g., "OT", "2OT", or NULL if decided in regulation).
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_20212022/game/202205040LAK/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/game/202205040LAK/
 ```
 <a name="league_playoff_series_result_{year}/date/{game_date}"></a>
 ### 5.3 Get playoff result by year and specific date
@@ -1249,7 +1325,11 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_20212022/game/202
   - **`loser_team_abbrev`** (string) – Loser Team Abbreviation. Three-letter abbreviation for the team that lost the game.
   - **`overtime`** (string) – Overtime. Indicates whether the game went to overtime, and may include additional info such as the number of overtime periods (e.g., "OT", "2OT", or NULL if decided in regulation).
 
-##### Example using
+##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_2022/date/2022-05-04/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/date/2022-05-04/
 ```
