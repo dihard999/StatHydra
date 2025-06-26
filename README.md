@@ -110,13 +110,17 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 ╚════════════════════════════════════════╩══════════════╝  
 ```  
 ##### Example using by specific year
-```cURL Config
-http://crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
 ```
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/
 ```
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 <a name="league_leaders_{year}/category/{leader_id_abbrev}"></a>
 ### 2.2 Get player leaders by year and specific category
 - **Endpoint:** `/league_leaders_{year}/category/{leader_id_abbrev}`
