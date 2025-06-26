@@ -111,7 +111,7 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 ```  
 ##### Example using by specific year
 ```cURL Config
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
+http://crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
 ```
 ##### Example using for the current year
 ```bash
