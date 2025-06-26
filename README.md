@@ -132,51 +132,50 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-```  
-╔════════════════════════════════════════╦══════════════╗  
-║ Category                               ║ Short code   ║  
-╠════════════════════════════════════════╬══════════════╣  
-║ Assists                                ║ A            ║  
-║ Assists Per Game                       ║ APG          ║  
-║ Defensive Point Shares                 ║ DPS          ║  
-║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected +/-                           ║ XPM          ║  
-║ Game-Winning Goals                     ║ GWG          ║  
-║ Games Played (Goalie)                  ║ GPG          ║  
-║ Goalie Point Shares                    ║ GPS          ║  
-║ Goals                                  ║ G            ║  
-║ Goals Against                          ║ GA           ║  
-║ Goals Against Average                  ║ GAA          ║  
-║ Goals Allowed Adjusted                 ║ GAAJ         ║  
-║ Goals Created                          ║ GCR          ║  
-║ Goals Created Per Game                 ║ GCPG         ║  
-║ Goals Per Game                         ║ GPGM         ║  
-║ Goals Saved Above Average              ║ GSAA         ║  
-║ Hat Tricks                             ║ HTR          ║  
-║ Losses                                 ║ L            ║  
-║ Minutes                                ║ MIN          ║  
-║ Offensive Point Shares                 ║ OPS          ║  
-║ Penalties in Minutes                   ║ PIM          ║  
-║ Plus/Minus                             ║ PLM          ║  
-║ Point Shares                           ║ PTS          ║  
-║ Points                                 ║ P            ║  
-║ Points Per Game                        ║ PPG          ║  
-║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On-Ice Against        ║ PGAI         ║  
-║ Power Play Goals On-Ice For            ║ PGFI         ║  
-║ Save Percentage                        ║ SVP          ║  
-║ Saves                                  ║ SAV          ║  
-║ Shooting Percentage                    ║ SHP          ║  
-║ Short-Handed Goals                     ║ SHG          ║  
-║ Shots                                  ║ S            ║  
-║ Shots Against                          ║ SAG          ║  
-║ Shutouts                               ║ SHO          ║  
-║ Ties plus OT/SO Losses                 ║ TOL          ║  
-║ Total Goals On-Ice Against             ║ TGAI         ║  
-║ Total Goals On-Ice For                 ║ TGFI         ║  
-║ Wins                                   ║ W            ║  
-╚════════════════════════════════════════╩══════════════╝  
-```  
+
+    
+| Category                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
+
 
 ##### Example using by specific year
 ```bash
@@ -205,51 +204,49 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-```  
-╔════════════════════════════════════════╦══════════════╗  
-║ Category                               ║ Short code   ║  
-╠════════════════════════════════════════╬══════════════╣  
-║ Assists                                ║ A            ║  
-║ Assists Per Game                       ║ APG          ║  
-║ Defensive Point Shares                 ║ DPS          ║  
-║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected +/-                           ║ XPM          ║  
-║ Game-Winning Goals                     ║ GWG          ║  
-║ Games Played (Goalie)                  ║ GPG          ║  
-║ Goalie Point Shares                    ║ GPS          ║  
-║ Goals                                  ║ G            ║  
-║ Goals Against                          ║ GA           ║  
-║ Goals Against Average                  ║ GAA          ║  
-║ Goals Allowed Adjusted                 ║ GAAJ         ║  
-║ Goals Created                          ║ GCR          ║  
-║ Goals Created Per Game                 ║ GCPG         ║  
-║ Goals Per Game                         ║ GPGM         ║  
-║ Goals Saved Above Average              ║ GSAA         ║  
-║ Hat Tricks                             ║ HTR          ║  
-║ Losses                                 ║ L            ║  
-║ Minutes                                ║ MIN          ║  
-║ Offensive Point Shares                 ║ OPS          ║  
-║ Penalties in Minutes                   ║ PIM          ║  
-║ Plus/Minus                             ║ PLM          ║  
-║ Point Shares                           ║ PTS          ║  
-║ Points                                 ║ P            ║  
-║ Points Per Game                        ║ PPG          ║  
-║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On-Ice Against        ║ PGAI         ║  
-║ Power Play Goals On-Ice For            ║ PGFI         ║  
-║ Save Percentage                        ║ SVP          ║  
-║ Saves                                  ║ SAV          ║  
-║ Shooting Percentage                    ║ SHP          ║  
-║ Short-Handed Goals                     ║ SHG          ║  
-║ Shots                                  ║ S            ║  
-║ Shots Against                          ║ SAG          ║  
-║ Shutouts                               ║ SHO          ║  
-║ Ties plus OT/SO Losses                 ║ TOL          ║  
-║ Total Goals On-Ice Against             ║ TGAI         ║  
-║ Total Goals On-Ice For                 ║ TGFI         ║  
-║ Wins                                   ║ W            ║  
-╚════════════════════════════════════════╩══════════════╝  
-```  
+
+    
+| Category                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
 
 ##### Example by specific year
 ```bash
@@ -278,51 +275,49 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/rank/3/
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-```  
-╔════════════════════════════════════════╦══════════════╗  
-║ Category                               ║ Short code   ║  
-╠════════════════════════════════════════╬══════════════╣  
-║ Assists                                ║ A            ║  
-║ Assists Per Game                       ║ APG          ║  
-║ Defensive Point Shares                 ║ DPS          ║  
-║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected +/-                           ║ XPM          ║  
-║ Game-Winning Goals                     ║ GWG          ║  
-║ Games Played (Goalie)                  ║ GPG          ║  
-║ Goalie Point Shares                    ║ GPS          ║  
-║ Goals                                  ║ G            ║  
-║ Goals Against                          ║ GA           ║  
-║ Goals Against Average                  ║ GAA          ║  
-║ Goals Allowed Adjusted                 ║ GAAJ         ║  
-║ Goals Created                          ║ GCR          ║  
-║ Goals Created Per Game                 ║ GCPG         ║  
-║ Goals Per Game                         ║ GPGM         ║  
-║ Goals Saved Above Average              ║ GSAA         ║  
-║ Hat Tricks                             ║ HTR          ║  
-║ Losses                                 ║ L            ║  
-║ Minutes                                ║ MIN          ║  
-║ Offensive Point Shares                 ║ OPS          ║  
-║ Penalties in Minutes                   ║ PIM          ║  
-║ Plus/Minus                             ║ PLM          ║  
-║ Point Shares                           ║ PTS          ║  
-║ Points                                 ║ P            ║  
-║ Points Per Game                        ║ PPG          ║  
-║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On-Ice Against        ║ PGAI         ║  
-║ Power Play Goals On-Ice For            ║ PGFI         ║  
-║ Save Percentage                        ║ SVP          ║  
-║ Saves                                  ║ SAV          ║  
-║ Shooting Percentage                    ║ SHP          ║  
-║ Short-Handed Goals                     ║ SHG          ║  
-║ Shots                                  ║ S            ║  
-║ Shots Against                          ║ SAG          ║  
-║ Shutouts                               ║ SHO          ║  
-║ Ties plus OT/SO Losses                 ║ TOL          ║  
-║ Total Goals On-Ice Against             ║ TGAI         ║  
-║ Total Goals On-Ice For                 ║ TGFI         ║  
-║ Wins                                   ║ W            ║  
-╚════════════════════════════════════════╩══════════════╝  
-```  
+
+    
+| Category                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
 
 ##### Example using by specific year
 ```bash
@@ -351,51 +346,49 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/player/vasilan
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-```  
-╔════════════════════════════════════════╦══════════════╗  
-║ Category                               ║ Short code   ║  
-╠════════════════════════════════════════╬══════════════╣  
-║ Assists                                ║ A            ║  
-║ Assists Per Game                       ║ APG          ║  
-║ Defensive Point Shares                 ║ DPS          ║  
-║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected +/-                           ║ XPM          ║  
-║ Game-Winning Goals                     ║ GWG          ║  
-║ Games Played (Goalie)                  ║ GPG          ║  
-║ Goalie Point Shares                    ║ GPS          ║  
-║ Goals                                  ║ G            ║  
-║ Goals Against                          ║ GA           ║  
-║ Goals Against Average                  ║ GAA          ║  
-║ Goals Allowed Adjusted                 ║ GAAJ         ║  
-║ Goals Created                          ║ GCR          ║  
-║ Goals Created Per Game                 ║ GCPG         ║  
-║ Goals Per Game                         ║ GPGM         ║  
-║ Goals Saved Above Average              ║ GSAA         ║  
-║ Hat Tricks                             ║ HTR          ║  
-║ Losses                                 ║ L            ║  
-║ Minutes                                ║ MIN          ║  
-║ Offensive Point Shares                 ║ OPS          ║  
-║ Penalties in Minutes                   ║ PIM          ║  
-║ Plus/Minus                             ║ PLM          ║  
-║ Point Shares                           ║ PTS          ║  
-║ Points                                 ║ P            ║  
-║ Points Per Game                        ║ PPG          ║  
-║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On-Ice Against        ║ PGAI         ║  
-║ Power Play Goals On-Ice For            ║ PGFI         ║  
-║ Save Percentage                        ║ SVP          ║  
-║ Saves                                  ║ SAV          ║  
-║ Shooting Percentage                    ║ SHP          ║  
-║ Short-Handed Goals                     ║ SHG          ║  
-║ Shots                                  ║ S            ║  
-║ Shots Against                          ║ SAG          ║  
-║ Shutouts                               ║ SHO          ║  
-║ Ties plus OT/SO Losses                 ║ TOL          ║  
-║ Total Goals On-Ice Against             ║ TGAI         ║  
-║ Total Goals On-Ice For                 ║ TGFI         ║  
-║ Wins                                   ║ W            ║  
-╚════════════════════════════════════════╩══════════════╝  
-```  
+
+    
+| Category                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
 
 ##### Example using by specific year
 ```bash
@@ -423,51 +416,49 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/team/TBL/
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-```  
-╔════════════════════════════════════════╦══════════════╗  
-║ Category                               ║ Short code   ║  
-╠════════════════════════════════════════╬══════════════╣  
-║ Assists                                ║ A            ║  
-║ Assists Per Game                       ║ APG          ║  
-║ Defensive Point Shares                 ║ DPS          ║  
-║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected +/-                           ║ XPM          ║  
-║ Game-Winning Goals                     ║ GWG          ║  
-║ Games Played (Goalie)                  ║ GPG          ║  
-║ Goalie Point Shares                    ║ GPS          ║  
-║ Goals                                  ║ G            ║  
-║ Goals Against                          ║ GA           ║  
-║ Goals Against Average                  ║ GAA          ║  
-║ Goals Allowed Adjusted                 ║ GAAJ         ║  
-║ Goals Created                          ║ GCR          ║  
-║ Goals Created Per Game                 ║ GCPG         ║  
-║ Goals Per Game                         ║ GPGM         ║  
-║ Goals Saved Above Average              ║ GSAA         ║  
-║ Hat Tricks                             ║ HTR          ║  
-║ Losses                                 ║ L            ║  
-║ Minutes                                ║ MIN          ║  
-║ Offensive Point Shares                 ║ OPS          ║  
-║ Penalties in Minutes                   ║ PIM          ║  
-║ Plus/Minus                             ║ PLM          ║  
-║ Point Shares                           ║ PTS          ║  
-║ Points                                 ║ P            ║  
-║ Points Per Game                        ║ PPG          ║  
-║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On-Ice Against        ║ PGAI         ║  
-║ Power Play Goals On-Ice For            ║ PGFI         ║  
-║ Save Percentage                        ║ SVP          ║  
-║ Saves                                  ║ SAV          ║  
-║ Shooting Percentage                    ║ SHP          ║  
-║ Short-Handed Goals                     ║ SHG          ║  
-║ Shots                                  ║ S            ║  
-║ Shots Against                          ║ SAG          ║  
-║ Shutouts                               ║ SHO          ║  
-║ Ties plus OT/SO Losses                 ║ TOL          ║  
-║ Total Goals On-Ice Against             ║ TGAI         ║  
-║ Total Goals On-Ice For                 ║ TGFI         ║  
-║ Wins                                   ║ W            ║  
-╚════════════════════════════════════════╩══════════════╝  
-```  
+
+    
+| Category                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
 
 ##### Example using by specific year
 ```bash
@@ -496,51 +487,49 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-```  
-╔════════════════════════════════════════╦══════════════╗  
-║ Category                               ║ Short code   ║  
-╠════════════════════════════════════════╬══════════════╣  
-║ Assists                                ║ A            ║  
-║ Assists Per Game                       ║ APG          ║  
-║ Defensive Point Shares                 ║ DPS          ║  
-║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected +/-                           ║ XPM          ║  
-║ Game-Winning Goals                     ║ GWG          ║  
-║ Games Played (Goalie)                  ║ GPG          ║  
-║ Goalie Point Shares                    ║ GPS          ║  
-║ Goals                                  ║ G            ║  
-║ Goals Against                          ║ GA           ║  
-║ Goals Against Average                  ║ GAA          ║  
-║ Goals Allowed Adjusted                 ║ GAAJ         ║  
-║ Goals Created                          ║ GCR          ║  
-║ Goals Created Per Game                 ║ GCPG         ║  
-║ Goals Per Game                         ║ GPGM         ║  
-║ Goals Saved Above Average              ║ GSAA         ║  
-║ Hat Tricks                             ║ HTR          ║  
-║ Losses                                 ║ L            ║  
-║ Minutes                                ║ MIN          ║  
-║ Offensive Point Shares                 ║ OPS          ║  
-║ Penalties in Minutes                   ║ PIM          ║  
-║ Plus/Minus                             ║ PLM          ║  
-║ Point Shares                           ║ PTS          ║  
-║ Points                                 ║ P            ║  
-║ Points Per Game                        ║ PPG          ║  
-║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On-Ice Against        ║ PGAI         ║  
-║ Power Play Goals On-Ice For            ║ PGFI         ║  
-║ Save Percentage                        ║ SVP          ║  
-║ Saves                                  ║ SAV          ║  
-║ Shooting Percentage                    ║ SHP          ║  
-║ Short-Handed Goals                     ║ SHG          ║  
-║ Shots                                  ║ S            ║  
-║ Shots Against                          ║ SAG          ║  
-║ Shutouts                               ║ SHO          ║  
-║ Ties plus OT/SO Losses                 ║ TOL          ║  
-║ Total Goals On-Ice Against             ║ TGAI         ║  
-║ Total Goals On-Ice For                 ║ TGFI         ║  
-║ Wins                                   ║ W            ║  
-╚════════════════════════════════════════╩══════════════╝  
-```  
+
+    
+| Category                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
 
 ##### Example using by specific year
 ```bash
@@ -569,51 +558,48 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/player/marksja02/
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-```  
-╔════════════════════════════════════════╦══════════════╗  
-║ Category                               ║ Short code   ║  
-╠════════════════════════════════════════╬══════════════╣  
-║ Assists                                ║ A            ║  
-║ Assists Per Game                       ║ APG          ║  
-║ Defensive Point Shares                 ║ DPS          ║  
-║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected +/-                           ║ XPM          ║  
-║ Game-Winning Goals                     ║ GWG          ║  
-║ Games Played (Goalie)                  ║ GPG          ║  
-║ Goalie Point Shares                    ║ GPS          ║  
-║ Goals                                  ║ G            ║  
-║ Goals Against                          ║ GA           ║  
-║ Goals Against Average                  ║ GAA          ║  
-║ Goals Allowed Adjusted                 ║ GAAJ         ║  
-║ Goals Created                          ║ GCR          ║  
-║ Goals Created Per Game                 ║ GCPG         ║  
-║ Goals Per Game                         ║ GPGM         ║  
-║ Goals Saved Above Average              ║ GSAA         ║  
-║ Hat Tricks                             ║ HTR          ║  
-║ Losses                                 ║ L            ║  
-║ Minutes                                ║ MIN          ║  
-║ Offensive Point Shares                 ║ OPS          ║  
-║ Penalties in Minutes                   ║ PIM          ║  
-║ Plus/Minus                             ║ PLM          ║  
-║ Point Shares                           ║ PTS          ║  
-║ Points                                 ║ P            ║  
-║ Points Per Game                        ║ PPG          ║  
-║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On-Ice Against        ║ PGAI         ║  
-║ Power Play Goals On-Ice For            ║ PGFI         ║  
-║ Save Percentage                        ║ SVP          ║  
-║ Saves                                  ║ SAV          ║  
-║ Shooting Percentage                    ║ SHP          ║  
-║ Short-Handed Goals                     ║ SHG          ║  
-║ Shots                                  ║ S            ║  
-║ Shots Against                          ║ SAG          ║  
-║ Shutouts                               ║ SHO          ║  
-║ Ties plus OT/SO Losses                 ║ TOL          ║  
-║ Total Goals On-Ice Against             ║ TGAI         ║  
-║ Total Goals On-Ice For                 ║ TGFI         ║  
-║ Wins                                   ║ W            ║  
-╚════════════════════════════════════════╩══════════════╝  
-```  
+    
+| Category                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
 
 ##### Example using by specific year
 ```bash
@@ -641,51 +627,48 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/team/TBL/
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-```  
-╔════════════════════════════════════════╦══════════════╗  
-║ Category                               ║ Short code   ║  
-╠════════════════════════════════════════╬══════════════╣  
-║ Assists                                ║ A            ║  
-║ Assists Per Game                       ║ APG          ║  
-║ Defensive Point Shares                 ║ DPS          ║  
-║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected +/-                           ║ XPM          ║  
-║ Game-Winning Goals                     ║ GWG          ║  
-║ Games Played (Goalie)                  ║ GPG          ║  
-║ Goalie Point Shares                    ║ GPS          ║  
-║ Goals                                  ║ G            ║  
-║ Goals Against                          ║ GA           ║  
-║ Goals Against Average                  ║ GAA          ║  
-║ Goals Allowed Adjusted                 ║ GAAJ         ║  
-║ Goals Created                          ║ GCR          ║  
-║ Goals Created Per Game                 ║ GCPG         ║  
-║ Goals Per Game                         ║ GPGM         ║  
-║ Goals Saved Above Average              ║ GSAA         ║  
-║ Hat Tricks                             ║ HTR          ║  
-║ Losses                                 ║ L            ║  
-║ Minutes                                ║ MIN          ║  
-║ Offensive Point Shares                 ║ OPS          ║  
-║ Penalties in Minutes                   ║ PIM          ║  
-║ Plus/Minus                             ║ PLM          ║  
-║ Point Shares                           ║ PTS          ║  
-║ Points                                 ║ P            ║  
-║ Points Per Game                        ║ PPG          ║  
-║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On-Ice Against        ║ PGAI         ║  
-║ Power Play Goals On-Ice For            ║ PGFI         ║  
-║ Save Percentage                        ║ SVP          ║  
-║ Saves                                  ║ SAV          ║  
-║ Shooting Percentage                    ║ SHP          ║  
-║ Short-Handed Goals                     ║ SHG          ║  
-║ Shots                                  ║ S            ║  
-║ Shots Against                          ║ SAG          ║  
-║ Shutouts                               ║ SHO          ║  
-║ Ties plus OT/SO Losses                 ║ TOL          ║  
-║ Total Goals On-Ice Against             ║ TGAI         ║  
-║ Total Goals On-Ice For                 ║ TGFI         ║  
-║ Wins                                   ║ W            ║  
-╚════════════════════════════════════════╩══════════════╝  
-```  
+    
+| Category                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
 
 ##### Example using by specific year
 ```bash
@@ -712,52 +695,49 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/player/kreidch01/
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-```  
-╔════════════════════════════════════════╦══════════════╗  
-║ Category                               ║ Short code   ║  
-╠════════════════════════════════════════╬══════════════╣  
-║ Assists                                ║ A            ║  
-║ Assists Per Game                       ║ APG          ║  
-║ Defensive Point Shares                 ║ DPS          ║  
-║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected +/-                           ║ XPM          ║  
-║ Game-Winning Goals                     ║ GWG          ║  
-║ Games Played (Goalie)                  ║ GPG          ║  
-║ Goalie Point Shares                    ║ GPS          ║  
-║ Goals                                  ║ G            ║  
-║ Goals Against                          ║ GA           ║  
-║ Goals Against Average                  ║ GAA          ║  
-║ Goals Allowed Adjusted                 ║ GAAJ         ║  
-║ Goals Created                          ║ GCR          ║  
-║ Goals Created Per Game                 ║ GCPG         ║  
-║ Goals Per Game                         ║ GPGM         ║  
-║ Goals Saved Above Average              ║ GSAA         ║  
-║ Hat Tricks                             ║ HTR          ║  
-║ Losses                                 ║ L            ║  
-║ Minutes                                ║ MIN          ║  
-║ Offensive Point Shares                 ║ OPS          ║  
-║ Penalties in Minutes                   ║ PIM          ║  
-║ Plus/Minus                             ║ PLM          ║  
-║ Point Shares                           ║ PTS          ║  
-║ Points                                 ║ P            ║  
-║ Points Per Game                        ║ PPG          ║  
-║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On-Ice Against        ║ PGAI         ║  
-║ Power Play Goals On-Ice For            ║ PGFI         ║  
-║ Save Percentage                        ║ SVP          ║  
-║ Saves                                  ║ SAV          ║  
-║ Shooting Percentage                    ║ SHP          ║  
-║ Short-Handed Goals                     ║ SHG          ║  
-║ Shots                                  ║ S            ║  
-║ Shots Against                          ║ SAG          ║  
-║ Shutouts                               ║ SHO          ║  
-║ Ties plus OT/SO Losses                 ║ TOL          ║  
-║ Total Goals On-Ice Against             ║ TGAI         ║  
-║ Total Goals On-Ice For                 ║ TGFI         ║  
-║ Wins                                   ║ W            ║  
-╚════════════════════════════════════════╩══════════════╝  
-```  
+  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code: 
+    
+| Category                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
 
 ##### Example using by specific year
 ```bash
@@ -786,51 +766,48 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team/TOR/
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-```  
-╔════════════════════════════════════════╦══════════════╗  
-║ Category                               ║ Short code   ║  
-╠════════════════════════════════════════╬══════════════╣  
-║ Assists                                ║ A            ║  
-║ Assists Per Game                       ║ APG          ║  
-║ Defensive Point Shares                 ║ DPS          ║  
-║ Even Strength Goals                    ║ EVSG         ║  
-║ Expected +/-                           ║ XPM          ║  
-║ Game-Winning Goals                     ║ GWG          ║  
-║ Games Played (Goalie)                  ║ GPG          ║  
-║ Goalie Point Shares                    ║ GPS          ║  
-║ Goals                                  ║ G            ║  
-║ Goals Against                          ║ GA           ║  
-║ Goals Against Average                  ║ GAA          ║  
-║ Goals Allowed Adjusted                 ║ GAAJ         ║  
-║ Goals Created                          ║ GCR          ║  
-║ Goals Created Per Game                 ║ GCPG         ║  
-║ Goals Per Game                         ║ GPGM         ║  
-║ Goals Saved Above Average              ║ GSAA         ║  
-║ Hat Tricks                             ║ HTR          ║  
-║ Losses                                 ║ L            ║  
-║ Minutes                                ║ MIN          ║  
-║ Offensive Point Shares                 ║ OPS          ║  
-║ Penalties in Minutes                   ║ PIM          ║  
-║ Plus/Minus                             ║ PLM          ║  
-║ Point Shares                           ║ PTS          ║  
-║ Points                                 ║ P            ║  
-║ Points Per Game                        ║ PPG          ║  
-║ Power Play Goals                       ║ PPGL         ║  
-║ Power Play Goals On-Ice Against        ║ PGAI         ║  
-║ Power Play Goals On-Ice For            ║ PGFI         ║  
-║ Save Percentage                        ║ SVP          ║  
-║ Saves                                  ║ SAV          ║  
-║ Shooting Percentage                    ║ SHP          ║  
-║ Short-Handed Goals                     ║ SHG          ║  
-║ Shots                                  ║ S            ║  
-║ Shots Against                          ║ SAG          ║  
-║ Shutouts                               ║ SHO          ║  
-║ Ties plus OT/SO Losses                 ║ TOL          ║  
-║ Total Goals On-Ice Against             ║ TGAI         ║  
-║ Total Goals On-Ice For                 ║ TGFI         ║  
-║ Wins                                   ║ W            ║  
-╚════════════════════════════════════════╩══════════════╝  
-```  
+    
+| Category                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
 
 ##### Example using by specific year
 ```bash
