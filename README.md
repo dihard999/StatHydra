@@ -104,6 +104,7 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 | Total Goals On-Ice Against                 | TGAI       |  
 | Total Goals On-Ice For                     | TGFI       |  
 | Wins                                       | W          |  
+
 ##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
