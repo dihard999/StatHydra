@@ -11,14 +11,14 @@
    2.1 [Get player leaders by year and all category](#league_leaders_{year})  
    2.2 [Get player leaders by year and specific category](#league_leaders_{year}/category/{leader_id_abbrev})  
    2.3 [Get player leaders by year and specific category and rank](#league_leaders_{year}/category/{leader_id_abbrev}/rank/{rank})  
-   2.4 [Get player leaders by year and specific category and player ID](#league_leaders_{year}/category/{leader_id_abbrev}/player/{player_id})  
+   2.4 [Get player leaders by year and specific category and player ID](#league_leaders_{year}/category/{leader_id_abbrev}/player_id/{player_id})  
    2.5 [Get player leaders by year and specific category and team](#league_leaders_{year}/category/{leader_id_abbrev}/team_abbrev/{team_abbrev})  
    2.6 [Get player leaders by year and specific rank](#league_leaders_{year}/rank/{rank})  
-   2.7 [Get player leaders by year and specific rank and player ID](#league_leaders_{year}/rank/{rank}/player/{player_id})  
+   2.7 [Get player leaders by year and specific rank and player ID](#league_leaders_{year}/rank/{rank}/player_id/{player_id})  
    2.8 [Get player leaders by year and specific rank and team](#league_leaders_{year}/rank/{rank}/team_abbrev/{team_abbrev})  
-   2.9 [Get player leaders by year and specific player ID](#league_leaders_{year}/player/{player_id})  
+   2.9 [Get player leaders by year and specific player ID](#league_leaders_{year}/player_id/{player_id})  
    2.10 [Get player leaders by year and specific team](#league_leaders_{year}/team_abbrev/{team_abbrev})  
-   2.11 [Get player leaders by year and specific team and player ID](#league_leaders_{year}/team_abbrev/{team_abbrev}/player/{player_id})  
+   2.11 [Get player leaders by year and specific team and player ID](#league_leaders_{year}/team_abbrev/{team_abbrev}/player_id/{player_id})  
 3. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/team_abbrev/{team_abbrev})  
@@ -256,9 +256,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/rank/3/
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/rank/3/
 ```
-<a name="league_leaders_{year}/category/{leader_id_abbrev}/player/{player_id}"></a>
+<a name="league_leaders_{year}/category/{leader_id_abbrev}/player_id/{player_id}"></a>
 ### 2.4 Get player leaders by year and specific category and player ID
-- **Endpoint:** `/league_leaders_{year}/category/{leader_id_abbrev}/player/{player_id}`
+- **Endpoint:** `/league_leaders_{year}/category/{leader_id_abbrev}/player_id/{player_id}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific category and player ID.
 - **Parameters:**
@@ -321,11 +321,11 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/rank/3/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/player/vasilan02/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/player_id/vasilan02/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/player/vasilan02/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/player_id/vasilan02/
 ```
 <a name="league_leaders_{year}/category/{leader_id_abbrev}/team_abbrev/{team_abbrev}"></a>
 ### 2.5 Get player leaders by year and specific category and team
@@ -468,9 +468,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/rank/3/
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/
 ```
-<a name="league_leaders_{year}/rank/{rank}/player/{player_id}"></a>
+<a name="league_leaders_{year}/rank/{rank}/player_id/{player_id}"></a>
 ### 2.7 Get player leaders by year and specific rank and player ID
-- **Endpoint:** `/league_leaders_{year}/rank/{rank}/player/{player_id}`
+- **Endpoint:** `/league_leaders_{year}/rank/{rank}/player_id/{player_id}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific rank and player ID.
 - **Parameters:**
@@ -533,11 +533,11 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/rank/3/player/marksja02/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/rank/3/player_id/marksja02/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/player/marksja02/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/player_id/marksja02/
 ```
 <a name="league_leaders_{year}/rank/{rank}/team_abbrev/{team_abbrev}"></a>
 ### 2.8 Get player leaders by year and specific rank and team
@@ -609,9 +609,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/rank/3/team_abbrev/TBL
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/team_abbrev/TBL/
 ```
-<a name="league_leaders_{year}/player/{player_id}"></a>
+<a name="league_leaders_{year}/player_id/{player_id}"></a>
 ### 2.9 Get player leaders by year and specific player ID
-- **Endpoint:** `/league_leaders_{year}/player/{player_id}`
+- **Endpoint:** `/league_leaders_{year}/player_id/{player_id}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific player ID.
 - **Parameters:**
@@ -747,9 +747,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/team_abbrev/TOR/
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/
 ```
-<a name="league_leaders_{year}/team_abbrev/{team_abbrev}/player/{player_id}"></a>
+<a name="league_leaders_{year}/team_abbrev/{team_abbrev}/player_id/{player_id}"></a>
 ### 2.11 Get player leaders by year and specific team and player ID
-- **Endpoint:** `/league_leaders_{year}/team_abbrev/{team_abbrev}/player/{player_id}`
+- **Endpoint:** `/league_leaders_{year}/team_abbrev/{team_abbrev}/player_id/{player_id}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific team and player ID.
 - **Parameters:**
@@ -811,11 +811,11 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/team_abbrev/TOR/player/matthau01/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/team_abbrev/TOR/player_id/matthau01/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/player/matthau01/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/player_id/matthau01/
 ```
 ---
 <a name="team"></a>
