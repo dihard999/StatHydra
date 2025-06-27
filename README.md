@@ -747,9 +747,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/team_abbrev/TOR/
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/
 ```
-<a name="league_leaders_{year}/team/{team_abbrev}/player/{player_id}"></a>
+<a name="league_leaders_{year}/team_abbrev/{team_abbrev}/player/{player_id}"></a>
 ### 2.11 Get player leaders by year and specific team and player ID
-- **Endpoint:** `/league_leaders_{year}/team/{team_abbrev}/player/{player_id}`
+- **Endpoint:** `/league_leaders_{year}/team_abbrev/{team_abbrev}/player/{player_id}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific team and player ID.
 - **Parameters:**
@@ -829,7 +829,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/player/matt
 - **Response:** JSON format
 - **Schema table:**
   - **`team_name`** (string) - Full team name. The name of the NHL team.
-  - **`abbreviation`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`league`** (string) - The league in which the team played (e.g., NHL).
   - **`year_min`** (integer) - First year of NHL career.
   - **`year_max`** (integer) - Last year of NHL career.
@@ -851,17 +851,17 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/player/matt
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/team_all_season_summary/
 ```
-<a name="team_all_season_summary/{team_abbrev}"></a>
+<a name="team_all_season_summary/team_abbrev/{team_abbrev}"></a>
 ### 3.2 Get all season teams statistics summary by specific team(except for the current season)
-- **Endpoint:** `/team_all_season_summary/{team_abbrev}`
+- **Endpoint:** `/team_all_season_summary/team_abbrev/{team_abbrev}`
 - **Method:** GET
 - **Description:** Retrieves aggregated statistics for all teams across all seasons they participated in the NHL.
 - **Parameters:**
-   - **`{abbreviation}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+   - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
 - **Response:** JSON format
 - **Schema table:**
   - **`team_name`** (string) - Full team name. The name of the NHL team.
-  - **`abbreviation`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`league`** (string) - The league in which the team played (e.g., NHL).
   - **`year_min`** (integer) - First year of NHL career.
   - **`year_max`** (integer) - Last year of NHL career.
@@ -881,7 +881,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_all_season_summary/
 
 ##### Example using
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/team_all_season_summary/TOR/
+crashcrab.ddns.net/{YOUR_API_KEY}/team_all_season_summary/team_abbrev/TOR/
 ```
 <a name="team_analytics_5_on_5_{year}"></a>
 ### 3.3 Get teams analytics 5 on 5 by year
@@ -894,7 +894,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_all_season_summary/TOR/
 - **Schema table:**
   - **`ranker`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
   - **`team_name`** (string) - Team Name. The name of the NHL team.
-  - **`abbreviation`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`playoff`** (string) - Indicator if the team made the playoffs that season (e.g., 'Yes', 'No).
   - **`shot_pct_5on5`** (number, decimal) - Shooting Percentage 5-on-5. Reflects shooting efficiency. Expressed as a decimal (e.g., 7.3).
   - **`sv_pct_5on5`** (number, decimal) - Save percentage 5-on-5. Reflects a goaltenders ability to stop shots during 5-on-5 situations. Expressed as a decimal (e.g., 0.923).
@@ -936,12 +936,12 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_now/
 - **Description:** Table presents advanced statistics for NHL teams , focusing on 5-on-5 play of a specific team for specific season
 - **Parameters:**
    - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-   - **`{abbreviation}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+   - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
 - **Response:** JSON format
 - **Schema table:**
   - **`ranker`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
   - **`team_name`** (string) - Team Name. The name of the NHL team.
-  - **`abbreviation`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`playoff`** (string) - Indicator if the team made the playoffs that season (e.g., 'Yes', 'No).
   - **`shot_pct_5on5`** (number, decimal) - Shooting Percentage 5-on-5. Reflects shooting efficiency. Expressed as a decimal (e.g., 7.3).
   - **`sv_pct_5on5`** (number, decimal) - Save percentage 5-on-5. Reflects a goaltenders ability to stop shots during 5-on-5 situations. Expressed as a decimal (e.g., 0.923).
@@ -989,7 +989,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_now/team_abbrev/TOR/
 - **Response:** JSON format
 - **Schema table:**
   - **`team_name`** (string) - Full team name. The name of the NHL team.
-  - **`abbreviation`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`conference`** (string) - Conference the team played in during the season. 
   - **`division`** (string) - Division the team played in during the season. 
   - **`playoff`** (string) - Indicator if the team made the playoffs that season (e.g., 'Yes', 'No).
@@ -1027,7 +1027,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/season_summary_now/
 - **Response:** JSON format
 - **Schema table:**
   - **`team_name`** (string) - Full team name. The name of the NHL team.
-  - **`abbreviation`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`conference`** (string) - Conference the team played in during the season. 
   - **`division`** (string) - Division the team played in during the season. 
   - **`playoff`** (string) - Indicator if the team made the playoffs that season (e.g., 'Yes', 'No).
@@ -1065,7 +1065,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/season_summary_now/team_abbrev/TOR/
 - **Schema table:**
   - **`ranker`** (integer) - Rank. The ranking of the team in the league based on their performance. A lower number (e.g., 1) indicates a higher-ranked team.
   - **`team_name`** (string) - Full team name. The name of the NHL team.
-  - **`abbreviation`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`average_age`** (number, decimal) - Average Age. Average age of team weighted by time on ice. Expressed as a decimal (e.g., 25.7).
   - **`playoff`** (string) - Indicator if the team made the playoffs that season (e.g., 'Yes', 'No).
   - **`games`** (integer) - Games Played. Total number of games played by the team during the regular season.
