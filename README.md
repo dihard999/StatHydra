@@ -9,10 +9,10 @@
 1. [Base URL](#base-url)
 2. [Player](#player)  
    2.1 [Get player leaders by year and all category](#league_leaders_{year})  
-   2.2 [Get player leaders by year and specific category](#league_leaders_{year}/category/{leader_id_abbrev})  
-   2.3 [Get player leaders by year and specific category and rank](#league_leaders_{year}/category/{leader_id_abbrev}/rank/{rank})  
-   2.4 [Get player leaders by year and specific category and player ID](#league_leaders_{year}/category/{leader_id_abbrev}/player_id/{player_id})  
-   2.5 [Get player leaders by year and specific category and team](#league_leaders_{year}/category/{leader_id_abbrev}/team_abbrev/{team_abbrev})  
+   2.2 [Get player leaders by year and specific category](#league_leaders_{year}/stat_abbrev/{stat_abbrev})  
+   2.3 [Get player leaders by year and specific category and rank](#league_leaders_{year}/stat_abbrev/{stat_abbrev}/rank/{rank})  
+   2.4 [Get player leaders by year and specific category and player ID](#league_leaders_{year}/stat_abbrev/{stat_abbrev}/player_id/{player_id})  
+   2.5 [Get player leaders by year and specific category and team](#league_leaders_{year}/stat_abbrev/{stat_abbrev}/team_abbrev/{team_abbrev})  
    2.6 [Get player leaders by year and specific rank](#league_leaders_{year}/rank/{rank})  
    2.7 [Get player leaders by year and specific rank and player ID](#league_leaders_{year}/rank/{rank}/player_id/{player_id})  
    2.8 [Get player leaders by year and specific rank and team](#league_leaders_{year}/rank/{rank}/team_abbrev/{team_abbrev})  
@@ -56,15 +56,15 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 - **Response:** JSON format
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
     
-| Category                                   | Short code |  
+| Stat name                                   | Short code |  
 |---------------------------------------------|------------|  
 | Assists                                    | A          |  
 | Assists Per Game                           | APG        |  
@@ -114,27 +114,27 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/
 ```
-<a name="league_leaders_{year}/category/{leader_id_abbrev}"></a>
+<a name="league_leaders_{year}/stat_abbrev/{stat_abbrev}"></a>
 ### 2.2 Get player leaders by year and specific category
-- **Endpoint:** `/league_leaders_{year}/category/{leader_id_abbrev}`
+- **Endpoint:** `/league_leaders_{year}/stat_abbrev/{stat_abbrev}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific category.
 - **Parameters:**
    - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-   - **`{leader_id_abbrev}`** (string) - Short abbreviation of categories.
+   - **`{stat_abbrev}`** (string) - Short abbreviation of categories.
 - **Response:** JSON format
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 
     
-| Category                                   | Short code |  
+| Stat name                                   | Short code |  
 |---------------------------------------------|------------|  
 | Assists                                    | A          |  
 | Assists Per Game                           | APG        |  
@@ -179,34 +179,34 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/stat_abbrev/GPS/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/
 ```
-<a name="league_leaders_{year}/category/{leader_id_abbrev}/rank/{rank}"></a>
+<a name="league_leaders_{year}/stat_abbrev/{stat_abbrev}/rank/{rank}"></a>
 ### 2.3 Get player leaders by year and specific category and rank
-- **Endpoint:** `/league_leaders_{year}/category/{leader_id_abbrev}/rank/{rank}`
+- **Endpoint:** `/league_leaders_{year}/stat_abbrev/{stat_abbrev}/rank/{rank}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific category and rank.
 - **Parameters:**
    - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-   - **`{leader_id_abbrev}`** (string) - Short abbreviation of categories.
+   - **`{stat_abbrev}`** (string) - Short abbreviation of categories.
    - **`{rank}`** (string) - Rank in the leaderboard, first place is the best.
 - **Response:** JSON format
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 
     
-| Category                                   | Short code |  
+| Stat name                                   | Short code |  
 |---------------------------------------------|------------|  
 | Assists                                    | A          |  
 | Assists Per Game                           | APG        |  
@@ -250,34 +250,34 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/
 
 ##### Example by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/rank/3/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/stat_abbrev/GPS/rank/3/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/rank/3/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/rank/3/
 ```
-<a name="league_leaders_{year}/category/{leader_id_abbrev}/player_id/{player_id}"></a>
+<a name="league_leaders_{year}/stat_abbrev/{stat_abbrev}/player_id/{player_id}"></a>
 ### 2.4 Get player leaders by year and specific category and player ID
-- **Endpoint:** `/league_leaders_{year}/category/{leader_id_abbrev}/player_id/{player_id}`
+- **Endpoint:** `/league_leaders_{year}/stat_abbrev/{stat_abbrev}/player_id/{player_id}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific category and player ID.
 - **Parameters:**
    - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-   - **`{leader_id_abbrev}`** (string) - Short abbreviation of categories.
+   - **`{stat_abbrev}`** (string) - Short abbreviation of categories.
    - **`{player_id}`** (string) - Unique identifier for each player, contains letters and numbers.
 - **Response:** JSON format
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 
     
-| Category                                   | Short code |  
+| Stat name                                   | Short code |  
 |---------------------------------------------|------------|  
 | Assists                                    | A          |  
 | Assists Per Game                           | APG        |  
@@ -321,34 +321,34 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/rank/3/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/player_id/vasilan02/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/stat_abbrev/GPS/player_id/vasilan02/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/player_id/vasilan02/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/player_id/vasilan02/
 ```
-<a name="league_leaders_{year}/category/{leader_id_abbrev}/team_abbrev/{team_abbrev}"></a>
+<a name="league_leaders_{year}/stat_abbrev/{stat_abbrev}/team_abbrev/{team_abbrev}"></a>
 ### 2.5 Get player leaders by year and specific category and team
-- **Endpoint:** `/league_leaders_{year}/category/{leader_id_abbrev}/team_abbrev/{team_abbrev}`
+- **Endpoint:** `/league_leaders_{year}/stat_abbrev/{stat_abbrev}/team_abbrev/{team_abbrev}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific category and team.
 - **Parameters:**
    - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-   - **`{leader_id_abbrev}`** (string) - Short abbreviation of categories.
+   - **`{stat_abbrev}`** (string) - Short abbreviation of categories.
    - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
 - **Response:** JSON format
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 
     
-| Category                                   | Short code |  
+| Stat name                                   | Short code |  
 |---------------------------------------------|------------|  
 | Assists                                    | A          |  
 | Assists Per Game                           | APG        |  
@@ -392,11 +392,11 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/player_id/vasi
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/category/GPS/team_abbrev/TBL/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/stat_abbrev/GPS/team_abbrev/TBL/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/team_abbrev/TBL/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/team_abbrev/TBL/
 ```
 <a name="league_leaders_{year}/rank/{rank}"></a>
 ### 2.6 Get player leaders by year and specific rank
@@ -409,16 +409,16 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/category/GPS/team_abbrev/TB
 - **Response:** JSON format
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 
     
-| Category                                   | Short code |  
+| Stat name                                   | Short code |  
 |---------------------------------------------|------------|  
 | Assists                                    | A          |  
 | Assists Per Game                           | APG        |  
@@ -480,16 +480,16 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/
 - **Response:** JSON format
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 
     
-| Category                                   | Short code |  
+| Stat name                                   | Short code |  
 |---------------------------------------------|------------|  
 | Assists                                    | A          |  
 | Assists Per Game                           | APG        |  
@@ -551,15 +551,15 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/player_id/marksja02/
 - **Response:** JSON format
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
     
-| Category                                   | Short code |  
+| Stat name                                   | Short code |  
 |---------------------------------------------|------------|  
 | Assists                                    | A          |  
 | Assists Per Game                           | APG        |  
@@ -620,15 +620,15 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/team_abbrev/TBL/
 - **Response:** JSON format
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
     
-| Category                                   | Short code |  
+| Stat name                                   | Short code |  
 |---------------------------------------------|------------|  
 | Assists                                    | A          |  
 | Assists Per Game                           | APG        |  
@@ -689,15 +689,15 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/player_id/kreidch01/
 - **Response:** JSON format
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code: 
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code: 
     
-| Category                                   | Short code |  
+| Stat name                                   | Short code |  
 |---------------------------------------------|------------|  
 | Assists                                    | A          |  
 | Assists Per Game                           | APG        |  
@@ -759,15 +759,15 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/
 - **Response:** JSON format
 - **Schema table:**
   - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`leader_id`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`leader_id_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
     
-| Category                                   | Short code |  
+| Stat name                                   | Short code |  
 |---------------------------------------------|------------|  
 | Assists                                    | A          |  
 | Assists Per Game                           | APG        |  
