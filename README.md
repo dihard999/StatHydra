@@ -1302,7 +1302,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/game/20220504
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_2022/date/2022-05-04/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_20212022/date/2022-05-04/
 ```
 ##### Example using for the current year
 ```bash
