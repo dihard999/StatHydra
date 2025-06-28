@@ -3,6 +3,7 @@
 > [!NOTE]
 > **Development is only available for NHL, development of other sports is in progress....**  
 > **The data starts from 2005-06 season. Of course, if most people need years earlier, we will consider this possibility.**
+> **Any requests to make additional filters based on the data are also welcome.**
 ---
 ---
 # NHL
