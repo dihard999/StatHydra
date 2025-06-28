@@ -32,8 +32,8 @@
    4.5 [Get league average by year](#league_average_{year})  
 5. [Playoff](#playoff)  
    5.1 [Get playoff result by year](#league_playoff_series_result_{year})  
-   5.2 [Get playoff result by year and specific game](#league_playoff_series_result_{year}/game/{game_id})  
-   5.3 [Get playoff result by year and specific date](#league_playoff_series_result_{year}/date/{game_date})  
+   5.2 [Get playoff result by year and specific game](#league_playoff_series_result_{year}/game_id/{game_id})  
+   5.3 [Get playoff result by year and specific date](#league_playoff_series_result_{year}/game_date/{game_date})  
 ---
 <a name="base-url"></a>
 ## 1. Base URL
@@ -1238,9 +1238,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_20212022/
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/
 ```
-<a name="league_playoff_series_result_{year}/game/{game_id}"></a>
+<a name="league_playoff_series_result_{year}/game_id/{game_id}"></a>
 ### 5.2 Get playoff result by year and specific game
-- **Endpoint:** `/league_playoff_series_result_{year}/game/{game_id}/`
+- **Endpoint:** `/league_playoff_series_result_{year}/game_id/{game_id}/`
 - **Method:** GET
 - **Description:** Table with results of playoff series games for a specific game. 
 - **Parameters:**
@@ -1267,15 +1267,15 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_20212022/game/202205040LAK/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_20212022/game_id/202205040LAK/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/game/202205040LAK/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/game_id/202205040LAK/
 ```
-<a name="league_playoff_series_result_{year}/date/{game_date}"></a>
+<a name="league_playoff_series_result_{year}/game_date/{game_date}"></a>
 ### 5.3 Get playoff result by year and specific date
-- **Endpoint:** `/league_playoff_series_result_{year}/date/{game_date}/`
+- **Endpoint:** `/league_playoff_series_result_{year}/game_date/{game_date}/`
 - **Method:** GET
 - **Description:** Table with results of playoff series games for a specific date.
 - **Parameters:**
@@ -1302,9 +1302,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/game/20220504
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_20212022/date/2022-05-04/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_20212022/game_date/2022-05-04/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/date/2022-05-04/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/game_date/2022-05-04/
 ```
