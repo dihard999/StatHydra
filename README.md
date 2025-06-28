@@ -2,7 +2,7 @@
 **This application is a powerful API for sports analytics and match prediction, leveraging state-of-the-art machine learning algorithms. Designed for enthusiasts, analysts, and developers. With its robust and scalable architecture, the API offers seamless integration and real-time predictions, making it an essential tool for anyone seeking data-driven insights into the world of sports.**
 > [!NOTE]
 > **Development is only available for NHL, development of other sports is in progress....**  
-> **The data starts from 2005-06 season. Of course, if most people need years earlier, we will consider this possibility.**
+> **The data starts from 2005-06 season. Of course, if most people need years earlier, we will consider this possibility.**  
 > **Any requests to make additional filters based on the data are also welcome.**
 ---
 ---
