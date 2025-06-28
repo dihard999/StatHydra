@@ -886,6 +886,8 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_all_season_summary/team_abbrev/TOR/
 ```
 <a name="team_analytics_5_on_5_{year}"></a>
 ### 3.3 Get teams analytics 5 on 5 by year
+> [!NOTE]
+> **Data available since 2016-17 season** 
 - **Endpoint:** `/team_analytics_5_on_5_{year}/`
 - **Method:** GET
 - **Description:** Table presents advanced statistics for NHL teams , focusing on 5-on-5 play for specific season.
@@ -932,6 +934,8 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_now/
 ```
 <a name="team_analytics_5_on_5_{year}/team_abbrev/{team_abbrev}"></a>
 ### 3.4 Get teams analytics 5 on 5 by year and specific team
+> [!NOTE]
+> **Data available since 2016-17 season** 
 - **Endpoint:** `/team_analytics_5_on_5_{year}/team_abbrev/{team_abbrev}/`
 - **Method:** GET
 - **Description:** Table presents advanced statistics for NHL teams , focusing on 5-on-5 play of a specific team for specific season
