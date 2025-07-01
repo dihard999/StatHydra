@@ -9,11 +9,11 @@
 # NHL
 1. [Base URL](#base-url)
 2. [Player](#player)  
-   2.1 [Get player leaders by year and all category](#league_leaders_{year})  
-   2.2 [Get player leaders by year and specific category](#league_leaders_{year}/stat_abbrev/{stat_abbrev})  
-   2.3 [Get player leaders by year and specific category and rank](#league_leaders_{year}/stat_abbrev/{stat_abbrev}/rank/{rank})  
-   2.4 [Get player leaders by year and specific category and player ID](#league_leaders_{year}/stat_abbrev/{stat_abbrev}/player_id/{player_id})  
-   2.5 [Get player leaders by year and specific category and team](#league_leaders_{year}/stat_abbrev/{stat_abbrev}/team_abbrev/{team_abbrev})  
+   2.1 [Get player leaders by year and all stat](#league_leaders_{year})  
+   2.2 [Get player leaders by year and specific stat](#league_leaders_{year}/stat_abbrev/{stat_abbrev})  
+   2.3 [Get player leaders by year and specific stat and rank](#league_leaders_{year}/stat_abbrev/{stat_abbrev}/rank/{rank})  
+   2.4 [Get player leaders by year and specific stat and player ID (#league_leaders_{year}/stat_abbrev/{stat_abbrev}/player_id/{player_id})  
+   2.5 [Get player leaders by year and specific stat and team](#league_leaders_{year}/stat_abbrev/{stat_abbrev}/team_abbrev/{team_abbrev})  
    2.6 [Get player leaders by year and specific rank](#league_leaders_{year}/rank/{rank})  
    2.7 [Get player leaders by year and specific rank and player ID](#league_leaders_{year}/rank/{rank}/player_id/{player_id})  
    2.8 [Get player leaders by year and specific rank and team](#league_leaders_{year}/rank/{rank}/team_abbrev/{team_abbrev})  
@@ -49,7 +49,7 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
 <a name="player"></a>
 ## 2. Player
 <a name="league_leaders_{year}"></a>
-### 2.1 Get player leaders by year and all category
+### 2.1 Get player leaders by year and all stat
 - **Endpoint:** `/league_leaders_{year}/`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and all category.
@@ -117,7 +117,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/
 ```
 <a name="league_leaders_{year}/stat_abbrev/{stat_abbrev}"></a>
-### 2.2 Get player leaders by year and specific category
+### 2.2 Get player leaders by year and specific stat
 - **Endpoint:** `/league_leaders_{year}/stat_abbrev/{stat_abbrev}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific category.
@@ -188,7 +188,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/stat_abbrev/GPS/
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/
 ```
 <a name="league_leaders_{year}/stat_abbrev/{stat_abbrev}/rank/{rank}"></a>
-### 2.3 Get player leaders by year and specific category and rank
+### 2.3 Get player leaders by year and specific stat and rank
 - **Endpoint:** `/league_leaders_{year}/stat_abbrev/{stat_abbrev}/rank/{rank}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific category and rank.
@@ -259,7 +259,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/stat_abbrev/GPS/rank/3
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/rank/3/
 ```
 <a name="league_leaders_{year}/stat_abbrev/{stat_abbrev}/player_id/{player_id}"></a>
-### 2.4 Get player leaders by year and specific category and player ID
+### 2.4 Get player leaders by year and specific stat and player ID
 - **Endpoint:** `/league_leaders_{year}/stat_abbrev/{stat_abbrev}/player_id/{player_id}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific category and player ID.
@@ -330,7 +330,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/stat_abbrev/GPS/player
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/player_id/vasilan02/
 ```
 <a name="league_leaders_{year}/stat_abbrev/{stat_abbrev}/team_abbrev/{team_abbrev}"></a>
-### 2.5 Get player leaders by year and specific category and team
+### 2.5 Get player leaders by year and specific stat and team
 - **Endpoint:** `/league_leaders_{year}/stat_abbrev/{stat_abbrev}/team_abbrev/{team_abbrev}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific category and team.
