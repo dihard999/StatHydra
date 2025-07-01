@@ -62,7 +62,7 @@ Your unique API Key required for accessing the API endpoints. Substitute YOUR_AP
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
     
@@ -131,7 +131,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 
@@ -203,7 +203,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 
@@ -274,7 +274,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/rank/3/
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 
@@ -345,7 +345,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/player_id/v
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 
@@ -415,7 +415,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/team_abbrev
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 
@@ -486,7 +486,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
 
@@ -557,7 +557,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/player_id/marksja02/
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
     
@@ -626,7 +626,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/team_abbrev/TBL/
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
     
@@ -695,7 +695,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/player_id/kreidch01/
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code: 
     
@@ -765,7 +765,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/
   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
   - **`player`** (string) - Player's full name.
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
   - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
   - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
     
