@@ -12,7 +12,7 @@
    2.1 [Get player leaders by year and all stat](#league_leaders_{year})  
    2.2 [Get player leaders by year and specific stat](#league_leaders_{year}/stat_abbrev/{stat_abbrev})  
    2.3 [Get player leaders by year and specific stat and rank](#league_leaders_{year}/stat_abbrev/{stat_abbrev}/rank/{rank})  
-   2.4 [Get player leaders by year and specific stat and player ID(#league_leaders_{year}/stat_abbrev/{stat_abbrev}/player_id/{player_id})  
+   2.4 [Get player leaders by year and specific stat and player ID](#league_leaders_{year}/stat_abbrev/{stat_abbrev}/player_id/{player_id})  
    2.5 [Get player leaders by year and specific stat and team](#league_leaders_{year}/stat_abbrev/{stat_abbrev}/team_abbrev/{team_abbrev})  
    2.6 [Get player leaders by year and specific rank](#league_leaders_{year}/rank/{rank})  
    2.7 [Get player leaders by year and specific rank and player ID](#league_leaders_{year}/rank/{rank}/player_id/{player_id})  
