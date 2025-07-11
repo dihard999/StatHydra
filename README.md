@@ -1,5 +1,7 @@
-# :crab:CrashCrab | Sports API and Machine Learning for Match Prediction
-**This application is a powerful API for sports analytics and match prediction, leveraging state-of-the-art machine learning algorithms. Designed for enthusiasts, analysts, and developers. With its robust and scalable architecture, the API offers seamless integration and real-time predictions, making it an essential tool for anyone seeking data-driven insights into the world of sports.**
+# :crab:StatHydra | Sports API and Machine Learning for Match Prediction
+**This application is a powerful API for sports analytics and intelligent sports prediction system that combines analytics, machine learning and deep statistical approach. StatHydra provides accurate match predictions based on a large array of data, current news and unique algorithms for evaluating the form of teams and players. This is a tool for those who value awareness and data in the world of betting and sports.
+The brand's mission is to turn sports analytics into your reliable tool for winning, making every prediction informed, accurate and transparent.
+StatHydra is not just a prediction, it is your personal sports analyst who does not miss a single detail. We combine the power of artificial intelligence and love for sports so that your decisions are always one step ahead.**
 > [!NOTE]
 > **Development is only available for NHL, development of other sports is in progress....**  
 > **The data starts from 2005-06 season. Of course, if most people need years earlier, we will consider this possibility.**  
