@@ -1009,12 +1009,35 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_now/team_abbrev/TOR/
   - **`road_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "road" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.628').
   - **`eas`** (string) - W-L-T/O record versus Eastern Conference teams (e.g., '6-2-5'). The value may be absent if the team did not play in this group.
   - **`eas_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "eas" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.518'). The value may be missing if the "eas" variable is missing.
+  - **`easd`** (string) - W-L-T/O record versus East Division teams (e.g., '6-2-5'). The value may be absent if the team did not play in this group. Only valid for 2020-21 season.
+  - **`easd_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "easd" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.714'). The value may be missing if the "easd" variable is missing. Only valid for 2020-21 season.
   - **`wes`** (string) - W-L-T/O record versus Western Conference teams (e.g., '21-28-7'). The value may be absent if the team did not play in this group.
   - **`wes_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "wes" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.518'). The value may be missing if the "wes" variable is missing.
   - **`atl`** (string) - W-L-T/O record versus Atlantic Division teams (e.g., '21-28-7'). The value may be absent if the team did not play in this group.
   - **`atl_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "atl" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.518'). The value may be missing if the "atl" variable is missing.
   - **`nth`** (string) - W-L-T/O record versus North Division teams (e.g., '35-14-7'). The value may be absent if the team did not play in this group.
-  - **`nth_tsi`** (number, decimal) -  TSI - team succes index. The higher the value, the better the performance. Reflects the "nth" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.518'). The value may be missing if the "nth" variable is missing.
+  - **`nth_tsi`** (number, decimal) -  TSI - team succes index. The higher the value, the better the performance. Reflects the "nth" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.322'). The value may be missing if the "nth" variable is missing.
+  - **`wesd`** (string) - W-L-T/O record versus West Division teams (e.g., '21-28-7'). The value may be absent if the team did not play in this group.
+  - **`wesd_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "wesd" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.467'). The value may be missing if the "wesd" variable is missing.
+  - **`nea`** (string) - W-L-T/O record versus Northeast Division teams (e.g., '19-27-10'). The value may be absent if the team did not play in this group.
+  - **`nea_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "nea" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.705'). The value may be missing if the "nea" variable is missing.
+  - **`sea`** (string) - W-L-T/O record versus Southeast Division teams (e.g., '18-26-12'). The value may be absent if the team did not play in this group.
+  - **`sea_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "sea" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.536'). The value may be missing if the "sea" variable is missing.c
+  - **`nwe`** (string) - W-L-T/O record versus Northwest Division teams (e.g., '26-27-3'). The value may be absent if the team did not play in this group.
+  - **`nwe_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "nwe" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "nwe" variable is missing.
+  - **`met`** (string) - W-L-T/O record versus Metropolitan Division teams (e.g., '17-30-9'). The value may be absent if the team did not play in this group.
+  - **`met_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "met" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "met" variable is missing.
+  - **`cen`** (string) - W-L-T/O record versus Central Division teams (e.g., '17-30-9'). The value may be absent if the team did not play in this group.
+  - **`cen_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "cen" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "cen" variable is missing.
+  - **`pac`** (string) - W-L-T/O record versus Pacific Division teams (e.g., '17-30-9'). The value may be absent if the team did not play in this group.
+  - **`pac_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "pac" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "pac" variable is missing.
+  - **`one_goal`** (string) - W-L-T/O record in games decided by 1 or fewer goals (e.g., '17-30-9'). 
+  - **`one_goal_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "one_goal" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455').
+  - **`three_goal`** (string) - W-L-T/O record in games decided by 3 or more goals (e.g., '17-30-9'). 
+  - **`three_goal_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "three_goal" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455').
+  - **`sep`** (string) - W-L-T/O record in games decided by 3 or more goals (e.g., '17-30-9'). 
+  - **`sep_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "three_goal" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). 
+    
 
 ##### Example using by specific year
 ```bash
