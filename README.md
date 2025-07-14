@@ -29,6 +29,8 @@ When you need more than one point of view, choose StatHydra!**
    3.3 [Get teams analytics 5 on 5 by year](#team_analytics_5_on_5_{year})  
    3.4 [Get teams analytics 5 on 5 by year and specific team](#team_analytics_5_on_5_{year}/team_abbrev/{team_abbrev})  
    3.5 [Get expanded standings teams by year](#expanded_standings_{year})  
+   3.6 [Get expanded standings teams by year and specific team](#expanded_standings_{year}/team_abbrev/{team_abbrev})  
+   3.7 [Get expanded standings teams by year and specific rank](#expanded_standings_{year}/rank/{rank}/)  
 5. [Season](#season)  
    4.1 [Get summary statistic season by year](#season_summary_{year})  
    4.2 [Get summary statistic season by year and specific team](#season_summary_{year}/team_abbrev/{team_abbrev})  
@@ -1035,17 +1037,188 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_now/team_abbrev/TOR/
   - **`one_goal_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "one_goal" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455').
   - **`three_goal`** (string) - W-L-T/O record in games decided by 3 or more goals (e.g., '17-30-9'). 
   - **`three_goal_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "three_goal" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455').
-  - **`sep`** (string) - W-L-T/O record in games decided by 3 or more goals (e.g., '17-30-9'). 
-  - **`sep_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "three_goal" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). 
-    
+  - **`sep`** (string) - W-L-T/O record in the month of September (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`sep_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "sep" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "sep" variable is missing.
+  - **`oct`** (string) - W-L-T/O record in the month of October (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`oct_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "oct" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "oct" variable is missing.
+  - **`nov`** (string) - W-L-T/O record in the month of November (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`nov_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "nov" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "nov" variable is missing.
+  - **`dec`** (string) - W-L-T/O record in the month of December (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`dec_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "dec" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "dec" variable is missing.
+  - **`jan`** (string) - W-L-T/O record in the month of January (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`jan_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "jan" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "jan" variable is missing.
+  - **`feb`** (string) - W-L-T/O record in the month of February (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`feb_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "feb" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "feb" variable is missing.
+  - **`mar`** (string) - W-L-T/O record in the month of March (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`mar_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "mar" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "mar" variable is missing.
+  - **`apr`** (string) - W-L-T/O record in the month of April (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`apr_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "apr" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "apr" variable is missing.
+  - **`may`** (string) - W-L-T/O record in the month of May (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`may_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "may" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "may" variable is missing.   
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_20212022/team_abbrev/TOR/
+crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_{year}/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_now/team_abbrev/TOR/
+crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_now/
+```
+<a name="expanded_standings_{year}/team_abbrev/{team_abbrev}"></a>
+### 3.6 Get expanded standings teams by year and specific team
+- **Endpoint:** `/expanded_standings_{year}/team_abbrev/{team_abbrev}`
+- **Method:** GET
+- **Description:** Table presents expanded statistics for NHL teams , focusing on W-L-T\O by specific team
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+- **Response:** JSON format
+- **Schema table:**
+  - **`ranker`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
+  - **`team_name`** (string) - Team Name. The name of the NHL team.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`overall`** (string) - Overall W-L-T/O record (e.g., '28-14-6').
+  - **`overall_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "overall" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.646').
+  - **`shootout`** (string) - Shootout W-L record (e.g., '4-3', '0-3').
+  - **`shootout_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "shootout" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '1.333').
+  - **`ot`** (string) - Overtime W-L record, not including shootouts (e.g., '2-1', '3-5').
+  - **`ot_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "ot" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.667').
+  - **`home`** (string) - W-L-T/O record in home games (e.g., '2-11-5', '11-14-0').
+  - **`home_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "home" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.768').
+  - **`road`** (string) - W-L-T/O record in road games (e.g., '12-11-5').
+  - **`road_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "road" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.628').
+  - **`eas`** (string) - W-L-T/O record versus Eastern Conference teams (e.g., '6-2-5'). The value may be absent if the team did not play in this group.
+  - **`eas_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "eas" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.518'). The value may be missing if the "eas" variable is missing.
+  - **`easd`** (string) - W-L-T/O record versus East Division teams (e.g., '6-2-5'). The value may be absent if the team did not play in this group. Only valid for 2020-21 season.
+  - **`easd_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "easd" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.714'). The value may be missing if the "easd" variable is missing. Only valid for 2020-21 season.
+  - **`wes`** (string) - W-L-T/O record versus Western Conference teams (e.g., '21-28-7'). The value may be absent if the team did not play in this group.
+  - **`wes_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "wes" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.518'). The value may be missing if the "wes" variable is missing.
+  - **`atl`** (string) - W-L-T/O record versus Atlantic Division teams (e.g., '21-28-7'). The value may be absent if the team did not play in this group.
+  - **`atl_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "atl" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.518'). The value may be missing if the "atl" variable is missing.
+  - **`nth`** (string) - W-L-T/O record versus North Division teams (e.g., '35-14-7'). The value may be absent if the team did not play in this group.
+  - **`nth_tsi`** (number, decimal) -  TSI - team succes index. The higher the value, the better the performance. Reflects the "nth" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.322'). The value may be missing if the "nth" variable is missing.
+  - **`wesd`** (string) - W-L-T/O record versus West Division teams (e.g., '21-28-7'). The value may be absent if the team did not play in this group.
+  - **`wesd_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "wesd" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.467'). The value may be missing if the "wesd" variable is missing.
+  - **`nea`** (string) - W-L-T/O record versus Northeast Division teams (e.g., '19-27-10'). The value may be absent if the team did not play in this group.
+  - **`nea_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "nea" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.705'). The value may be missing if the "nea" variable is missing.
+  - **`sea`** (string) - W-L-T/O record versus Southeast Division teams (e.g., '18-26-12'). The value may be absent if the team did not play in this group.
+  - **`sea_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "sea" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.536'). The value may be missing if the "sea" variable is missing.c
+  - **`nwe`** (string) - W-L-T/O record versus Northwest Division teams (e.g., '26-27-3'). The value may be absent if the team did not play in this group.
+  - **`nwe_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "nwe" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "nwe" variable is missing.
+  - **`met`** (string) - W-L-T/O record versus Metropolitan Division teams (e.g., '17-30-9'). The value may be absent if the team did not play in this group.
+  - **`met_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "met" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "met" variable is missing.
+  - **`cen`** (string) - W-L-T/O record versus Central Division teams (e.g., '17-30-9'). The value may be absent if the team did not play in this group.
+  - **`cen_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "cen" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "cen" variable is missing.
+  - **`pac`** (string) - W-L-T/O record versus Pacific Division teams (e.g., '17-30-9'). The value may be absent if the team did not play in this group.
+  - **`pac_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "pac" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "pac" variable is missing.
+  - **`one_goal`** (string) - W-L-T/O record in games decided by 1 or fewer goals (e.g., '17-30-9'). 
+  - **`one_goal_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "one_goal" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455').
+  - **`three_goal`** (string) - W-L-T/O record in games decided by 3 or more goals (e.g., '17-30-9'). 
+  - **`three_goal_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "three_goal" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455').
+  - **`sep`** (string) - W-L-T/O record in the month of September (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`sep_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "sep" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "sep" variable is missing.
+  - **`oct`** (string) - W-L-T/O record in the month of October (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`oct_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "oct" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "oct" variable is missing.
+  - **`nov`** (string) - W-L-T/O record in the month of November (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`nov_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "nov" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "nov" variable is missing.
+  - **`dec`** (string) - W-L-T/O record in the month of December (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`dec_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "dec" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "dec" variable is missing.
+  - **`jan`** (string) - W-L-T/O record in the month of January (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`jan_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "jan" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "jan" variable is missing.
+  - **`feb`** (string) - W-L-T/O record in the month of February (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`feb_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "feb" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "feb" variable is missing.
+  - **`mar`** (string) - W-L-T/O record in the month of March (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`mar_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "mar" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "mar" variable is missing.
+  - **`apr`** (string) - W-L-T/O record in the month of April (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`apr_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "apr" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "apr" variable is missing.
+  - **`may`** (string) - W-L-T/O record in the month of May (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`may_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "may" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "may" variable is missing.   
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_{year}/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_now/
+```
+<a name="expanded_standings_{year}/rank/{rank}"></a>
+### 3.7 Get expanded standings teams by year and specific rank
+- **Endpoint:** `/expanded_standings_{year}/rank/{rank}`
+- **Method:** GET
+- **Description:** Table presents expanded statistics for NHL teams , focusing on W-L-T\O by specific rank
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{ranker}`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
+- **Response:** JSON format
+- **Schema table:**
+  - **`ranker`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
+  - **`team_name`** (string) - Team Name. The name of the NHL team.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`overall`** (string) - Overall W-L-T/O record (e.g., '28-14-6').
+  - **`overall_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "overall" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.646').
+  - **`shootout`** (string) - Shootout W-L record (e.g., '4-3', '0-3').
+  - **`shootout_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "shootout" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '1.333').
+  - **`ot`** (string) - Overtime W-L record, not including shootouts (e.g., '2-1', '3-5').
+  - **`ot_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "ot" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.667').
+  - **`home`** (string) - W-L-T/O record in home games (e.g., '2-11-5', '11-14-0').
+  - **`home_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "home" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.768').
+  - **`road`** (string) - W-L-T/O record in road games (e.g., '12-11-5').
+  - **`road_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "road" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.628').
+  - **`eas`** (string) - W-L-T/O record versus Eastern Conference teams (e.g., '6-2-5'). The value may be absent if the team did not play in this group.
+  - **`eas_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "eas" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.518'). The value may be missing if the "eas" variable is missing.
+  - **`easd`** (string) - W-L-T/O record versus East Division teams (e.g., '6-2-5'). The value may be absent if the team did not play in this group. Only valid for 2020-21 season.
+  - **`easd_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "easd" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.714'). The value may be missing if the "easd" variable is missing. Only valid for 2020-21 season.
+  - **`wes`** (string) - W-L-T/O record versus Western Conference teams (e.g., '21-28-7'). The value may be absent if the team did not play in this group.
+  - **`wes_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "wes" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.518'). The value may be missing if the "wes" variable is missing.
+  - **`atl`** (string) - W-L-T/O record versus Atlantic Division teams (e.g., '21-28-7'). The value may be absent if the team did not play in this group.
+  - **`atl_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "atl" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.518'). The value may be missing if the "atl" variable is missing.
+  - **`nth`** (string) - W-L-T/O record versus North Division teams (e.g., '35-14-7'). The value may be absent if the team did not play in this group.
+  - **`nth_tsi`** (number, decimal) -  TSI - team succes index. The higher the value, the better the performance. Reflects the "nth" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.322'). The value may be missing if the "nth" variable is missing.
+  - **`wesd`** (string) - W-L-T/O record versus West Division teams (e.g., '21-28-7'). The value may be absent if the team did not play in this group.
+  - **`wesd_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "wesd" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.467'). The value may be missing if the "wesd" variable is missing.
+  - **`nea`** (string) - W-L-T/O record versus Northeast Division teams (e.g., '19-27-10'). The value may be absent if the team did not play in this group.
+  - **`nea_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "nea" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.705'). The value may be missing if the "nea" variable is missing.
+  - **`sea`** (string) - W-L-T/O record versus Southeast Division teams (e.g., '18-26-12'). The value may be absent if the team did not play in this group.
+  - **`sea_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "sea" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.536'). The value may be missing if the "sea" variable is missing.c
+  - **`nwe`** (string) - W-L-T/O record versus Northwest Division teams (e.g., '26-27-3'). The value may be absent if the team did not play in this group.
+  - **`nwe_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "nwe" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "nwe" variable is missing.
+  - **`met`** (string) - W-L-T/O record versus Metropolitan Division teams (e.g., '17-30-9'). The value may be absent if the team did not play in this group.
+  - **`met_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "met" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "met" variable is missing.
+  - **`cen`** (string) - W-L-T/O record versus Central Division teams (e.g., '17-30-9'). The value may be absent if the team did not play in this group.
+  - **`cen_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "cen" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "cen" variable is missing.
+  - **`pac`** (string) - W-L-T/O record versus Pacific Division teams (e.g., '17-30-9'). The value may be absent if the team did not play in this group.
+  - **`pac_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "pac" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "pac" variable is missing.
+  - **`one_goal`** (string) - W-L-T/O record in games decided by 1 or fewer goals (e.g., '17-30-9'). 
+  - **`one_goal_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "one_goal" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455').
+  - **`three_goal`** (string) - W-L-T/O record in games decided by 3 or more goals (e.g., '17-30-9'). 
+  - **`three_goal_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "three_goal" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455').
+  - **`sep`** (string) - W-L-T/O record in the month of September (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`sep_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "sep" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "sep" variable is missing.
+  - **`oct`** (string) - W-L-T/O record in the month of October (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`oct_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "oct" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "oct" variable is missing.
+  - **`nov`** (string) - W-L-T/O record in the month of November (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`nov_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "nov" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "nov" variable is missing.
+  - **`dec`** (string) - W-L-T/O record in the month of December (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`dec_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "dec" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "dec" variable is missing.
+  - **`jan`** (string) - W-L-T/O record in the month of January (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`jan_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "jan" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "jan" variable is missing.
+  - **`feb`** (string) - W-L-T/O record in the month of February (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`feb_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "feb" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "feb" variable is missing.
+  - **`mar`** (string) - W-L-T/O record in the month of March (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`mar_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "mar" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "mar" variable is missing.
+  - **`apr`** (string) - W-L-T/O record in the month of April (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`apr_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "apr" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "apr" variable is missing.
+  - **`may`** (string) - W-L-T/O record in the month of May (e.g., '17-30-9'). The value may be absent if the team did not play in this month.
+  - **`may_tsi`** (number, decimal) - TSI - team succes index. The higher the value, the better the performance. Reflects the "may" variable as a number, reflects the team's success in this indicator. Expressed as a decimal (e.g., '0.455'). The value may be missing if the "may" variable is missing.   
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_{year}/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_now/
 ```
 ---
 <a name="season"></a>
