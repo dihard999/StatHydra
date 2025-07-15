@@ -35,9 +35,11 @@ When you need more than one point of view, choose StatHydra!**
    4.1 [Get summary statistic season by year](#season_summary_{year})  
    4.2 [Get summary statistic season by year and specific team](#season_summary_{year}/team_abbrev/{team_abbrev})  
    4.3 [Get detail statistic season by year](#season_statistics_{year})  
-   4.4 [Get detail statistic season by year and specific team](#season_statistics_{year}/team_abbrev/{team_abbrev})  
-   4.5 [Get league average by year](#league_average_{year})  
-6. [Playoff](#playoff)  
+   4.4 [Get detail statistic season by year and specific team](#season_statistics_{year}/team_abbrev/{team_abbrev})
+   4.5 [Get detail statistic season by year and specific rank](#season_statistics_{year}/rank/{rank})  
+   4.6 [Get detail statistic season by year and playoff](#season_statistics_{year}/playoff/{playoff})  
+   4.7 [Get league average by year](#league_average_{year})  
+7. [Playoff](#playoff)  
    5.1 [Get playoff result by year](#league_playoff_series_result_{year})  
    5.2 [Get playoff result by year and specific game](#league_playoff_series_result_{year}/game_id/{game_id})  
    5.3 [Get playoff result by year and specific date](#league_playoff_series_result_{year}/game_date/{game_date})  
@@ -1307,7 +1309,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/season_summary_now/team_abbrev/TOR/
    - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
-  - **`ranker`** (integer) - Rank. The ranking of the team in the league based on their performance. A lower number (e.g., 1) indicates a higher-ranked team.
+  - **`rank`** (integer) - Rank. The ranking of the team in the league based on their performance. A lower number (e.g., 1) indicates a higher-ranked team.
   - **`team_name`** (string) - Full team name. The name of the NHL team.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`average_age`** (number, decimal) - Average Age. Average age of team weighted by time on ice. Expressed as a decimal (e.g., 25.7).
@@ -1360,7 +1362,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_now/
    - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
 - **Response:** JSON format
 - **Schema table:**
-  - **`ranker`** (integer) - Rank. The ranking of the team in the league based on their performance. A lower number (e.g., 1) indicates a higher-ranked team.
+  - **`rank`** (integer) - Rank. The ranking of the team in the league based on their performance. A lower number (e.g., 1) indicates a higher-ranked team.
   - **`team_name`** (string) - Full team name. The name of the NHL team.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`average_age`** (number, decimal) - Average Age. Average age of team weighted by time on ice. Expressed as a decimal (e.g., 25.7).
@@ -1403,8 +1405,114 @@ crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_20212022/team_abbrev/TOR/
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_now/team_abbrev/TOR/
 ```
+<a name="season_statistics_{year}/rank/{rank}"></a>
+### 4.5 Get detail statistic season by year and specific rank
+- **Endpoint:** `/season_statistics_{year}/rank/{rank}`
+- **Method:** GET
+- **Description:** Detail statistics of a specific team for specific season and specific rank
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{rank}`** (string) - Rank. The ranking of the team in the league based on their performance. A lower number (e.g., 1) indicates a higher-ranked team.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank. The ranking of the team in the league based on their performance. A lower number (e.g., 1) indicates a higher-ranked team.
+  - **`team_name`** (string) - Full team name. The name of the NHL team.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`average_age`** (number, decimal) - Average Age. Average age of team weighted by time on ice. Expressed as a decimal (e.g., 25.7).
+  - **`playoff`** (string) - Indicator if the team made the playoffs that season (e.g., 'Yes', 'No).
+  - **`games`** (integer) - Games Played. Total number of games played by the team during the regular season.
+  - **`wins`** (integer) - Wins. Total number of games won by the team in regulation, overtime, or shootout.
+  - **`losses`** (integer) - Losses. Total number of games lost by the team in regulation, overtime, or shootout.
+  - **`losses_ot`** (integer) - Overtime/Shootout Losses. Total number of games lost by the team in overtime or shootout (relevant from 2000 season onward).
+  - **`points`** (integer) - Points. Total points accumulated by the team during the regular season.
+  - **`points_pct`** (number, decimal) - Points percentage (i.e., points divided by maximum points). Expressed as a decimal (e.g., 0.677).
+  - **`goals`** (integer) - Goals For. Total number of goals scored by the team during the season. Reflects the team's offensive performance.
+  - **`goals_against`** (integer) - Goals Against. Total number of goals conceded by the team during the season. Reflects the team's defensive performance.
+  - **`wins_shootout`** (integer) - Shootout Wins. Total number of games won by the team in shootouts.
+  - **`losses_shootout`** (integer) - Shootout Losses. Total number of games lost by the team in shootouts.
+  - **`srs`** (number, decimal) - Simple Rating System. A team rating that takes into account average goal differential and strength of schedule. The rating is denominated in goals above/below average, where zero is average. Expressed as a decimal (e.g., -1.29).
+  - **`sos`** (number, decimal) - Strength of Schedule. A rating of strength of schedule. The rating is denominated in goals above/below average, where zero is average. Expressed as a decimal (e.g., -0.05).
+  - **`goals_for_per_game`** (number, decimal) - Goals For Per Game. Reflects offensive efficiency. Expressed as a decimal (e.g., 3.68).
+  - **`goals_against_per_game`** (number, decimal) - Goals Against Per Game. Reflects defensive efficiency. Expressed as a decimal (e.g., 3.33).
+  - **`goals_pp`** (integer) - Power Play Goals. Indicates power play effectiveness.
+  - **`chances_pp`** (integer) - Power Play Opportunities. Reflects chances to use man advantage.
+  - **`power_play_pct`** (number, decimal) - Power Play Percentage. Reflected the percentage of a team's power play opportunities that resulted in a goal. Expressed as a decimal (e.g., 22.45).
+  - **`opp_goals_pp`** (integer) - Power Play Goals Against. Total number of goals conceded by the team during opposing power plays. Reflects penalty-killing effectiveness.
+  - **`opp_chances_pp`** (integer) - Power Play Opportunities Against. Total number of power play opportunities the opposing team had against them. Indicates how often the team had to kill penalties.
+  - **`pen_kill_pct`** (number, decimal) - Penalty Kill Percentage. Percentage of opposing power play opportunities successfully killed off. Higher percentages indicate better penalty-killing performance. Expressed as a decimal (e.g., 82.47).
+  - **`goals_sh`** (integer) - Short-Handed Goals. Reflected the number of goals a team scored while playing short-handed (with fewer players on the ice, usually due to a penalty).
+  - **`opp_goals_sh`** (integer) - Short-Handed Goals Against. Reflected the number of goals a team allowed while they were on a power play, meaning the opposing (penalized) team scored despite being short-handed.
+  - **`pen_min_per_game`** (number, decimal) - Penalties in Minutes Per Game. Reflects the team's discipline or lack thereof. Expressed as a decimal (e.g., 13.6).
+  - **`pen_min_per_game_opp`** (number, decimal) - Opponent Penalties in Minutes Per Game. Average number of penalty minutes per game for the opposing team. Expressed as a decimal (e.g., 9.9).
+  - **`shots`** (integer) - Shots on Goal. Total number of shots on goal taken by the team during the season. Reflects offensive activity.
+  - **`shot_pct`** (number, decimal) - Shooting Percentage. Percentage of shots on goal that resulted in goals. Expressed as a decimal (e.g., 11.6).
+  - **`shots_against`** (integer) - Shots Against. Total number of shots on goal taken by opponents against the team. Reflects defensive pressure faced.
+  - **`save_pct`** (number, decimal) - Save Percentage. Percentage of shots on goal stopped by the team's goaltenders. Higher values mean better goaltending. Expressed as a decimal (e.g., 0.901).
+  - **`shutouts`** (integer) - Shutouts. Total number of games in which the team did not allow any goals. Reflects strong defensive and goaltending performances.
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_20212022/rank/2/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_now/rank/2/
+```
+<a name="season_statistics_{year}/playoff/{playoff}"></a>
+### 4.6 Get detail statistic season by year and playoff
+- **Endpoint:** `/season_statistics_{year}/playoff/{playoff}`
+- **Method:** GET
+- **Description:** Detail statistics of a specific team for specific season and playoff
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{playoff}`** (string) - Indicator if the team made the playoffs that season (e.g., 'Yes', 'No).
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank. The ranking of the team in the league based on their performance. A lower number (e.g., 1) indicates a higher-ranked team.
+  - **`team_name`** (string) - Full team name. The name of the NHL team.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`average_age`** (number, decimal) - Average Age. Average age of team weighted by time on ice. Expressed as a decimal (e.g., 25.7).
+  - **`playoff`** (string) - Indicator if the team made the playoffs that season (e.g., 'Yes', 'No).
+  - **`games`** (integer) - Games Played. Total number of games played by the team during the regular season.
+  - **`wins`** (integer) - Wins. Total number of games won by the team in regulation, overtime, or shootout.
+  - **`losses`** (integer) - Losses. Total number of games lost by the team in regulation, overtime, or shootout.
+  - **`losses_ot`** (integer) - Overtime/Shootout Losses. Total number of games lost by the team in overtime or shootout (relevant from 2000 season onward).
+  - **`points`** (integer) - Points. Total points accumulated by the team during the regular season.
+  - **`points_pct`** (number, decimal) - Points percentage (i.e., points divided by maximum points). Expressed as a decimal (e.g., 0.677).
+  - **`goals`** (integer) - Goals For. Total number of goals scored by the team during the season. Reflects the team's offensive performance.
+  - **`goals_against`** (integer) - Goals Against. Total number of goals conceded by the team during the season. Reflects the team's defensive performance.
+  - **`wins_shootout`** (integer) - Shootout Wins. Total number of games won by the team in shootouts.
+  - **`losses_shootout`** (integer) - Shootout Losses. Total number of games lost by the team in shootouts.
+  - **`srs`** (number, decimal) - Simple Rating System. A team rating that takes into account average goal differential and strength of schedule. The rating is denominated in goals above/below average, where zero is average. Expressed as a decimal (e.g., -1.29).
+  - **`sos`** (number, decimal) - Strength of Schedule. A rating of strength of schedule. The rating is denominated in goals above/below average, where zero is average. Expressed as a decimal (e.g., -0.05).
+  - **`goals_for_per_game`** (number, decimal) - Goals For Per Game. Reflects offensive efficiency. Expressed as a decimal (e.g., 3.68).
+  - **`goals_against_per_game`** (number, decimal) - Goals Against Per Game. Reflects defensive efficiency. Expressed as a decimal (e.g., 3.33).
+  - **`goals_pp`** (integer) - Power Play Goals. Indicates power play effectiveness.
+  - **`chances_pp`** (integer) - Power Play Opportunities. Reflects chances to use man advantage.
+  - **`power_play_pct`** (number, decimal) - Power Play Percentage. Reflected the percentage of a team's power play opportunities that resulted in a goal. Expressed as a decimal (e.g., 22.45).
+  - **`opp_goals_pp`** (integer) - Power Play Goals Against. Total number of goals conceded by the team during opposing power plays. Reflects penalty-killing effectiveness.
+  - **`opp_chances_pp`** (integer) - Power Play Opportunities Against. Total number of power play opportunities the opposing team had against them. Indicates how often the team had to kill penalties.
+  - **`pen_kill_pct`** (number, decimal) - Penalty Kill Percentage. Percentage of opposing power play opportunities successfully killed off. Higher percentages indicate better penalty-killing performance. Expressed as a decimal (e.g., 82.47).
+  - **`goals_sh`** (integer) - Short-Handed Goals. Reflected the number of goals a team scored while playing short-handed (with fewer players on the ice, usually due to a penalty).
+  - **`opp_goals_sh`** (integer) - Short-Handed Goals Against. Reflected the number of goals a team allowed while they were on a power play, meaning the opposing (penalized) team scored despite being short-handed.
+  - **`pen_min_per_game`** (number, decimal) - Penalties in Minutes Per Game. Reflects the team's discipline or lack thereof. Expressed as a decimal (e.g., 13.6).
+  - **`pen_min_per_game_opp`** (number, decimal) - Opponent Penalties in Minutes Per Game. Average number of penalty minutes per game for the opposing team. Expressed as a decimal (e.g., 9.9).
+  - **`shots`** (integer) - Shots on Goal. Total number of shots on goal taken by the team during the season. Reflects offensive activity.
+  - **`shot_pct`** (number, decimal) - Shooting Percentage. Percentage of shots on goal that resulted in goals. Expressed as a decimal (e.g., 11.6).
+  - **`shots_against`** (integer) - Shots Against. Total number of shots on goal taken by opponents against the team. Reflects defensive pressure faced.
+  - **`save_pct`** (number, decimal) - Save Percentage. Percentage of shots on goal stopped by the team's goaltenders. Higher values mean better goaltending. Expressed as a decimal (e.g., 0.901).
+  - **`shutouts`** (integer) - Shutouts. Total number of games in which the team did not allow any goals. Reflects strong defensive and goaltending performances.
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_20212022/playoff/yes/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_now/playoff/yes/
+```
 <a name="league_average_{year}"></a>
-### 4.5 Get league average by year
+### 4.7 Get league average by year
 - **Endpoint:** `/league_average_{year}/`
 - **Method:** GET
 - **Description:** League average for the specific season
