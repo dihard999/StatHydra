@@ -35,7 +35,7 @@ When you need more than one point of view, choose StatHydra!**
    4.1 [Get summary statistic season by year](#season_summary_{year})  
    4.2 [Get summary statistic season by year and specific team](#season_summary_{year}/team_abbrev/{team_abbrev})  
    4.3 [Get detail statistic season by year](#season_statistics_{year})  
-   4.4 [Get detail statistic season by year and specific team](#season_statistics_{year}/team_abbrev/{team_abbrev})
+   4.4 [Get detail statistic season by year and specific team](#season_statistics_{year}/team_abbrev/{team_abbrev})  
    4.5 [Get detail statistic season by year and specific rank](#season_statistics_{year}/rank/{rank})  
    4.6 [Get detail statistic season by year and playoff](#season_statistics_{year}/playoff/{playoff})  
    4.7 [Get league average by year](#league_average_{year})  
