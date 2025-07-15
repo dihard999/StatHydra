@@ -903,7 +903,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_all_season_summary/team_abbrev/TOR/
    - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
-  - **`ranker`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
+  - **`rank`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
   - **`team_name`** (string) - Team Name. The name of the NHL team.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`playoff`** (string) - Indicator if the team made the playoffs that season (e.g., 'Yes', 'No).
@@ -952,7 +952,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_now/
    - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
 - **Response:** JSON format
 - **Schema table:**
-  - **`ranker`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
+  - **`rank`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
   - **`team_name`** (string) - Team Name. The name of the NHL team.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`playoff`** (string) - Indicator if the team made the playoffs that season (e.g., 'Yes', 'No).
