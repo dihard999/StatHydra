@@ -30,7 +30,7 @@ When you need more than one point of view, choose StatHydra!**
    3.4 [Get teams analytics 5 on 5 by year and specific team](#team_analytics_5_on_5_{year}/team_abbrev/{team_abbrev})  
    3.5 [Get expanded standings teams by year](#expanded_standings_{year})  
    3.6 [Get expanded standings teams by year and specific team](#expanded_standings_{year}/team_abbrev/{team_abbrev})  
-   3.7 [Get expanded standings teams by year and specific rank](#expanded_standings_{year}/rank/{rank}/)  
+   3.7 [Get expanded standings teams by year and specific rank](#expanded_standings_{year}/rank/{rank})  
 5. [Season](#season)  
    4.1 [Get summary statistic season by year](#season_summary_{year})  
    4.2 [Get summary statistic season by year and specific team](#season_summary_{year}/team_abbrev/{team_abbrev})  
