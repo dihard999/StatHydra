@@ -998,7 +998,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_now/team_abbrev/TOR/
    - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
-  - **`ranker`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
+  - **`rank`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
   - **`team_name`** (string) - Team Name. The name of the NHL team.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`overall`** (string) - Overall W-L-T/O record (e.g., '28-14-6').
@@ -1060,7 +1060,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_analytics_5_on_5_now/team_abbrev/TOR/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_{year}/
+crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_20212022/
 ```
 ##### Example using for the current year
 ```bash
@@ -1076,7 +1076,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_now/
    - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
 - **Response:** JSON format
 - **Schema table:**
-  - **`ranker`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
+  - **`rank`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
   - **`team_name`** (string) - Team Name. The name of the NHL team.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`overall`** (string) - Overall W-L-T/O record (e.g., '28-14-6').
@@ -1138,11 +1138,11 @@ crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_now/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_{year}/
+crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_20212022/team_abbrev/MTL/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_now/
+crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_now/team_abbrev/MTL/
 ```
 <a name="expanded_standings_{year}/rank/{rank}"></a>
 ### 3.7 Get expanded standings teams by year and specific rank
@@ -1151,10 +1151,10 @@ crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_now/
 - **Description:** Table presents expanded statistics for NHL teams , focusing on W-L-T\O by specific rank
 - **Parameters:**
    - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-   - **`{ranker}`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
+   - **`{rank}`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
 - **Response:** JSON format
 - **Schema table:**
-  - **`ranker`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
+  - **`rank`** (integer) - Rank. The position of the team in the ranking based on their performance metrics.
   - **`team_name`** (string) - Team Name. The name of the NHL team.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`overall`** (string) - Overall W-L-T/O record (e.g., '28-14-6').
@@ -1216,11 +1216,11 @@ crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_now/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_{year}/
+crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_20212022/rank/3/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_now/
+crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_now/rank/3/
 ```
 ---
 <a name="season"></a>
