@@ -546,7 +546,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/rank/3/player_id/marks
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/player_id/marksja02/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/player_id/kuempda01/
 ```
 <a name="league_leaders_{year}/rank/{rank}/team_abbrev/{team_abbrev}"></a>
 ### 2.8 Get player leaders by year and specific rank and team
