@@ -1623,7 +1623,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_20212022/game_id/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/game_id/202205040LAK/
+crashcrab.ddns.net/{YOUR_API_KEY}/league_playoff_series_result_now/game_id/202504200CAR/
 ```
 <a name="league_playoff_series_result_{year}/game_date/{game_date}"></a>
 ### 5.3 Get playoff result by year and specific date
