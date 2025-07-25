@@ -31,7 +31,8 @@ When you need more than one point of view, choose StatHydra!**
    3.5 [Get expanded standings teams by year](#expanded_standings_{year})  
    3.6 [Get expanded standings teams by year and specific team](#expanded_standings_{year}/team_abbrev/{team_abbrev})  
    3.7 [Get expanded standings teams by year and specific rank](#expanded_standings_{year}/rank/{rank})  
-5. [Season](#season)  
+   3.8 [Get team versus team by year](#team_vs_team_{year})  
+4. [Season](#season)  
    4.1 [Get summary statistic season by year](#season_summary_{year})  
    4.2 [Get summary statistic season by year and specific team](#season_summary_{year}/team_abbrev/{team_abbrev})  
    4.3 [Get detail statistic season by year](#season_statistics_{year})  
@@ -39,7 +40,7 @@ When you need more than one point of view, choose StatHydra!**
    4.5 [Get detail statistic season by year and specific rank](#season_statistics_{year}/rank/{rank})  
    4.6 [Get detail statistic season by year and playoff](#season_statistics_{year}/playoff/{playoff})  
    4.7 [Get league average by year](#league_average_{year})  
-7. [Playoff](#playoff)  
+5. [Playoff](#playoff)  
    5.1 [Get playoff result by year](#league_playoff_series_result_{year})  
    5.2 [Get playoff result by year and specific game](#league_playoff_series_result_{year}/game_id/{game_id})  
    5.3 [Get playoff result by year and specific date](#league_playoff_series_result_{year}/game_date/{game_date})  
@@ -1221,6 +1222,34 @@ crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_20212022/rank/3/
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/expanded_standings_now/rank/3/
+```
+<a name="team_vs_team_{year}"></a>
+### 3.8 Get team versus team by year
+- **Endpoint:** `/team_vs_team_{year}}`
+- **Method:** GET
+- **Description:**  This table provides detailed NHL team statistics against each opponent for a specific season. For every head-to-head matchup, the W-L-T/O record and a Team Success Index (TSI) are shown.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_name`** (string) - Team Name. The name of the NHL team.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+For each NHL team-opponent pair (e.g., "ANA", "ARI", "ATL", etc.), there are two columns:
+  - **`XXX`** (string) - W-L-T/O record versus team XXX (for example: '3-2-0' means 3 wins, 2 losses, 0 ties/overtime losses). The column is omitted if the opponent team did not participate in the given season.
+  - **`XXX_tsi`** (number, decimal) - TSI — team success index versus team XXX. The higher the value, the better the performance against this opponent. Expressed as a decimal (e.g., 0.382). The value may be missing if the "XXX" column is missing.
+    **`List of possible opponent columns (XXX):`** 
+  ANA, ARI, ATL, BOS, BUF, CAR, CBJ, CGY, CHI, COL, DAL, DET, EDM, FLA, LAK, MDA, MIN, MTL, NJD, NSH, NYI, NYR, OTT, PHI, PHX, PIT, SJS, STL, SEA, TBL, TOR, UTA, VAN, VEG, WPG, WSH
+  For each opponent, there is a pair of columns: <team_abbrev>, <team_abbrev>_tsi.
+> [!NOTE]
+> **If a particular team did not participate in the season, the related columns (e.g., "ATL", "ATL_tsi", "SEA", "SEA_tsi", etc.) will not be present in the table for that year.**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/team_vs_team_20132014/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/team_vs_team__now/
 ```
 ---
 <a name="season"></a>
