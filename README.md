@@ -33,7 +33,7 @@ When you need more than one point of view, choose StatHydra!**
    3.7 [Get expanded standings teams by year and specific rank](#expanded_standings_{year}/rank/{rank})  
    3.8 [Get team versus team by year](#team_vs_team_{year})  
    3.9 [Get team versus team by year and specific team](#team_vs_team_{year}/{team_abbrev}) 
-5. [Season](#season)  
+4. [Season](#season)  
    4.1 [Get summary statistic season by year](#season_summary_{year})  
    4.2 [Get summary statistic season by year and specific team](#season_summary_{year}/team_abbrev/{team_abbrev})  
    4.3 [Get detail statistic season by year](#season_statistics_{year})  
@@ -41,6 +41,15 @@ When you need more than one point of view, choose StatHydra!**
    4.5 [Get detail statistic season by year and specific rank](#season_statistics_{year}/rank/{rank})  
    4.6 [Get detail statistic season by year and playoff](#season_statistics_{year}/playoff/{playoff})  
    4.7 [Get league average by year](#league_average_{year})  
+   4.8 [Get regular season schedule by year](#regular_season_schedule_{year})  
+   4.9 [Get regular season schedule by year and specific date](#regular_season_schedule_{year}/game_date/{game_date})  
+   4.10 [Get regular season schedule by year and specific game](#regular_season_schedule_{year}/game_id/{game_id})  
+   4.11 [Get regular season schedule by year and specific team](#regular_season_schedule_{year}/team_abbrev/{team_abbrev})  
+   4.12 [Get regular season schedule by year and finished game](#regular_season_schedule_{year}/finished)  
+   4.13 [Get regular season schedule by year and upcoming game](#regular_season_schedule_{year}/upcoming)  
+   4.14 [Get regular season schedule by year and upcoming game for next day](#regular_season_schedule_{year}/upcoming_day)  
+   4.15 [Get regular season schedule by year and upcoming game for next week](#regular_season_schedule_{year}/upcoming_week)  
+   4.16 [Get regular season schedule by year and upcoming game for next month](#regular_season_schedule_{year}/upcoming_month)
 6. [Playoff](#playoff)  
    5.1 [Get playoff result by year](#league_playoff_series_result_{year})  
    5.2 [Get playoff result by year and specific game](#league_playoff_series_result_{year}/game_id/{game_id})  
@@ -1611,6 +1620,288 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_average_20212022/
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_average_now/
+```
+<a name="regular_season_schedule_{year}"></a>
+### 4.8 Get regular season schedule by year
+- **Endpoint:** `/regular_season_schedule_{year}/`
+- **Method:** GET
+- **Description:** Table with schedule and results for all regular season games for the specified year. 
+- **Parameters:**
+     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`game_date`** (date) –  Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_time`** (string) – Game Time. Scheduled local start time of the game in 12-hour format; or null if unknown (e.g., "10:00 PM").
+  - **`away_team_name`** (string) – Away Team Name. Full name of the visiting team (e.g., "Toronto Maple Leafs").
+  - **`away_team_abbrev`** (string) –  Away Team Abbreviation. Official abbreviation (e.g., "TOR").
+  - **`away_team_goals`** (integer) – Away Team Goals. Goals scored by away team; null if not played (e.g., 2).
+  - **`away_team_abbrev`** (string) – Away Team Abbreviation. Three-letter abbreviation for the away team (e.g., "NYR").
+  - **`home_team_name`** (string) – Home Team Name. Full name of the home team (e.g., "Montreal Canadiens").
+  - **`home_team_abbrev`** (string) – Home Team Abbreviation. Official abbreviation (e.g., "MTL").
+  - **`home_team_goals`** (integer) –  Home Team Goals. Goals scored by home team; null if not played (e.g., 3).
+  - **`overtime`** (string) –  Overtime or Shootout. "OT", "2OT", "SO" or null if decided in regulation.
+  - **`attendance `** (integer) – Attendance. Number of spectators at the game; null if not available (e.g., 21047).
+  - **`game_duration`** (string) – Game Duration. Length of game in hours and minutes "H:MM"; null if not played (e.g., "2:33").
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/
+```
+<a name="regular_season_schedule_{year}/game_date/{game_date}"></a>
+### 4.9 Get regular season schedule by year and specific date
+- **Endpoint:** `/regular_season_schedule_{year}/game_date/{game_date}`
+- **Method:** GET
+- **Description:** Table with schedule and results for all games played on a specific date within the chosen season.
+- **Parameters:**
+     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`game_date`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+- **Response:** JSON format
+- **Schema table:**
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`game_date`** (date) –  Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_time`** (string) – Game Time. Scheduled local start time of the game in 12-hour format; or null if unknown (e.g., "10:00 PM").
+  - **`away_team_name`** (string) – Away Team Name. Full name of the visiting team (e.g., "Toronto Maple Leafs").
+  - **`away_team_abbrev`** (string) –  Away Team Abbreviation. Official abbreviation (e.g., "TOR").
+  - **`away_team_goals`** (integer) – Away Team Goals. Goals scored by away team; null if not played (e.g., 2).
+  - **`away_team_abbrev`** (string) – Away Team Abbreviation. Three-letter abbreviation for the away team (e.g., "NYR").
+  - **`home_team_name`** (string) – Home Team Name. Full name of the home team (e.g., "Montreal Canadiens").
+  - **`home_team_abbrev`** (string) – Home Team Abbreviation. Official abbreviation (e.g., "MTL").
+  - **`home_team_goals`** (integer) –  Home Team Goals. Goals scored by home team; null if not played (e.g., 3).
+  - **`overtime`** (string) –  Overtime or Shootout. "OT", "2OT", "SO" or null if decided in regulation.
+  - **`attendance `** (integer) – Attendance. Number of spectators at the game; null if not available (e.g., 21047).
+  - **`game_duration`** (string) – Game Duration. Length of game in hours and minutes "H:MM"; null if not played (e.g., "2:33").
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/game_date/{game_date}/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/game_date/{game_date}/
+```
+<a name="regular_season_schedule_{year}/game_id/{game_id}"></a>
+### 4.10 Get regular season schedule by year and specific date
+- **Endpoint:** `/regular_season_schedule_{year}/game_id/{game_id}`
+- **Method:** GET
+- **Description:** Information about a specific game by its unique game ID.
+- **Parameters:**
+     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`game_id`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+- **Response:** JSON format
+- **Schema table:**
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`game_date`** (date) –  Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_time`** (string) – Game Time. Scheduled local start time of the game in 12-hour format; or null if unknown (e.g., "10:00 PM").
+  - **`away_team_name`** (string) – Away Team Name. Full name of the visiting team (e.g., "Toronto Maple Leafs").
+  - **`away_team_abbrev`** (string) –  Away Team Abbreviation. Official abbreviation (e.g., "TOR").
+  - **`away_team_goals`** (integer) – Away Team Goals. Goals scored by away team; null if not played (e.g., 2).
+  - **`away_team_abbrev`** (string) – Away Team Abbreviation. Three-letter abbreviation for the away team (e.g., "NYR").
+  - **`home_team_name`** (string) – Home Team Name. Full name of the home team (e.g., "Montreal Canadiens").
+  - **`home_team_abbrev`** (string) – Home Team Abbreviation. Official abbreviation (e.g., "MTL").
+  - **`home_team_goals`** (integer) –  Home Team Goals. Goals scored by home team; null if not played (e.g., 3).
+  - **`overtime`** (string) –  Overtime or Shootout. "OT", "2OT", "SO" or null if decided in regulation.
+  - **`attendance `** (integer) – Attendance. Number of spectators at the game; null if not available (e.g., 21047).
+  - **`game_duration`** (string) – Game Duration. Length of game in hours and minutes "H:MM"; null if not played (e.g., "2:33").
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/game_id/{game_id}/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/game_id/{game_id}/
+```
+<a name="regular_season_schedule_{year}/team_abbrev/{team_abbrev}"></a>
+### 4.11 Get regular season schedule by year and specific team
+- **Endpoint:** `/regular_season_schedule_{year}/team_abbrev/{team_abbrev}`
+- **Method:** GET
+- **Description:** Table with all games for a specific team in the selected season.
+- **Parameters:**
+     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`team_abbrev`** (string) - Team's official abbreviation (e.g., "TOR").
+- **Response:** JSON format
+- **Schema table:**
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`game_date`** (date) –  Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_time`** (string) – Game Time. Scheduled local start time of the game in 12-hour format; or null if unknown (e.g., "10:00 PM").
+  - **`away_team_name`** (string) – Away Team Name. Full name of the visiting team (e.g., "Toronto Maple Leafs").
+  - **`away_team_abbrev`** (string) –  Away Team Abbreviation. Official abbreviation (e.g., "TOR").
+  - **`away_team_goals`** (integer) – Away Team Goals. Goals scored by away team; null if not played (e.g., 2).
+  - **`away_team_abbrev`** (string) – Away Team Abbreviation. Three-letter abbreviation for the away team (e.g., "NYR").
+  - **`home_team_name`** (string) – Home Team Name. Full name of the home team (e.g., "Montreal Canadiens").
+  - **`home_team_abbrev`** (string) – Home Team Abbreviation. Official abbreviation (e.g., "MTL").
+  - **`home_team_goals`** (integer) –  Home Team Goals. Goals scored by home team; null if not played (e.g., 3).
+  - **`overtime`** (string) –  Overtime or Shootout. "OT", "2OT", "SO" or null if decided in regulation.
+  - **`attendance `** (integer) – Attendance. Number of spectators at the game; null if not available (e.g., 21047).
+  - **`game_duration`** (string) – Game Duration. Length of game in hours and minutes "H:MM"; null if not played (e.g., "2:33").
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/team_abbrev/{team_abbrev}/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/team_abbrev/{team_abbrev}/
+```
+<a name="regular_season_schedule_{year}/finished"></a>
+### 4.12 Get regular season schedule by year and finished game
+- **Endpoint:** `/regular_season_schedule_{year}/finished`
+- **Method:** GET
+- **Description:** Table with all finished (concluded) regular season games in the selected season.
+- **Parameters:**
+     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`game_date`** (date) –  Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_time`** (string) – Game Time. Scheduled local start time of the game in 12-hour format; or null if unknown (e.g., "10:00 PM").
+  - **`away_team_name`** (string) – Away Team Name. Full name of the visiting team (e.g., "Toronto Maple Leafs").
+  - **`away_team_abbrev`** (string) –  Away Team Abbreviation. Official abbreviation (e.g., "TOR").
+  - **`away_team_goals`** (integer) – Away Team Goals. Goals scored by away team; null if not played (e.g., 2).
+  - **`away_team_abbrev`** (string) – Away Team Abbreviation. Three-letter abbreviation for the away team (e.g., "NYR").
+  - **`home_team_name`** (string) – Home Team Name. Full name of the home team (e.g., "Montreal Canadiens").
+  - **`home_team_abbrev`** (string) – Home Team Abbreviation. Official abbreviation (e.g., "MTL").
+  - **`home_team_goals`** (integer) –  Home Team Goals. Goals scored by home team; null if not played (e.g., 3).
+  - **`overtime`** (string) –  Overtime or Shootout. "OT", "2OT", "SO" or null if decided in regulation.
+  - **`attendance `** (integer) – Attendance. Number of spectators at the game; null if not available (e.g., 21047).
+  - **`game_duration`** (string) – Game Duration. Length of game in hours and minutes "H:MM"; null if not played (e.g., "2:33").
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/finished/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/finished/
+```
+<a name="regular_season_schedule_{year}/upcoming"></a>
+### 4.13 Get regular season schedule by year and upcoming game
+- **Endpoint:** `/regular_season_schedule_{year}/upcoming`
+- **Method:** GET
+- **Description:** Table with all upcoming games in the selected season.
+- **Parameters:**
+     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`game_date`** (date) –  Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_time`** (string) – Game Time. Scheduled local start time of the game in 12-hour format; or null if unknown (e.g., "10:00 PM").
+  - **`away_team_name`** (string) – Away Team Name. Full name of the visiting team (e.g., "Toronto Maple Leafs").
+  - **`away_team_abbrev`** (string) –  Away Team Abbreviation. Official abbreviation (e.g., "TOR").
+  - **`away_team_goals`** (integer) – Away Team Goals. Goals scored by away team; null if not played (e.g., 2).
+  - **`away_team_abbrev`** (string) – Away Team Abbreviation. Three-letter abbreviation for the away team (e.g., "NYR").
+  - **`home_team_name`** (string) – Home Team Name. Full name of the home team (e.g., "Montreal Canadiens").
+  - **`home_team_abbrev`** (string) – Home Team Abbreviation. Official abbreviation (e.g., "MTL").
+  - **`home_team_goals`** (integer) –  Home Team Goals. Goals scored by home team; null if not played (e.g., 3).
+  - **`overtime`** (string) –  Overtime or Shootout. "OT", "2OT", "SO" or null if decided in regulation.
+  - **`attendance `** (integer) – Attendance. Number of spectators at the game; null if not available (e.g., 21047).
+  - **`game_duration`** (string) – Game Duration. Length of game in hours and minutes "H:MM"; null if not played (e.g., "2:33").
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/upcoming/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/upcoming/
+```
+<a name="regular_season_schedule_{year}/upcoming_day"></a>
+### 4.14 Get regular season schedule by year and upcoming game for next day
+- **Endpoint:** `/regular_season_schedule_{year}/upcoming_day`
+- **Method:** GET
+- **Description:** Table with all games scheduled for the next day in the selected season. If today is 06/25/2025 and the next first games will start only on 10/25/2025, it will take the date for 10/25/2025, since these are the first available games.
+- **Parameters:**
+     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`game_date`** (date) –  Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_time`** (string) – Game Time. Scheduled local start time of the game in 12-hour format; or null if unknown (e.g., "10:00 PM").
+  - **`away_team_name`** (string) – Away Team Name. Full name of the visiting team (e.g., "Toronto Maple Leafs").
+  - **`away_team_abbrev`** (string) –  Away Team Abbreviation. Official abbreviation (e.g., "TOR").
+  - **`away_team_goals`** (integer) – Away Team Goals. Goals scored by away team; null if not played (e.g., 2).
+  - **`away_team_abbrev`** (string) – Away Team Abbreviation. Three-letter abbreviation for the away team (e.g., "NYR").
+  - **`home_team_name`** (string) – Home Team Name. Full name of the home team (e.g., "Montreal Canadiens").
+  - **`home_team_abbrev`** (string) – Home Team Abbreviation. Official abbreviation (e.g., "MTL").
+  - **`home_team_goals`** (integer) –  Home Team Goals. Goals scored by home team; null if not played (e.g., 3).
+  - **`overtime`** (string) –  Overtime or Shootout. "OT", "2OT", "SO" or null if decided in regulation.
+  - **`attendance `** (integer) – Attendance. Number of spectators at the game; null if not available (e.g., 21047).
+  - **`game_duration`** (string) – Game Duration. Length of game in hours and minutes "H:MM"; null if not played (e.g., "2:33").
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/upcoming_day/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/upcoming_day/
+```
+<a name="regular_season_schedule_{year}/upcoming_week"></a>
+### 4.15 Get regular season schedule by year and upcoming game for next week
+- **Endpoint:** `/regular_season_schedule_{year}/upcoming_week`
+- **Method:** GET
+- **Description:** Table with all games scheduled for the next week in the selected season.
+- **Parameters:**
+     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`game_date`** (date) –  Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_time`** (string) – Game Time. Scheduled local start time of the game in 12-hour format; or null if unknown (e.g., "10:00 PM").
+  - **`away_team_name`** (string) – Away Team Name. Full name of the visiting team (e.g., "Toronto Maple Leafs").
+  - **`away_team_abbrev`** (string) –  Away Team Abbreviation. Official abbreviation (e.g., "TOR").
+  - **`away_team_goals`** (integer) – Away Team Goals. Goals scored by away team; null if not played (e.g., 2).
+  - **`away_team_abbrev`** (string) – Away Team Abbreviation. Three-letter abbreviation for the away team (e.g., "NYR").
+  - **`home_team_name`** (string) – Home Team Name. Full name of the home team (e.g., "Montreal Canadiens").
+  - **`home_team_abbrev`** (string) – Home Team Abbreviation. Official abbreviation (e.g., "MTL").
+  - **`home_team_goals`** (integer) –  Home Team Goals. Goals scored by home team; null if not played (e.g., 3).
+  - **`overtime`** (string) –  Overtime or Shootout. "OT", "2OT", "SO" or null if decided in regulation.
+  - **`attendance `** (integer) – Attendance. Number of spectators at the game; null if not available (e.g., 21047).
+  - **`game_duration`** (string) – Game Duration. Length of game in hours and minutes "H:MM"; null if not played (e.g., "2:33").
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/upcoming_week/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/upcoming_week/
+```
+<a name="regular_season_schedule_{year}/upcoming_month"></a>
+### 4.16 Get regular season schedule by year and upcoming game for next month
+- **Endpoint:** `/regular_season_schedule_{year}/upcoming_month`
+- **Method:** GET
+- **Description:** Table with all games scheduled for the next month in the selected season.
+- **Parameters:**
+     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`game_date`** (date) –  Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_time`** (string) – Game Time. Scheduled local start time of the game in 12-hour format; or null if unknown (e.g., "10:00 PM").
+  - **`away_team_name`** (string) – Away Team Name. Full name of the visiting team (e.g., "Toronto Maple Leafs").
+  - **`away_team_abbrev`** (string) –  Away Team Abbreviation. Official abbreviation (e.g., "TOR").
+  - **`away_team_goals`** (integer) – Away Team Goals. Goals scored by away team; null if not played (e.g., 2).
+  - **`away_team_abbrev`** (string) – Away Team Abbreviation. Three-letter abbreviation for the away team (e.g., "NYR").
+  - **`home_team_name`** (string) – Home Team Name. Full name of the home team (e.g., "Montreal Canadiens").
+  - **`home_team_abbrev`** (string) – Home Team Abbreviation. Official abbreviation (e.g., "MTL").
+  - **`home_team_goals`** (integer) –  Home Team Goals. Goals scored by home team; null if not played (e.g., 3).
+  - **`overtime`** (string) –  Overtime or Shootout. "OT", "2OT", "SO" or null if decided in regulation.
+  - **`attendance `** (integer) – Attendance. Number of spectators at the game; null if not available (e.g., 21047).
+  - **`game_duration`** (string) – Game Duration. Length of game in hours and minutes "H:MM"; null if not played (e.g., "2:33").
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/upcoming_month/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/upcoming_month/
 ```
 ---
 <a name="playoff"></a>
