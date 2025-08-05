@@ -23,7 +23,12 @@ When you need more than one point of view, choose StatHydra!**
    2.9 [Get player leaders by year and specific player ID](#league_leaders_{year}/player_id/{player_id})  
    2.10 [Get player leaders by year and specific team](#league_leaders_{year}/team_abbrev/{team_abbrev})  
    2.11 [Get player leaders by year and specific team and player ID](#league_leaders_{year}/team_abbrev/{team_abbrev}/player_id/{player_id})  
-3. [Team](#team)  
+   2.12 [Get basic stats players regular season by year](#basic_stats_players_regular_season_{year})  
+   2.13 [Get basic stats players regular season by year and specific rank](#basic_stats_players_regular_season_{year}/rank/{rank})  
+   2.14 [Get basic stats players regular season by year and specific team](#basic_stats_players_regular_season_{year}/team_abbrev/{team_abbrev})  
+   2.15 [Get basic stats players regular season by year and player ID](#basic_stats_players_regular_season_{year}/player_id/{player_id})  
+   2.16 [Get basic stats players regular season by year and position](#basic_stats_players_regular_season_{year}/position/{position})  
+4. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/team_abbrev/{team_abbrev})  
    3.3 [Get teams analytics 5 on 5 by year](#team_analytics_5_on_5_{year})  
@@ -33,7 +38,7 @@ When you need more than one point of view, choose StatHydra!**
    3.7 [Get expanded standings teams by year and specific rank](#expanded_standings_{year}/rank/{rank})  
    3.8 [Get team versus team by year](#team_vs_team_{year})  
    3.9 [Get team versus team by year and specific team](#team_vs_team_{year}/{team_abbrev}) 
-4. [Season](#season)  
+5. [Season](#season)  
    4.1 [Get summary statistic season by year](#season_summary_{year})  
    4.2 [Get summary statistic season by year and specific team](#season_summary_{year}/team_abbrev/{team_abbrev})  
    4.3 [Get detail statistic season by year](#season_statistics_{year})  
@@ -50,7 +55,7 @@ When you need more than one point of view, choose StatHydra!**
    4.14 [Get regular season schedule by year and upcoming game for next day](#regular_season_schedule_{year}/upcoming_day)  
    4.15 [Get regular season schedule by year and upcoming game for next week](#regular_season_schedule_{year}/upcoming_week)  
    4.16 [Get regular season schedule by year and upcoming game for next month](#regular_season_schedule_{year}/upcoming_month)  
-5. [Playoff](#playoff)  
+6. [Playoff](#playoff)  
    5.1 [Get playoff result by year](#league_playoff_series_result_{year})  
    5.2 [Get playoff result by year and specific game](#league_playoff_series_result_{year}/game_id/{game_id})  
    5.3 [Get playoff result by year and specific date](#league_playoff_series_result_{year}/game_date/{game_date})  
@@ -838,6 +843,40 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/
 | Total Goals On-Ice For                     | TGFI       |  
 | Wins                                       | W          |  
 
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/team_abbrev/TOR/player_id/matthau01/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/player_id/matthau01/
+```
+<a name="basic_stats_players_regular_season_{year}"></a>
+### 2.12 Get basic stats players regular season by year
+- **Endpoint:** `/basic_stats_players_regular_season_{year}/`
+- **Method:** GET
+- **Description:** Returns a table of basic individual player statistics for the specified NHL regular season. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats..
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`goals`** (integer) - Goals scored.
+  - **`goals_per_game`** (number, decimal) - Goals per game (goals/games_played).
+  - **`assists`** (integer) - Assists.
+  - **`assists_per_game`** (number, decimal) - Assists per game (assists/games_played).
+  - **`points`** (integer) - Points (Goals + Assists).
+  - **`points_per_game`** (number, decimal) - Points per game (points/games_played).
+  - **`xpm`** (integer) - Plus/Minus Rating (net difference in goals scored and allowed on the ice with this player's participation).
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game (xpm/games_played).
+    
+ 
 ##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/team_abbrev/TOR/player_id/matthau01/
