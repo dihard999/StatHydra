@@ -917,6 +917,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/player_id/m
   - **`give_per_game`** (number, decimal) - Giveaways per game. (give/games_played) (2007–08 and later season).
   - **`awards`** (string) - List of any individual awards received.
     
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played.**
+
 ##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_20212022/
@@ -991,6 +994,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now/
   - **`give`** (integer) - Giveaways. (2007–08 and later season).
   - **`give_per_game`** (number, decimal) - Giveaways per game. (give/games_played) (2007–08 and later season).
   - **`awards`** (string) - List of any individual awards received.
+
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played.**
     
 ##### Example using by specific year
 ```bash
@@ -1066,6 +1072,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now/rank/17
   - **`give`** (integer) - Giveaways. (2007–08 and later season).
   - **`give_per_game`** (number, decimal) - Giveaways per game. (give/games_played) (2007–08 and later season).
   - **`awards`** (string) - List of any individual awards received.
+
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played.**
     
 ##### Example using by specific year
 ```bash
@@ -1141,6 +1150,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now/team_ab
   - **`give`** (integer) - Giveaways. (2007–08 and later season).
   - **`give_per_game`** (number, decimal) - Giveaways per game. (give/games_played) (2007–08 and later season).
   - **`awards`** (string) - List of any individual awards received.
+
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played.**
     
 ##### Example using by specific year
 ```bash
@@ -1216,6 +1228,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now/player_
   - **`give`** (integer) - Giveaways. (2007–08 and later season).
   - **`give_per_game`** (number, decimal) - Giveaways per game. (give/games_played) (2007–08 and later season).
   - **`awards`** (string) - List of any individual awards received.
+
+  > [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played.**
     
 ##### Example using by specific year
 ```bash
