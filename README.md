@@ -38,7 +38,12 @@ When you need more than one point of view, choose StatHydra!**
    2.24 [Get miscellaneous stats players regular season by year and specific team](#miscellaneous_stats_players_regular_season_{year}/team_abbrev/{team_abbrev})  
    2.25 [Get miscellaneous stats players regular season by year and player ID](#miscellaneous_stats_players_regular_season_{year}/player_id/{player_id})  
    2.26 [Get miscellaneous stats players regular season by year and position](#miscellaneous_stats_players_regular_season_{year}/position/{position})  
-4. [Team](#team)  
+   2.27 [Get miscellaneous stats players playoff by year](#miscellaneous_stats_players_playoff_{year})  
+   2.28 [Get miscellaneous stats players playoff by year and specific rank](#miscellaneous_stats_players_playoff_{year}/rank/{rank})  
+   2.29 [Get miscellaneous stats players playoff by year and specific team](#miscellaneous_stats_players_playoff_{year}/team_abbrev/{team_abbrev})  
+   2.30 [Get miscellaneous stats players playoff by year and player ID](#miscellaneous_stats_players_playoff_{year}/player_id/{player_id})  
+   2.31 [Get miscellaneous stats players playoff by year and position](#miscellaneous_stats_players_playoff_{year}/position/{position})  
+3. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/team_abbrev/{team_abbrev})  
    3.3 [Get teams analytics 5 on 5 by year](#team_analytics_5_on_5_{year})  
@@ -48,7 +53,7 @@ When you need more than one point of view, choose StatHydra!**
    3.7 [Get expanded standings teams by year and specific rank](#expanded_standings_{year}/rank/{rank})  
    3.8 [Get team versus team by year](#team_vs_team_{year})  
    3.9 [Get team versus team by year and specific team](#team_vs_team_{year}/{team_abbrev}) 
-5. [Season](#season)  
+4. [Season](#season)  
    4.1 [Get summary statistic season by year](#season_summary_{year})  
    4.2 [Get summary statistic season by year and specific team](#season_summary_{year}/team_abbrev/{team_abbrev})  
    4.3 [Get detail statistic season by year](#season_statistics_{year})  
@@ -2017,6 +2022,205 @@ crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_202
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_now/position/RW/
+```
+<a name="miscellaneous_stats_players_playoff_{year}"></a>
+### 2.27 Get miscellaneous stats players playoff by year
+- **Endpoint:** `/miscellaneous_stats_players_playoff_{year}/`
+- **Method:** GET
+- **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified playoff. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`total_goals_for`** (integer) - Total Goals On-Ice For.
+  - **`total_goals_for_per_game`** (number, decimal) - Total Goals On-Ice For per game. 
+  - **`power_play_goals_for`** (integer) - Power play goals for while the player was on the ice.
+  - **`power_play_goals_for_per_game`** (number, decimal) - Power play goals per game.
+  - **`total_goals_against`** (integer) - Total Goals On-Ice Against.
+  - **`total_goals_against_per_game`** (number, decimal) -  Total Goals On-Ice Against per game.
+  - **`power_play_goals_against`** (integer) - Power play goals against while the player was on the ice.
+  - **`power_play_goals_against_per_game`** (number, decimal) - Power play goals against per game. 
+  - **`xpm`** (integer) - Plus/Minus.
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game. 
+  - **`awards`** (string) - List of any individual awards received.
+
+> [!NOTE]
+> **Table data from the 2007-2008 season.**
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_now/
+```
+<a name="miscellaneous_stats_players_playoff_{year}/rank/{rank}"></a>
+### 2.28 Get miscellaneous stats players playoff by year and specific rank
+- **Endpoint:** `/miscellaneous_stats_players_playoff_{year}/rank/{rank}/`
+- **Method:** GET
+- **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified playoff by specific rank. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{rank}`** (integer) - Rank in the leaderboard, first place is the best.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`total_goals_for`** (integer) - Total Goals On-Ice For.
+  - **`total_goals_for_per_game`** (number, decimal) - Total Goals On-Ice For per game. 
+  - **`power_play_goals_for`** (integer) - Power play goals for while the player was on the ice.
+  - **`power_play_goals_for_per_game`** (number, decimal) - Power play goals per game.
+  - **`total_goals_against`** (integer) - Total Goals On-Ice Against.
+  - **`total_goals_against_per_game`** (number, decimal) -  Total Goals On-Ice Against per game.
+  - **`power_play_goals_against`** (integer) - Power play goals against while the player was on the ice.
+  - **`power_play_goals_against_per_game`** (number, decimal) - Power play goals against per game. 
+  - **`xpm`** (integer) - Plus/Minus.
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game. 
+  - **`awards`** (string) - List of any individual awards received.
+
+> [!NOTE]
+> **Table data from the 2007-2008 season.**
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_20212022/rank/12
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_now/rank/12
+```
+<a name="miscellaneous_stats_players_playoff_{year}/team_abbrev/{team_abbrev}"></a>
+### 2.29 Get miscellaneous stats players playoff by year and specific team
+- **Endpoint:** `/miscellaneous_stats_players_playoff_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified playoff by specific team. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{team_abbrev}`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`total_goals_for`** (integer) - Total Goals On-Ice For.
+  - **`total_goals_for_per_game`** (number, decimal) - Total Goals On-Ice For per game. 
+  - **`power_play_goals_for`** (integer) - Power play goals for while the player was on the ice.
+  - **`power_play_goals_for_per_game`** (number, decimal) - Power play goals per game.
+  - **`total_goals_against`** (integer) - Total Goals On-Ice Against.
+  - **`total_goals_against_per_game`** (number, decimal) -  Total Goals On-Ice Against per game.
+  - **`power_play_goals_against`** (integer) - Power play goals against while the player was on the ice.
+  - **`power_play_goals_against_per_game`** (number, decimal) - Power play goals against per game. 
+  - **`xpm`** (integer) - Plus/Minus.
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game. 
+  - **`awards`** (string) - List of any individual awards received.
+
+> [!NOTE]
+> **Table data from the 2007-2008 season.**
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_20212022/team_abbrev/BOS/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_now/team_abbrev/BOS/
+```
+<a name="miscellaneous_stats_players_playoff_{year}/player_id/{player_id}"></a>
+### 2.30 Get miscellaneous stats players playoff by year and player ID
+- **Endpoint:** `/miscellaneous_stats_players_playoff_{year}/player_id/{player_id}/`
+- **Method:** GET
+- **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified playoff by player ID. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{player_id}`** (string) - Unique identifier for each player, contains letters and numbers.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`total_goals_for`** (integer) - Total Goals On-Ice For.
+  - **`total_goals_for_per_game`** (number, decimal) - Total Goals On-Ice For per game. 
+  - **`power_play_goals_for`** (integer) - Power play goals for while the player was on the ice.
+  - **`power_play_goals_for_per_game`** (number, decimal) - Power play goals per game.
+  - **`total_goals_against`** (integer) - Total Goals On-Ice Against.
+  - **`total_goals_against_per_game`** (number, decimal) -  Total Goals On-Ice Against per game.
+  - **`power_play_goals_against`** (integer) - Power play goals against while the player was on the ice.
+  - **`power_play_goals_against_per_game`** (number, decimal) - Power play goals against per game. 
+  - **`xpm`** (integer) - Plus/Minus.
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game. 
+  - **`awards`** (string) - List of any individual awards received.
+
+> [!NOTE]
+> **Table data from the 2007-2008 season.**
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_20212022/player_id/acciano01/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_now/player_id/acciano01/
+```
+<a name="miscellaneous_stats_players_playoff_{year}/position/{position}"></a>
+### 2.31 Get miscellaneous stats players playoff by year and position
+- **Endpoint:** `/miscellaneous_stats_players_playoff_{year}/position/{position}/`
+- **Method:** GET
+- **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified playoff by position. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{position}`** (string) - Primary position played (C, LW, RW, D).
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`total_goals_for`** (integer) - Total Goals On-Ice For.
+  - **`total_goals_for_per_game`** (number, decimal) - Total Goals On-Ice For per game. 
+  - **`power_play_goals_for`** (integer) - Power play goals for while the player was on the ice.
+  - **`power_play_goals_for_per_game`** (number, decimal) - Power play goals per game.
+  - **`total_goals_against`** (integer) - Total Goals On-Ice Against.
+  - **`total_goals_against_per_game`** (number, decimal) -  Total Goals On-Ice Against per game.
+  - **`power_play_goals_against`** (integer) - Power play goals against while the player was on the ice.
+  - **`power_play_goals_against_per_game`** (number, decimal) - Power play goals against per game. 
+  - **`xpm`** (integer) - Plus/Minus.
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game. 
+  - **`awards`** (string) - List of any individual awards received.
+
+> [!NOTE]
+> **Table data from the 2007-2008 season.**
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_20212022/position/RW/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_now/position/RW/
 ```
 ---
 <a name="team"></a>
