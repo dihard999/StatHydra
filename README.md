@@ -1623,7 +1623,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_playoff_now/player_id/ahos
   - **`give_per_game`** (number, decimal) - Giveaways per game. (give/games_played) (2007–08 and later season).
   - **`awards`** (string) - List of any individual awards received.
 
-  > [!NOTE]
+> [!NOTE]
 > **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played.**
     
 ##### Example using by specific year
