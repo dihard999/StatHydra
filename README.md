@@ -33,6 +33,11 @@ When you need more than one point of view, choose StatHydra!**
    2.19 [Get basic stats players playoff by year and specific team](#basic_stats_players_playoff_{year}/team_abbrev/{team_abbrev})  
    2.20 [Get basic stats players playoff by year and player ID](#basic_stats_players_playoff_{year}/player_id/{player_id})  
    2.21 [Get basic stats players playoff by year and position](#basic_stats_players_playoff_{year}/position/{position})  
+   2.22 [Get miscellaneous stats players regular season by year](#miscellaneous_stats_players_regular_season_{year})  
+   2.23 [Get miscellaneous stats players regular season by year and specific rank](#miscellaneous_stats_players_regular_season_{year}/rank/{rank})  
+   2.24 [Get miscellaneous stats players regular season by year and specific team](#miscellaneous_stats_players_regular_season_{year}/team_abbrev/{team_abbrev})  
+   2.25 [Get miscellaneous stats players regular season by year and player ID](#miscellaneous_stats_players_regular_season_{year}/player_id/{player_id})  
+   2.26 [Get miscellaneous stats players regular season by year and position](#miscellaneous_stats_players_regular_season_{year}/position/{position})  
 4. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/team_abbrev/{team_abbrev})  
@@ -1633,6 +1638,385 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_playoff_20212022/position/
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_playoff_now/position/RW/
+```
+<a name="miscellaneous_stats_players_regular_season_{year}"></a>
+### 2.22 Get miscellaneous stats players regular season by year
+- **Endpoint:** `/miscellaneous_stats_players_regular_season_{year}/`
+- **Method:** GET
+- **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified regular season. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`goals_adjusted`** (integer) - Adjusted Goals - adjusted stats are normalized to an 82-game schedule, 18 skaters and league averages of 6 goals/game and 1.67 assists/goal.
+  - **`goals_adjusted_per_game`** (number, decimal) -  Adjusted Goals per game.
+  - **`assists_adjusted`** (integer) -Adjusted Assists - adjusted stats are normalized to an 82-game schedule, 18 skaters and league averages of 6 goals/game and 1.67 assists/goal.
+  - **`assists_adjusted_per_game`** (number, decimal) - Adjusted Assists per game.
+  - **`points_adjusted`** (integer) - Adjusted Points.
+  - **`points_adjusted_per_game`** (number, decimal) -  Adjusted Points per game.
+  - **`goals_created_adjusted`** (number, decimal) - Adjusted Goals Created.
+  - **`goals_created_adjusted_per_game`** (number, decimal) - Adjusted Goals Created per game.
+  - **`total_goals_for`** (integer) - Total Goals On-Ice For.
+  - **`total_goals_for_per_game`** (number, decimal) - Total Goals On-Ice For per game. 
+  - **`power_play_goals_for`** (integer) - Power play goals for while the player was on the ice.
+  - **`power_play_goals_for_per_game`** (number, decimal) - Power play goals per game.
+  - **`total_goals_against`** (integer) - Total Goals On-Ice Against.
+  - **`total_goals_against_per_game`** (number, decimal) -  Total Goals On-Ice Against per game.
+  - **`power_play_goals_against`** (integer) - Power play goals against while the player was on the ice.
+  - **`power_play_goals_against_per_game`** (number, decimal) - Power play goals against per game. 
+  - **`xpm`** (integer) - Plus/Minus.
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game. 
+  - **`ops`** (number, decimal) - Offensive Point Shares - an estimate of the number of points contributed by a player due to his offense.
+  - **`ops_per_game`** (number, decimal) - Offensive Point Shares per game.
+  - **`ops_decimal`** (number, decimal) - Offensive Point Shares (Exact value without rounding the number).
+  - **`ops_decimal_per_game`** (number, decimal) - Offensive Point Shares (Exact value without rounding the number) per game. 
+  - **`dps`** (number, decimal) - Defensive Point Shares - an estimate of the number of points contributed by a player due to his defense.
+  - **`dps_per_game`** (number, decimal) - Defensive Point Shares per game. 
+  - **`dps_decimal`** (number, decimal) - Defensive Point Shares (Exact value without rounding the number).
+  - **`dps_decimal_per_game`** (number, decimal) -  Defensive Point Shares (Exact value without rounding the number) per game. 
+  - **`ps`** (number, decimal) - Point Shares - an estimate of the number of points contributed by a player.
+  - **`ps_per_game`** (number, decimal) - Point Shares per game. 
+  - **`ps_decimal`** (number, decimal) - Point Shares (Exact value without rounding the number).
+  - **`ps_decimal_per_game`** (number, decimal) - Point Shares (Exact value without rounding the number) per game.
+  - **`shootouts_att`** (integer) - Shootout attempts. (2007–08 and later season)
+  - **`shootouts_att_per_game`** (number, decimal) - Shootout attempts per game. (2007–08 and later season)
+  - **`shootouts_made`** (integer) - Shootout shots made. (2007–08 and later season)
+  - **`shootouts_made_per_game`** (number, decimal) - Shootout shots made per game. (2007–08 and later season)
+  - **`shootouts_miss`** (integer) - Shootout shots missed. (2007–08 and later season)
+  - **`shootouts_miss_per_game`** (number, decimal) - Shootout shots missed per game. (2007–08 and later season)
+  - **`shootouts_made_pct`** (number, decimal) - Percentage of shootout attempts converted. (2007–08 and later season)
+  - **`shootouts_made_pct_per_game`** (number, decimal) - Percentage of shootout attempts converted per game. (2007–08 and later season)
+  - **`shootouts_made_pct_decimal`** (number, decimal) - Percentage of shootout attempts converted as a decimal (e.g., 0.370). (2007–08 and later season)
+  - **`shootouts_made_pct_decimal_per_game`** (number, decimal) - Percentage of shootout attempts converted as a decimal per game. (2007–08 and later season)
+  - **`ev_exp_on_goals_for`** (number, decimal) - 'Expected Goals For' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`ev_exp_on_goals_for_per_game`** (number, decimal) - Expected Goals For per game. (2014–15 and later season)
+  - **`ev_exp_on_goals_against`** (number, decimal) - 'Expected Goals Against' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`ev_exp_on_goals_against_per_game`** (number, decimal) - Expected Goals Against per game. (2014–15 and later season)
+  - **`expected_plsmns`** (number, decimal) - 'Expected +/-' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`expected_plsmns_per_game`** (number, decimal) - Expected +/- per game. (2014–15 and later season)
+  - **`awards`** (string) - List of any individual awards received.
+
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played.**
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_now/
+```
+<a name="miscellaneous_stats_players_regular_season_{year}/rank/{rank}"></a>
+### 2.23 Get miscellaneous stats players regular season by year and specific rank
+- **Endpoint:** `/miscellaneous_stats_players_regular_season_{year}/rank/{rank}/`
+- **Method:** GET
+- **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified regular season by specific rank. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{rank}`** (integer) - Rank in the leaderboard, first place is the best.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`goals_adjusted`** (integer) - Adjusted Goals - adjusted stats are normalized to an 82-game schedule, 18 skaters and league averages of 6 goals/game and 1.67 assists/goal.
+  - **`goals_adjusted_per_game`** (number, decimal) -  Adjusted Goals per game.
+  - **`assists_adjusted`** (integer) -Adjusted Assists - adjusted stats are normalized to an 82-game schedule, 18 skaters and league averages of 6 goals/game and 1.67 assists/goal.
+  - **`assists_adjusted_per_game`** (number, decimal) - Adjusted Assists per game.
+  - **`points_adjusted`** (integer) - Adjusted Points.
+  - **`points_adjusted_per_game`** (number, decimal) -  Adjusted Points per game.
+  - **`goals_created_adjusted`** (number, decimal) - Adjusted Goals Created.
+  - **`goals_created_adjusted_per_game`** (number, decimal) - Adjusted Goals Created per game.
+  - **`total_goals_for`** (integer) - Total Goals On-Ice For.
+  - **`total_goals_for_per_game`** (number, decimal) - Total Goals On-Ice For per game. 
+  - **`power_play_goals_for`** (integer) - Power play goals for while the player was on the ice.
+  - **`power_play_goals_for_per_game`** (number, decimal) - Power play goals per game.
+  - **`total_goals_against`** (integer) - Total Goals On-Ice Against.
+  - **`total_goals_against_per_game`** (number, decimal) -  Total Goals On-Ice Against per game.
+  - **`power_play_goals_against`** (integer) - Power play goals against while the player was on the ice.
+  - **`power_play_goals_against_per_game`** (number, decimal) - Power play goals against per game. 
+  - **`xpm`** (integer) - Plus/Minus.
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game. 
+  - **`ops`** (number, decimal) - Offensive Point Shares - an estimate of the number of points contributed by a player due to his offense.
+  - **`ops_per_game`** (number, decimal) - Offensive Point Shares per game.
+  - **`ops_decimal`** (number, decimal) - Offensive Point Shares (Exact value without rounding the number).
+  - **`ops_decimal_per_game`** (number, decimal) - Offensive Point Shares (Exact value without rounding the number) per game. 
+  - **`dps`** (number, decimal) - Defensive Point Shares - an estimate of the number of points contributed by a player due to his defense.
+  - **`dps_per_game`** (number, decimal) - Defensive Point Shares per game. 
+  - **`dps_decimal`** (number, decimal) - Defensive Point Shares (Exact value without rounding the number).
+  - **`dps_decimal_per_game`** (number, decimal) -  Defensive Point Shares (Exact value without rounding the number) per game. 
+  - **`ps`** (number, decimal) - Point Shares - an estimate of the number of points contributed by a player.
+  - **`ps_per_game`** (number, decimal) - Point Shares per game. 
+  - **`ps_decimal`** (number, decimal) - Point Shares (Exact value without rounding the number).
+  - **`ps_decimal_per_game`** (number, decimal) - Point Shares (Exact value without rounding the number) per game.
+  - **`shootouts_att`** (integer) - Shootout attempts. (2007–08 and later season)
+  - **`shootouts_att_per_game`** (number, decimal) - Shootout attempts per game. (2007–08 and later season)
+  - **`shootouts_made`** (integer) - Shootout shots made. (2007–08 and later season)
+  - **`shootouts_made_per_game`** (number, decimal) - Shootout shots made per game. (2007–08 and later season)
+  - **`shootouts_miss`** (integer) - Shootout shots missed. (2007–08 and later season)
+  - **`shootouts_miss_per_game`** (number, decimal) - Shootout shots missed per game. (2007–08 and later season)
+  - **`shootouts_made_pct`** (number, decimal) - Percentage of shootout attempts converted. (2007–08 and later season)
+  - **`shootouts_made_pct_per_game`** (number, decimal) - Percentage of shootout attempts converted per game. (2007–08 and later season)
+  - **`shootouts_made_pct_decimal`** (number, decimal) - Percentage of shootout attempts converted as a decimal (e.g., 0.370). (2007–08 and later season)
+  - **`shootouts_made_pct_decimal_per_game`** (number, decimal) - Percentage of shootout attempts converted as a decimal per game. (2007–08 and later season)
+  - **`ev_exp_on_goals_for`** (number, decimal) - 'Expected Goals For' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`ev_exp_on_goals_for_per_game`** (number, decimal) - Expected Goals For per game. (2014–15 and later season)
+  - **`ev_exp_on_goals_against`** (number, decimal) - 'Expected Goals Against' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`ev_exp_on_goals_against_per_game`** (number, decimal) - Expected Goals Against per game. (2014–15 and later season)
+  - **`expected_plsmns`** (number, decimal) - 'Expected +/-' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`expected_plsmns_per_game`** (number, decimal) - Expected +/- per game. (2014–15 and later season)
+  - **`awards`** (string) - List of any individual awards received.
+
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played.**
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_20212022/rank/12
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_now/rank/12
+```
+<a name="miscellaneous_stats_players_regular_season_{year}/team_abbrev/{team_abbrev}"></a>
+### 2.24 Get miscellaneous stats players regular season by year and specific team
+- **Endpoint:** `/miscellaneous_stats_players_regular_season_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified regular season by specific team. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{team_abbrev}`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`goals_adjusted`** (integer) - Adjusted Goals - adjusted stats are normalized to an 82-game schedule, 18 skaters and league averages of 6 goals/game and 1.67 assists/goal.
+  - **`goals_adjusted_per_game`** (number, decimal) -  Adjusted Goals per game.
+  - **`assists_adjusted`** (integer) -Adjusted Assists - adjusted stats are normalized to an 82-game schedule, 18 skaters and league averages of 6 goals/game and 1.67 assists/goal.
+  - **`assists_adjusted_per_game`** (number, decimal) - Adjusted Assists per game.
+  - **`points_adjusted`** (integer) - Adjusted Points.
+  - **`points_adjusted_per_game`** (number, decimal) -  Adjusted Points per game.
+  - **`goals_created_adjusted`** (number, decimal) - Adjusted Goals Created.
+  - **`goals_created_adjusted_per_game`** (number, decimal) - Adjusted Goals Created per game.
+  - **`total_goals_for`** (integer) - Total Goals On-Ice For.
+  - **`total_goals_for_per_game`** (number, decimal) - Total Goals On-Ice For per game. 
+  - **`power_play_goals_for`** (integer) - Power play goals for while the player was on the ice.
+  - **`power_play_goals_for_per_game`** (number, decimal) - Power play goals per game.
+  - **`total_goals_against`** (integer) - Total Goals On-Ice Against.
+  - **`total_goals_against_per_game`** (number, decimal) -  Total Goals On-Ice Against per game.
+  - **`power_play_goals_against`** (integer) - Power play goals against while the player was on the ice.
+  - **`power_play_goals_against_per_game`** (number, decimal) - Power play goals against per game. 
+  - **`xpm`** (integer) - Plus/Minus.
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game. 
+  - **`ops`** (number, decimal) - Offensive Point Shares - an estimate of the number of points contributed by a player due to his offense.
+  - **`ops_per_game`** (number, decimal) - Offensive Point Shares per game.
+  - **`ops_decimal`** (number, decimal) - Offensive Point Shares (Exact value without rounding the number).
+  - **`ops_decimal_per_game`** (number, decimal) - Offensive Point Shares (Exact value without rounding the number) per game. 
+  - **`dps`** (number, decimal) - Defensive Point Shares - an estimate of the number of points contributed by a player due to his defense.
+  - **`dps_per_game`** (number, decimal) - Defensive Point Shares per game. 
+  - **`dps_decimal`** (number, decimal) - Defensive Point Shares (Exact value without rounding the number).
+  - **`dps_decimal_per_game`** (number, decimal) -  Defensive Point Shares (Exact value without rounding the number) per game. 
+  - **`ps`** (number, decimal) - Point Shares - an estimate of the number of points contributed by a player.
+  - **`ps_per_game`** (number, decimal) - Point Shares per game. 
+  - **`ps_decimal`** (number, decimal) - Point Shares (Exact value without rounding the number).
+  - **`ps_decimal_per_game`** (number, decimal) - Point Shares (Exact value without rounding the number) per game.
+  - **`shootouts_att`** (integer) - Shootout attempts. (2007–08 and later season)
+  - **`shootouts_att_per_game`** (number, decimal) - Shootout attempts per game. (2007–08 and later season)
+  - **`shootouts_made`** (integer) - Shootout shots made. (2007–08 and later season)
+  - **`shootouts_made_per_game`** (number, decimal) - Shootout shots made per game. (2007–08 and later season)
+  - **`shootouts_miss`** (integer) - Shootout shots missed. (2007–08 and later season)
+  - **`shootouts_miss_per_game`** (number, decimal) - Shootout shots missed per game. (2007–08 and later season)
+  - **`shootouts_made_pct`** (number, decimal) - Percentage of shootout attempts converted. (2007–08 and later season)
+  - **`shootouts_made_pct_per_game`** (number, decimal) - Percentage of shootout attempts converted per game. (2007–08 and later season)
+  - **`shootouts_made_pct_decimal`** (number, decimal) - Percentage of shootout attempts converted as a decimal (e.g., 0.370). (2007–08 and later season)
+  - **`shootouts_made_pct_decimal_per_game`** (number, decimal) - Percentage of shootout attempts converted as a decimal per game. (2007–08 and later season)
+  - **`ev_exp_on_goals_for`** (number, decimal) - 'Expected Goals For' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`ev_exp_on_goals_for_per_game`** (number, decimal) - Expected Goals For per game. (2014–15 and later season)
+  - **`ev_exp_on_goals_against`** (number, decimal) - 'Expected Goals Against' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`ev_exp_on_goals_against_per_game`** (number, decimal) - Expected Goals Against per game. (2014–15 and later season)
+  - **`expected_plsmns`** (number, decimal) - 'Expected +/-' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`expected_plsmns_per_game`** (number, decimal) - Expected +/- per game. (2014–15 and later season)
+  - **`awards`** (string) - List of any individual awards received.
+
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played.**
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_20212022/team_abbrev/BOS/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_now/team_abbrev/BOS/
+```
+<a name="miscellaneous_stats_players_regular_season_{year}/player_id/{player_id}"></a>
+### 2.25 Get miscellaneous stats players regular season by year and player ID
+- **Endpoint:** `/miscellaneous_stats_players_regular_season_{year}/player_id/{player_id}/`
+- **Method:** GET
+- **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified regular season by player ID. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{player_id}`** (string) - Unique identifier for each player, contains letters and numbers.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`goals_adjusted`** (integer) - Adjusted Goals - adjusted stats are normalized to an 82-game schedule, 18 skaters and league averages of 6 goals/game and 1.67 assists/goal.
+  - **`goals_adjusted_per_game`** (number, decimal) -  Adjusted Goals per game.
+  - **`assists_adjusted`** (integer) -Adjusted Assists - adjusted stats are normalized to an 82-game schedule, 18 skaters and league averages of 6 goals/game and 1.67 assists/goal.
+  - **`assists_adjusted_per_game`** (number, decimal) - Adjusted Assists per game.
+  - **`points_adjusted`** (integer) - Adjusted Points.
+  - **`points_adjusted_per_game`** (number, decimal) -  Adjusted Points per game.
+  - **`goals_created_adjusted`** (number, decimal) - Adjusted Goals Created.
+  - **`goals_created_adjusted_per_game`** (number, decimal) - Adjusted Goals Created per game.
+  - **`total_goals_for`** (integer) - Total Goals On-Ice For.
+  - **`total_goals_for_per_game`** (number, decimal) - Total Goals On-Ice For per game. 
+  - **`power_play_goals_for`** (integer) - Power play goals for while the player was on the ice.
+  - **`power_play_goals_for_per_game`** (number, decimal) - Power play goals per game.
+  - **`total_goals_against`** (integer) - Total Goals On-Ice Against.
+  - **`total_goals_against_per_game`** (number, decimal) -  Total Goals On-Ice Against per game.
+  - **`power_play_goals_against`** (integer) - Power play goals against while the player was on the ice.
+  - **`power_play_goals_against_per_game`** (number, decimal) - Power play goals against per game. 
+  - **`xpm`** (integer) - Plus/Minus.
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game. 
+  - **`ops`** (number, decimal) - Offensive Point Shares - an estimate of the number of points contributed by a player due to his offense.
+  - **`ops_per_game`** (number, decimal) - Offensive Point Shares per game.
+  - **`ops_decimal`** (number, decimal) - Offensive Point Shares (Exact value without rounding the number).
+  - **`ops_decimal_per_game`** (number, decimal) - Offensive Point Shares (Exact value without rounding the number) per game. 
+  - **`dps`** (number, decimal) - Defensive Point Shares - an estimate of the number of points contributed by a player due to his defense.
+  - **`dps_per_game`** (number, decimal) - Defensive Point Shares per game. 
+  - **`dps_decimal`** (number, decimal) - Defensive Point Shares (Exact value without rounding the number).
+  - **`dps_decimal_per_game`** (number, decimal) -  Defensive Point Shares (Exact value without rounding the number) per game. 
+  - **`ps`** (number, decimal) - Point Shares - an estimate of the number of points contributed by a player.
+  - **`ps_per_game`** (number, decimal) - Point Shares per game. 
+  - **`ps_decimal`** (number, decimal) - Point Shares (Exact value without rounding the number).
+  - **`ps_decimal_per_game`** (number, decimal) - Point Shares (Exact value without rounding the number) per game.
+  - **`shootouts_att`** (integer) - Shootout attempts. (2007–08 and later season)
+  - **`shootouts_att_per_game`** (number, decimal) - Shootout attempts per game. (2007–08 and later season)
+  - **`shootouts_made`** (integer) - Shootout shots made. (2007–08 and later season)
+  - **`shootouts_made_per_game`** (number, decimal) - Shootout shots made per game. (2007–08 and later season)
+  - **`shootouts_miss`** (integer) - Shootout shots missed. (2007–08 and later season)
+  - **`shootouts_miss_per_game`** (number, decimal) - Shootout shots missed per game. (2007–08 and later season)
+  - **`shootouts_made_pct`** (number, decimal) - Percentage of shootout attempts converted. (2007–08 and later season)
+  - **`shootouts_made_pct_per_game`** (number, decimal) - Percentage of shootout attempts converted per game. (2007–08 and later season)
+  - **`shootouts_made_pct_decimal`** (number, decimal) - Percentage of shootout attempts converted as a decimal (e.g., 0.370). (2007–08 and later season)
+  - **`shootouts_made_pct_decimal_per_game`** (number, decimal) - Percentage of shootout attempts converted as a decimal per game. (2007–08 and later season)
+  - **`ev_exp_on_goals_for`** (number, decimal) - 'Expected Goals For' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`ev_exp_on_goals_for_per_game`** (number, decimal) - Expected Goals For per game. (2014–15 and later season)
+  - **`ev_exp_on_goals_against`** (number, decimal) - 'Expected Goals Against' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`ev_exp_on_goals_against_per_game`** (number, decimal) - Expected Goals Against per game. (2014–15 and later season)
+  - **`expected_plsmns`** (number, decimal) - 'Expected +/-' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`expected_plsmns_per_game`** (number, decimal) - Expected +/- per game. (2014–15 and later season)
+  - **`awards`** (string) - List of any individual awards received.
+
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played.**
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_20212022/player_id/acciano01/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_now/player_id/acciano01/
+```
+<a name="miscellaneous_stats_players_regular_season_{year}/position/{position}"></a>
+### 2.26 Get miscellaneous stats players regular season by year and position
+- **Endpoint:** `/miscellaneous_stats_players_regular_season_{year}/position/{position}/`
+- **Method:** GET
+- **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified regular season by position. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{position}`** (string) - Primary position played (C, LW, RW, D).
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`goals_adjusted`** (integer) - Adjusted Goals - adjusted stats are normalized to an 82-game schedule, 18 skaters and league averages of 6 goals/game and 1.67 assists/goal.
+  - **`goals_adjusted_per_game`** (number, decimal) -  Adjusted Goals per game.
+  - **`assists_adjusted`** (integer) -Adjusted Assists - adjusted stats are normalized to an 82-game schedule, 18 skaters and league averages of 6 goals/game and 1.67 assists/goal.
+  - **`assists_adjusted_per_game`** (number, decimal) - Adjusted Assists per game.
+  - **`points_adjusted`** (integer) - Adjusted Points.
+  - **`points_adjusted_per_game`** (number, decimal) -  Adjusted Points per game.
+  - **`goals_created_adjusted`** (number, decimal) - Adjusted Goals Created.
+  - **`goals_created_adjusted_per_game`** (number, decimal) - Adjusted Goals Created per game.
+  - **`total_goals_for`** (integer) - Total Goals On-Ice For.
+  - **`total_goals_for_per_game`** (number, decimal) - Total Goals On-Ice For per game. 
+  - **`power_play_goals_for`** (integer) - Power play goals for while the player was on the ice.
+  - **`power_play_goals_for_per_game`** (number, decimal) - Power play goals per game.
+  - **`total_goals_against`** (integer) - Total Goals On-Ice Against.
+  - **`total_goals_against_per_game`** (number, decimal) -  Total Goals On-Ice Against per game.
+  - **`power_play_goals_against`** (integer) - Power play goals against while the player was on the ice.
+  - **`power_play_goals_against_per_game`** (number, decimal) - Power play goals against per game. 
+  - **`xpm`** (integer) - Plus/Minus.
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game. 
+  - **`ops`** (number, decimal) - Offensive Point Shares - an estimate of the number of points contributed by a player due to his offense.
+  - **`ops_per_game`** (number, decimal) - Offensive Point Shares per game.
+  - **`ops_decimal`** (number, decimal) - Offensive Point Shares (Exact value without rounding the number).
+  - **`ops_decimal_per_game`** (number, decimal) - Offensive Point Shares (Exact value without rounding the number) per game. 
+  - **`dps`** (number, decimal) - Defensive Point Shares - an estimate of the number of points contributed by a player due to his defense.
+  - **`dps_per_game`** (number, decimal) - Defensive Point Shares per game. 
+  - **`dps_decimal`** (number, decimal) - Defensive Point Shares (Exact value without rounding the number).
+  - **`dps_decimal_per_game`** (number, decimal) -  Defensive Point Shares (Exact value without rounding the number) per game. 
+  - **`ps`** (number, decimal) - Point Shares - an estimate of the number of points contributed by a player.
+  - **`ps_per_game`** (number, decimal) - Point Shares per game. 
+  - **`ps_decimal`** (number, decimal) - Point Shares (Exact value without rounding the number).
+  - **`ps_decimal_per_game`** (number, decimal) - Point Shares (Exact value without rounding the number) per game.
+  - **`shootouts_att`** (integer) - Shootout attempts. (2007–08 and later season)
+  - **`shootouts_att_per_game`** (number, decimal) - Shootout attempts per game. (2007–08 and later season)
+  - **`shootouts_made`** (integer) - Shootout shots made. (2007–08 and later season)
+  - **`shootouts_made_per_game`** (number, decimal) - Shootout shots made per game. (2007–08 and later season)
+  - **`shootouts_miss`** (integer) - Shootout shots missed. (2007–08 and later season)
+  - **`shootouts_miss_per_game`** (number, decimal) - Shootout shots missed per game. (2007–08 and later season)
+  - **`shootouts_made_pct`** (number, decimal) - Percentage of shootout attempts converted. (2007–08 and later season)
+  - **`shootouts_made_pct_per_game`** (number, decimal) - Percentage of shootout attempts converted per game. (2007–08 and later season)
+  - **`shootouts_made_pct_decimal`** (number, decimal) - Percentage of shootout attempts converted as a decimal (e.g., 0.370). (2007–08 and later season)
+  - **`shootouts_made_pct_decimal_per_game`** (number, decimal) - Percentage of shootout attempts converted as a decimal per game. (2007–08 and later season)
+  - **`ev_exp_on_goals_for`** (number, decimal) - 'Expected Goals For' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`ev_exp_on_goals_for_per_game`** (number, decimal) - Expected Goals For per game. (2014–15 and later season)
+  - **`ev_exp_on_goals_against`** (number, decimal) - 'Expected Goals Against' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`ev_exp_on_goals_against_per_game`** (number, decimal) - Expected Goals Against per game. (2014–15 and later season)
+  - **`expected_plsmns`** (number, decimal) - 'Expected +/-' given where shots came from, for and against, while this player was on the ice at even strength. It's based on where the shots are coming from, compared to the league-wide shooting percentage for that shot location. (2014–15 and later season)
+  - **`expected_plsmns_per_game`** (number, decimal) - Expected +/- per game. (2014–15 and later season)
+  - **`awards`** (string) - List of any individual awards received.
+
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played.**
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_20212022/position/RW/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_now/position/RW/
 ```
 ---
 <a name="team"></a>
