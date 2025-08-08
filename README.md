@@ -1223,7 +1223,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_20212022/po
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now//position/RW/
+crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now/position/RW/
 ```
 ---
 <a name="team"></a>
