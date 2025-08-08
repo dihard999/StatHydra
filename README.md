@@ -43,7 +43,12 @@ When you need more than one point of view, choose StatHydra!**
    2.29 [Get miscellaneous stats players playoff by year and specific team](#miscellaneous_stats_players_playoff_{year}/team_abbrev/{team_abbrev})  
    2.30 [Get miscellaneous stats players playoff by year and player ID](#miscellaneous_stats_players_playoff_{year}/player_id/{player_id})  
    2.31 [Get miscellaneous stats players playoff by year and position](#miscellaneous_stats_players_playoff_{year}/position/{position})  
-3. [Team](#team)  
+   2.32 [Get hat tricks by year](#hat_tricks_{year})  
+   2.33 [Get hat tricks by year and specific team](#hat_tricks_{year}/team_abbrev/{team_abbrev})  
+   2.34 [Get hat tricks by year and player ID](#hat_tricks_{year}/player_id/{player_id})  
+   2.35 [Get hat tricks by year and specific game](#hat_tricks_{year}/game_id/{game_id})  
+   2.36 [Get hat tricks by year and specific date](#hat_tricks_{year}/game_date/{game_date})  
+4. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/team_abbrev/{team_abbrev})  
    3.3 [Get teams analytics 5 on 5 by year](#team_analytics_5_on_5_{year})  
@@ -53,7 +58,7 @@ When you need more than one point of view, choose StatHydra!**
    3.7 [Get expanded standings teams by year and specific rank](#expanded_standings_{year}/rank/{rank})  
    3.8 [Get team versus team by year](#team_vs_team_{year})  
    3.9 [Get team versus team by year and specific team](#team_vs_team_{year}/{team_abbrev}) 
-4. [Season](#season)  
+5. [Season](#season)  
    4.1 [Get summary statistic season by year](#season_summary_{year})  
    4.2 [Get summary statistic season by year and specific team](#season_summary_{year}/team_abbrev/{team_abbrev})  
    4.3 [Get detail statistic season by year](#season_statistics_{year})  
@@ -2221,6 +2226,145 @@ crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_20212022/p
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_now/position/RW/
+```
+<a name="hat_tricks_{year}"></a>
+### 2.32 Get hat tricks by year
+- **Endpoint:** `/hat_tricks_{year}/`
+- **Method:** GET
+- **Description:** Returns a table of detailed information about all NHL hat tricks for a given season.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`game_date`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_id`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`opponent`** (string) - Opponent abbreviation (e.g., EDM, NYR, TOR).
+  - **`goal`** (integer) - Number of goals scored in this match. 
+  - **`score`** (string) - Total game score.
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_now/
+```
+<a name="hat_tricks_{year}/team_abbrev/{team_abbrev}"></a>
+### 2.33 Get hat tricks by year and specific team
+- **Endpoint:** `/hat_tricks_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns a table of detailed information about all NHL hat tricks for a given season by and specific team.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{team_abbrev}`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`game_date`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_id`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`opponent`** (string) - Opponent abbreviation (e.g., EDM, NYR, TOR).
+  - **`goal`** (integer) - Number of goals scored in this match. 
+  - **`score`** (string) - Total game score.
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_20212022/team_abbrev/BOS/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_now/team_abbrev/BOS/
+```
+<a name="hat_tricks_{year}/player_id/{player_id}"></a>
+### 2.34 Get hat tricks by year and player ID
+- **Endpoint:** `/hat_tricks_{year}/player_id/{player_id}/`
+- **Method:** GET
+- **Description:** Returns a table of detailed information about all NHL hat tricks for a given season by and player ID.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{player_id}`** (string) - Unique identifier for each player, contains letters and numbers.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`game_date`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_id`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`opponent`** (string) - Opponent abbreviation (e.g., EDM, NYR, TOR).
+  - **`goal`** (integer) - Number of goals scored in this match. 
+  - **`score`** (string) - Total game score.
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_20212022/player_id/bennesa01/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_now/player_id/bennesa01/
+```
+<a name="hat_tricks_{year}/game_id/{game_id}"></a>
+### 2.35 Get hat tricks by year and specific game
+- **Endpoint:** `/hat_tricks_{year}/game_id/{game_id}/`
+- **Method:** GET
+- **Description:** Returns a table of detailed information about all NHL hat tricks for a given season by and specific game.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{game_id}`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`game_date`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_id`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`opponent`** (string) - Opponent abbreviation (e.g., EDM, NYR, TOR).
+  - **`goal`** (integer) - Number of goals scored in this match. 
+  - **`score`** (string) - Total game score.
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_20212022/game_id/202110160FLA/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_now/game_id/202110160FLA/
+```
+<a name="hat_tricks_{year}/game_date/{game_date}"></a>
+### 2.36 Get hat tricks by year and specific date
+- **Endpoint:** `/hat_tricks_{year}/game_date/{game_date}/`
+- **Method:** GET
+- **Description:** Returns a table of detailed information about all NHL hat tricks for a given season by and specific date.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{game_date}`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`game_date`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_id`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`opponent`** (string) - Opponent abbreviation (e.g., EDM, NYR, TOR).
+  - **`goal`** (integer) - Number of goals scored in this match. 
+  - **`score`** (string) - Total game score.
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_20212022/game_date/2021-10-16/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_now/game_date/2021-10-16/
 ```
 ---
 <a name="team"></a>
