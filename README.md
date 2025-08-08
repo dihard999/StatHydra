@@ -875,15 +875,355 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/player_id/m
   - **`points_per_game`** (number, decimal) - Points per game (points/games_played).
   - **`xpm`** (integer) - Plus/Minus Rating (net difference in goals scored and allowed on the ice with this player's participation).
   - **`xpm_per_game`** (number, decimal) - Plus/Minus per game (xpm/games_played).
+  - **`pim`** (integer) - Penalties in Minutes — total penalty minutes accrued.
+  - **`pim_per_game`** (number, decimal) - Penalty minutes per game. (pim/games_played).
+  - **`evsg`** (integer) - Even Strength Goals.
+  - **`evsg_per_game`** (number, decimal) - Even strength goals per game (evsg/games_played).
+  - **`ppgl`** (integer) - Power Play Goals — goals scored with man advantage.
+  - **`ppgl_per_game`** (number, decimal) - Power play goals per game. (ppgl/games_played).
+  - **`shg`** (integer) - Short-handed Goals — goals scored when team is short-handed.
+  - **`shg_per_game`** (number, decimal) - Short-handed goals per game. (shg/games_played).
+  - **`gwg`** (integer) - Game-Winning Goals.
+  - **`gwg_per_game`** (number, decimal) - Game-winning goals per game. (gwg/games_played).
+  - **`evsa`** (integer) - Even Strength Assists — assists at even strength.
+  - **`evsa_per_game`** (number, decimal) - Even strength assists per game. (evsa/games_played).
+  - **`ppa`** (integer) - Power Play Assists — assists on power play goals.
+  - **`ppa_per_game`** (number, decimal) - Power play assists per game. (ppa/games_played).
+  - **`sha`** (integer) - Short-handed Assists — assists while team is short-handed.
+  - **`sha_per_game`** (number, decimal) - Short-handed assists per game. (sha/games_played).
+  - **`sog`** (integer) - Shots on Goal.
+  - **`sog_per_game`** (number, decimal) - Shots on goal per game. (sog/games_played).
+  - **`shp`** (number, decimal) - Shooting percentage, as a number (typically XX.X). No percent sign.
+  - **`shp_decimal`** (number, decimal) - Shooting percentage, as a decimal fraction (e.g., 12.6% → 0.126).
+  - **`toi`** (string) - Total time on ice for the season — expressed as mm:ss.
+  - **`toi_decimal`** (number, decimal) - Total time on ice, as decimal minutes.
+  - **`atoi`** (string) - Average time on ice per game (mm:ss).
+  - **`atoi_decimal`** (number, decimal) - Average time on ice per game, decimal minutes.
+  - **`tsa`** (integer) - Total Shot Attempts (2007–08 and later season).
+  - **`tsa_per_game`** (number, decimal) - Total Shot Attempts per game. (tsa/games_played) (2007–08 and later season).
+  - **`fow`** (integer) - Faceoff Wins (2007–08 and later season).
+  - **`fow_per_game`** (number, decimal) - Faceoff Wins per game. (fow/games_played) (2007–08 and later season).
+  - **`fol`** (integer) - Faceoff Losses (2007–08 and later season).
+  - **`fol_per_game`** (number, decimal) - Faceoff Losses per game. (fol/games_played) (2007–08 and later season).
+  - **`fo_per`** (number, decimal) - Faceoff Win Percentage, as percent (e.g., 52.1). (2007–08 and later season).
+  - **`fol_per_decimal`** (number, decimal) - Faceoff win rate, decimal (e.g., 0.521). (2007–08 and later season).
+  - **`blk`** (integer) - Blocked Shots: number of opponent shots blocked. (2007–08 and later season).
+  - **`blk_per_game`** (number, decimal) - Blocked shots per game. (blk/games_played) (2007–08 and later season).
+  - **`hit`** (integer) - Hits. (2007–08 and later season).
+  - **`hit_per_game`** (number, decimal) - Hits per game. (hit/games_played) (2007–08 and later season).
+  - **`take`** (integer) - Takeaways. (2007–08 and later season).
+  - **`tak_per_game`** (number, decimal) - Takeaways per game. (take/games_played) (2007–08 and later season).
+  - **`give`** (integer) - Giveaways. (2007–08 and later season).
+  - **`give_per_game`** (number, decimal) - Giveaways per game. (give/games_played) (2007–08 and later season).
+  - **`awards`** (string) - List of any individual awards received.
     
- 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/team_abbrev/TOR/player_id/matthau01/
+crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_20212022/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/player_id/matthau01/
+crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now/
+```
+<a name="basic_stats_players_regular_season_{year}/rank/{rank}"></a>
+### 2.13 Get basic stats players regular season by year and specific rank
+- **Endpoint:** `/basic_stats_players_regular_season_{year}/rank/{rank}/`
+- **Method:** GET
+- **Description:** Returns a table of basic individual player statistics for the specified NHL regular season by rank. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`goals`** (integer) - Goals scored.
+  - **`goals_per_game`** (number, decimal) - Goals per game (goals/games_played).
+  - **`assists`** (integer) - Assists.
+  - **`assists_per_game`** (number, decimal) - Assists per game (assists/games_played).
+  - **`points`** (integer) - Points (Goals + Assists).
+  - **`points_per_game`** (number, decimal) - Points per game (points/games_played).
+  - **`xpm`** (integer) - Plus/Minus Rating (net difference in goals scored and allowed on the ice with this player's participation).
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game (xpm/games_played).
+  - **`pim`** (integer) - Penalties in Minutes — total penalty minutes accrued.
+  - **`pim_per_game`** (number, decimal) - Penalty minutes per game. (pim/games_played).
+  - **`evsg`** (integer) - Even Strength Goals.
+  - **`evsg_per_game`** (number, decimal) - Even strength goals per game (evsg/games_played).
+  - **`ppgl`** (integer) - Power Play Goals — goals scored with man advantage.
+  - **`ppgl_per_game`** (number, decimal) - Power play goals per game. (ppgl/games_played).
+  - **`shg`** (integer) - Short-handed Goals — goals scored when team is short-handed.
+  - **`shg_per_game`** (number, decimal) - Short-handed goals per game. (shg/games_played).
+  - **`gwg`** (integer) - Game-Winning Goals.
+  - **`gwg_per_game`** (number, decimal) - Game-winning goals per game. (gwg/games_played).
+  - **`evsa`** (integer) - Even Strength Assists — assists at even strength.
+  - **`evsa_per_game`** (number, decimal) - Even strength assists per game. (evsa/games_played).
+  - **`ppa`** (integer) - Power Play Assists — assists on power play goals.
+  - **`ppa_per_game`** (number, decimal) - Power play assists per game. (ppa/games_played).
+  - **`sha`** (integer) - Short-handed Assists — assists while team is short-handed.
+  - **`sha_per_game`** (number, decimal) - Short-handed assists per game. (sha/games_played).
+  - **`sog`** (integer) - Shots on Goal.
+  - **`sog_per_game`** (number, decimal) - Shots on goal per game. (sog/games_played).
+  - **`shp`** (number, decimal) - Shooting percentage, as a number (typically XX.X). No percent sign.
+  - **`shp_decimal`** (number, decimal) - Shooting percentage, as a decimal fraction (e.g., 12.6% → 0.126).
+  - **`toi`** (string) - Total time on ice for the season — expressed as mm:ss.
+  - **`toi_decimal`** (number, decimal) - Total time on ice, as decimal minutes.
+  - **`atoi`** (string) - Average time on ice per game (mm:ss).
+  - **`atoi_decimal`** (number, decimal) - Average time on ice per game, decimal minutes.
+  - **`tsa`** (integer) - Total Shot Attempts (2007–08 and later season).
+  - **`tsa_per_game`** (number, decimal) - Total Shot Attempts per game. (tsa/games_played) (2007–08 and later season).
+  - **`fow`** (integer) - Faceoff Wins (2007–08 and later season).
+  - **`fow_per_game`** (number, decimal) - Faceoff Wins per game. (fow/games_played) (2007–08 and later season).
+  - **`fol`** (integer) - Faceoff Losses (2007–08 and later season).
+  - **`fol_per_game`** (number, decimal) - Faceoff Losses per game. (fol/games_played) (2007–08 and later season).
+  - **`fo_per`** (number, decimal) - Faceoff Win Percentage, as percent (e.g., 52.1). (2007–08 and later season).
+  - **`fol_per_decimal`** (number, decimal) - Faceoff win rate, decimal (e.g., 0.521). (2007–08 and later season).
+  - **`blk`** (integer) - Blocked Shots: number of opponent shots blocked. (2007–08 and later season).
+  - **`blk_per_game`** (number, decimal) - Blocked shots per game. (blk/games_played) (2007–08 and later season).
+  - **`hit`** (integer) - Hits. (2007–08 and later season).
+  - **`hit_per_game`** (number, decimal) - Hits per game. (hit/games_played) (2007–08 and later season).
+  - **`take`** (integer) - Takeaways. (2007–08 and later season).
+  - **`tak_per_game`** (number, decimal) - Takeaways per game. (take/games_played) (2007–08 and later season).
+  - **`give`** (integer) - Giveaways. (2007–08 and later season).
+  - **`give_per_game`** (number, decimal) - Giveaways per game. (give/games_played) (2007–08 and later season).
+  - **`awards`** (string) - List of any individual awards received.
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_20212022/rank/17
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now/rank/17
+```
+<a name="basic_stats_players_regular_season_{year}/team_abbrev/{team_abbrev}"></a>
+### 2.14 Get basic stats players regular season by year and specific team
+- **Endpoint:** `/basic_stats_players_regular_season_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns a table of basic individual player statistics for the specified NHL regular season by team. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`goals`** (integer) - Goals scored.
+  - **`goals_per_game`** (number, decimal) - Goals per game (goals/games_played).
+  - **`assists`** (integer) - Assists.
+  - **`assists_per_game`** (number, decimal) - Assists per game (assists/games_played).
+  - **`points`** (integer) - Points (Goals + Assists).
+  - **`points_per_game`** (number, decimal) - Points per game (points/games_played).
+  - **`xpm`** (integer) - Plus/Minus Rating (net difference in goals scored and allowed on the ice with this player's participation).
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game (xpm/games_played).
+  - **`pim`** (integer) - Penalties in Minutes — total penalty minutes accrued.
+  - **`pim_per_game`** (number, decimal) - Penalty minutes per game. (pim/games_played).
+  - **`evsg`** (integer) - Even Strength Goals.
+  - **`evsg_per_game`** (number, decimal) - Even strength goals per game (evsg/games_played).
+  - **`ppgl`** (integer) - Power Play Goals — goals scored with man advantage.
+  - **`ppgl_per_game`** (number, decimal) - Power play goals per game. (ppgl/games_played).
+  - **`shg`** (integer) - Short-handed Goals — goals scored when team is short-handed.
+  - **`shg_per_game`** (number, decimal) - Short-handed goals per game. (shg/games_played).
+  - **`gwg`** (integer) - Game-Winning Goals.
+  - **`gwg_per_game`** (number, decimal) - Game-winning goals per game. (gwg/games_played).
+  - **`evsa`** (integer) - Even Strength Assists — assists at even strength.
+  - **`evsa_per_game`** (number, decimal) - Even strength assists per game. (evsa/games_played).
+  - **`ppa`** (integer) - Power Play Assists — assists on power play goals.
+  - **`ppa_per_game`** (number, decimal) - Power play assists per game. (ppa/games_played).
+  - **`sha`** (integer) - Short-handed Assists — assists while team is short-handed.
+  - **`sha_per_game`** (number, decimal) - Short-handed assists per game. (sha/games_played).
+  - **`sog`** (integer) - Shots on Goal.
+  - **`sog_per_game`** (number, decimal) - Shots on goal per game. (sog/games_played).
+  - **`shp`** (number, decimal) - Shooting percentage, as a number (typically XX.X). No percent sign.
+  - **`shp_decimal`** (number, decimal) - Shooting percentage, as a decimal fraction (e.g., 12.6% → 0.126).
+  - **`toi`** (string) - Total time on ice for the season — expressed as mm:ss.
+  - **`toi_decimal`** (number, decimal) - Total time on ice, as decimal minutes.
+  - **`atoi`** (string) - Average time on ice per game (mm:ss).
+  - **`atoi_decimal`** (number, decimal) - Average time on ice per game, decimal minutes.
+  - **`tsa`** (integer) - Total Shot Attempts (2007–08 and later season).
+  - **`tsa_per_game`** (number, decimal) - Total Shot Attempts per game. (tsa/games_played) (2007–08 and later season).
+  - **`fow`** (integer) - Faceoff Wins (2007–08 and later season).
+  - **`fow_per_game`** (number, decimal) - Faceoff Wins per game. (fow/games_played) (2007–08 and later season).
+  - **`fol`** (integer) - Faceoff Losses (2007–08 and later season).
+  - **`fol_per_game`** (number, decimal) - Faceoff Losses per game. (fol/games_played) (2007–08 and later season).
+  - **`fo_per`** (number, decimal) - Faceoff Win Percentage, as percent (e.g., 52.1). (2007–08 and later season).
+  - **`fol_per_decimal`** (number, decimal) - Faceoff win rate, decimal (e.g., 0.521). (2007–08 and later season).
+  - **`blk`** (integer) - Blocked Shots: number of opponent shots blocked. (2007–08 and later season).
+  - **`blk_per_game`** (number, decimal) - Blocked shots per game. (blk/games_played) (2007–08 and later season).
+  - **`hit`** (integer) - Hits. (2007–08 and later season).
+  - **`hit_per_game`** (number, decimal) - Hits per game. (hit/games_played) (2007–08 and later season).
+  - **`take`** (integer) - Takeaways. (2007–08 and later season).
+  - **`tak_per_game`** (number, decimal) - Takeaways per game. (take/games_played) (2007–08 and later season).
+  - **`give`** (integer) - Giveaways. (2007–08 and later season).
+  - **`give_per_game`** (number, decimal) - Giveaways per game. (give/games_played) (2007–08 and later season).
+  - **`awards`** (string) - List of any individual awards received.
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_20212022/team_abbrev/BOS/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now/team_abbrev/BOS/
+```
+<a name="basic_stats_players_regular_season_{year}/player_id/{player_id}"></a>
+### 2.15 Get basic stats players regular season by year and player ID
+- **Endpoint:** `/basic_stats_players_regular_season_{year}/player_id/{player_id}/`
+- **Method:** GET
+- **Description:** Returns a table of basic individual player statistics for the specified NHL regular season by player ID. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`goals`** (integer) - Goals scored.
+  - **`goals_per_game`** (number, decimal) - Goals per game (goals/games_played).
+  - **`assists`** (integer) - Assists.
+  - **`assists_per_game`** (number, decimal) - Assists per game (assists/games_played).
+  - **`points`** (integer) - Points (Goals + Assists).
+  - **`points_per_game`** (number, decimal) - Points per game (points/games_played).
+  - **`xpm`** (integer) - Plus/Minus Rating (net difference in goals scored and allowed on the ice with this player's participation).
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game (xpm/games_played).
+  - **`pim`** (integer) - Penalties in Minutes — total penalty minutes accrued.
+  - **`pim_per_game`** (number, decimal) - Penalty minutes per game. (pim/games_played).
+  - **`evsg`** (integer) - Even Strength Goals.
+  - **`evsg_per_game`** (number, decimal) - Even strength goals per game (evsg/games_played).
+  - **`ppgl`** (integer) - Power Play Goals — goals scored with man advantage.
+  - **`ppgl_per_game`** (number, decimal) - Power play goals per game. (ppgl/games_played).
+  - **`shg`** (integer) - Short-handed Goals — goals scored when team is short-handed.
+  - **`shg_per_game`** (number, decimal) - Short-handed goals per game. (shg/games_played).
+  - **`gwg`** (integer) - Game-Winning Goals.
+  - **`gwg_per_game`** (number, decimal) - Game-winning goals per game. (gwg/games_played).
+  - **`evsa`** (integer) - Even Strength Assists — assists at even strength.
+  - **`evsa_per_game`** (number, decimal) - Even strength assists per game. (evsa/games_played).
+  - **`ppa`** (integer) - Power Play Assists — assists on power play goals.
+  - **`ppa_per_game`** (number, decimal) - Power play assists per game. (ppa/games_played).
+  - **`sha`** (integer) - Short-handed Assists — assists while team is short-handed.
+  - **`sha_per_game`** (number, decimal) - Short-handed assists per game. (sha/games_played).
+  - **`sog`** (integer) - Shots on Goal.
+  - **`sog_per_game`** (number, decimal) - Shots on goal per game. (sog/games_played).
+  - **`shp`** (number, decimal) - Shooting percentage, as a number (typically XX.X). No percent sign.
+  - **`shp_decimal`** (number, decimal) - Shooting percentage, as a decimal fraction (e.g., 12.6% → 0.126).
+  - **`toi`** (string) - Total time on ice for the season — expressed as mm:ss.
+  - **`toi_decimal`** (number, decimal) - Total time on ice, as decimal minutes.
+  - **`atoi`** (string) - Average time on ice per game (mm:ss).
+  - **`atoi_decimal`** (number, decimal) - Average time on ice per game, decimal minutes.
+  - **`tsa`** (integer) - Total Shot Attempts (2007–08 and later season).
+  - **`tsa_per_game`** (number, decimal) - Total Shot Attempts per game. (tsa/games_played) (2007–08 and later season).
+  - **`fow`** (integer) - Faceoff Wins (2007–08 and later season).
+  - **`fow_per_game`** (number, decimal) - Faceoff Wins per game. (fow/games_played) (2007–08 and later season).
+  - **`fol`** (integer) - Faceoff Losses (2007–08 and later season).
+  - **`fol_per_game`** (number, decimal) - Faceoff Losses per game. (fol/games_played) (2007–08 and later season).
+  - **`fo_per`** (number, decimal) - Faceoff Win Percentage, as percent (e.g., 52.1). (2007–08 and later season).
+  - **`fol_per_decimal`** (number, decimal) - Faceoff win rate, decimal (e.g., 0.521). (2007–08 and later season).
+  - **`blk`** (integer) - Blocked Shots: number of opponent shots blocked. (2007–08 and later season).
+  - **`blk_per_game`** (number, decimal) - Blocked shots per game. (blk/games_played) (2007–08 and later season).
+  - **`hit`** (integer) - Hits. (2007–08 and later season).
+  - **`hit_per_game`** (number, decimal) - Hits per game. (hit/games_played) (2007–08 and later season).
+  - **`take`** (integer) - Takeaways. (2007–08 and later season).
+  - **`tak_per_game`** (number, decimal) - Takeaways per game. (take/games_played) (2007–08 and later season).
+  - **`give`** (integer) - Giveaways. (2007–08 and later season).
+  - **`give_per_game`** (number, decimal) - Giveaways per game. (give/games_played) (2007–08 and later season).
+  - **`awards`** (string) - List of any individual awards received.
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_20212022/player_id/ahose01/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now/player_id/ahose01/
+```
+<a name="basic_stats_players_regular_season_{year}/position/{position}"></a>
+### 2.16 Get basic stats players regular season by year and position
+- **Endpoint:** `/basic_stats_players_regular_season_{year}/position/{position}/`
+- **Method:** GET
+- **Description:** Returns a table of basic individual player statistics for the specified NHL regular season by position player. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`position`** (string) - Primary position played (C, LW, RW, D).
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`goals`** (integer) - Goals scored.
+  - **`goals_per_game`** (number, decimal) - Goals per game (goals/games_played).
+  - **`assists`** (integer) - Assists.
+  - **`assists_per_game`** (number, decimal) - Assists per game (assists/games_played).
+  - **`points`** (integer) - Points (Goals + Assists).
+  - **`points_per_game`** (number, decimal) - Points per game (points/games_played).
+  - **`xpm`** (integer) - Plus/Minus Rating (net difference in goals scored and allowed on the ice with this player's participation).
+  - **`xpm_per_game`** (number, decimal) - Plus/Minus per game (xpm/games_played).
+  - **`pim`** (integer) - Penalties in Minutes — total penalty minutes accrued.
+  - **`pim_per_game`** (number, decimal) - Penalty minutes per game. (pim/games_played).
+  - **`evsg`** (integer) - Even Strength Goals.
+  - **`evsg_per_game`** (number, decimal) - Even strength goals per game (evsg/games_played).
+  - **`ppgl`** (integer) - Power Play Goals — goals scored with man advantage.
+  - **`ppgl_per_game`** (number, decimal) - Power play goals per game. (ppgl/games_played).
+  - **`shg`** (integer) - Short-handed Goals — goals scored when team is short-handed.
+  - **`shg_per_game`** (number, decimal) - Short-handed goals per game. (shg/games_played).
+  - **`gwg`** (integer) - Game-Winning Goals.
+  - **`gwg_per_game`** (number, decimal) - Game-winning goals per game. (gwg/games_played).
+  - **`evsa`** (integer) - Even Strength Assists — assists at even strength.
+  - **`evsa_per_game`** (number, decimal) - Even strength assists per game. (evsa/games_played).
+  - **`ppa`** (integer) - Power Play Assists — assists on power play goals.
+  - **`ppa_per_game`** (number, decimal) - Power play assists per game. (ppa/games_played).
+  - **`sha`** (integer) - Short-handed Assists — assists while team is short-handed.
+  - **`sha_per_game`** (number, decimal) - Short-handed assists per game. (sha/games_played).
+  - **`sog`** (integer) - Shots on Goal.
+  - **`sog_per_game`** (number, decimal) - Shots on goal per game. (sog/games_played).
+  - **`shp`** (number, decimal) - Shooting percentage, as a number (typically XX.X). No percent sign.
+  - **`shp_decimal`** (number, decimal) - Shooting percentage, as a decimal fraction (e.g., 12.6% → 0.126).
+  - **`toi`** (string) - Total time on ice for the season — expressed as mm:ss.
+  - **`toi_decimal`** (number, decimal) - Total time on ice, as decimal minutes.
+  - **`atoi`** (string) - Average time on ice per game (mm:ss).
+  - **`atoi_decimal`** (number, decimal) - Average time on ice per game, decimal minutes.
+  - **`tsa`** (integer) - Total Shot Attempts (2007–08 and later season).
+  - **`tsa_per_game`** (number, decimal) - Total Shot Attempts per game. (tsa/games_played) (2007–08 and later season).
+  - **`fow`** (integer) - Faceoff Wins (2007–08 and later season).
+  - **`fow_per_game`** (number, decimal) - Faceoff Wins per game. (fow/games_played) (2007–08 and later season).
+  - **`fol`** (integer) - Faceoff Losses (2007–08 and later season).
+  - **`fol_per_game`** (number, decimal) - Faceoff Losses per game. (fol/games_played) (2007–08 and later season).
+  - **`fo_per`** (number, decimal) - Faceoff Win Percentage, as percent (e.g., 52.1). (2007–08 and later season).
+  - **`fol_per_decimal`** (number, decimal) - Faceoff win rate, decimal (e.g., 0.521). (2007–08 and later season).
+  - **`blk`** (integer) - Blocked Shots: number of opponent shots blocked. (2007–08 and later season).
+  - **`blk_per_game`** (number, decimal) - Blocked shots per game. (blk/games_played) (2007–08 and later season).
+  - **`hit`** (integer) - Hits. (2007–08 and later season).
+  - **`hit_per_game`** (number, decimal) - Hits per game. (hit/games_played) (2007–08 and later season).
+  - **`take`** (integer) - Takeaways. (2007–08 and later season).
+  - **`tak_per_game`** (number, decimal) - Takeaways per game. (take/games_played) (2007–08 and later season).
+  - **`give`** (integer) - Giveaways. (2007–08 and later season).
+  - **`give_per_game`** (number, decimal) - Giveaways per game. (give/games_played) (2007–08 and later season).
+  - **`awards`** (string) - List of any individual awards received.
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_20212022/position/RW/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now//position/RW/
 ```
 ---
 <a name="team"></a>
