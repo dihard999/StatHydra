@@ -48,6 +48,11 @@ When you need more than one point of view, choose StatHydra!**
    2.34 [Get hat tricks by year and player ID](#hat_tricks_{year}/player_id/{player_id})  
    2.35 [Get hat tricks by year and specific game](#hat_tricks_{year}/game_id/{game_id})  
    2.36 [Get hat tricks by year and specific date](#hat_tricks_{year}/game_date/{game_date})  
+   2.37 [Get penalty shots by year](#penalty_shots_{year})  
+   2.38 [Get penalty shots by year and specific team](#penalty_shots_{year}/team_abbrev/{team_abbrev})  
+   2.39 [Get penalty shots by year and player ID](#penalty_shots_{year}/player_id/{player_id})  
+   2.40 [Get penalty shots by year and specific game](#penalty_shots_{year}/game_id/{game_id})  
+   2.41 [Get penalty shots by year and specific date](#penalty_shots_{year}/game_date/{game_date})  
 4. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/team_abbrev/{team_abbrev})  
@@ -2365,6 +2370,145 @@ crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_20212022/game_date/2021-10-16/
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_now/game_date/2021-10-16/
+```
+<a name="penalty_shots_{year}"></a>
+### 2.37 Get penalty shots by year
+- **Endpoint:** `/penalty_shots_{year}/`
+- **Method:** GET
+- **Description:** Returns a table of detailed information about all NHL penalty shots for a given season.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`game_date`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_id`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`opponent`** (string) - Opponent abbreviation (e.g., EDM, NYR, TOR).
+  - **`goal`** (string) - Only two meanings "goal" or "miss". 
+  - **`score`** (string) - Total game score.
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_now/
+```
+<a name="penalty_shots_{year}/team_abbrev/{team_abbrev}"></a>
+### 2.38 Get penalty shots by year and specific team
+- **Endpoint:** `/penalty_shots_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns a table of detailed information about all NHL penalty shots for a given season by and specific team.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{team_abbrev}`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`game_date`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_id`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`opponent`** (string) - Opponent abbreviation (e.g., EDM, NYR, TOR).
+  - **`goal`** (string) - Only two meanings "goal" or "miss". 
+  - **`score`** (string) - Total game score.
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_20212022/team_abbrev/BOS/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_now/team_abbrev/BOS/
+```
+<a name="penalty_shots_{year}/player_id/{player_id}"></a>
+### 2.39 Get penalty shots by year and player ID
+- **Endpoint:** `/penalty_shots_{year}/player_id/{player_id}/`
+- **Method:** GET
+- **Description:** Returns a table of detailed information about all NHL penalty shots for a given season by and player ID.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{player_id}`** (string) - Unique identifier for each player, contains letters and numbers.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`game_date`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_id`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`opponent`** (string) - Opponent abbreviation (e.g., EDM, NYR, TOR).
+  - **`goal`** (string) - Only two meanings "goal" or "miss". 
+  - **`score`** (string) - Total game score.
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_20212022/player_id/laughsc01/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_now/player_id/laughsc01/
+```
+<a name="penalty_shots_{year}/game_id/{game_id}"></a>
+### 2.40 Get penalty shots by year and specific game
+- **Endpoint:** `/penalty_shots_{year}/game_id/{game_id}/`
+- **Method:** GET
+- **Description:** Returns a table of detailed information about all NHL penalty shots for a given season by and specific game.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{game_id}`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`game_date`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_id`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`opponent`** (string) - Opponent abbreviation (e.g., EDM, NYR, TOR).
+  - **`goal`** (string) - Only two meanings "goal" or "miss".
+  - **`score`** (string) - Total game score.
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_20212022/game_id/202111160PHI/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_now/game_id/202111160PHI/
+```
+<a name="penalty shots_{year}/game_date/{game_date}"></a>
+### 2.41 Get penalty shots by year and specific date
+- **Endpoint:** `/penalty_shots_{year}/game_date/{game_date}/`
+- **Method:** GET
+- **Description:** Returns a table of detailed information about all NHL penalty shots for a given season by and specific date.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{game_date}`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`game_date`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+  - **`game_id`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`opponent`** (string) - Opponent abbreviation (e.g., EDM, NYR, TOR).
+  - **`goal`** (string) - Only two meanings "goal" or "miss".
+  - **`score`** (string) - Total game score.
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_20212022/game_date/2021-11-16/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_now/game_date/2021-11-16/
 ```
 ---
 <a name="team"></a>
