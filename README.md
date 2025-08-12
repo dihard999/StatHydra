@@ -58,6 +58,11 @@ When you need more than one point of view, choose StatHydra!**
    2.44 [Get advanced stats players by year and player ID](#advanced_stats_players_{year}/player_id/{player_id})  
    2.45 [Get advanced stats players by year and specific team](#advanced_stats_players_{year}/team_abbrev/{team_abbrev})  
    2.46 [Get advanced stats players by year and position](#advanced_stats_players_{year}/position/{position})  
+   2.47 [Get skater time on ice stats by year](#skater_time_on_ice_stats_{year})  
+   2.48 [Get skater time on ice stats by year and specific rank](#skater_time_on_ice_stats_{year}/rank/{rank})  
+   2.49 [Get skater time on ice stats by year and player ID](#skater_time_on_ice_stats_{year}/player_id/{player_id})  
+   2.50 [Get skater time on ice stats by year and specific team](#skater_time_on_ice_stats_{year}/team_abbrev/{team_abbrev})  
+   2.51 [Get skater time on ice stats by year and position](#skater_time_on_ice_stats_{year}/position/{position})  
 4. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/team_abbrev/{team_abbrev})  
@@ -2763,6 +2768,230 @@ crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_20212022/position/RW/
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_now/position/RW/
+```
+<a name="skater_time_on_ice_stats_{year}"></a>
+### 2.47 Get skater time on ice stats by year
+- **Endpoint:** `/skater_time_on_ice_stats_{year}/`
+- **Method:** GET
+- **Description:** Returns a table of skater time on ice stats for the specified NHL season. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`avg_shift_length`** (string) - Avg. Shift Length/Gm (hh:mm).
+  - **`avg_shift_length_decimal`** (number, decimal) - Avg. Shift Length/Gm (hh:mm). (number, decimal)
+  - **`games_played`** (integer) - Games played.
+  - **`toi_ev`** (string) - Avg. Time on Ice/Gm at Even Strength.
+  - **`toi_ev_decimal`** (number, decimal) - Avg. Time on Ice/Gm at Even Strength. (number, decimal)
+  - **`corsi_rel_pct_ev`** (number, decimal) - Relative Corsi For % at Even Strength.
+  - **`on_gf_per_60_ev`** (number, decimal) - On-Ice Goals For/60 Minutes at Even Strength.
+  - **`on_ga_per_60_ev`** (number, decimal) - On-Ice Goals Against/60 Minutes at Even Strength.
+  - **`toi_pp`** (string) - Avg. Time on Ice/Gm while on Power Play.
+  - **`toi_pp_decimal`** (number, decimal) - Avg. Time on Ice/Gm while on Power Play. (number, decimal)
+  - **`corsi_rel_pct_pp`** (number, decimal) - Relative Corsi For % on the Power Play.
+  - **`on_gf_per_60_pp`** (number, decimal) - On-Ice Goals For/60 Minutes on the Power Play.
+  - **`on_ga_per_60_pp`** (number, decimal) - On-Ice Goals Against/60 Minutes on the Power Play.
+  - **`toi_sh`** (string) - Avg. Time on Ice/Gm while Short Handed.
+  - **`toi_sh_decimal`** (number, decimal) -  Avg. Time on Ice/Gm while Short Handed. (number, decimal)
+  - **`corsi_rel_pct_sh`** (number, decimal) - Relative Corsi For % while Short Handed.
+  - **`on_gf_per_60_sh`** (number, decimal) - On-Ice Goals For/60 Minutes while Short Handed.
+  - **`on_ga_per_60_sh`** (number, decimal) - On-Ice Goals Against/60 Minutes while Short Handed.
+    
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played. Data start from 2007-08 season**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_now/
+```
+<a name="skater_time_on_ice_stats_{year}/rank/{rank}"></a>
+### 2.48 Get skater time on ice stats by year and specific rank
+- **Endpoint:** `/skater_time_on_ice_stats_{year}/rank/{rank}/`
+- **Method:** GET
+- **Description:** Returns a table of skater time on ice stats for the specified NHL season and specific rank. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{rank}`** (integer) - Rank in the leaderboard, first place is the best.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`avg_shift_length`** (string) - Avg. Shift Length/Gm (hh:mm).
+  - **`avg_shift_length_decimal`** (number, decimal) - Avg. Shift Length/Gm (hh:mm). (number, decimal)
+  - **`games_played`** (integer) - Games played.
+  - **`toi_ev`** (string) - Avg. Time on Ice/Gm at Even Strength.
+  - **`toi_ev_decimal`** (number, decimal) - Avg. Time on Ice/Gm at Even Strength. (number, decimal)
+  - **`corsi_rel_pct_ev`** (number, decimal) - Relative Corsi For % at Even Strength.
+  - **`on_gf_per_60_ev`** (number, decimal) - On-Ice Goals For/60 Minutes at Even Strength.
+  - **`on_ga_per_60_ev`** (number, decimal) - On-Ice Goals Against/60 Minutes at Even Strength.
+  - **`toi_pp`** (string) - Avg. Time on Ice/Gm while on Power Play.
+  - **`toi_pp_decimal`** (number, decimal) - Avg. Time on Ice/Gm while on Power Play. (number, decimal)
+  - **`corsi_rel_pct_pp`** (number, decimal) - Relative Corsi For % on the Power Play.
+  - **`on_gf_per_60_pp`** (number, decimal) - On-Ice Goals For/60 Minutes on the Power Play.
+  - **`on_ga_per_60_pp`** (number, decimal) - On-Ice Goals Against/60 Minutes on the Power Play.
+  - **`toi_sh`** (string) - Avg. Time on Ice/Gm while Short Handed.
+  - **`toi_sh_decimal`** (number, decimal) -  Avg. Time on Ice/Gm while Short Handed. (number, decimal)
+  - **`corsi_rel_pct_sh`** (number, decimal) - Relative Corsi For % while Short Handed.
+  - **`on_gf_per_60_sh`** (number, decimal) - On-Ice Goals For/60 Minutes while Short Handed.
+  - **`on_ga_per_60_sh`** (number, decimal) - On-Ice Goals Against/60 Minutes while Short Handed.
+    
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played. Data start from 2007-08 season**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_20212022/rank/22/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_now/rank/22/
+```
+<a name="skater_time_on_ice_stats_{year}/player_id/{player_id}"></a>
+### 2.49 Get skater time on ice stats by year and player ID
+- **Endpoint:** `/skater_time_on_ice_stats_{year}/player_id/{player_id}/`
+- **Method:** GET
+- **Description:** Returns a table of skater time on ice stats for the specified NHL season and player ID. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{player_id}`** (string) - Unique identifier for each player, contains letters and numbers.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`avg_shift_length`** (string) - Avg. Shift Length/Gm (hh:mm).
+  - **`avg_shift_length_decimal`** (number, decimal) - Avg. Shift Length/Gm (hh:mm). (number, decimal)
+  - **`games_played`** (integer) - Games played.
+  - **`toi_ev`** (string) - Avg. Time on Ice/Gm at Even Strength.
+  - **`toi_ev_decimal`** (number, decimal) - Avg. Time on Ice/Gm at Even Strength. (number, decimal)
+  - **`corsi_rel_pct_ev`** (number, decimal) - Relative Corsi For % at Even Strength.
+  - **`on_gf_per_60_ev`** (number, decimal) - On-Ice Goals For/60 Minutes at Even Strength.
+  - **`on_ga_per_60_ev`** (number, decimal) - On-Ice Goals Against/60 Minutes at Even Strength.
+  - **`toi_pp`** (string) - Avg. Time on Ice/Gm while on Power Play.
+  - **`toi_pp_decimal`** (number, decimal) - Avg. Time on Ice/Gm while on Power Play. (number, decimal)
+  - **`corsi_rel_pct_pp`** (number, decimal) - Relative Corsi For % on the Power Play.
+  - **`on_gf_per_60_pp`** (number, decimal) - On-Ice Goals For/60 Minutes on the Power Play.
+  - **`on_ga_per_60_pp`** (number, decimal) - On-Ice Goals Against/60 Minutes on the Power Play.
+  - **`toi_sh`** (string) - Avg. Time on Ice/Gm while Short Handed.
+  - **`toi_sh_decimal`** (number, decimal) -  Avg. Time on Ice/Gm while Short Handed. (number, decimal)
+  - **`corsi_rel_pct_sh`** (number, decimal) - Relative Corsi For % while Short Handed.
+  - **`on_gf_per_60_sh`** (number, decimal) - On-Ice Goals For/60 Minutes while Short Handed.
+  - **`on_ga_per_60_sh`** (number, decimal) - On-Ice Goals Against/60 Minutes while Short Handed.
+    
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played. Data start from 2007-08 season**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_20212022/player_id/addisca01/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_now/player_id/addisca01/
+```
+<a name="skater_time_on_ice_stats_{year}/team_abbrev/{team_abbrev}"></a>
+### 2.50 Get skater time on ice stats by year and specific team
+- **Endpoint:** `/skater_time_on_ice_stats_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns a table of skater time on ice stats for the specified NHL season and specific team. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{team_abbrev}`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`avg_shift_length`** (string) - Avg. Shift Length/Gm (hh:mm).
+  - **`avg_shift_length_decimal`** (number, decimal) - Avg. Shift Length/Gm (hh:mm). (number, decimal)
+  - **`games_played`** (integer) - Games played.
+  - **`toi_ev`** (string) - Avg. Time on Ice/Gm at Even Strength.
+  - **`toi_ev_decimal`** (number, decimal) - Avg. Time on Ice/Gm at Even Strength. (number, decimal)
+  - **`corsi_rel_pct_ev`** (number, decimal) - Relative Corsi For % at Even Strength.
+  - **`on_gf_per_60_ev`** (number, decimal) - On-Ice Goals For/60 Minutes at Even Strength.
+  - **`on_ga_per_60_ev`** (number, decimal) - On-Ice Goals Against/60 Minutes at Even Strength.
+  - **`toi_pp`** (string) - Avg. Time on Ice/Gm while on Power Play.
+  - **`toi_pp_decimal`** (number, decimal) - Avg. Time on Ice/Gm while on Power Play. (number, decimal)
+  - **`corsi_rel_pct_pp`** (number, decimal) - Relative Corsi For % on the Power Play.
+  - **`on_gf_per_60_pp`** (number, decimal) - On-Ice Goals For/60 Minutes on the Power Play.
+  - **`on_ga_per_60_pp`** (number, decimal) - On-Ice Goals Against/60 Minutes on the Power Play.
+  - **`toi_sh`** (string) - Avg. Time on Ice/Gm while Short Handed.
+  - **`toi_sh_decimal`** (number, decimal) -  Avg. Time on Ice/Gm while Short Handed. (number, decimal)
+  - **`corsi_rel_pct_sh`** (number, decimal) - Relative Corsi For % while Short Handed.
+  - **`on_gf_per_60_sh`** (number, decimal) - On-Ice Goals For/60 Minutes while Short Handed.
+  - **`on_ga_per_60_sh`** (number, decimal) - On-Ice Goals Against/60 Minutes while Short Handed.
+    
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played. Data start from 2007-08 season**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_20212022/team_abbrev/BOS/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_now/team_abbrev/BOS/
+```
+<a name="skater_time_on_ice_stats_{year}/position/{position}"></a>
+### 2.51 Get skater time on ice stats by year and position
+- **Endpoint:** `/skater_time_on_ice_stats_{year}/position/{position}/`
+- **Method:** GET
+- **Description:** Returns a table of skater time on ice stats for the specified NHL season and position. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{posittion}`** (string) - Primary position played (C, LW, RW, D).
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`avg_shift_length`** (string) - Avg. Shift Length/Gm (hh:mm).
+  - **`avg_shift_length_decimal`** (number, decimal) - Avg. Shift Length/Gm (hh:mm). (number, decimal)
+  - **`games_played`** (integer) - Games played.
+  - **`toi_ev`** (string) - Avg. Time on Ice/Gm at Even Strength.
+  - **`toi_ev_decimal`** (number, decimal) - Avg. Time on Ice/Gm at Even Strength. (number, decimal)
+  - **`corsi_rel_pct_ev`** (number, decimal) - Relative Corsi For % at Even Strength.
+  - **`on_gf_per_60_ev`** (number, decimal) - On-Ice Goals For/60 Minutes at Even Strength.
+  - **`on_ga_per_60_ev`** (number, decimal) - On-Ice Goals Against/60 Minutes at Even Strength.
+  - **`toi_pp`** (string) - Avg. Time on Ice/Gm while on Power Play.
+  - **`toi_pp_decimal`** (number, decimal) - Avg. Time on Ice/Gm while on Power Play. (number, decimal)
+  - **`corsi_rel_pct_pp`** (number, decimal) - Relative Corsi For % on the Power Play.
+  - **`on_gf_per_60_pp`** (number, decimal) - On-Ice Goals For/60 Minutes on the Power Play.
+  - **`on_ga_per_60_pp`** (number, decimal) - On-Ice Goals Against/60 Minutes on the Power Play.
+  - **`toi_sh`** (string) - Avg. Time on Ice/Gm while Short Handed.
+  - **`toi_sh_decimal`** (number, decimal) -  Avg. Time on Ice/Gm while Short Handed. (number, decimal)
+  - **`corsi_rel_pct_sh`** (number, decimal) - Relative Corsi For % while Short Handed.
+  - **`on_gf_per_60_sh`** (number, decimal) - On-Ice Goals For/60 Minutes while Short Handed.
+  - **`on_ga_per_60_sh`** (number, decimal) - On-Ice Goals Against/60 Minutes while Short Handed.
+    
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played. Data start from 2007-08 season**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_20212022/position/RW/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_now/position/RW/
 ```
 ---
 <a name="team"></a>
