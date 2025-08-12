@@ -2608,15 +2608,15 @@ crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_now/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_20212022/rank/{rank}/
+crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_20212022/rank/23/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_now/rank/{rank}/
+crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_now/rank/23/
 ```
 <a name="advanced_stats_players_{year}/player_id/{player_id}"></a>
 ### 2.44 Get advanced stats players by year and player ID
-- **Endpoint:** `/advanced_stats_players_{year}/rank/{rank}/`
+- **Endpoint:** `/advanced_stats_players_{year}/player_id/{player_id}/`
 - **Method:** GET
 - **Description:** Returns a table of advanced individual player statistics for the specified NHL season and player ID. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
 - **Parameters:**
@@ -2658,11 +2658,111 @@ crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_now/rank/{rank}/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_20212022/rank/{rank}/
+crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_20212022/player_id/ahose01/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_now/rank/{rank}/
+crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_now/player_id/ahose01/
+```
+<a name="advanced_stats_players_{year}/team_abbrev/{team_abbrev}"></a>
+### 2.45 Get advanced stats players by year and specific team
+- **Endpoint:** `/advanced_stats_players_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns a table of advanced individual player statistics for the specified NHL season and specific team. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{team_abbrev}`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`corsi_for`** (integer) - Corsi For at Even Strength (Shots + Blocks + Misses).
+  - **`corsi_against`** (integer) - Corsi Against at Even Strength (Shots + Blocks + Misses).
+  - **`corsi_pct`** (number, decimal) - Corsi For % at Even Strength corsi_for / (corsi_for + corsi_against) . Above 50% means the team was controlling the puck more often than not with this player on the<br>ice in this situation.
+  - **`corsi_rel_pct`** (number, decimal) - Relative Corsi For % at Even Strength .On-Ice Corsi For % - Off-Ice Corsi For %.
+  - **`fenwick_for`** (integer) - Fenwick For at Even Strength (Shots + Misses).
+  - **`fenwick_against`** (integer) - Fenwick Against at Even Strength (Shots + Misses).
+  - **`fenwick_pct`** (number, decimal) - Fenwick For % at Even Strength fenwick_for / (fenwick_for + fenwick_against) .Above 50% means the team was controlling the<br>puck more often than not with this player on the ice in this situation.
+  - **`fenwick_rel_pct`** (number, decimal) - Relative Fenwick For %. On-Ice Fenwick For % - Off-Ice Fenwick For %.
+  - **`on_ice_shot_pct`** (number, decimal) - Team On-Ice Shooting Percentage . Shooting % while this player/team was on the ice.
+  - **`on_ice_sv_pct`** (number, decimal) - Team On-Ice Save Percentage . Save % while this player/team was on the ice.
+  - **`pdo`** (number, decimal) - PDO. Shooting % + Save %.
+  - **`zs_offense_pct`** (number, decimal) - Offensive Zone Start % . Offensive Zone Faceoffs / (Offensive Zone Faceoffs + Defensive Zone Faceoffs), that took place while on the ice.
+  - **`zs_defense_pct`** (number, decimal) - Defensive Zone Start %. Defensive Zone Faceoffs / (Offensive Zone Faceoffs + Defensive Zone Faceoffs), that took place while on the ice.
+  - **`toi_pbp_per_60_all`** (string) - TOI/60 in All Situations. Time on Ice per 60 minutes.
+  - **`toi_pbp_per_60_all_decimal`** (number, decimal) - TOI/60 in All Situations. Time on Ice per 60 minutes (number, decimal).
+  - **`toi_pbp_per_60_ev`** (string) - TOI/60 at Even Strength. Time on Ice per 60 minutes.
+  - **`toi_pbp_per_60_ev_decimal`** (number, decimal) - TOI/60 at Even Strength. Time on Ice per 60 minutes (number, decimal).
+  - **`take`** (integer) - Takeaways.
+  - **`give`** (integer) - Giveaways.
+  - **`total_shots_attempted_all`** (integer) - Total shots attempted in all situations.
+  - **`shot_thru_percentage`** (number, decimal) - Percentage of shots taken that go on net.
+    
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played. Data start from 2007-08 season**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_20212022/team_abbrev/BOS/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_now/team_abbrev/BOS/
+```
+<a name="advanced_stats_players_{year}/position/{position}"></a>
+### 2.46 Get advanced stats players by year and position
+- **Endpoint:** `/advanced_stats_players_{year}/position/{position}/`
+- **Method:** GET
+- **Description:** Returns a table of advanced individual player statistics for the specified NHL season and position. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{posittion}`** (string) - Primary position played (C, LW, RW, D).
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`age`** (integer) - Player's age of the season.
+  - **`team_abbrev`** (string) - Team abbreviation (e.g., EDM, NYR, TOR).
+  - **`posittion`** (string) - Primary position played (C, LW, RW, D).
+  - **`games_played`** (integer) - Games played.
+  - **`corsi_for`** (integer) - Corsi For at Even Strength (Shots + Blocks + Misses).
+  - **`corsi_against`** (integer) - Corsi Against at Even Strength (Shots + Blocks + Misses).
+  - **`corsi_pct`** (number, decimal) - Corsi For % at Even Strength corsi_for / (corsi_for + corsi_against) . Above 50% means the team was controlling the puck more often than not with this player on the<br>ice in this situation.
+  - **`corsi_rel_pct`** (number, decimal) - Relative Corsi For % at Even Strength .On-Ice Corsi For % - Off-Ice Corsi For %.
+  - **`fenwick_for`** (integer) - Fenwick For at Even Strength (Shots + Misses).
+  - **`fenwick_against`** (integer) - Fenwick Against at Even Strength (Shots + Misses).
+  - **`fenwick_pct`** (number, decimal) - Fenwick For % at Even Strength fenwick_for / (fenwick_for + fenwick_against) .Above 50% means the team was controlling the<br>puck more often than not with this player on the ice in this situation.
+  - **`fenwick_rel_pct`** (number, decimal) - Relative Fenwick For %. On-Ice Fenwick For % - Off-Ice Fenwick For %.
+  - **`on_ice_shot_pct`** (number, decimal) - Team On-Ice Shooting Percentage . Shooting % while this player/team was on the ice.
+  - **`on_ice_sv_pct`** (number, decimal) - Team On-Ice Save Percentage . Save % while this player/team was on the ice.
+  - **`pdo`** (number, decimal) - PDO. Shooting % + Save %.
+  - **`zs_offense_pct`** (number, decimal) - Offensive Zone Start % . Offensive Zone Faceoffs / (Offensive Zone Faceoffs + Defensive Zone Faceoffs), that took place while on the ice.
+  - **`zs_defense_pct`** (number, decimal) - Defensive Zone Start %. Defensive Zone Faceoffs / (Offensive Zone Faceoffs + Defensive Zone Faceoffs), that took place while on the ice.
+  - **`toi_pbp_per_60_all`** (string) - TOI/60 in All Situations. Time on Ice per 60 minutes.
+  - **`toi_pbp_per_60_all_decimal`** (number, decimal) - TOI/60 in All Situations. Time on Ice per 60 minutes (number, decimal).
+  - **`toi_pbp_per_60_ev`** (string) - TOI/60 at Even Strength. Time on Ice per 60 minutes.
+  - **`toi_pbp_per_60_ev_decimal`** (number, decimal) - TOI/60 at Even Strength. Time on Ice per 60 minutes (number, decimal).
+  - **`take`** (integer) - Takeaways.
+  - **`give`** (integer) - Giveaways.
+  - **`total_shots_attempted_all`** (integer) - Total shots attempted in all situations.
+  - **`shot_thru_percentage`** (number, decimal) - Percentage of shots taken that go on net.
+    
+> [!NOTE]
+> **Some data for some players may be NULL if this data is specific to a specific position (eg goalkeeper) or the player has not played. Data start from 2007-08 season**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_20212022/position/RW/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_now/position/RW/
 ```
 ---
 <a name="team"></a>
