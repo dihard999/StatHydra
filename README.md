@@ -77,7 +77,10 @@ When you need more than one point of view, choose StatHydra!**
    3.11 [Get roster team by year and specific team](#roster_team_{year}/team_abbrev/{team_abbrev})  
    3.12 [Get roster team by year and player ID](#roster_team_{year}/player_id/{player_id})  
    3.13 [Get roster team by year and position](#roster_team_{year}/position/{position})  
-4. [Season](#season)  
+   3.14 [Get injuries team now](#injuries_now)  
+   3.15 [Get injuries team now by specific team](#injuries_now/team_abbrev/{team_abbrev})  
+   3.16 [Get injuries team now by player ID](#injuries_now/player_id/{player_id})  
+5. [Season](#season)  
    4.1 [Get summary statistic season by year](#season_summary_{year})  
    4.2 [Get summary statistic season by year and specific team](#season_summary_{year}/team_abbrev/{team_abbrev})  
    4.3 [Get detail statistic season by year](#season_statistics_{year})  
@@ -94,7 +97,7 @@ When you need more than one point of view, choose StatHydra!**
    4.14 [Get regular season schedule by year and upcoming game for next day](#regular_season_schedule_{year}/upcoming_day)  
    4.15 [Get regular season schedule by year and upcoming game for next week](#regular_season_schedule_{year}/upcoming_week)  
    4.16 [Get regular season schedule by year and upcoming game for next month](#regular_season_schedule_{year}/upcoming_month)  
-5. [Playoff](#playoff)  
+6. [Playoff](#playoff)  
    5.1 [Get playoff result by year](#league_playoff_series_result_{year})  
    5.2 [Get playoff result by year and specific game](#league_playoff_series_result_{year}/game_id/{game_id})  
    5.3 [Get playoff result by year and specific date](#league_playoff_series_result_{year}/game_date/{game_date})  
@@ -3557,7 +3560,6 @@ crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_now/player_id/grantde01/
 - **Schema table:**
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
   - **`number`** (string) - Sweater Number.
-For each NHL team-opponent pair (e.g., "ANA", "ARI", "ATL", etc.), there are two columns:
   - **`player`** (string) - Full player name.
   - **`player_id `** (string) - Unique player identifier.
   - **`country_of_birth`** (string) - Country of birth (US, SE, CA, RU).
@@ -3576,6 +3578,71 @@ crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_20212022/position/G/
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_now/position/G/
+```
+<a name="injuries_now"></a>
+### 3.14 Get injuries team now
+- **Endpoint:** `/injuries_now/`
+- **Method:** GET
+- **Description:** Returns the injuries team, all team.
+- **Parameters:** No
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`number`** (string) - Sweater Number.
+  - **`player`** (string) - Full player name.
+  - **`player_id `** (string) - Unique player identifier.
+  - **`date_injury`** (string) - Date injury (Wed, Aug 28, 2024).
+  - **`date_injury_iso`** (string) - Date injury YYYY-MM-DD (2024-08-28).
+  - **`injury_type`** (string) - Type of injury
+  - **`injury_note`** (string) - Explanation of the player's injury, how long he will miss and whether he will play.
+
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/injuries_now/
+```
+<a name="injuries_now/team_abbrev/{team_abbrev}"></a>
+### 3.15 Get injuries team now by specific team
+- **Endpoint:** `/injuries_now/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns the injuries team,  filtered by team.
+- **Parameters:**
+   - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`number`** (string) - Sweater Number.
+  - **`player`** (string) - Full player name.
+  - **`player_id `** (string) - Unique player identifier.
+  - **`date_injury`** (string) - Date injury (Wed, Aug 28, 2024).
+  - **`date_injury_iso`** (string) - Date injury YYYY-MM-DD (2024-08-28).
+  - **`injury_type`** (string) - Type of injury
+  - **`injury_note`** (string) - Explanation of the player's injury, how long he will miss and whether he will play.
+
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/injuries_now/team_abbrev/PHI/
+```
+<a name="injuries_now/player_id/{player_id}"></a>
+### 3.16 Get injuries team now by player ID
+- **Endpoint:** `/injuries_now/player_id/{player_id}/`
+- **Method:** GET
+- **Description:** Returns the injuries team,  filtered by player ID.
+- **Parameters:**
+   - **`{player_id}`** (string) - Unique player identifier.
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`number`** (string) - Sweater Number.
+  - **`player`** (string) - Full player name.
+  - **`player_id `** (string) - Unique player identifier.
+  - **`date_injury`** (string) - Date injury (Wed, Aug 28, 2024).
+  - **`date_injury_iso`** (string) - Date injury YYYY-MM-DD (2024-08-28).
+  - **`injury_type`** (string) - Type of injury
+  - **`injury_note`** (string) - Explanation of the player's injury, how long he will miss and whether he will play.
+
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/injuries_now/player_id/ellisry01/
 ```
 ---
 <a name="season"></a>
