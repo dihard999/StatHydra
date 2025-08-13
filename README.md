@@ -3444,11 +3444,11 @@ ANA, ARI, ATL, BOS, BUF, CAR, CBJ, CGY, CHI, COL, DAL, DET, EDM, FLA, LAK, MDA, 
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/team_vs_team_20132014/{team_abbrev}/
+crashcrab.ddns.net/{YOUR_API_KEY}/team_vs_team_20132014/MTL/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/team_vs_team_now/{team_abbrev}/
+crashcrab.ddns.net/{YOUR_API_KEY}/team_vs_team_now/MTL/
 ```
 <a name="roster_team_{year}"></a>
 ### 3.10 Get roster team by year
@@ -3507,11 +3507,11 @@ For each NHL team-opponent pair (e.g., "ANA", "ARI", "ATL", etc.), there are two
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_20212022/team_abbrev/MTL/`
+crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_20212022/team_abbrev/MTL/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_now/team_abbrev/MTL/`
+crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_now/team_abbrev/MTL/
 ```
 <a name="roster_team_{year}/player_id/{player_id}"></a>
 ### 3.12 Get roster team by year and player ID
@@ -3539,11 +3539,11 @@ For each NHL team-opponent pair (e.g., "ANA", "ARI", "ATL", etc.), there are two
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_20212022/player_id/grantde01/`
+crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_20212022/player_id/grantde01/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_now/player_id/grantde01/`
+crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_now/player_id/grantde01/
 ```
 <a name="roster_team_{year}/position/{position}"></a>
 ### 3.13 Get roster team by year and position
@@ -3571,11 +3571,11 @@ For each NHL team-opponent pair (e.g., "ANA", "ARI", "ATL", etc.), there are two
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_20212022/position/G/`
+crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_20212022/position/G/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_now/position/G/`
+crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_now/position/G/
 ```
 ---
 <a name="season"></a>
