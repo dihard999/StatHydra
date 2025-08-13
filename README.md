@@ -63,7 +63,7 @@ When you need more than one point of view, choose StatHydra!**
    2.49 [Get skater time on ice stats by year and player ID](#skater_time_on_ice_stats_{year}/player_id/{player_id})  
    2.50 [Get skater time on ice stats by year and specific team](#skater_time_on_ice_stats_{year}/team_abbrev/{team_abbrev})  
    2.51 [Get skater time on ice stats by year and position](#skater_time_on_ice_stats_{year}/position/{position})  
-4. [Team](#team)  
+3. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/team_abbrev/{team_abbrev})  
    3.3 [Get teams analytics 5 on 5 by year](#team_analytics_5_on_5_{year})  
@@ -72,8 +72,12 @@ When you need more than one point of view, choose StatHydra!**
    3.6 [Get expanded standings teams by year and specific team](#expanded_standings_{year}/team_abbrev/{team_abbrev})  
    3.7 [Get expanded standings teams by year and specific rank](#expanded_standings_{year}/rank/{rank})  
    3.8 [Get team versus team by year](#team_vs_team_{year})  
-   3.9 [Get team versus team by year and specific team](#team_vs_team_{year}/{team_abbrev}) 
-5. [Season](#season)  
+   3.9 [Get team versus team by year and specific team](#team_vs_team_{year}/{team_abbrev})  
+   3.10 [Get roster team by year](#roster_team_{year})  
+   3.11 [Get roster team by year and specific team](#roster_team_{year}/team_abbrev/{team_abbrev})  
+   3.12 [Get roster team by year and player ID](#roster_team_{year}/player_id/{player_id})  
+   3.13 [Get roster team by year and position](#roster_team_{year}/position/{position})  
+4. [Season](#season)  
    4.1 [Get summary statistic season by year](#season_summary_{year})  
    4.2 [Get summary statistic season by year and specific team](#season_summary_{year}/team_abbrev/{team_abbrev})  
    4.3 [Get detail statistic season by year](#season_statistics_{year})  
@@ -90,7 +94,7 @@ When you need more than one point of view, choose StatHydra!**
    4.14 [Get regular season schedule by year and upcoming game for next day](#regular_season_schedule_{year}/upcoming_day)  
    4.15 [Get regular season schedule by year and upcoming game for next week](#regular_season_schedule_{year}/upcoming_week)  
    4.16 [Get regular season schedule by year and upcoming game for next month](#regular_season_schedule_{year}/upcoming_month)  
-6. [Playoff](#playoff)  
+5. [Playoff](#playoff)  
    5.1 [Get playoff result by year](#league_playoff_series_result_{year})  
    5.2 [Get playoff result by year and specific game](#league_playoff_series_result_{year}/game_id/{game_id})  
    5.3 [Get playoff result by year and specific date](#league_playoff_series_result_{year}/game_date/{game_date})  
@@ -3415,7 +3419,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_vs_team_20132014/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/team_vs_team__now/
+crashcrab.ddns.net/{YOUR_API_KEY}/team_vs_team_now/
 ```
 <a name="team_vs_team_{year}/{team_abbrev}"></a>
 ### 3.9 Get team versus team by year and specific team
@@ -3444,7 +3448,134 @@ crashcrab.ddns.net/{YOUR_API_KEY}/team_vs_team_20132014/{team_abbrev}/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/team_vs_team__now/{team_abbrev}/
+crashcrab.ddns.net/{YOUR_API_KEY}/team_vs_team_now/{team_abbrev}/
+```
+<a name="roster_team_{year}"></a>
+### 3.10 Get roster team by year
+- **Endpoint:** `/roster_team_{year}`
+- **Method:** GET
+- **Description:**  Returns a consolidated roster table for all NHL teams for the specified season. For each player, core biographical and playing attributes, team, and experience are provided.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`number`** (string) - Sweater Number.
+For each NHL team-opponent pair (e.g., "ANA", "ARI", "ATL", etc.), there are two columns:
+  - **`player`** (string) - Full player name.
+  - **`player_id `** (string) - Unique player identifier.
+  - **`country_of_birth`** (string) - Country of birth (US, SE, CA, RU).
+  - **`position`** (string) - Playing position ("F", "D", "G").
+  - **`age`** (integer) - Age at/for the season.
+  - **`height`** (string) - Height.
+  - **`weight`** (string) - Weight.
+  - **`shoots_and_catches`** (string) - Shooting/Catching side: skaters — "L"/"R" (Shoots); goalies — "L"/"R" (Catches).
+  - **`years_experience`** (string) - Years experience in league (prior to this season).
+  - **`birth_date`** (string) - Date of birth (January 19, 2004).
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_now/
+```
+<a name="roster_team_{year}/team_abbrev/{team_abbrev}"></a>
+### 3.11 Get roster team by year and specific team
+- **Endpoint:** `/roster_team_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:**  Returns the roster of the specified team for the given season with all attributes..
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`number`** (string) - Sweater Number.
+For each NHL team-opponent pair (e.g., "ANA", "ARI", "ATL", etc.), there are two columns:
+  - **`player`** (string) - Full player name.
+  - **`player_id `** (string) - Unique player identifier.
+  - **`country_of_birth`** (string) - Country of birth (US, SE, CA, RU).
+  - **`position`** (string) - Playing position ("F", "D", "G").
+  - **`age`** (integer) - Age at/for the season.
+  - **`height`** (string) - Height.
+  - **`weight`** (string) - Weight.
+  - **`shoots_and_catches`** (string) - Shooting/Catching side: skaters — "L"/"R" (Shoots); goalies — "L"/"R" (Catches).
+  - **`years_experience`** (string) - Years experience in league (prior to this season).
+  - **`birth_date`** (string) - Date of birth (January 19, 2004).
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_20212022/team_abbrev/MTL/`
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_now/team_abbrev/MTL/`
+```
+<a name="roster_team_{year}/player_id/{player_id}"></a>
+### 3.12 Get roster team by year and player ID
+- **Endpoint:** `/roster_team_{year}/player_id/{player_id}/`
+- **Method:** GET
+- **Description:** Returns row(s) for the specified player in the given season by unique player ID. Useful to retrieve the player’s season team assignment and attributes.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{player_id}`** (string) - Unique player identifier.
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`number`** (string) - Sweater Number.
+For each NHL team-opponent pair (e.g., "ANA", "ARI", "ATL", etc.), there are two columns:
+  - **`player`** (string) - Full player name.
+  - **`player_id `** (string) - Unique player identifier.
+  - **`country_of_birth`** (string) - Country of birth (US, SE, CA, RU).
+  - **`position`** (string) - Playing position ("F", "D", "G").
+  - **`age`** (integer) - Age at/for the season.
+  - **`height`** (string) - Height.
+  - **`weight`** (string) - Weight.
+  - **`shoots_and_catches`** (string) - Shooting/Catching side: skaters — "L"/"R" (Shoots); goalies — "L"/"R" (Catches).
+  - **`years_experience`** (string) - Years experience in league (prior to this season).
+  - **`birth_date`** (string) - Date of birth (January 19, 2004).
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_20212022/player_id/grantde01/`
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_now/player_id/grantde01/`
+```
+<a name="roster_team_{year}/position/{position}"></a>
+### 3.13 Get roster team by year and position
+- **Endpoint:** `/roster_team_{year}/position/{position}/`
+- **Method:** GET
+- **Description:** Returns the roster for all teams in the specified season, filtered by position.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{position}`** (string) - Playing position ("F", "D", "G").
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`number`** (string) - Sweater Number.
+For each NHL team-opponent pair (e.g., "ANA", "ARI", "ATL", etc.), there are two columns:
+  - **`player`** (string) - Full player name.
+  - **`player_id `** (string) - Unique player identifier.
+  - **`country_of_birth`** (string) - Country of birth (US, SE, CA, RU).
+  - **`position`** (string) - Playing position ("F", "D", "G").
+  - **`age`** (integer) - Age at/for the season.
+  - **`height`** (string) - Height.
+  - **`weight`** (string) - Weight.
+  - **`shoots_and_catches`** (string) - Shooting/Catching side: skaters — "L"/"R" (Shoots); goalies — "L"/"R" (Catches).
+  - **`years_experience`** (string) - Years experience in league (prior to this season).
+  - **`birth_date`** (string) - Date of birth (January 19, 2004).
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_20212022/position/G/`
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/roster_team_now/position/G/`
 ```
 ---
 <a name="season"></a>
