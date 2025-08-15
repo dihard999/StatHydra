@@ -83,7 +83,9 @@ When you need more than one point of view, choose StatHydra!**
    3.17 [Get scoring (period) by year](#scoring_by_period_{year})  
    3.18 [Get scoring (period) by year and specific team](#scoring_by_period_{year}/team_abbrev/{team_abbrev})  
    3.19 [Get shots (period) by year](#shots_by_period_{year})  
-   3.20 [Get shots (period) by year and specific team](#shots_by_period_{year}/team_abbrev/{team_abbrev})  
+   3.20 [Get shots (period) by year and specific team](#shots_by_period_{year}/team_abbrev/{team_abbrev})
+   3.21 [Get miscellaneous records teams by year](#records_team_{year})  
+   3.22 [Get miscellaneous records teams by year and specific team](#records_team_{year}/team_abbrev/{team_abbrev})  
 5. [Season](#season)  
    4.1 [Get summary statistic season by year](#season_summary_{year})  
    4.2 [Get summary statistic season by year and specific team](#season_summary_{year}/team_abbrev/{team_abbrev})  
@@ -3857,6 +3859,183 @@ crashcrab.ddns.net/{YOUR_API_KEY}/shots_by_period_20212022/team_abbrev/MTL/
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/shots_by_period_now/team_abbrev/MTL/
+```
+<a name="records_team_{year}"></a>
+### 3.21 Get miscellaneous records teams by year
+- **Endpoint:** `/records_team_{year}/`
+- **Method:** GET
+- **Description:** Returns team miscellaneous situational records for the given season. For each team, provides Overall/Home/Away splits across several situations (e.g., scoring first, opponent scoring first, outshooting/outshot, one-goal games, and when leading/trailing/tied after periods). Each record is returned as a W-L-OT string plus a computed Team Points Percentage index (_tsi), where points percentage is calculated as (2*W + 1*OT) / (2*(W+L+OT)), rounded to 4 decimals.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`overall_scoring_first`** (string) - Record (W-L-OT) when the team scores first, all games.
+  - **`overall_scoring_first_tsi`** (number, decimal) - Points percentage when scoring first; higher is better.
+  - **`overall_opponent_scores_first`** (string) - Record (W-L-OT) when the opponent scores first, all games.
+  - **`overall_opponent_scores_first_tsi`** (number, decimal) - Points percentage when conceding first; higher is better within this negative context (resilience).
+  - **`overall_when_outshooting_opponent`** (string) - Record (W-L-OT) when outshooting the opponent, all games.
+  - **`overall_when_outshooting_opponent_tsi`** (number, decimal) - Points percentage when outshooting the opponent; higher is better.
+  - **`overall_when_outshot_opponent`** (string) - Record (W-L-OT) when being outshot by the opponent, all games.
+  - **`overall_when_outshot_opponent_tsi`** (number, decimal) - Points percentage when outshot; higher is better within this negative context (withstanding pressure).
+  - **`overall_1_goal_games`** (string) - Record (W-L-OT) in one-goal games, all games.
+  - **`overall_1_goal_games_tsi`** (number, decimal) - Points percentage in one-goal games; higher is better.
+  - **`overall_lead_after_1_period`** (string) - Record (W-L-OT) when leading after 1st period, all games.
+  - **`overall_lead_after_1_period_tsi`** (number, decimal) - Points percentage when leading after 1st period; higher is better (closing out from early lead).
+  - **`overall_trail_after_1_period`** (string) - Record (W-L-OT) when trailing after 1st period, all games.
+  - **`overall_trail_after_1_period_tsi`** (number, decimal) - Points percentage when trailing after 1st period; higher is better within this negative context (comeback ability).
+  - **`overall_tie_after_1_period`** (string) - Record (W-L-OT) when tied after 1st period, all games.
+  - **`overall_tie_after_1_period_tsi`** (number, decimal) - Points percentage when tied after 1st period; higher is better.
+  - **`overall_lead_after_2_periods`** (string) - Record (W-L-OT) when leading after 2nd period, all games.
+  - **`overall_lead_after_2_periods_tsi`** (number, decimal) - Points percentage when leading after 2nd period; higher is better (finish ability).
+  - **`overall_trail_after_2_periods`** (string) - Record (W-L-OT) when trailing after 2nd period, all games.
+  - **`overall_trail_after_2_periods_tsi`** (number, decimal) - Points percentage when trailing after 2nd period; higher is better within this negative context (late resilience).
+  - **`overall_tie_after_2_periods`** (string) - Record (W-L-OT) when tied after 2nd period, all games.
+  - **`overall_tie_after_2_periods_tsi`** (number, decimal) - Points percentage when tied after 2nd period; higher is better.
+  - **`home_scoring_first`** (string) - Record (W-L-OT) when the team scores first, home games.
+  - **`home_scoring_first_tsi `** (number, decimal) - Points percentage when scoring first at home; higher is better.
+  - **`home_opponent_scores_first`** (string) - Record (W-L-OT) when the opponent scores first, home games.
+  - **`home_opponent_scores_first_tsi`** (number, decimal) - Points percentage when conceding first at home; higher is better within this negative context.
+  - **`home_when_outshooting_opponent`** (string) - Record (W-L-OT) when outshooting the opponent, home games.
+  - **`home_when_outshooting_opponent_tsi`** (number, decimal) - Points percentage when outshooting at home; higher is better.
+  - **`home_when_outshot_opponent`** (string) - Record (W-L-OT) when being outshot by the opponent, home games.
+  - **`home_when_outshot_opponent_tsi`** (number, decimal) - Points percentage when outshot at home; higher is better within this negative context.
+  - **`home_1_goal_games`** (string) - Record (W-L-OT) in one-goal games, home games.
+  - **`home_1_goal_games_tsi`** (number, decimal) - Points percentage in one-goal games at home; higher is better.
+  - **`home_lead_after_1_period`** (string) - Record (W-L-OT) when leading after 1st period, home games.
+  - **`home_lead_after_1_period_tsi`** (number, decimal) - Points percentage when leading after 1st period at home; higher is better.
+  - **`home_trail_after_1_period`** (string) - Record (W-L-OT) when trailing after 1st period, home games.
+  - **`home_trail_after_1_period_tsi`** (number, decimal) - Points percentage when trailing after 1st period at home; higher is better within this negative context.
+  - **`home_tie_after_1_period`** (string) - Record (W-L-OT) when tied after 1st period, home games.
+  - **`home_tie_after_1_period_tsi`** (number, decimal) - Points percentage when tied after 1st period at home; higher is better.
+  - **`home_lead_after_2_periods`** (string) - Record (W-L-OT) when leading after 2nd period, home games.
+  - **`home_lead_after_2_periods_tsi`** (number, decimal) - Points percentage when leading after 2nd period at home; higher is better.
+  - **`home_trail_after_2_periods`** (string) - Record (W-L-OT) when trailing after 2nd period, home games.
+  - **`home_trail_after_2_periods_tsi`** (number, decimal) - Points percentage when trailing after 2nd period at home; higher is better within this negative context.
+  - **`home_tie_after_2_periods`** (string) - Record (W-L-OT) when tied after 2nd period, home games.
+  - **`home_tie_after_2_periods_tsi`** (number, decimal) - Points percentage when tied after 2nd period at home; higher is better.
+  - **`away_scoring_first`** (string) - Record (W-L-OT) when the team scores first, away games.
+  - **`away_scoring_first_tsi`** (number, decimal) - Points percentage when scoring first away; higher is better.
+  - **`away_opponent_scores_first`** (string) - Record (W-L-OT) when the opponent scores first, away games.
+  - **`away_opponent_scores_first_tsi`** (number, decimal) - Points percentage when conceding first away; higher is better within this negative context.
+  - **`away_when_outshooting_opponent`** (string) - Record (W-L-OT) when outshooting the opponent, away games.
+  - **`away_when_outshooting_opponent_tsi`** (number, decimal) - Points percentage when outshooting away; higher is better.
+  - **`away_when_outshot_opponent`** (string) - Record (W-L-OT) when being outshot by the opponent, away games.
+  - **`away_when_outshot_opponent_tsi`** (number, decimal) - Points percentage when outshot away; higher is better within this negative context.
+  - **`away_1_goal_games`** (string) - Record (W-L-OT) in one-goal games, away games.
+  - **`away_1_goal_games_tsi`** (number, decimal) - Points percentage in one-goal games away; higher is better.
+  - **`away_lead_after_1_period`** (string) - Record (W-L-OT) when leading after 1st period, away games.
+  - **`away_lead_after_1_period_tsi`** (number, decimal) - Points percentage when leading after 1st period away; higher is better.
+  - **`away_trail_after_1_period`** (string) - Record (W-L-OT) when trailing after 1st period, away games.
+  - **`away_trail_after_1_period_tsi`** (number, decimal) - Points percentage when trailing after 1st period away; higher is better within this negative context.
+  - **`away_tie_after_1_period`** (string) - Record (W-L-OT) when tied after 1st period, away games.
+  - **`away_tie_after_1_period_tsi`** (number, decimal) - Points percentage when tied after 1st period away; higher is better.
+  - **`away_lead_after_2_periods`** (string) - Record (W-L-OT) when leading after 2nd period, away games.
+  - **`away_lead_after_2_periods_tsi`** (number, decimal) - Points percentage when leading after 2nd period away; higher is better.
+  - **`away_trail_after_2_periods`** (string) - Record (W-L-OT) when trailing after 2nd period, away games.
+  - **`away_trail_after_2_periods_tsi`** (number, decimal) - Points percentage when trailing after 2nd period away; higher is better within this negative context.
+  - **`away_tie_after_2_periods`** (string) - Record (W-L-OT) when tied after 2nd period, away games.
+  - **`away_tie_after_2_periods_tsi`** (number, decimal) - Points percentage when tied after 2nd period away; higher is better.
+
+> [!NOTE]
+> **Data starts with the 2014-15 season**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/records_team_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/records_team_now/
+```
+<a name="records_team_{year}/team_abbrev/{team_abbrev}"></a>
+### 3.22 Get miscellaneous records teams by year and specific team
+- **Endpoint:** `/records_team_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns team miscellaneous situational records for the given season and specific team. For each team, provides Overall/Home/Away splits across several situations (e.g., scoring first, opponent scoring first, outshooting/outshot, one-goal games, and when leading/trailing/tied after periods). Each record is returned as a W-L-OT string plus a computed Team Points Percentage index (_tsi), where points percentage is calculated as (2*W + 1*OT) / (2*(W+L+OT)), rounded to 4 decimals.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`overall_scoring_first`** (string) - Record (W-L-OT) when the team scores first, all games.
+  - **`overall_scoring_first_tsi`** (number, decimal) - Points percentage when scoring first; higher is better.
+  - **`overall_opponent_scores_first`** (string) - Record (W-L-OT) when the opponent scores first, all games.
+  - **`overall_opponent_scores_first_tsi`** (number, decimal) - Points percentage when conceding first; higher is better within this negative context (resilience).
+  - **`overall_when_outshooting_opponent`** (string) - Record (W-L-OT) when outshooting the opponent, all games.
+  - **`overall_when_outshooting_opponent_tsi`** (number, decimal) - Points percentage when outshooting the opponent; higher is better.
+  - **`overall_when_outshot_opponent`** (string) - Record (W-L-OT) when being outshot by the opponent, all games.
+  - **`overall_when_outshot_opponent_tsi`** (number, decimal) - Points percentage when outshot; higher is better within this negative context (withstanding pressure).
+  - **`overall_1_goal_games`** (string) - Record (W-L-OT) in one-goal games, all games.
+  - **`overall_1_goal_games_tsi`** (number, decimal) - Points percentage in one-goal games; higher is better.
+  - **`overall_lead_after_1_period`** (string) - Record (W-L-OT) when leading after 1st period, all games.
+  - **`overall_lead_after_1_period_tsi`** (number, decimal) - Points percentage when leading after 1st period; higher is better (closing out from early lead).
+  - **`overall_trail_after_1_period`** (string) - Record (W-L-OT) when trailing after 1st period, all games.
+  - **`overall_trail_after_1_period_tsi`** (number, decimal) - Points percentage when trailing after 1st period; higher is better within this negative context (comeback ability).
+  - **`overall_tie_after_1_period`** (string) - Record (W-L-OT) when tied after 1st period, all games.
+  - **`overall_tie_after_1_period_tsi`** (number, decimal) - Points percentage when tied after 1st period; higher is better.
+  - **`overall_lead_after_2_periods`** (string) - Record (W-L-OT) when leading after 2nd period, all games.
+  - **`overall_lead_after_2_periods_tsi`** (number, decimal) - Points percentage when leading after 2nd period; higher is better (finish ability).
+  - **`overall_trail_after_2_periods`** (string) - Record (W-L-OT) when trailing after 2nd period, all games.
+  - **`overall_trail_after_2_periods_tsi`** (number, decimal) - Points percentage when trailing after 2nd period; higher is better within this negative context (late resilience).
+  - **`overall_tie_after_2_periods`** (string) - Record (W-L-OT) when tied after 2nd period, all games.
+  - **`overall_tie_after_2_periods_tsi`** (number, decimal) - Points percentage when tied after 2nd period; higher is better.
+  - **`home_scoring_first`** (string) - Record (W-L-OT) when the team scores first, home games.
+  - **`home_scoring_first_tsi `** (number, decimal) - Points percentage when scoring first at home; higher is better.
+  - **`home_opponent_scores_first`** (string) - Record (W-L-OT) when the opponent scores first, home games.
+  - **`home_opponent_scores_first_tsi`** (number, decimal) - Points percentage when conceding first at home; higher is better within this negative context.
+  - **`home_when_outshooting_opponent`** (string) - Record (W-L-OT) when outshooting the opponent, home games.
+  - **`home_when_outshooting_opponent_tsi`** (number, decimal) - Points percentage when outshooting at home; higher is better.
+  - **`home_when_outshot_opponent`** (string) - Record (W-L-OT) when being outshot by the opponent, home games.
+  - **`home_when_outshot_opponent_tsi`** (number, decimal) - Points percentage when outshot at home; higher is better within this negative context.
+  - **`home_1_goal_games`** (string) - Record (W-L-OT) in one-goal games, home games.
+  - **`home_1_goal_games_tsi`** (number, decimal) - Points percentage in one-goal games at home; higher is better.
+  - **`home_lead_after_1_period`** (string) - Record (W-L-OT) when leading after 1st period, home games.
+  - **`home_lead_after_1_period_tsi`** (number, decimal) - Points percentage when leading after 1st period at home; higher is better.
+  - **`home_trail_after_1_period`** (string) - Record (W-L-OT) when trailing after 1st period, home games.
+  - **`home_trail_after_1_period_tsi`** (number, decimal) - Points percentage when trailing after 1st period at home; higher is better within this negative context.
+  - **`home_tie_after_1_period`** (string) - Record (W-L-OT) when tied after 1st period, home games.
+  - **`home_tie_after_1_period_tsi`** (number, decimal) - Points percentage when tied after 1st period at home; higher is better.
+  - **`home_lead_after_2_periods`** (string) - Record (W-L-OT) when leading after 2nd period, home games.
+  - **`home_lead_after_2_periods_tsi`** (number, decimal) - Points percentage when leading after 2nd period at home; higher is better.
+  - **`home_trail_after_2_periods`** (string) - Record (W-L-OT) when trailing after 2nd period, home games.
+  - **`home_trail_after_2_periods_tsi`** (number, decimal) - Points percentage when trailing after 2nd period at home; higher is better within this negative context.
+  - **`home_tie_after_2_periods`** (string) - Record (W-L-OT) when tied after 2nd period, home games.
+  - **`home_tie_after_2_periods_tsi`** (number, decimal) - Points percentage when tied after 2nd period at home; higher is better.
+  - **`away_scoring_first`** (string) - Record (W-L-OT) when the team scores first, away games.
+  - **`away_scoring_first_tsi`** (number, decimal) - Points percentage when scoring first away; higher is better.
+  - **`away_opponent_scores_first`** (string) - Record (W-L-OT) when the opponent scores first, away games.
+  - **`away_opponent_scores_first_tsi`** (number, decimal) - Points percentage when conceding first away; higher is better within this negative context.
+  - **`away_when_outshooting_opponent`** (string) - Record (W-L-OT) when outshooting the opponent, away games.
+  - **`away_when_outshooting_opponent_tsi`** (number, decimal) - Points percentage when outshooting away; higher is better.
+  - **`away_when_outshot_opponent`** (string) - Record (W-L-OT) when being outshot by the opponent, away games.
+  - **`away_when_outshot_opponent_tsi`** (number, decimal) - Points percentage when outshot away; higher is better within this negative context.
+  - **`away_1_goal_games`** (string) - Record (W-L-OT) in one-goal games, away games.
+  - **`away_1_goal_games_tsi`** (number, decimal) - Points percentage in one-goal games away; higher is better.
+  - **`away_lead_after_1_period`** (string) - Record (W-L-OT) when leading after 1st period, away games.
+  - **`away_lead_after_1_period_tsi`** (number, decimal) - Points percentage when leading after 1st period away; higher is better.
+  - **`away_trail_after_1_period`** (string) - Record (W-L-OT) when trailing after 1st period, away games.
+  - **`away_trail_after_1_period_tsi`** (number, decimal) - Points percentage when trailing after 1st period away; higher is better within this negative context.
+  - **`away_tie_after_1_period`** (string) - Record (W-L-OT) when tied after 1st period, away games.
+  - **`away_tie_after_1_period_tsi`** (number, decimal) - Points percentage when tied after 1st period away; higher is better.
+  - **`away_lead_after_2_periods`** (string) - Record (W-L-OT) when leading after 2nd period, away games.
+  - **`away_lead_after_2_periods_tsi`** (number, decimal) - Points percentage when leading after 2nd period away; higher is better.
+  - **`away_trail_after_2_periods`** (string) - Record (W-L-OT) when trailing after 2nd period, away games.
+  - **`away_trail_after_2_periods_tsi`** (number, decimal) - Points percentage when trailing after 2nd period away; higher is better within this negative context.
+  - **`away_tie_after_2_periods`** (string) - Record (W-L-OT) when tied after 2nd period, away games.
+  - **`away_tie_after_2_periods_tsi`** (number, decimal) - Points percentage when tied after 2nd period away; higher is better.
+
+> [!NOTE]
+> **Data starts with the 2014-15 season**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/records_team_20212022/team_abbrev/WPG/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/records_team_now/team_abbrev/WPG/
 ```
 ---
 <a name="season"></a>
