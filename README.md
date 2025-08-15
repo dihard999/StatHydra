@@ -3678,7 +3678,6 @@ crashcrab.ddns.net/{YOUR_API_KEY}/injuries_now/player_id/ellisry01/
   - **`scoring_home_3_period_opponent`** (integer) - Opponent goals in 3rd period in the team’s home games.
   - **`scoring_home_ot_opponent`** (integer) - Opponent goals in overtime in the team’s home games.
   - **`scoring_home_total_opponent`** (integer) - Opponent total goals in the team’s home games.
-  - **`scoring_home_total_opponent`** (integer) - Opponent total goals in the team’s home games.s
   - **`scoring_away_1_period_team `** (integer) - Team goals in 1st period in away games.
   - **`scoring_away_2_period_team `** (integer) - Team goals in 2nd period in away games.
   - **`scoring_away_3_period_team `** (integer) - Team goals in 2rd period in away games.
@@ -3688,7 +3687,6 @@ crashcrab.ddns.net/{YOUR_API_KEY}/injuries_now/player_id/ellisry01/
   - **`scoring_away_2_period_opponent`** (integer) - Opponent goals in 2nd period when the team plays away.
   - **`scoring_away_3_period_opponent`** (integer) - Opponent goals in 3rd period when the team plays away.
   - **`scoring_away_ot_opponent`** (integer) - Opponent goals in overtime when the team plays away.
-  - **`scoring_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
   - **`scoring_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
 
 > [!NOTE]
@@ -3733,7 +3731,6 @@ crashcrab.ddns.net/{YOUR_API_KEY}/scoring_by_period_now/
   - **`scoring_home_3_period_opponent`** (integer) - Opponent goals in 3rd period in the team’s home games.
   - **`scoring_home_ot_opponent`** (integer) - Opponent goals in overtime in the team’s home games.
   - **`scoring_home_total_opponent`** (integer) - Opponent total goals in the team’s home games.
-  - **`scoring_home_total_opponent`** (integer) - Opponent total goals in the team’s home games.s
   - **`scoring_away_1_period_team `** (integer) - Team goals in 1st period in away games.
   - **`scoring_away_2_period_team `** (integer) - Team goals in 2nd period in away games.
   - **`scoring_away_3_period_team `** (integer) - Team goals in 2rd period in away games.
@@ -3743,7 +3740,6 @@ crashcrab.ddns.net/{YOUR_API_KEY}/scoring_by_period_now/
   - **`scoring_away_2_period_opponent`** (integer) - Opponent goals in 2nd period when the team plays away.
   - **`scoring_away_3_period_opponent`** (integer) - Opponent goals in 3rd period when the team plays away.
   - **`scoring_away_ot_opponent`** (integer) - Opponent goals in overtime when the team plays away.
-  - **`scoring_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
   - **`scoring_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
 
 > [!NOTE]
@@ -3787,7 +3783,6 @@ crashcrab.ddns.net/{YOUR_API_KEY}/scoring_by_period_now/team_abbrev/MTL/
   - **`shots_home_3_period_opponent`** (integer) - Opponent goals in 3rd period in the team’s home games.
   - **`shots_home_ot_opponent`** (integer) - Opponent goals in overtime in the team’s home games.
   - **`shots_home_total_opponent`** (integer) - Opponent total goals in the team’s home games.
-  - **`shots_home_total_opponent`** (integer) - Opponent total goals in the team’s home games.s
   - **`shots_away_1_period_team `** (integer) - Team goals in 1st period in away games.
   - **`shots_away_2_period_team `** (integer) - Team goals in 2nd period in away games.
   - **`shots_away_3_period_team `** (integer) - Team goals in 2rd period in away games.
@@ -3797,7 +3792,6 @@ crashcrab.ddns.net/{YOUR_API_KEY}/scoring_by_period_now/team_abbrev/MTL/
   - **`shots_away_2_period_opponent`** (integer) - Opponent goals in 2nd period when the team plays away.
   - **`shots_away_3_period_opponent`** (integer) - Opponent goals in 3rd period when the team plays away.
   - **`shots_away_ot_opponent`** (integer) - Opponent goals in overtime when the team plays away.
-  - **`shots_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
   - **`shots_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
 
 > [!NOTE]
@@ -3842,7 +3836,6 @@ crashcrab.ddns.net/{YOUR_API_KEY}/shots_by_period_now/
   - **`shots_home_3_period_opponent`** (integer) - Opponent goals in 3rd period in the team’s home games.
   - **`shots_home_ot_opponent`** (integer) - Opponent goals in overtime in the team’s home games.
   - **`shots_home_total_opponent`** (integer) - Opponent total goals in the team’s home games.
-  - **`shots_home_total_opponent`** (integer) - Opponent total goals in the team’s home games.s
   - **`shots_away_1_period_team `** (integer) - Team goals in 1st period in away games.
   - **`shots_away_2_period_team `** (integer) - Team goals in 2nd period in away games.
   - **`shots_away_3_period_team `** (integer) - Team goals in 2rd period in away games.
@@ -3852,7 +3845,6 @@ crashcrab.ddns.net/{YOUR_API_KEY}/shots_by_period_now/
   - **`shots_away_2_period_opponent`** (integer) - Opponent goals in 2nd period when the team plays away.
   - **`shots_away_3_period_opponent`** (integer) - Opponent goals in 3rd period when the team plays away.
   - **`shots_away_ot_opponent`** (integer) - Opponent goals in overtime when the team plays away.
-  - **`shots_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
   - **`shots_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
 
 > [!NOTE]
