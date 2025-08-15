@@ -1,4 +1,19 @@
-# 🐉 StatHydra | Sports API and Machine Learning for Match Prediction
+# 🐉 <svg viewBox="0 0 64 64" width="256" height="256" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Hydra icon">  
+  <!-- Тело -->  
+  <path d="M10 50c6 6 20 8 30 4 10-4 14-12 14-18" />  
+  <path d="M10 50c-2-10 6-18 16-20 6-1 10-5 12-10" />  
+  <!-- Шея/голова 1 -->  
+  <path d="M34 24c-1.5-4 0-8 3-10 4 2 6 6 6 10-3 2-6 2-9 0z" />  
+  <circle cx="42" cy="18" r="1.2" />  
+  <!-- Шея/голова 2 -->  
+  <path d="M28 28c-1.5-4 0-8 3-10 4 2 6 6 6 10-3 2-6 2-9 0z" />  
+  <circle cx="36" cy="22" r="1.2" />  
+  <!-- Шея/голова 3 -->  
+  <path d="M22 34c-1.5-4 0-8 3-10 4 2 6 6 6 10-3 2-6 2-9 0z" />  
+  <circle cx="30" cy="28" r="1.2" />  
+  <!-- Хвост -->  
+  <path d="M8 48c-1 3-1 5 2 6" />  
+</svg>  StatHydra | Sports API and Machine Learning for Match Prediction
 **This application is a powerful API for sports analytics and intelligent sports prediction system that combines analytics, machine learning and deep statistical approach. StatHydra provides accurate match predictions based on a large array of data, current news and unique algorithms for evaluating the form of teams and players. This is a tool for those who value awareness and data in the world of betting and sports.  
 The brand's mission is to turn sports analytics into your reliable tool for winning, making every prediction informed, accurate and transparent.  
 StatHydra is not just a prediction, it is your personal sports analyst who does not miss a single detail. We combine the power of artificial intelligence and love for sports so that your decisions are always one step ahead.  
