@@ -3699,6 +3699,161 @@ crashcrab.ddns.net/{YOUR_API_KEY}/scoring_by_period_20212022/
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/scoring_by_period_now/
 ```
+<a name="scoring_by_period_{year}/team_abbrev/{team_abbrev}"></a>
+### 3.18 Get scoring (period) by year and specific team
+- **Endpoint:** `/scoring_by_period_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns goals by period for the specified team in the given season. Values are split into Team and Opponent and grouped by Overall/Home/Away with period breakdown 1/2/3/OT/Total.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`scoring_overall_1_period_team`** (integer) - Team goals in 1st period across all games (overall).
+  - **`scoring_overall_2_period_team`** (integer) - Team goals in 2nd period across all games (overall).
+  - **`scoring_overall_3_period_team`** (integer) - Team goals in 3rd period across all games (overall).
+  - **`scoring_overall_ot_team`** (integer) - Team goals in overtime across all games (overall).
+  - **`scoring_overall_total_team`** (integer) - Team total goals across all games (overall).
+  - **`scoring_overall_1_period_opponent`** (integer) - Opponent goals in 1st period across all games (overall).
+  - **`scoring_overall_2_period_opponent`** (integer) - Opponent goals in 2nd period across all games (overall).
+  - **`scoring_overall_3_period_opponent`** (integer) - Opponent goals in 3rd period across all games (overall).
+  - **`scoring_overall_ot_opponent`** (integer) - Opponent goals in overtime across all games (overall).
+  - **`scoring_overall_total_opponent`** (integer) - Opponent total goals across all games (overall).
+  - **`scoring_home_1_period_team `** (integer) - Team goals in 1st period in home games.
+  - **`scoring_home_2_period_team `** (integer) - Team goals in 2nd period in home games.
+  - **`scoring_home_3_period_team `** (integer) - Team goals in 2rd period in home games.
+  - **`scoring_home_ot_team`** (integer) - Team goals in overtime in home games.
+  - **`scoring_home_total_team`** (integer) - Team total goals in home games.
+  - **`scoring_home_1_period_opponent`** (integer) - Opponent goals in 1st period in the team’s home games.
+  - **`scoring_home_2_period_opponent`** (integer) - Opponent goals in 2nd period in the team’s home games.
+  - **`scoring_home_3_period_opponent`** (integer) - Opponent goals in 3rd period in the team’s home games.
+  - **`scoring_home_ot_opponent`** (integer) - Opponent goals in overtime in the team’s home games.
+  - **`scoring_home_total_opponent`** (integer) - Opponent total goals in the team’s home games.
+  - **`scoring_home_total_opponent`** (integer) - Opponent total goals in the team’s home games.s
+  - **`scoring_away_1_period_team `** (integer) - Team goals in 1st period in away games.
+  - **`scoring_away_2_period_team `** (integer) - Team goals in 2nd period in away games.
+  - **`scoring_away_3_period_team `** (integer) - Team goals in 2rd period in away games.
+  - **`scoring_away_ot_team`** (integer) - Team goals in overtime in away games.
+  - **`scoring_away_total_team`** (integer) - Team total goals in away games.
+  - **`scoring_away_1_period_opponent`** (integer) - Opponent goals in 1st period when the team plays away.
+  - **`scoring_away_2_period_opponent`** (integer) - Opponent goals in 2nd period when the team plays away.
+  - **`scoring_away_3_period_opponent`** (integer) - Opponent goals in 3rd period when the team plays away.
+  - **`scoring_away_ot_opponent`** (integer) - Opponent goals in overtime when the team plays away.
+  - **`scoring_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
+  - **`scoring_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/scoring_by_period_20212022/team_abbrev/MTL/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/scoring_by_period_now/team_abbrev/MTL/
+```
+<a name="shots_by_period_{year}"></a>
+### 3.19 Get shots (period) by year
+- **Endpoint:** `/shots_by_period_{year}/`
+- **Method:** GET
+- **Description:** Returns shots by period in the given season. Values are split into Team and Opponent and grouped by Overall/Home/Away with period breakdown 1/2/3/OT/Total.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`shots_overall_1_period_team`** (integer) - Team goals in 1st period across all games (overall).
+  - **`shots_overall_2_period_team`** (integer) - Team goals in 2nd period across all games (overall).
+  - **`shots_overall_3_period_team`** (integer) - Team goals in 3rd period across all games (overall).
+  - **`shots_overall_ot_team`** (integer) - Team goals in overtime across all games (overall).
+  - **`shots_overall_total_team`** (integer) - Team total goals across all games (overall).
+  - **`shots_overall_1_period_opponent`** (integer) - Opponent goals in 1st period across all games (overall).
+  - **`shots_overall_2_period_opponent`** (integer) - Opponent goals in 2nd period across all games (overall).
+  - **`shots_overall_3_period_opponent`** (integer) - Opponent goals in 3rd period across all games (overall).
+  - **`shots_overall_ot_opponent`** (integer) - Opponent goals in overtime across all games (overall).
+  - **`shots_overall_total_opponent`** (integer) - Opponent total goals across all games (overall).
+  - **`shots_home_1_period_team `** (integer) - Team goals in 1st period in home games.
+  - **`shots_home_2_period_team `** (integer) - Team goals in 2nd period in home games.
+  - **`shots_home_3_period_team `** (integer) - Team goals in 2rd period in home games.
+  - **`shots_home_ot_team`** (integer) - Team goals in overtime in home games.
+  - **`shots_home_total_team`** (integer) - Team total goals in home games.
+  - **`shots_home_1_period_opponent`** (integer) - Opponent goals in 1st period in the team’s home games.
+  - **`shots_home_2_period_opponent`** (integer) - Opponent goals in 2nd period in the team’s home games.
+  - **`shots_home_3_period_opponent`** (integer) - Opponent goals in 3rd period in the team’s home games.
+  - **`shots_home_ot_opponent`** (integer) - Opponent goals in overtime in the team’s home games.
+  - **`shots_home_total_opponent`** (integer) - Opponent total goals in the team’s home games.
+  - **`shots_home_total_opponent`** (integer) - Opponent total goals in the team’s home games.s
+  - **`shots_away_1_period_team `** (integer) - Team goals in 1st period in away games.
+  - **`shots_away_2_period_team `** (integer) - Team goals in 2nd period in away games.
+  - **`shots_away_3_period_team `** (integer) - Team goals in 2rd period in away games.
+  - **`shots_away_ot_team`** (integer) - Team goals in overtime in away games.
+  - **`shots_away_total_team`** (integer) - Team total goals in away games.
+  - **`shots_away_1_period_opponent`** (integer) - Opponent goals in 1st period when the team plays away.
+  - **`shots_away_2_period_opponent`** (integer) - Opponent goals in 2nd period when the team plays away.
+  - **`shots_away_3_period_opponent`** (integer) - Opponent goals in 3rd period when the team plays away.
+  - **`shots_away_ot_opponent`** (integer) - Opponent goals in overtime when the team plays away.
+  - **`shots_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
+  - **`shots_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/shots_by_period_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/shots_by_period_now/
+```
+<a name="shots_by_period_{year}/team_abbrev/{team_abbrev}"></a>
+### 3.20 Get shots (period) by year and specific team
+- **Endpoint:** `/shots_by_period_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns shots by period for the specified team in the given season. Values are split into Team and Opponent and grouped by Overall/Home/Away with period breakdown 1/2/3/OT/Total.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`shots_overall_1_period_team`** (integer) - Team goals in 1st period across all games (overall).
+  - **`shots_overall_2_period_team`** (integer) - Team goals in 2nd period across all games (overall).
+  - **`shots_overall_3_period_team`** (integer) - Team goals in 3rd period across all games (overall).
+  - **`shots_overall_ot_team`** (integer) - Team goals in overtime across all games (overall).
+  - **`shots_overall_total_team`** (integer) - Team total goals across all games (overall).
+  - **`shots_overall_1_period_opponent`** (integer) - Opponent goals in 1st period across all games (overall).
+  - **`shots_overall_2_period_opponent`** (integer) - Opponent goals in 2nd period across all games (overall).
+  - **`shots_overall_3_period_opponent`** (integer) - Opponent goals in 3rd period across all games (overall).
+  - **`shots_overall_ot_opponent`** (integer) - Opponent goals in overtime across all games (overall).
+  - **`shots_overall_total_opponent`** (integer) - Opponent total goals across all games (overall).
+  - **`shots_home_1_period_team `** (integer) - Team goals in 1st period in home games.
+  - **`shots_home_2_period_team `** (integer) - Team goals in 2nd period in home games.
+  - **`shots_home_3_period_team `** (integer) - Team goals in 2rd period in home games.
+  - **`shots_home_ot_team`** (integer) - Team goals in overtime in home games.
+  - **`shots_home_total_team`** (integer) - Team total goals in home games.
+  - **`shots_home_1_period_opponent`** (integer) - Opponent goals in 1st period in the team’s home games.
+  - **`shots_home_2_period_opponent`** (integer) - Opponent goals in 2nd period in the team’s home games.
+  - **`shots_home_3_period_opponent`** (integer) - Opponent goals in 3rd period in the team’s home games.
+  - **`shots_home_ot_opponent`** (integer) - Opponent goals in overtime in the team’s home games.
+  - **`shots_home_total_opponent`** (integer) - Opponent total goals in the team’s home games.
+  - **`shots_home_total_opponent`** (integer) - Opponent total goals in the team’s home games.s
+  - **`shots_away_1_period_team `** (integer) - Team goals in 1st period in away games.
+  - **`shots_away_2_period_team `** (integer) - Team goals in 2nd period in away games.
+  - **`shots_away_3_period_team `** (integer) - Team goals in 2rd period in away games.
+  - **`shots_away_ot_team`** (integer) - Team goals in overtime in away games.
+  - **`shots_away_total_team`** (integer) - Team total goals in away games.
+  - **`shots_away_1_period_opponent`** (integer) - Opponent goals in 1st period when the team plays away.
+  - **`shots_away_2_period_opponent`** (integer) - Opponent goals in 2nd period when the team plays away.
+  - **`shots_away_3_period_opponent`** (integer) - Opponent goals in 3rd period when the team plays away.
+  - **`shots_away_ot_opponent`** (integer) - Opponent goals in overtime when the team plays away.
+  - **`shots_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
+  - **`shots_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/shots_by_period_20212022/team_abbrev/MTL/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/shots_by_period_now/team_abbrev/MTL/
+```
 ---
 <a name="season"></a>
 ## 4. Season  
