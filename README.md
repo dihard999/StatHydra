@@ -83,7 +83,7 @@ When you need more than one point of view, choose StatHydra!**
    3.17 [Get scoring (period) by year](#scoring_by_period_{year})  
    3.18 [Get scoring (period) by year and specific team](#scoring_by_period_{year}/team_abbrev/{team_abbrev})  
    3.19 [Get shots (period) by year](#shots_by_period_{year})  
-   3.20 [Get shots (period) by year and specific team](#shots_by_period_{year}/team_abbrev/{team_abbrev})
+   3.20 [Get shots (period) by year and specific team](#shots_by_period_{year}/team_abbrev/{team_abbrev})  
    3.21 [Get miscellaneous records teams by year](#records_team_{year})  
    3.22 [Get miscellaneous records teams by year and specific team](#records_team_{year}/team_abbrev/{team_abbrev})  
 5. [Season](#season)  
