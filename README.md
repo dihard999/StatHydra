@@ -3691,6 +3691,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/injuries_now/player_id/ellisry01/
   - **`scoring_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
   - **`scoring_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
 
+> [!NOTE]
+> **Data starts with the 2014-15 season**
+
 ##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/scoring_by_period_20212022/
@@ -3743,6 +3746,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/scoring_by_period_now/
   - **`scoring_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
   - **`scoring_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
 
+> [!NOTE]
+> **Data starts with the 2014-15 season**
+
 ##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/scoring_by_period_20212022/team_abbrev/MTL/
@@ -3793,6 +3799,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/scoring_by_period_now/team_abbrev/MTL/
   - **`shots_away_ot_opponent`** (integer) - Opponent goals in overtime when the team plays away.
   - **`shots_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
   - **`shots_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
+
+> [!NOTE]
+> **Data starts with the 2014-15 season**
 
 ##### Example using by specific year
 ```bash
@@ -3845,6 +3854,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/shots_by_period_now/
   - **`shots_away_ot_opponent`** (integer) - Opponent goals in overtime when the team plays away.
   - **`shots_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
   - **`shots_away_total_opponent`** (integer) - Opponent total goals when the team plays away.
+
+> [!NOTE]
+> **Data starts with the 2014-15 season**
 
 ##### Example using by specific year
 ```bash
