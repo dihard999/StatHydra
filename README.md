@@ -4694,6 +4694,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/upcoming_month/
   - **`tm_5on5_zs_offense_pct`** (number, decimal) – Offensive Zone Start % at 5-on-5.
   - **`tm_5on5_pdo_team`** (number, decimal) – Team Shooting % + Team Save %, at 5-on-5.
 
+> [!NOTE]
+> **chances_pp and opp_chances_pp start from 2015-16. All data start from 2007-08 season**
+
 ##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_team_gamelog_20242025/
@@ -4744,6 +4747,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_team_gamelog_now/
   - **`tm_5on5_zs_offense_pct`** (number, decimal) – Offensive Zone Start % at 5-on-5.
   - **`tm_5on5_pdo_team`** (number, decimal) – Team Shooting % + Team Save %, at 5-on-5.
 
+> [!NOTE]
+> **chances_pp and opp_chances_pp start from 2015-16. All data start from 2007-08 season**
+
 ##### Example using by specific year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_team_gamelog_20242025/team_abbrev/MTL/
@@ -4793,6 +4799,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_team_gamelog_now/team_abbrev/MT
   - **`tm_gm_5on5_fenwick_pct`** (number, decimal) – Fenwick For Pct. (5 on 5).
   - **`tm_5on5_zs_offense_pct`** (number, decimal) – Offensive Zone Start % at 5-on-5.
   - **`tm_5on5_pdo_team`** (number, decimal) – Team Shooting % + Team Save %, at 5-on-5.
+
+> [!NOTE]
+> **chances_pp and opp_chances_pp start from 2015-16. All data start from 2007-08 season**
 
 ##### Example using by specific year
 ```bash
