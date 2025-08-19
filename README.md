@@ -108,7 +108,7 @@ When you need more than one point of view, choose StatHydra!**
    4.19 [Get regular season team gamelog by year and specific game](#regular_season_team_gamelog_{year}/game_id/{game_id})  
    4.20 [Get preseason odds team for season by year](#preseason_odds_{year})  
    4.21 [Get preseason odds team for season by year and specific team](#preseason_odds_{year}/team_abbrev/{team_abbrev})  
-6. [Playoff](#playoff)  
+5. [Playoff](#playoff)  
    5.1 [Get playoff result by year](#league_playoff_series_result_{year})  
    5.2 [Get playoff result by year and specific game](#league_playoff_series_result_{year}/game_id/{game_id})  
    5.3 [Get playoff result by year and specific date](#league_playoff_series_result_{year}/game_date/{game_date})  
@@ -123,7 +123,10 @@ When you need more than one point of view, choose StatHydra!**
    5.12 [Get playoff schedule by year and upcoming game for next month](#playoff_schedule_{year}/upcoming_month)  
    5.13 [Get playoff team gamelog by year](#playoff_team_gamelog_{year})  
    5.14 [Get playoff team gamelog by year and specific team](#playoff_team_gamelog_{year}/team_abbrev/{team_abbrev})  
-   5.15 [Get playoff team gamelog by year and specific game](#playoff_team_gamelog_{year}/game_id/{game_id}) 
+   5.15 [Get playoff team gamelog by year and specific game](#playoff_team_gamelog_{year}/game_id/{game_id})  
+   5.16 [Get playoff team statistics by year](#playoff_team_statistics_{year})  
+   5.17 [Get playoff team statistics by year and specific team](#playoff_team_statistics_{year}/team_abbrev/{team_abbrev})  
+   5.18 [Get playoff team statistics by year and specific rank](#playoff_team_statistics_{year}/rank/{rank})  
 ---
 <a name="base-url"></a>
 ## 1. Base URL
@@ -5413,4 +5416,99 @@ crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_gamelog_20242025/game_id/20130119
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_gamelog_now/game_id/201301190NYI/
+```
+<a name="playoff_team_statistics_{year}"></a>
+### 5.16 Get playoff team statistics by year
+- **Endpoint:** `/playoff_team_statistics_{year}/`
+- **Method:** GET
+- **Description:** Returns playoff team basic statistics for the specified year.
+- **Parameters:**
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) – Rank. The higher the position, the better the team performed (1st place best).
+  - **`team_name`** (string) – Full name team.
+  - **`team_abbrev`** (string) – Official abbreviation (e.g., "TOR").
+  - **`games`** (integer) – Games Played.
+  - **`wins`** (integer) –  Wins.
+  - **`losses`** (integer) – Losses.
+  - **`ties`** (integer) – Ties.
+  - **`wins_ot`** (integer) – Overtime/Shootout Wins.
+  - **`losses_ot`** (integer) – Overtime/Shootout Losses.
+  - **`win_loss_pct`** (number, decimal) –  Win-Loss Percentage (i.e., wins plus one-half ties, divided by games played).
+  - **`goals`** (integer) –  Goals.
+  - **`goals_against `** (integer) – Goals Against.
+  - **`goals_diff`** (integer) – Goal Differential (i.e., Goals minus Goals Against).
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_statistics_20242025/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_statistics_now/
+```
+<a name="playoff_team_statistics_{year}/team_abbrev/{team_abbrev}"></a>
+### 5.17 Get playoff team statistics by year and specific team
+- **Endpoint:** `/playoff_team_statistics_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns playoff team basic statistics for the specified year and specific team .
+- **Parameters:**
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{team_abbrev}`** (string) – Official abbreviation (e.g., "TOR").
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) – Rank. The higher the position, the better the team performed (1st place best).
+  - **`team_name`** (string) – Full name team.
+  - **`team_abbrev`** (string) – Official abbreviation (e.g., "TOR").
+  - **`games`** (integer) – Games Played.
+  - **`wins`** (integer) –  Wins.
+  - **`losses`** (integer) – Losses.
+  - **`ties`** (integer) – Ties.
+  - **`wins_ot`** (integer) – Overtime/Shootout Wins.
+  - **`losses_ot`** (integer) – Overtime/Shootout Losses.
+  - **`win_loss_pct`** (number, decimal) –  Win-Loss Percentage (i.e., wins plus one-half ties, divided by games played).
+  - **`goals`** (integer) –  Goals.
+  - **`goals_against `** (integer) – Goals Against.
+  - **`goals_diff`** (integer) – Goal Differential (i.e., Goals minus Goals Against).
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_statistics_20242025/team_abbrev/WSH/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_statistics_now/team_abbrev/WSH/
+```
+<a name="playoff_team_statistics_{year}/rank/{rank}"></a>
+### 5.18 Get playoff team statistics by year and specific rank
+- **Endpoint:** `/playoff_team_statistics_{year}/rank/{rank}/`
+- **Method:** GET
+- **Description:** Returns playoff team basic statistics for the specified year and specific rank .
+- **Parameters:**
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{rank}`** (integer) – Rank. The higher the position, the better the team performed (1st place best).
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) – Rank. The higher the position, the better the team performed (1st place best).
+  - **`team_name`** (string) – Full name team.
+  - **`team_abbrev`** (string) – Official abbreviation (e.g., "TOR").
+  - **`games`** (integer) – Games Played.
+  - **`wins`** (integer) –  Wins.
+  - **`losses`** (integer) – Losses.
+  - **`ties`** (integer) – Ties.
+  - **`wins_ot`** (integer) – Overtime/Shootout Wins.
+  - **`losses_ot`** (integer) – Overtime/Shootout Losses.
+  - **`win_loss_pct`** (number, decimal) –  Win-Loss Percentage (i.e., wins plus one-half ties, divided by games played).
+  - **`goals`** (integer) –  Goals.
+  - **`goals_against `** (integer) – Goals Against.
+  - **`goals_diff`** (integer) – Goal Differential (i.e., Goals minus Goals Against).
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_statistics_20242025/rank/3/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_statistics_now/rank/3/
 ```
