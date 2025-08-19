@@ -105,7 +105,7 @@ When you need more than one point of view, choose StatHydra!**
    4.16 [Get regular season schedule by year and upcoming game for next month](#regular_season_schedule_{year}/upcoming_month)  
    4.17 [Get regular season team gamelog by year](#regular_season_team_gamelog_{year})  
    4.18 [Get regular season team gamelog by year and specific team](#regular_season_team_gamelog_{year}/team_abbrev/{team_abbrev})  
-   4.19 [Get regular season team gamelog by year specific game](#regular_season_team_gamelog_{year}/game_id/{game_id})  
+   4.19 [Get regular season team gamelog by year and specific game](#regular_season_team_gamelog_{year}/game_id/{game_id})  
 6. [Playoff](#playoff)  
    5.1 [Get playoff result by year](#league_playoff_series_result_{year})  
    5.2 [Get playoff result by year and specific game](#league_playoff_series_result_{year}/game_id/{game_id})  
@@ -4335,7 +4335,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/season_statistics_now/playoff/yes/
 - **Method:** GET
 - **Description:** League average for the specific season
 - **Parameters:**
-   - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`average_age`** (number, decimal) - Average Age. Average age of team weighted by time on ice. Expressed as a decimal (e.g., 27.4).
@@ -4377,7 +4377,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_average_now/
 - **Method:** GET
 - **Description:** Table with schedule and results for all regular season games for the specified year. 
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
@@ -4396,7 +4396,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_average_now/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_20242025/
 ```
 ##### Example using for the current year
 ```bash
@@ -4408,8 +4408,8 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/
 - **Method:** GET
 - **Description:** Table with schedule and results for all games played on a specific date within the chosen season.
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-     - **`game_date`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{game_date}`** (date) - Game Date. Date the game was played or is scheduled "YYYY-MM-DD" (e.g., "2023-12-15").
 - **Response:** JSON format
 - **Schema table:**
   - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
@@ -4428,11 +4428,11 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/game_date/{game_date}/
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_20242025/game_date/201301190NYI/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/game_date/{game_date}/
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/game_date/201301190NYI/
 ```
 <a name="regular_season_schedule_{year}/game_id/{game_id}"></a>
 ### 4.10 Get regular season schedule by year and specific date
@@ -4440,8 +4440,8 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/game_date/{game_da
 - **Method:** GET
 - **Description:** Information about a specific game by its unique game ID.
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-     - **`game_id`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{game_id}`** (string) - Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
 - **Response:** JSON format
 - **Schema table:**
   - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
@@ -4460,11 +4460,11 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/game_date/{game_da
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/game_id/{game_id}/
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_20242025/game_id/201301190NYI/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/game_id/{game_id}/
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/game_id/201301190NYI/
 ```
 <a name="regular_season_schedule_{year}/team_abbrev/{team_abbrev}"></a>
 ### 4.11 Get regular season schedule by year and specific team
@@ -4472,8 +4472,8 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/game_id/{game_id}/
 - **Method:** GET
 - **Description:** Table with all games for a specific team in the selected season.
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-     - **`team_abbrev`** (string) - Team's official abbreviation (e.g., "TOR").
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{team_abbrev}`** (string) - Team's official abbreviation (e.g., "TOR").
 - **Response:** JSON format
 - **Schema table:**
   - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
@@ -4492,11 +4492,11 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/game_id/{game_id}/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/team_abbrev/{team_abbrev}/
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_20242025/team_abbrev/BOS/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/team_abbrev/{team_abbrev}/
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/team_abbrev/BOS/
 ```
 <a name="regular_season_schedule_{year}/finished"></a>
 ### 4.12 Get regular season schedule by year and finished game
@@ -4504,7 +4504,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/team_abbrev/{team_
 - **Method:** GET
 - **Description:** Table with all finished (concluded) regular season games in the selected season.
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
@@ -4523,7 +4523,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/team_abbrev/{team_
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/finished/
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_20242025/finished/
 ```
 ##### Example using for the current year
 ```bash
@@ -4535,7 +4535,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/finished/
 - **Method:** GET
 - **Description:** Table with all upcoming games in the selected season.
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
@@ -4554,7 +4554,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/finished/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/upcoming/
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_20242025/upcoming/
 ```
 ##### Example using for the current year
 ```bash
@@ -4566,7 +4566,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/upcoming/
 - **Method:** GET
 - **Description:** Table with all games scheduled for the next day in the selected season. If today is 06/25/2025 and the next first games will start only on 10/25/2025, it will take the date for 10/25/2025, since these are the first available games.
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
@@ -4585,7 +4585,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/upcoming/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/upcoming_day/
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_20242025/upcoming_day/
 ```
 ##### Example using for the current year
 ```bash
@@ -4597,7 +4597,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/upcoming_day/
 - **Method:** GET
 - **Description:** Table with all games scheduled for the next week in the selected season.
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
@@ -4616,7 +4616,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/upcoming_day/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/upcoming_week/
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_20242025/upcoming_week/
 ```
 ##### Example using for the current year
 ```bash
@@ -4628,7 +4628,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/upcoming_week/
 - **Method:** GET
 - **Description:** Table with all games scheduled for the next month in the selected season.
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
@@ -4647,11 +4647,160 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/upcoming_week/
 
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_{year}/upcoming_month/
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_20242025/upcoming_month/
 ```
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_schedule_now/upcoming_month/
+```
+<a name="regular_season_team_gamelog_{year}"></a>
+### 4.17 Get regular season team gamelog by year
+- **Endpoint:** `/regular_season_team_gamelog_{year}`
+- **Method:** GET
+- **Description:** Returns the full per-team regular season game logs for the specified NHL season.
+- **Parameters:**
+     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) – Official abbreviation (e.g., "TOR").
+  - **`team_game_num_season`** (integer) –  Season Game Number for Team.
+  - **`game_date`** (date) – Game date (e.g., "YYYY-MM-DD").
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`home_or_away`** (string) –  Indicates whether the team played at home or away. Values: Home or Away.
+  - **`opp_name_abbr`** (string) – Opponent team abbreviation (e.g., "TOR").
+  - **`team_game_result`** (string) – Result of the game (W - wins, L - loss).
+  - **`goals`** (integer) – Goals scored by the team in the game.
+  - **`goals_against`** (integer) – Goals Against.
+  - **`overtimes`** (string) –  Overtime/shootout indicator or count (e.g., OT, 2OT, SO).
+  - **`shots`** (integer) –  Shots on Goal.
+  - **`pen_min `** (integer) – Penalties in Minutes.
+  - **`goals_pp`** (integer) – Power Play Goals.
+  - **`chances_pp`** (integer) – Power-Play Opportunities.
+  - **`goals_sh`** (integer) – Short-Handed Goals.
+  - **`shots_against`** (integer) – Shots Against.
+  - **`opp_pen_min`** (integer) – Opponent Penalties in Minutes.
+  - **`goals_against_pp`** (integer) – Power Play Goals Against.
+  - **`opp_chances_pp`** (integer) – Penalty Kill Opportunities.
+  - **`goals_against_sh`** (integer) – Short-Handed Goals Against.
+  - **`faceoff_wins`** (integer) – Faceoff Wins.
+  - **`faceoff_losses`** (integer) – Faceoff Losses.
+  - **`faceoff_percentage`** (number, decimal) – Faceoff Percentage.
+  - **`tm_5on5_corsi_for`** (integer) – Corsi For 5 on 5.
+  - **`tm_gm_5on5_corsi_against`** (integer) – Corsi Against 5 on 5.
+  - **`tm_gm_5on5_corsi_pct`** (number, decimal) – Shot events for team, divided by all shot events by team and opponent (5 on 5).
+  - **`tm_5on5_fenwick_for`** (integer) – Fenwick For (5 on 5).
+  - **`tm_gm_5on5_fenwick_against`** (integer) – Fenwick Against (5 on 5).
+  - **`tm_gm_5on5_fenwick_pct`** (number, decimal) – Fenwick For Pct. (5 on 5).
+  - **`tm_5on5_zs_offense_pct`** (number, decimal) – Offensive Zone Start % at 5-on-5.
+  - **`tm_5on5_pdo_team`** (number, decimal) – Team Shooting % + Team Save %, at 5-on-5.
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_team_gamelog_20242025/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_team_gamelog_now/
+```
+<a name="regular_season_team_gamelog_{year}/team_abbrev/{team_abbrev}"></a>
+### 4.18 Get regular season team gamelog by year and specific team
+- **Endpoint:** `/regular_season_team_gamelog_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns the full per-team regular season game logs for the specified NHL season and specific team.
+- **Parameters:**
+     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`team_abbrev`** (string) – Official abbreviation (e.g., "TOR").
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) – Official abbreviation (e.g., "TOR").
+  - **`team_game_num_season`** (integer) –  Season Game Number for Team.
+  - **`game_date`** (date) – Game date (e.g., "YYYY-MM-DD").
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`home_or_away`** (string) –  Indicates whether the team played at home or away. Values: Home or Away.
+  - **`opp_name_abbr`** (string) – Opponent team abbreviation (e.g., "TOR").
+  - **`team_game_result`** (string) – Result of the game (W - wins, L - loss).
+  - **`goals`** (integer) – Goals scored by the team in the game.
+  - **`goals_against`** (integer) – Goals Against.
+  - **`overtimes`** (string) –  Overtime/shootout indicator or count (e.g., OT, 2OT, SO).
+  - **`shots`** (integer) –  Shots on Goal.
+  - **`pen_min `** (integer) – Penalties in Minutes.
+  - **`goals_pp`** (integer) – Power Play Goals.
+  - **`chances_pp`** (integer) – Power-Play Opportunities.
+  - **`goals_sh`** (integer) – Short-Handed Goals.
+  - **`shots_against`** (integer) – Shots Against.
+  - **`opp_pen_min`** (integer) – Opponent Penalties in Minutes.
+  - **`goals_against_pp`** (integer) – Power Play Goals Against.
+  - **`opp_chances_pp`** (integer) – Penalty Kill Opportunities.
+  - **`goals_against_sh`** (integer) – Short-Handed Goals Against.
+  - **`faceoff_wins`** (integer) – Faceoff Wins.
+  - **`faceoff_losses`** (integer) – Faceoff Losses.
+  - **`faceoff_percentage`** (number, decimal) – Faceoff Percentage.
+  - **`tm_5on5_corsi_for`** (integer) – Corsi For 5 on 5.
+  - **`tm_gm_5on5_corsi_against`** (integer) – Corsi Against 5 on 5.
+  - **`tm_gm_5on5_corsi_pct`** (number, decimal) – Shot events for team, divided by all shot events by team and opponent (5 on 5).
+  - **`tm_5on5_fenwick_for`** (integer) – Fenwick For (5 on 5).
+  - **`tm_gm_5on5_fenwick_against`** (integer) – Fenwick Against (5 on 5).
+  - **`tm_gm_5on5_fenwick_pct`** (number, decimal) – Fenwick For Pct. (5 on 5).
+  - **`tm_5on5_zs_offense_pct`** (number, decimal) – Offensive Zone Start % at 5-on-5.
+  - **`tm_5on5_pdo_team`** (number, decimal) – Team Shooting % + Team Save %, at 5-on-5.
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_team_gamelog_20242025/team_abbrev/MTL/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_team_gamelog_now/team_abbrev/MTL/
+```
+<a name="regular_season_team_gamelog_{year}/game_id/{game_id}"></a>
+### 4.19 Get regular season team gamelog by year and specific game
+- **Endpoint:** `/regular_season_team_gamelog_{year}/game_id/{game_id}/`
+- **Method:** GET
+- **Description:** Returns the full per-team regular season game logs for the specified NHL season and specific team.
+- **Parameters:**
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{game_id}`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) – Official abbreviation (e.g., "TOR").
+  - **`team_game_num_season`** (integer) –  Season Game Number for Team.
+  - **`game_date`** (date) – Game date (e.g., "YYYY-MM-DD").
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`home_or_away`** (string) –  Indicates whether the team played at home or away. Values: Home or Away.
+  - **`opp_name_abbr`** (string) – Opponent team abbreviation (e.g., "TOR").
+  - **`team_game_result`** (string) – Result of the game (W - wins, L - loss).
+  - **`goals`** (integer) – Goals scored by the team in the game.
+  - **`goals_against`** (integer) – Goals Against.
+  - **`overtimes`** (string) –  Overtime/shootout indicator or count (e.g., OT, 2OT, SO).
+  - **`shots`** (integer) –  Shots on Goal.
+  - **`pen_min `** (integer) – Penalties in Minutes.
+  - **`goals_pp`** (integer) – Power Play Goals.
+  - **`chances_pp`** (integer) – Power-Play Opportunities.
+  - **`goals_sh`** (integer) – Short-Handed Goals.
+  - **`shots_against`** (integer) – Shots Against.
+  - **`opp_pen_min`** (integer) – Opponent Penalties in Minutes.
+  - **`goals_against_pp`** (integer) – Power Play Goals Against.
+  - **`opp_chances_pp`** (integer) – Penalty Kill Opportunities.
+  - **`goals_against_sh`** (integer) – Short-Handed Goals Against.
+  - **`faceoff_wins`** (integer) – Faceoff Wins.
+  - **`faceoff_losses`** (integer) – Faceoff Losses.
+  - **`faceoff_percentage`** (number, decimal) – Faceoff Percentage.
+  - **`tm_5on5_corsi_for`** (integer) – Corsi For 5 on 5.
+  - **`tm_gm_5on5_corsi_against`** (integer) – Corsi Against 5 on 5.
+  - **`tm_gm_5on5_corsi_pct`** (number, decimal) – Shot events for team, divided by all shot events by team and opponent (5 on 5).
+  - **`tm_5on5_fenwick_for`** (integer) – Fenwick For (5 on 5).
+  - **`tm_gm_5on5_fenwick_against`** (integer) – Fenwick Against (5 on 5).
+  - **`tm_gm_5on5_fenwick_pct`** (number, decimal) – Fenwick For Pct. (5 on 5).
+  - **`tm_5on5_zs_offense_pct`** (number, decimal) – Offensive Zone Start % at 5-on-5.
+  - **`tm_5on5_pdo_team`** (number, decimal) – Team Shooting % + Team Save %, at 5-on-5.
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_team_gamelog_20242025/game_id/201301190NYI/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_team_gamelog_now/game_id/201301190NYI/
 ```
 ---
 <a name="playoff"></a>
