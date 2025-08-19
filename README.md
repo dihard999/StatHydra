@@ -5,7 +5,7 @@ StatHydra is not just a prediction, it is your personal sports analyst who does 
 When you need more than one point of view, choose StatHydra!**
 > [!NOTE]
 > **Development is only available for NHL, development of other sports is in progress....**  
-> **The data starts from 2005-06 season. Of course, if most people need years earlier, we will consider this possibility.**  
+> **The data starts from 2005-06 season. Some tables start from other seasons, read the notes. Of course, if most people need years earlier, we will consider this possibility.**  
 > **Any requests to make additional filters based on the data are also welcome.**
 ---
 ---
@@ -106,6 +106,8 @@ When you need more than one point of view, choose StatHydra!**
    4.17 [Get regular season team gamelog by year](#regular_season_team_gamelog_{year})  
    4.18 [Get regular season team gamelog by year and specific team](#regular_season_team_gamelog_{year}/team_abbrev/{team_abbrev})  
    4.19 [Get regular season team gamelog by year and specific game](#regular_season_team_gamelog_{year}/game_id/{game_id})  
+   4.20 [Get preseason odds team for season by year](#preseason_odds_{year})  
+   4.21 [Get preseason odds team for season by year and specific team](#preseason_odds_{year}/team_abbrev/{team_abbrev})  
 6. [Playoff](#playoff)  
    5.1 [Get playoff result by year](#league_playoff_series_result_{year})  
    5.2 [Get playoff result by year and specific game](#league_playoff_series_result_{year}/game_id/{game_id})  
@@ -4813,6 +4815,59 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_team_gamelog_20242025/game_id/2
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_team_gamelog_now/game_id/201301190NYI/
+```
+<a name="preseason_odds_{year}"></a>
+### 4.20 Get preseason odds team for season by year
+- **Endpoint:** `/preseason_odds_{year}/`
+- **Method:** GET
+- **Description:** Returns preseason odds team for the specified NHL season.
+- **Parameters:**
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_name`** (string) – Full name team.
+  - **`team_abbrev`** (string) – Official abbreviation (e.g., "TOR").
+  - **`cup_odds`** (number, decimal) – Preseason team odds, the higher the value the better.
+  - **`over_under`** (number, decimal) – Initial team points.
+  - **`final_points`** (integer) –  Final points.
+
+> [!NOTE]
+> **Data start from 2010-11 season**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/preseason_odds_20242025/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/preseason_odds_now/
+```
+<a name="preseason_odds_{year}/team_abbrev/{team_abbrev}"></a>
+### 4.21 Get preseason odds team for season by year and specific team
+- **Endpoint:** `/preseason_odds_{year/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns preseason odds team for the specified NHL season and specific team.
+- **Parameters:**
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{team_abbrev}`** (string) – Official abbreviation (e.g., "TOR").
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_name`** (string) – Full name team.
+  - **`team_abbrev`** (string) – Official abbreviation (e.g., "TOR").
+  - **`cup_odds`** (number, decimal) – Preseason team odds, the higher the value the better.
+  - **`over_under`** (number, decimal) – Initial team points.
+  - **`final_points`** (integer) –  Final points.
+
+> [!NOTE]
+> **Data start from 2010-11 season**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/preseason_odds_20242025/team_abbrev/MTL/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/preseason_odds_now/team_abbrev/MTL/
 ```
 ---
 <a name="playoff"></a>
