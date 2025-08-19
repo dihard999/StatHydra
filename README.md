@@ -119,6 +119,9 @@ When you need more than one point of view, choose StatHydra!**
    5.10 [Get playoff schedule by year and upcoming game for next day](#playoff_schedule_{year}/upcoming_day)  
    5.11 [Get playoff schedule by year and upcoming game for next week](#playoff_schedule_{year}/upcoming_week)  
    5.12 [Get playoff schedule by year and upcoming game for next month](#playoff_schedule_{year}/upcoming_month)  
+   5.13 [Get playoff team gamelog by year](#playoff_team_gamelog_{year})  
+   5.14 [Get playoff team gamelog by year and specific team](#playoff_team_gamelog_{year}/team_abbrev/{team_abbrev})  
+   5.15 [Get playoff team gamelog by year and specific game](#playoff_team_gamelog_{year}/game_id/{game_id}) 
 ---
 <a name="base-url"></a>
 ## 1. Base URL
@@ -5113,7 +5116,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/playoff_schedule_now/upcoming/
 - **Method:** GET
 - **Description:** Table with all games scheduled for the next day in the selected season. If today is 06/25/2025 and the next first games will start only on 10/25/2025, it will take the date for 10/25/2025, since these are the first available games.
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
@@ -5144,7 +5147,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/playoff_schedule_now/upcoming_day/
 - **Method:** GET
 - **Description:** Table with all games scheduled for the next week in the selected season.
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
@@ -5175,7 +5178,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/playoff_schedule_now/upcoming_week/
 - **Method:** GET
 - **Description:** Table with all games scheduled for the next month in the selected season.
 - **Parameters:**
-     - **`year`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
 - **Response:** JSON format
 - **Schema table:**
   - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
@@ -5199,4 +5202,160 @@ crashcrab.ddns.net/{YOUR_API_KEY}/playoff_schedule_{year}/upcoming_month/
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/playoff_schedule_now/upcoming_month/
+```
+<a name="playoff_team_gamelog_{year}"></a>
+### 5.13 Get playoff team gamelog by year
+- **Endpoint:** `/playoff_team_gamelog_{year}/`
+- **Method:** GET
+- **Description:** Returns the full per-team playoffgame logs for the specified NHL season.
+- **Parameters:**
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) – Official abbreviation (e.g., "TOR").
+  - **`team_game_num_season`** (integer) –  Season Game Number for Team.
+  - **`game_date`** (date) – Game date (e.g., "YYYY-MM-DD").
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`home_or_away`** (string) –  Indicates whether the team played at home or away. Values: Home or Away.
+  - **`opp_name_abbr`** (string) – Opponent team abbreviation (e.g., "TOR").
+  - **`team_game_result`** (string) – Result of the game (W - wins, L - loss).
+  - **`goals`** (integer) – Goals scored by the team in the game.
+  - **`goals_against`** (integer) – Goals Against.
+  - **`overtimes`** (string) –  Overtime/shootout indicator or count (e.g., OT, 2OT, SO).
+  - **`shots`** (integer) –  Shots on Goal.
+  - **`pen_min `** (integer) – Penalties in Minutes.
+  - **`goals_pp`** (integer) – Power Play Goals.
+  - **`chances_pp`** (integer) – Power-Play Opportunities.
+  - **`goals_sh`** (integer) – Short-Handed Goals.
+  - **`shots_against`** (integer) – Shots Against.
+  - **`opp_pen_min`** (integer) – Opponent Penalties in Minutes.
+  - **`goals_against_pp`** (integer) – Power Play Goals Against.
+  - **`opp_chances_pp`** (integer) – Penalty Kill Opportunities.
+  - **`goals_against_sh`** (integer) – Short-Handed Goals Against.
+  - **`faceoff_wins`** (integer) – Faceoff Wins.
+  - **`faceoff_losses`** (integer) – Faceoff Losses.
+  - **`faceoff_percentage`** (number, decimal) – Faceoff Percentage.
+  - **`tm_5on5_corsi_for`** (integer) – Corsi For 5 on 5.
+  - **`tm_gm_5on5_corsi_against`** (integer) – Corsi Against 5 on 5.
+  - **`tm_gm_5on5_corsi_pct`** (number, decimal) – Shot events for team, divided by all shot events by team and opponent (5 on 5).
+  - **`tm_5on5_fenwick_for`** (integer) – Fenwick For (5 on 5).
+  - **`tm_gm_5on5_fenwick_against`** (integer) – Fenwick Against (5 on 5).
+  - **`tm_gm_5on5_fenwick_pct`** (number, decimal) – Fenwick For Pct. (5 on 5).
+  - **`tm_5on5_zs_offense_pct`** (number, decimal) – Offensive Zone Start % at 5-on-5.
+  - **`tm_5on5_pdo_team`** (number, decimal) – Team Shooting % + Team Save %, at 5-on-5.
+
+> [!NOTE]
+> **chances_pp and opp_chances_pp start from 2015-16. All data start from 2007-08 season**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_gamelog_20242025/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_gamelog_now/
+```
+<a name="playoff_team_gamelog_{year}/team_abbrev/{team_abbrev}"></a>
+### 5.14 Get playoff team gamelog by year and specific team
+- **Endpoint:** `/playoff_team_gamelog_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Returns the full per-team playoffgame logs for the specified NHL season and specific team.
+- **Parameters:**
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) – Official abbreviation (e.g., "TOR").
+  - **`team_game_num_season`** (integer) –  Season Game Number for Team.
+  - **`game_date`** (date) – Game date (e.g., "YYYY-MM-DD").
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`home_or_away`** (string) –  Indicates whether the team played at home or away. Values: Home or Away.
+  - **`opp_name_abbr`** (string) – Opponent team abbreviation (e.g., "TOR").
+  - **`team_game_result`** (string) – Result of the game (W - wins, L - loss).
+  - **`goals`** (integer) – Goals scored by the team in the game.
+  - **`goals_against`** (integer) – Goals Against.
+  - **`overtimes`** (string) –  Overtime/shootout indicator or count (e.g., OT, 2OT, SO).
+  - **`shots`** (integer) –  Shots on Goal.
+  - **`pen_min `** (integer) – Penalties in Minutes.
+  - **`goals_pp`** (integer) – Power Play Goals.
+  - **`chances_pp`** (integer) – Power-Play Opportunities.
+  - **`goals_sh`** (integer) – Short-Handed Goals.
+  - **`shots_against`** (integer) – Shots Against.
+  - **`opp_pen_min`** (integer) – Opponent Penalties in Minutes.
+  - **`goals_against_pp`** (integer) – Power Play Goals Against.
+  - **`opp_chances_pp`** (integer) – Penalty Kill Opportunities.
+  - **`goals_against_sh`** (integer) – Short-Handed Goals Against.
+  - **`faceoff_wins`** (integer) – Faceoff Wins.
+  - **`faceoff_losses`** (integer) – Faceoff Losses.
+  - **`faceoff_percentage`** (number, decimal) – Faceoff Percentage.
+  - **`tm_5on5_corsi_for`** (integer) – Corsi For 5 on 5.
+  - **`tm_gm_5on5_corsi_against`** (integer) – Corsi Against 5 on 5.
+  - **`tm_gm_5on5_corsi_pct`** (number, decimal) – Shot events for team, divided by all shot events by team and opponent (5 on 5).
+  - **`tm_5on5_fenwick_for`** (integer) – Fenwick For (5 on 5).
+  - **`tm_gm_5on5_fenwick_against`** (integer) – Fenwick Against (5 on 5).
+  - **`tm_gm_5on5_fenwick_pct`** (number, decimal) – Fenwick For Pct. (5 on 5).
+  - **`tm_5on5_zs_offense_pct`** (number, decimal) – Offensive Zone Start % at 5-on-5.
+  - **`tm_5on5_pdo_team`** (number, decimal) – Team Shooting % + Team Save %, at 5-on-5.
+
+> [!NOTE]
+> **chances_pp and opp_chances_pp start from 2015-16. All data start from 2007-08 season**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_gamelog_20242025/team_abbrev/MTL/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_gamelog_now/team_abbrev/MTL/
+```
+<a name="playoff_team_gamelog_{year}/game_id/{game_id}"></a>
+### 5.15 Get playoff team gamelog by year and specific game
+- **Endpoint:** `/playoff_team_gamelog_{year}/game_id/{game_id}/`
+- **Method:** GET
+- **Description:** Returns the full per-team playoffgame logs for the specified NHL season and specific game.
+- **Parameters:**
+     - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`team_abbrev`** (string) – Official abbreviation (e.g., "TOR").
+  - **`team_game_num_season`** (integer) –  Season Game Number for Team.
+  - **`game_date`** (date) – Game date (e.g., "YYYY-MM-DD").
+  - **`game_id`** (string) – Game ID. Unique identifier for the game within the season (e.g., "201301190NYI").
+  - **`home_or_away`** (string) –  Indicates whether the team played at home or away. Values: Home or Away.
+  - **`opp_name_abbr`** (string) – Opponent team abbreviation (e.g., "TOR").
+  - **`team_game_result`** (string) – Result of the game (W - wins, L - loss).
+  - **`goals`** (integer) – Goals scored by the team in the game.
+  - **`goals_against`** (integer) – Goals Against.
+  - **`overtimes`** (string) –  Overtime/shootout indicator or count (e.g., OT, 2OT, SO).
+  - **`shots`** (integer) –  Shots on Goal.
+  - **`pen_min `** (integer) – Penalties in Minutes.
+  - **`goals_pp`** (integer) – Power Play Goals.
+  - **`chances_pp`** (integer) – Power-Play Opportunities.
+  - **`goals_sh`** (integer) – Short-Handed Goals.
+  - **`shots_against`** (integer) – Shots Against.
+  - **`opp_pen_min`** (integer) – Opponent Penalties in Minutes.
+  - **`goals_against_pp`** (integer) – Power Play Goals Against.
+  - **`opp_chances_pp`** (integer) – Penalty Kill Opportunities.
+  - **`goals_against_sh`** (integer) – Short-Handed Goals Against.
+  - **`faceoff_wins`** (integer) – Faceoff Wins.
+  - **`faceoff_losses`** (integer) – Faceoff Losses.
+  - **`faceoff_percentage`** (number, decimal) – Faceoff Percentage.
+  - **`tm_5on5_corsi_for`** (integer) – Corsi For 5 on 5.
+  - **`tm_gm_5on5_corsi_against`** (integer) – Corsi Against 5 on 5.
+  - **`tm_gm_5on5_corsi_pct`** (number, decimal) – Shot events for team, divided by all shot events by team and opponent (5 on 5).
+  - **`tm_5on5_fenwick_for`** (integer) – Fenwick For (5 on 5).
+  - **`tm_gm_5on5_fenwick_against`** (integer) – Fenwick Against (5 on 5).
+  - **`tm_gm_5on5_fenwick_pct`** (number, decimal) – Fenwick For Pct. (5 on 5).
+  - **`tm_5on5_zs_offense_pct`** (number, decimal) – Offensive Zone Start % at 5-on-5.
+  - **`tm_5on5_pdo_team`** (number, decimal) – Team Shooting % + Team Save %, at 5-on-5.
+
+> [!NOTE]
+> **chances_pp and opp_chances_pp start from 2015-16. All data start from 2007-08 season**
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_gamelog_20242025/game_id/201301190NYI/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_gamelog_now/game_id/201301190NYI/
 ```
