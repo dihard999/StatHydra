@@ -14,55 +14,49 @@ When you need more than one point of view, choose StatHydra!**
 2. [Player](#player)  
    2.1 [Get player leaders by year and all stat](#league_leaders_{year})  
    2.2 [Get player leaders by year and specific stat](#league_leaders_{year}/stat_abbrev/{stat_abbrev})  
-   2.3 [Get player leaders by year and specific stat and rank](#league_leaders_{year}/stat_abbrev/{stat_abbrev}/rank/{rank})  
-   2.4 [Get player leaders by year and specific stat and player ID](#league_leaders_{year}/stat_abbrev/{stat_abbrev}/player_id/{player_id})  
-   2.5 [Get player leaders by year and specific stat and team](#league_leaders_{year}/stat_abbrev/{stat_abbrev}/team_abbrev/{team_abbrev})  
-   2.6 [Get player leaders by year and specific rank](#league_leaders_{year}/rank/{rank})  
-   2.7 [Get player leaders by year and specific rank and player ID](#league_leaders_{year}/rank/{rank}/player_id/{player_id})  
-   2.8 [Get player leaders by year and specific rank and team](#league_leaders_{year}/rank/{rank}/team_abbrev/{team_abbrev})  
-   2.9 [Get player leaders by year and specific player ID](#league_leaders_{year}/player_id/{player_id})  
-   2.10 [Get player leaders by year and specific team](#league_leaders_{year}/team_abbrev/{team_abbrev})  
-   2.11 [Get player leaders by year and specific team and player ID](#league_leaders_{year}/team_abbrev/{team_abbrev}/player_id/{player_id})  
-   2.12 [Get basic stats players regular season by year](#basic_stats_players_regular_season_{year})  
-   2.13 [Get basic stats players regular season by year and specific rank](#basic_stats_players_regular_season_{year}/rank/{rank})  
-   2.14 [Get basic stats players regular season by year and specific team](#basic_stats_players_regular_season_{year}/team_abbrev/{team_abbrev})  
-   2.15 [Get basic stats players regular season by year and player ID](#basic_stats_players_regular_season_{year}/player_id/{player_id})  
-   2.16 [Get basic stats players regular season by year and position](#basic_stats_players_regular_season_{year}/position/{position})  
-   2.17 [Get basic stats players playoff by year](#basic_stats_players_playoff_{year})  
-   2.18 [Get basic stats players playoff by year and specific rank](#basic_stats_players_playoff_{year}/rank/{rank})  
-   2.19 [Get basic stats players playoff by year and specific team](#basic_stats_players_playoff_{year}/team_abbrev/{team_abbrev})  
-   2.20 [Get basic stats players playoff by year and player ID](#basic_stats_players_playoff_{year}/player_id/{player_id})  
-   2.21 [Get basic stats players playoff by year and position](#basic_stats_players_playoff_{year}/position/{position})  
-   2.22 [Get miscellaneous stats players regular season by year](#miscellaneous_stats_players_regular_season_{year})  
-   2.23 [Get miscellaneous stats players regular season by year and specific rank](#miscellaneous_stats_players_regular_season_{year}/rank/{rank})  
-   2.24 [Get miscellaneous stats players regular season by year and specific team](#miscellaneous_stats_players_regular_season_{year}/team_abbrev/{team_abbrev})  
-   2.25 [Get miscellaneous stats players regular season by year and player ID](#miscellaneous_stats_players_regular_season_{year}/player_id/{player_id})  
-   2.26 [Get miscellaneous stats players regular season by year and position](#miscellaneous_stats_players_regular_season_{year}/position/{position})  
-   2.27 [Get miscellaneous stats players playoff by year](#miscellaneous_stats_players_playoff_{year})  
-   2.28 [Get miscellaneous stats players playoff by year and specific rank](#miscellaneous_stats_players_playoff_{year}/rank/{rank})  
-   2.29 [Get miscellaneous stats players playoff by year and specific team](#miscellaneous_stats_players_playoff_{year}/team_abbrev/{team_abbrev})  
-   2.30 [Get miscellaneous stats players playoff by year and player ID](#miscellaneous_stats_players_playoff_{year}/player_id/{player_id})  
-   2.31 [Get miscellaneous stats players playoff by year and position](#miscellaneous_stats_players_playoff_{year}/position/{position})  
-   2.32 [Get hat tricks by year](#hat_tricks_{year})  
-   2.33 [Get hat tricks by year and specific team](#hat_tricks_{year}/team_abbrev/{team_abbrev})  
-   2.34 [Get hat tricks by year and player ID](#hat_tricks_{year}/player_id/{player_id})  
-   2.35 [Get hat tricks by year and specific game](#hat_tricks_{year}/game_id/{game_id})  
-   2.36 [Get hat tricks by year and specific date](#hat_tricks_{year}/game_date/{game_date})  
-   2.37 [Get penalty shots by year](#penalty_shots_{year})  
-   2.38 [Get penalty shots by year and specific team](#penalty_shots_{year}/team_abbrev/{team_abbrev})  
-   2.39 [Get penalty shots by year and player ID](#penalty_shots_{year}/player_id/{player_id})  
-   2.40 [Get penalty shots by year and specific game](#penalty_shots_{year}/game_id/{game_id})  
-   2.41 [Get penalty shots by year and specific date](#penalty_shots_{year}/game_date/{game_date})  
-   2.42 [Get advanced stats players by year](#advanced_stats_players_{year})  
-   2.43 [Get advanced stats players by year and specific rank](#advanced_stats_players_{year}/rank/{rank})  
-   2.44 [Get advanced stats players by year and player ID](#advanced_stats_players_{year}/player_id/{player_id})  
-   2.45 [Get advanced stats players by year and specific team](#advanced_stats_players_{year}/team_abbrev/{team_abbrev})  
-   2.46 [Get advanced stats players by year and position](#advanced_stats_players_{year}/position/{position})  
-   2.47 [Get skater time on ice stats by year](#skater_time_on_ice_stats_{year})  
-   2.48 [Get skater time on ice stats by year and specific rank](#skater_time_on_ice_stats_{year}/rank/{rank})  
-   2.49 [Get skater time on ice stats by year and player ID](#skater_time_on_ice_stats_{year}/player_id/{player_id})  
-   2.50 [Get skater time on ice stats by year and specific team](#skater_time_on_ice_stats_{year}/team_abbrev/{team_abbrev})  
-   2.51 [Get skater time on ice stats by year and position](#skater_time_on_ice_stats_{year}/position/{position})  
+   2.3 [Get player leaders by year and specific rank](#league_leaders_{year}/rank/{rank})   
+   2.4 [Get player leaders by year and specific player ID](#league_leaders_{year}/player_id/{player_id})  
+   2.5 [Get player leaders by year and specific team](#league_leaders_{year}/team_abbrev/{team_abbrev})   
+   2.6 [Get basic stats players regular season by year](#basic_stats_players_regular_season_{year})  
+   2.7 [Get basic stats players regular season by year and specific rank](#basic_stats_players_regular_season_{year}/rank/{rank})  
+   2.8 [Get basic stats players regular season by year and specific team](#basic_stats_players_regular_season_{year}/team_abbrev/{team_abbrev})  
+   2.9 [Get basic stats players regular season by year and player ID](#basic_stats_players_regular_season_{year}/player_id/{player_id})  
+   2.10 [Get basic stats players regular season by year and position](#basic_stats_players_regular_season_{year}/position/{position})  
+   2.11 [Get basic stats players playoff by year](#basic_stats_players_playoff_{year})  
+   2.12 [Get basic stats players playoff by year and specific rank](#basic_stats_players_playoff_{year}/rank/{rank})  
+   2.13 [Get basic stats players playoff by year and specific team](#basic_stats_players_playoff_{year}/team_abbrev/{team_abbrev})  
+   2.14 [Get basic stats players playoff by year and player ID](#basic_stats_players_playoff_{year}/player_id/{player_id})  
+   2.15 [Get basic stats players playoff by year and position](#basic_stats_players_playoff_{year}/position/{position})  
+   2.16 [Get miscellaneous stats players regular season by year](#miscellaneous_stats_players_regular_season_{year})  
+   2.17 [Get miscellaneous stats players regular season by year and specific rank](#miscellaneous_stats_players_regular_season_{year}/rank/{rank})  
+   2.18 [Get miscellaneous stats players regular season by year and specific team](#miscellaneous_stats_players_regular_season_{year}/team_abbrev/{team_abbrev})  
+   2.19 [Get miscellaneous stats players regular season by year and player ID](#miscellaneous_stats_players_regular_season_{year}/player_id/{player_id})  
+   2.20 [Get miscellaneous stats players regular season by year and position](#miscellaneous_stats_players_regular_season_{year}/position/{position})  
+   2.21 [Get miscellaneous stats players playoff by year](#miscellaneous_stats_players_playoff_{year})  
+   2.22 [Get miscellaneous stats players playoff by year and specific rank](#miscellaneous_stats_players_playoff_{year}/rank/{rank})  
+   2.23 [Get miscellaneous stats players playoff by year and specific team](#miscellaneous_stats_players_playoff_{year}/team_abbrev/{team_abbrev})  
+   2.24 [Get miscellaneous stats players playoff by year and player ID](#miscellaneous_stats_players_playoff_{year}/player_id/{player_id})  
+   2.25 [Get miscellaneous stats players playoff by year and position](#miscellaneous_stats_players_playoff_{year}/position/{position})  
+   2.26 [Get hat tricks by year](#hat_tricks_{year})  
+   2.27 [Get hat tricks by year and specific team](#hat_tricks_{year}/team_abbrev/{team_abbrev})  
+   2.28 [Get hat tricks by year and player ID](#hat_tricks_{year}/player_id/{player_id})  
+   2.29 [Get hat tricks by year and specific game](#hat_tricks_{year}/game_id/{game_id})  
+   2.30 [Get hat tricks by year and specific date](#hat_tricks_{year}/game_date/{game_date})  
+   2.31 [Get penalty shots by year](#penalty_shots_{year})  
+   2.32 [Get penalty shots by year and specific team](#penalty_shots_{year}/team_abbrev/{team_abbrev})  
+   2.33 [Get penalty shots by year and player ID](#penalty_shots_{year}/player_id/{player_id})  
+   2.34 [Get penalty shots by year and specific game](#penalty_shots_{year}/game_id/{game_id})  
+   2.35 [Get penalty shots by year and specific date](#penalty_shots_{year}/game_date/{game_date})  
+   2.36 [Get advanced stats players by year](#advanced_stats_players_{year})  
+   2.37 [Get advanced stats players by year and specific rank](#advanced_stats_players_{year}/rank/{rank})  
+   2.38 [Get advanced stats players by year and player ID](#advanced_stats_players_{year}/player_id/{player_id})  
+   2.39 [Get advanced stats players by year and specific team](#advanced_stats_players_{year}/team_abbrev/{team_abbrev})  
+   2.40 [Get advanced stats players by year and position](#advanced_stats_players_{year}/position/{position})  
+   2.41 [Get skater time on ice stats by year](#skater_time_on_ice_stats_{year})  
+   2.42 [Get skater time on ice stats by year and specific rank](#skater_time_on_ice_stats_{year}/rank/{rank})  
+   2.43 [Get skater time on ice stats by year and player ID](#skater_time_on_ice_stats_{year}/player_id/{player_id})  
+   2.44 [Get skater time on ice stats by year and specific team](#skater_time_on_ice_stats_{year}/team_abbrev/{team_abbrev})  
+   2.45 [Get skater time on ice stats by year and position](#skater_time_on_ice_stats_{year}/position/{position})  
 3. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/team_abbrev/{team_abbrev})  
@@ -278,221 +272,8 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/stat_abbrev/GPS/
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/
 ```
-<a name="league_leaders_{year}/stat_abbrev/{stat_abbrev}/rank/{rank}"></a>
-### 2.3 Get player leaders by year and specific stat and rank
-- **Endpoint:** `/league_leaders_{year}/stat_abbrev/{stat_abbrev}/rank/{rank}`
-- **Method:** GET
-- **Description:** Contains statistics of leading players (league leaders) by year and specific category and rank.
-- **Parameters:**
-   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-   - **`{stat_abbrev}`** (string) - Short abbreviation of categories.
-   - **`{rank}`** (string) - Rank in the leaderboard, first place is the best.
-- **Response:** JSON format
-- **Schema table:**
-  - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
-  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
-  - **`player`** (string) - Player's full name.
-  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
-  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-
-    
-| Stat name                                   | Short code |  
-|---------------------------------------------|------------|  
-| Assists                                    | A          |  
-| Assists Per Game                           | APG        |  
-| Defensive Point Shares                     | DPS        |  
-| Even Strength Goals                        | EVSG       |  
-| Expected +/-                               | XPM        |  
-| Game-Winning Goals                         | GWG        |  
-| Games Played (Goalie)                      | GPG        |  
-| Goalie Point Shares                        | GPS        |  
-| Goals                                      | G          |  
-| Goals Against                              | GA         |  
-| Goals Against Average                      | GAA        |  
-| Goals Allowed Adjusted                     | GAAJ       |  
-| Goals Created                              | GCR        |  
-| Goals Created Per Game                     | GCPG       |  
-| Goals Per Game                             | GPGM       |  
-| Goals Saved Above Average                  | GSAA       |  
-| Hat Tricks                                 | HTR        |  
-| Losses                                     | L          |  
-| Minutes                                    | MIN        |  
-| Offensive Point Shares                     | OPS        |  
-| Penalties in Minutes                       | PIM        |  
-| Plus/Minus                                 | PLM        |  
-| Point Shares                               | PTS        |  
-| Points                                     | P          |  
-| Points Per Game                            | PPG        |  
-| Power Play Goals                           | PPGL       |  
-| Power Play Goals On-Ice Against            | PGAI       |  
-| Power Play Goals On-Ice For                | PGFI       |  
-| Save Percentage                            | SVP        |  
-| Saves                                      | SAV        |  
-| Shooting Percentage                        | SHP        |  
-| Short-Handed Goals                         | SHG        |  
-| Shots                                      | S          |  
-| Shots Against                              | SAG        |  
-| Shutouts                                   | SHO        |  
-| Ties plus OT/SO Losses                     | TOL        |  
-| Total Goals On-Ice Against                 | TGAI       |  
-| Total Goals On-Ice For                     | TGFI       |  
-| Wins                                       | W          |  
-
-##### Example by specific year
-```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/stat_abbrev/GPS/rank/3/
-```
-##### Example using for the current year
-```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/rank/3/
-```
-<a name="league_leaders_{year}/stat_abbrev/{stat_abbrev}/player_id/{player_id}"></a>
-### 2.4 Get player leaders by year and specific stat and player ID
-- **Endpoint:** `/league_leaders_{year}/stat_abbrev/{stat_abbrev}/player_id/{player_id}`
-- **Method:** GET
-- **Description:** Contains statistics of leading players (league leaders) by year and specific category and player ID.
-- **Parameters:**
-   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-   - **`{stat_abbrev}`** (string) - Short abbreviation of categories.
-   - **`{player_id}`** (string) - Unique identifier for each player, contains letters and numbers.
-- **Response:** JSON format
-- **Schema table:**
-  - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
-  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
-  - **`player`** (string) - Player's full name.
-  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
-  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-
-    
-| Stat name                                   | Short code |  
-|---------------------------------------------|------------|  
-| Assists                                    | A          |  
-| Assists Per Game                           | APG        |  
-| Defensive Point Shares                     | DPS        |  
-| Even Strength Goals                        | EVSG       |  
-| Expected +/-                               | XPM        |  
-| Game-Winning Goals                         | GWG        |  
-| Games Played (Goalie)                      | GPG        |  
-| Goalie Point Shares                        | GPS        |  
-| Goals                                      | G          |  
-| Goals Against                              | GA         |  
-| Goals Against Average                      | GAA        |  
-| Goals Allowed Adjusted                     | GAAJ       |  
-| Goals Created                              | GCR        |  
-| Goals Created Per Game                     | GCPG       |  
-| Goals Per Game                             | GPGM       |  
-| Goals Saved Above Average                  | GSAA       |  
-| Hat Tricks                                 | HTR        |  
-| Losses                                     | L          |  
-| Minutes                                    | MIN        |  
-| Offensive Point Shares                     | OPS        |  
-| Penalties in Minutes                       | PIM        |  
-| Plus/Minus                                 | PLM        |  
-| Point Shares                               | PTS        |  
-| Points                                     | P          |  
-| Points Per Game                            | PPG        |  
-| Power Play Goals                           | PPGL       |  
-| Power Play Goals On-Ice Against            | PGAI       |  
-| Power Play Goals On-Ice For                | PGFI       |  
-| Save Percentage                            | SVP        |  
-| Saves                                      | SAV        |  
-| Shooting Percentage                        | SHP        |  
-| Short-Handed Goals                         | SHG        |  
-| Shots                                      | S          |  
-| Shots Against                              | SAG        |  
-| Shutouts                                   | SHO        |  
-| Ties plus OT/SO Losses                     | TOL        |  
-| Total Goals On-Ice Against                 | TGAI       |  
-| Total Goals On-Ice For                     | TGFI       |  
-| Wins                                       | W          |  
-
-##### Example using by specific year
-```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/stat_abbrev/GPS/player_id/vasilan02/
-```
-##### Example using for the current year
-```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/player_id/vasilan02/
-```
-<a name="league_leaders_{year}/stat_abbrev/{stat_abbrev}/team_abbrev/{team_abbrev}"></a>
-### 2.5 Get player leaders by year and specific stat and team
-- **Endpoint:** `/league_leaders_{year}/stat_abbrev/{stat_abbrev}/team_abbrev/{team_abbrev}`
-- **Method:** GET
-- **Description:** Contains statistics of leading players (league leaders) by year and specific category and team.
-- **Parameters:**
-   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-   - **`{stat_abbrev}`** (string) - Short abbreviation of categories.
-   - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
-- **Response:** JSON format
-- **Schema table:**
-  - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
-  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
-  - **`player`** (string) - Player's full name.
-  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
-  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-
-    
-| Stat name                                   | Short code |  
-|---------------------------------------------|------------|  
-| Assists                                    | A          |  
-| Assists Per Game                           | APG        |  
-| Defensive Point Shares                     | DPS        |  
-| Even Strength Goals                        | EVSG       |  
-| Expected +/-                               | XPM        |  
-| Game-Winning Goals                         | GWG        |  
-| Games Played (Goalie)                      | GPG        |  
-| Goalie Point Shares                        | GPS        |  
-| Goals                                      | G          |  
-| Goals Against                              | GA         |  
-| Goals Against Average                      | GAA        |  
-| Goals Allowed Adjusted                     | GAAJ       |  
-| Goals Created                              | GCR        |  
-| Goals Created Per Game                     | GCPG       |  
-| Goals Per Game                             | GPGM       |  
-| Goals Saved Above Average                  | GSAA       |  
-| Hat Tricks                                 | HTR        |  
-| Losses                                     | L          |  
-| Minutes                                    | MIN        |  
-| Offensive Point Shares                     | OPS        |  
-| Penalties in Minutes                       | PIM        |  
-| Plus/Minus                                 | PLM        |  
-| Point Shares                               | PTS        |  
-| Points                                     | P          |  
-| Points Per Game                            | PPG        |  
-| Power Play Goals                           | PPGL       |  
-| Power Play Goals On-Ice Against            | PGAI       |  
-| Power Play Goals On-Ice For                | PGFI       |  
-| Save Percentage                            | SVP        |  
-| Saves                                      | SAV        |  
-| Shooting Percentage                        | SHP        |  
-| Short-Handed Goals                         | SHG        |  
-| Shots                                      | S          |  
-| Shots Against                              | SAG        |  
-| Shutouts                                   | SHO        |  
-| Ties plus OT/SO Losses                     | TOL        |  
-| Total Goals On-Ice Against                 | TGAI       |  
-| Total Goals On-Ice For                     | TGFI       |  
-| Wins                                       | W          |  
-
-##### Example using by specific year
-```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/stat_abbrev/GPS/team_abbrev/TBL/
-```
-##### Example using for the current year
-```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/stat_abbrev/GPS/team_abbrev/TBL/
-```
 <a name="league_leaders_{year}/rank/{rank}"></a>
-### 2.6 Get player leaders by year and specific rank
+### 2.3 Get player leaders by year and specific rank
 - **Endpoint:** `/league_leaders_{year}/rank/{rank}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific rank.
@@ -561,149 +342,8 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/rank/3/
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/
 ```
-<a name="league_leaders_{year}/rank/{rank}/player_id/{player_id}"></a>
-### 2.7 Get player leaders by year and specific rank and player ID
-- **Endpoint:** `/league_leaders_{year}/rank/{rank}/player_id/{player_id}`
-- **Method:** GET
-- **Description:** Contains statistics of leading players (league leaders) by year and specific rank and player ID.
-- **Parameters:**
-   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-   - **`{rank}`** (integer) - Rank in the leaderboard, first place is the best.
-   - **`{player_id}`** (string) - Unique identifier for each player, contains letters and numbers.
-- **Response:** JSON format
-- **Schema table:**
-  - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
-  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
-  - **`player`** (string) - Player's full name.
-  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
-  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-
-    
-| Stat name                                   | Short code |  
-|---------------------------------------------|------------|  
-| Assists                                    | A          |  
-| Assists Per Game                           | APG        |  
-| Defensive Point Shares                     | DPS        |  
-| Even Strength Goals                        | EVSG       |  
-| Expected +/-                               | XPM        |  
-| Game-Winning Goals                         | GWG        |  
-| Games Played (Goalie)                      | GPG        |  
-| Goalie Point Shares                        | GPS        |  
-| Goals                                      | G          |  
-| Goals Against                              | GA         |  
-| Goals Against Average                      | GAA        |  
-| Goals Allowed Adjusted                     | GAAJ       |  
-| Goals Created                              | GCR        |  
-| Goals Created Per Game                     | GCPG       |  
-| Goals Per Game                             | GPGM       |  
-| Goals Saved Above Average                  | GSAA       |  
-| Hat Tricks                                 | HTR        |  
-| Losses                                     | L          |  
-| Minutes                                    | MIN        |  
-| Offensive Point Shares                     | OPS        |  
-| Penalties in Minutes                       | PIM        |  
-| Plus/Minus                                 | PLM        |  
-| Point Shares                               | PTS        |  
-| Points                                     | P          |  
-| Points Per Game                            | PPG        |  
-| Power Play Goals                           | PPGL       |  
-| Power Play Goals On-Ice Against            | PGAI       |  
-| Power Play Goals On-Ice For                | PGFI       |  
-| Save Percentage                            | SVP        |  
-| Saves                                      | SAV        |  
-| Shooting Percentage                        | SHP        |  
-| Short-Handed Goals                         | SHG        |  
-| Shots                                      | S          |  
-| Shots Against                              | SAG        |  
-| Shutouts                                   | SHO        |  
-| Ties plus OT/SO Losses                     | TOL        |  
-| Total Goals On-Ice Against                 | TGAI       |  
-| Total Goals On-Ice For                     | TGFI       |  
-| Wins                                       | W          |  
-
-##### Example using by specific year
-```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/rank/3/player_id/marksja02/
-```
-##### Example using for the current year
-```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/player_id/kuempda01/
-```
-<a name="league_leaders_{year}/rank/{rank}/team_abbrev/{team_abbrev}"></a>
-### 2.8 Get player leaders by year and specific rank and team
-- **Endpoint:** `/league_leaders_{year}/rank/{rank}/team_abbrev/{team_abbrev}`
-- **Method:** GET
-- **Description:** Contains statistics of leading players (league leaders) by year and specific rank and team.
-- **Parameters:**
-   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-   - **`{rank}`** (integer) - Rank in the leaderboard, first place is the best.
-   - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
-- **Response:** JSON format
-- **Schema table:**
-  - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
-  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
-  - **`player`** (string) - Player's full name.
-  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
-  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-    
-| Stat name                                   | Short code |  
-|---------------------------------------------|------------|  
-| Assists                                    | A          |  
-| Assists Per Game                           | APG        |  
-| Defensive Point Shares                     | DPS        |  
-| Even Strength Goals                        | EVSG       |  
-| Expected +/-                               | XPM        |  
-| Game-Winning Goals                         | GWG        |  
-| Games Played (Goalie)                      | GPG        |  
-| Goalie Point Shares                        | GPS        |  
-| Goals                                      | G          |  
-| Goals Against                              | GA         |  
-| Goals Against Average                      | GAA        |  
-| Goals Allowed Adjusted                     | GAAJ       |  
-| Goals Created                              | GCR        |  
-| Goals Created Per Game                     | GCPG       |  
-| Goals Per Game                             | GPGM       |  
-| Goals Saved Above Average                  | GSAA       |  
-| Hat Tricks                                 | HTR        |  
-| Losses                                     | L          |  
-| Minutes                                    | MIN        |  
-| Offensive Point Shares                     | OPS        |  
-| Penalties in Minutes                       | PIM        |  
-| Plus/Minus                                 | PLM        |  
-| Point Shares                               | PTS        |  
-| Points                                     | P          |  
-| Points Per Game                            | PPG        |  
-| Power Play Goals                           | PPGL       |  
-| Power Play Goals On-Ice Against            | PGAI       |  
-| Power Play Goals On-Ice For                | PGFI       |  
-| Save Percentage                            | SVP        |  
-| Saves                                      | SAV        |  
-| Shooting Percentage                        | SHP        |  
-| Short-Handed Goals                         | SHG        |  
-| Shots                                      | S          |  
-| Shots Against                              | SAG        |  
-| Shutouts                                   | SHO        |  
-| Ties plus OT/SO Losses                     | TOL        |  
-| Total Goals On-Ice Against                 | TGAI       |  
-| Total Goals On-Ice For                     | TGFI       |  
-| Wins                                       | W          |  
-
-##### Example using by specific year
-```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/rank/3/team_abbrev/TBL/
-```
-##### Example using for the current year
-```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/rank/3/team_abbrev/TBL/
-```
 <a name="league_leaders_{year}/player_id/{player_id}"></a>
-### 2.9 Get player leaders by year and specific player ID
+### 2.4 Get player leaders by year and specific player ID
 - **Endpoint:** `/league_leaders_{year}/player_id/{player_id}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific player ID.
@@ -772,7 +412,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/player_id/kreidch01/
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/player_id/kreidch01/
 ```
 <a name="league_leaders_{year}/team_abbrev/{team_abbrev}"></a>
-### 2.10 Get player leaders by year and specific team
+### 2.5 Get player leaders by year and specific team
 - **Endpoint:** `/league_leaders_{year}/team_abbrev/{team_abbrev}`
 - **Method:** GET
 - **Description:** Contains statistics of leading players (league leaders) by year and specific team.
@@ -840,78 +480,8 @@ crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/team_abbrev/TOR/
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/
 ```
-<a name="league_leaders_{year}/team_abbrev/{team_abbrev}/player_id/{player_id}"></a>
-### 2.11 Get player leaders by year and specific team and player ID
-- **Endpoint:** `/league_leaders_{year}/team_abbrev/{team_abbrev}/player_id/{player_id}`
-- **Method:** GET
-- **Description:** Contains statistics of leading players (league leaders) by year and specific team and player ID.
-- **Parameters:**
-   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
-   - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
-   - **`{player_id}`** (string) - Unique identifier for each player, contains letters and numbers.
-- **Response:** JSON format
-- **Schema table:**
-  - **`season_id`** (integer) - Unique identifier for the sports season.
-  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
-  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
-  - **`player`** (string) - Player's full name.
-  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
-  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
-  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
-  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
-    
-| Stat name                                   | Short code |  
-|---------------------------------------------|------------|  
-| Assists                                    | A          |  
-| Assists Per Game                           | APG        |  
-| Defensive Point Shares                     | DPS        |  
-| Even Strength Goals                        | EVSG       |  
-| Expected +/-                               | XPM        |  
-| Game-Winning Goals                         | GWG        |  
-| Games Played (Goalie)                      | GPG        |  
-| Goalie Point Shares                        | GPS        |  
-| Goals                                      | G          |  
-| Goals Against                              | GA         |  
-| Goals Against Average                      | GAA        |  
-| Goals Allowed Adjusted                     | GAAJ       |  
-| Goals Created                              | GCR        |  
-| Goals Created Per Game                     | GCPG       |  
-| Goals Per Game                             | GPGM       |  
-| Goals Saved Above Average                  | GSAA       |  
-| Hat Tricks                                 | HTR        |  
-| Losses                                     | L          |  
-| Minutes                                    | MIN        |  
-| Offensive Point Shares                     | OPS        |  
-| Penalties in Minutes                       | PIM        |  
-| Plus/Minus                                 | PLM        |  
-| Point Shares                               | PTS        |  
-| Points                                     | P          |  
-| Points Per Game                            | PPG        |  
-| Power Play Goals                           | PPGL       |  
-| Power Play Goals On-Ice Against            | PGAI       |  
-| Power Play Goals On-Ice For                | PGFI       |  
-| Save Percentage                            | SVP        |  
-| Saves                                      | SAV        |  
-| Shooting Percentage                        | SHP        |  
-| Short-Handed Goals                         | SHG        |  
-| Shots                                      | S          |  
-| Shots Against                              | SAG        |  
-| Shutouts                                   | SHO        |  
-| Ties plus OT/SO Losses                     | TOL        |  
-| Total Goals On-Ice Against                 | TGAI       |  
-| Total Goals On-Ice For                     | TGFI       |  
-| Wins                                       | W          |  
-
-##### Example using by specific year
-```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_20212022/team_abbrev/TOR/player_id/matthau01/
-```
-##### Example using for the current year
-```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/league_leaders_now/team_abbrev/TOR/player_id/matthau01/
-```
 <a name="basic_stats_players_regular_season_{year}"></a>
-### 2.12 Get basic stats players regular season by year
+### 2.6 Get basic stats players regular season by year
 - **Endpoint:** `/basic_stats_players_regular_season_{year}/`
 - **Method:** GET
 - **Description:** Returns a table of basic individual player statistics for the specified NHL regular season. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats..
@@ -988,7 +558,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_20212022/
 crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now/
 ```
 <a name="basic_stats_players_regular_season_{year}/rank/{rank}"></a>
-### 2.13 Get basic stats players regular season by year and specific rank
+### 2.7 Get basic stats players regular season by year and specific rank
 - **Endpoint:** `/basic_stats_players_regular_season_{year}/rank/{rank}/`
 - **Method:** GET
 - **Description:** Returns a table of basic individual player statistics for the specified NHL regular season by rank. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats.
@@ -1066,7 +636,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_20212022/ra
 crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now/rank/17
 ```
 <a name="basic_stats_players_regular_season_{year}/team_abbrev/{team_abbrev}"></a>
-### 2.14 Get basic stats players regular season by year and specific team
+### 2.8 Get basic stats players regular season by year and specific team
 - **Endpoint:** `/basic_stats_players_regular_season_{year}/team_abbrev/{team_abbrev}/`
 - **Method:** GET
 - **Description:** Returns a table of basic individual player statistics for the specified NHL regular season by team. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats.
@@ -1144,7 +714,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_20212022/te
 crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now/team_abbrev/BOS/
 ```
 <a name="basic_stats_players_regular_season_{year}/player_id/{player_id}"></a>
-### 2.15 Get basic stats players regular season by year and player ID
+### 2.9 Get basic stats players regular season by year and player ID
 - **Endpoint:** `/basic_stats_players_regular_season_{year}/player_id/{player_id}/`
 - **Method:** GET
 - **Description:** Returns a table of basic individual player statistics for the specified NHL regular season by player ID. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats.
@@ -1222,7 +792,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_20212022/pl
 crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now/player_id/ahose01/
 ```
 <a name="basic_stats_players_regular_season_{year}/position/{position}"></a>
-### 2.16 Get basic stats players regular season by year and position
+### 2.10 Get basic stats players regular season by year and position
 - **Endpoint:** `/basic_stats_players_regular_season_{year}/position/{position}/`
 - **Method:** GET
 - **Description:** Returns a table of basic individual player statistics for the specified NHL regular season by position player. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats.
@@ -1300,7 +870,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_20212022/po
 crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_regular_season_now/position/RW/
 ```
 <a name="basic_stats_players_playoff_{year}"></a>
-### 2.17 Get basic stats players playoff by year
+### 2.11 Get basic stats players playoff by year
 - **Endpoint:** `/basic_stats_players_playoff_{year}/`
 - **Method:** GET
 - **Description:** Returns a table of basic individual player statistics for the specified NHL playoff. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats..
@@ -1377,7 +947,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_playoff_20212022/
 crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_playoff_now/
 ```
 <a name="basic_stats_players_playoff_{year}/rank/{rank}"></a>
-### 2.18 Get basic stats players playoff by year and specific rank
+### 2.12 Get basic stats players playoff by year and specific rank
 - **Endpoint:** `/basic_stats_players_playoff_{year}/rank/{rank}/`
 - **Method:** GET
 - **Description:** Returns a table of basic individual player statistics for the specified NHL playoff by rank. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats.
@@ -1455,7 +1025,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_playoff_20212022/rank/17
 crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_playoff_now/rank/17
 ```
 <a name="basic_stats_players_playoff_{year}/team_abbrev/{team_abbrev}"></a>
-### 2.19 Get basic stats players playoff by year and specific team
+### 2.13 Get basic stats players playoff by year and specific team
 - **Endpoint:** `/basic_stats_players_playoff_{year}/team_abbrev/{team_abbrev}/`
 - **Method:** GET
 - **Description:** Returns a table of basic individual player statistics for the specified NHL playoff by team. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats.
@@ -1533,7 +1103,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_playoff_20212022/team_abbr
 crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_playoff_now/team_abbrev/BOS/
 ```
 <a name="basic_stats_players_playoff_{year}/player_id/{player_id}"></a>
-### 2.20 Get basic stats players playoff by year and player ID
+### 2.14 Get basic stats players playoff by year and player ID
 - **Endpoint:** `/basic_stats_players_playoff_{year}/player_id/{player_id}/`
 - **Method:** GET
 - **Description:** Returns a table of basic individual player statistics for the specified NHL playoff by player ID. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats.
@@ -1611,7 +1181,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_playoff_20212022/player_id
 crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_playoff_now/player_id/ahose01/
 ```
 <a name="basic_stats_players_playoff_{year}/position/{position}"></a>
-### 2.21 Get basic stats players playoff by year and position
+### 2.15 Get basic stats players playoff by year and position
 - **Endpoint:** `/basic_stats_players_playoff_{year}/position/{position}/`
 - **Method:** GET
 - **Description:** Returns a table of basic individual player statistics for the specified NHL playoff by position player. Each object represents a player’s statistical profile for that season. For seasons from 2007–08 onward, contains additional columns such as total shot attempts and faceoff stats.
@@ -1689,7 +1259,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_playoff_20212022/position/
 crashcrab.ddns.net/{YOUR_API_KEY}/basic_stats_players_playoff_now/position/RW/
 ```
 <a name="miscellaneous_stats_players_regular_season_{year}"></a>
-### 2.22 Get miscellaneous stats players regular season by year
+### 2.16 Get miscellaneous stats players regular season by year
 - **Endpoint:** `/miscellaneous_stats_players_regular_season_{year}/`
 - **Method:** GET
 - **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified regular season. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
@@ -1764,7 +1334,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_202
 crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_now/
 ```
 <a name="miscellaneous_stats_players_regular_season_{year}/rank/{rank}"></a>
-### 2.23 Get miscellaneous stats players regular season by year and specific rank
+### 2.17 Get miscellaneous stats players regular season by year and specific rank
 - **Endpoint:** `/miscellaneous_stats_players_regular_season_{year}/rank/{rank}/`
 - **Method:** GET
 - **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified regular season by specific rank. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
@@ -1840,7 +1410,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_202
 crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_now/rank/12
 ```
 <a name="miscellaneous_stats_players_regular_season_{year}/team_abbrev/{team_abbrev}"></a>
-### 2.24 Get miscellaneous stats players regular season by year and specific team
+### 2.18 Get miscellaneous stats players regular season by year and specific team
 - **Endpoint:** `/miscellaneous_stats_players_regular_season_{year}/team_abbrev/{team_abbrev}/`
 - **Method:** GET
 - **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified regular season by specific team. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
@@ -1916,7 +1486,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_202
 crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_now/team_abbrev/BOS/
 ```
 <a name="miscellaneous_stats_players_regular_season_{year}/player_id/{player_id}"></a>
-### 2.25 Get miscellaneous stats players regular season by year and player ID
+### 2.19 Get miscellaneous stats players regular season by year and player ID
 - **Endpoint:** `/miscellaneous_stats_players_regular_season_{year}/player_id/{player_id}/`
 - **Method:** GET
 - **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified regular season by player ID. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
@@ -1992,7 +1562,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_202
 crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_now/player_id/acciano01/
 ```
 <a name="miscellaneous_stats_players_regular_season_{year}/position/{position}"></a>
-### 2.26 Get miscellaneous stats players regular season by year and position
+### 2.20 Get miscellaneous stats players regular season by year and position
 - **Endpoint:** `/miscellaneous_stats_players_regular_season_{year}/position/{position}/`
 - **Method:** GET
 - **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified regular season by position. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
@@ -2068,7 +1638,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_202
 crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_regular_season_now/position/RW/
 ```
 <a name="miscellaneous_stats_players_playoff_{year}"></a>
-### 2.27 Get miscellaneous stats players playoff by year
+### 2.21 Get miscellaneous stats players playoff by year
 - **Endpoint:** `/miscellaneous_stats_players_playoff_{year}/`
 - **Method:** GET
 - **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified playoff. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
@@ -2107,7 +1677,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_20212022/
 crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_now/
 ```
 <a name="miscellaneous_stats_players_playoff_{year}/rank/{rank}"></a>
-### 2.28 Get miscellaneous stats players playoff by year and specific rank
+### 2.22 Get miscellaneous stats players playoff by year and specific rank
 - **Endpoint:** `/miscellaneous_stats_players_playoff_{year}/rank/{rank}/`
 - **Method:** GET
 - **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified playoff by specific rank. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
@@ -2147,7 +1717,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_20212022/r
 crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_now/rank/12
 ```
 <a name="miscellaneous_stats_players_playoff_{year}/team_abbrev/{team_abbrev}"></a>
-### 2.29 Get miscellaneous stats players playoff by year and specific team
+### 2.23 Get miscellaneous stats players playoff by year and specific team
 - **Endpoint:** `/miscellaneous_stats_players_playoff_{year}/team_abbrev/{team_abbrev}/`
 - **Method:** GET
 - **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified playoff by specific team. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
@@ -2187,7 +1757,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_20212022/t
 crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_now/team_abbrev/BOS/
 ```
 <a name="miscellaneous_stats_players_playoff_{year}/player_id/{player_id}"></a>
-### 2.30 Get miscellaneous stats players playoff by year and player ID
+### 2.24 Get miscellaneous stats players playoff by year and player ID
 - **Endpoint:** `/miscellaneous_stats_players_playoff_{year}/player_id/{player_id}/`
 - **Method:** GET
 - **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified playoff by player ID. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
@@ -2227,7 +1797,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_20212022/p
 crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_now/player_id/acciano01/
 ```
 <a name="miscellaneous_stats_players_playoff_{year}/position/{position}"></a>
-### 2.31 Get miscellaneous stats players playoff by year and position
+### 2.25 Get miscellaneous stats players playoff by year and position
 - **Endpoint:** `/miscellaneous_stats_players_playoff_{year}/position/{position}/`
 - **Method:** GET
 - **Description:** Returns a table of miscellaneous individual NHL player statistics for the specified playoff by position. Each object represents a player's advanced and miscellaneous stats profile for that season, such as adjusted goals, expected plus-minus, point shares, shootout data, and more. 
@@ -2267,7 +1837,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_20212022/p
 crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_now/position/RW/
 ```
 <a name="hat_tricks_{year}"></a>
-### 2.32 Get hat tricks by year
+### 2.26 Get hat tricks by year
 - **Endpoint:** `/hat_tricks_{year}/`
 - **Method:** GET
 - **Description:** Returns a table of detailed information about all NHL hat tricks for a given season.
@@ -2294,7 +1864,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_20212022/
 crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_now/
 ```
 <a name="hat_tricks_{year}/team_abbrev/{team_abbrev}"></a>
-### 2.33 Get hat tricks by year and specific team
+### 2.27 Get hat tricks by year and specific team
 - **Endpoint:** `/hat_tricks_{year}/team_abbrev/{team_abbrev}/`
 - **Method:** GET
 - **Description:** Returns a table of detailed information about all NHL hat tricks for a given season by and specific team.
@@ -2322,7 +1892,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_20212022/team_abbrev/BOS/
 crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_now/team_abbrev/BOS/
 ```
 <a name="hat_tricks_{year}/player_id/{player_id}"></a>
-### 2.34 Get hat tricks by year and player ID
+### 2.28 Get hat tricks by year and player ID
 - **Endpoint:** `/hat_tricks_{year}/player_id/{player_id}/`
 - **Method:** GET
 - **Description:** Returns a table of detailed information about all NHL hat tricks for a given season by and player ID.
@@ -2350,7 +1920,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_20212022/player_id/bennesa01/
 crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_now/player_id/bennesa01/
 ```
 <a name="hat_tricks_{year}/game_id/{game_id}"></a>
-### 2.35 Get hat tricks by year and specific game
+### 2.29 Get hat tricks by year and specific game
 - **Endpoint:** `/hat_tricks_{year}/game_id/{game_id}/`
 - **Method:** GET
 - **Description:** Returns a table of detailed information about all NHL hat tricks for a given season by and specific game.
@@ -2378,7 +1948,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_20212022/game_id/202110160FLA/
 crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_now/game_id/202110160FLA/
 ```
 <a name="hat_tricks_{year}/game_date/{game_date}"></a>
-### 2.36 Get hat tricks by year and specific date
+### 2.30 Get hat tricks by year and specific date
 - **Endpoint:** `/hat_tricks_{year}/game_date/{game_date}/`
 - **Method:** GET
 - **Description:** Returns a table of detailed information about all NHL hat tricks for a given season by and specific date.
@@ -2406,7 +1976,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_20212022/game_date/2021-10-16/
 crashcrab.ddns.net/{YOUR_API_KEY}/hat_tricks_now/game_date/2021-10-16/
 ```
 <a name="penalty_shots_{year}"></a>
-### 2.37 Get penalty shots by year
+### 2.31 Get penalty shots by year
 - **Endpoint:** `/penalty_shots_{year}/`
 - **Method:** GET
 - **Description:** Returns a table of detailed information about all NHL penalty shots for a given season.
@@ -2433,7 +2003,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_20212022/
 crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_now/
 ```
 <a name="penalty_shots_{year}/team_abbrev/{team_abbrev}"></a>
-### 2.38 Get penalty shots by year and specific team
+### 2.32 Get penalty shots by year and specific team
 - **Endpoint:** `/penalty_shots_{year}/team_abbrev/{team_abbrev}/`
 - **Method:** GET
 - **Description:** Returns a table of detailed information about all NHL penalty shots for a given season by and specific team.
@@ -2461,7 +2031,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_20212022/team_abbrev/BOS/
 crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_now/team_abbrev/BOS/
 ```
 <a name="penalty_shots_{year}/player_id/{player_id}"></a>
-### 2.39 Get penalty shots by year and player ID
+### 2.33 Get penalty shots by year and player ID
 - **Endpoint:** `/penalty_shots_{year}/player_id/{player_id}/`
 - **Method:** GET
 - **Description:** Returns a table of detailed information about all NHL penalty shots for a given season by and player ID.
@@ -2489,7 +2059,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_20212022/player_id/laughsc01/
 crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_now/player_id/laughsc01/
 ```
 <a name="penalty_shots_{year}/game_id/{game_id}"></a>
-### 2.40 Get penalty shots by year and specific game
+### 2.34 Get penalty shots by year and specific game
 - **Endpoint:** `/penalty_shots_{year}/game_id/{game_id}/`
 - **Method:** GET
 - **Description:** Returns a table of detailed information about all NHL penalty shots for a given season by and specific game.
@@ -2517,7 +2087,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_20212022/game_id/202111160PHI/
 crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_now/game_id/202111160PHI/
 ```
 <a name="penalty shots_{year}/game_date/{game_date}"></a>
-### 2.41 Get penalty shots by year and specific date
+### 2.35 Get penalty shots by year and specific date
 - **Endpoint:** `/penalty_shots_{year}/game_date/{game_date}/`
 - **Method:** GET
 - **Description:** Returns a table of detailed information about all NHL penalty shots for a given season by and specific date.
@@ -2545,7 +2115,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_20212022/game_date/2021-11-16/
 crashcrab.ddns.net/{YOUR_API_KEY}/penalty_shots_now/game_date/2021-11-16/
 ```
 <a name="advanced_stats_players_{year}"></a>
-### 2.42 Get advanced stats players by year
+### 2.36 Get advanced stats players by year
 - **Endpoint:** `/advanced_stats_players_{year}/`
 - **Method:** GET
 - **Description:** Returns a table of advanced individual player statistics for the specified NHL season. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
@@ -2594,7 +2164,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_20212022/
 crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_now/
 ```
 <a name="advanced_stats_players_{year}/rank/{rank}"></a>
-### 2.43 Get advanced stats players by year and specific rank
+### 2.37 Get advanced stats players by year and specific rank
 - **Endpoint:** `/advanced_stats_players_{year}/rank/{rank}/`
 - **Method:** GET
 - **Description:** Returns a table of advanced individual player statistics for the specified NHL season and specific rank. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
@@ -2644,7 +2214,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_20212022/rank/23/
 crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_now/rank/23/
 ```
 <a name="advanced_stats_players_{year}/player_id/{player_id}"></a>
-### 2.44 Get advanced stats players by year and player ID
+### 2.38 Get advanced stats players by year and player ID
 - **Endpoint:** `/advanced_stats_players_{year}/player_id/{player_id}/`
 - **Method:** GET
 - **Description:** Returns a table of advanced individual player statistics for the specified NHL season and player ID. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
@@ -2694,7 +2264,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_20212022/player_id/ahos
 crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_now/player_id/ahose01/
 ```
 <a name="advanced_stats_players_{year}/team_abbrev/{team_abbrev}"></a>
-### 2.45 Get advanced stats players by year and specific team
+### 2.39 Get advanced stats players by year and specific team
 - **Endpoint:** `/advanced_stats_players_{year}/team_abbrev/{team_abbrev}/`
 - **Method:** GET
 - **Description:** Returns a table of advanced individual player statistics for the specified NHL season and specific team. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
@@ -2744,7 +2314,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_20212022/team_abbrev/BO
 crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_now/team_abbrev/BOS/
 ```
 <a name="advanced_stats_players_{year}/position/{position}"></a>
-### 2.46 Get advanced stats players by year and position
+### 2.40 Get advanced stats players by year and position
 - **Endpoint:** `/advanced_stats_players_{year}/position/{position}/`
 - **Method:** GET
 - **Description:** Returns a table of advanced individual player statistics for the specified NHL season and position. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
@@ -2794,7 +2364,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_20212022/position/RW/
 crashcrab.ddns.net/{YOUR_API_KEY}/advanced_stats_players_now/position/RW/
 ```
 <a name="skater_time_on_ice_stats_{year}"></a>
-### 2.47 Get skater time on ice stats by year
+### 2.41 Get skater time on ice stats by year
 - **Endpoint:** `/skater_time_on_ice_stats_{year}/`
 - **Method:** GET
 - **Description:** Returns a table of skater time on ice stats for the specified NHL season. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
@@ -2838,7 +2408,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_20212022/
 crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_now/
 ```
 <a name="skater_time_on_ice_stats_{year}/rank/{rank}"></a>
-### 2.48 Get skater time on ice stats by year and specific rank
+### 2.42 Get skater time on ice stats by year and specific rank
 - **Endpoint:** `/skater_time_on_ice_stats_{year}/rank/{rank}/`
 - **Method:** GET
 - **Description:** Returns a table of skater time on ice stats for the specified NHL season and specific rank. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
@@ -2883,7 +2453,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_20212022/rank/22/
 crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_now/rank/22/
 ```
 <a name="skater_time_on_ice_stats_{year}/player_id/{player_id}"></a>
-### 2.49 Get skater time on ice stats by year and player ID
+### 2.43 Get skater time on ice stats by year and player ID
 - **Endpoint:** `/skater_time_on_ice_stats_{year}/player_id/{player_id}/`
 - **Method:** GET
 - **Description:** Returns a table of skater time on ice stats for the specified NHL season and player ID. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
@@ -2928,7 +2498,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_20212022/player_id/ad
 crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_now/player_id/addisca01/
 ```
 <a name="skater_time_on_ice_stats_{year}/team_abbrev/{team_abbrev}"></a>
-### 2.50 Get skater time on ice stats by year and specific team
+### 2.44 Get skater time on ice stats by year and specific team
 - **Endpoint:** `/skater_time_on_ice_stats_{year}/team_abbrev/{team_abbrev}/`
 - **Method:** GET
 - **Description:** Returns a table of skater time on ice stats for the specified NHL season and specific team. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
@@ -2973,7 +2543,7 @@ crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_20212022/team_abbrev/
 crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_now/team_abbrev/BOS/
 ```
 <a name="skater_time_on_ice_stats_{year}/position/{position}"></a>
-### 2.51 Get skater time on ice stats by year and position
+### 2.45 Get skater time on ice stats by year and position
 - **Endpoint:** `/skater_time_on_ice_stats_{year}/position/{position}/`
 - **Method:** GET
 - **Description:** Returns a table of skater time on ice stats for the specified NHL season and position. Each object represents a player’s statistical profile for that season. Data start from 2007–08 season.
