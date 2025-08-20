@@ -121,6 +121,11 @@ When you need more than one point of view, choose StatHydra!**
    5.16 [Get playoff team statistics by year](#playoff_team_statistics_{year})  
    5.17 [Get playoff team statistics by year and specific team](#playoff_team_statistics_{year}/team_abbrev/{team_abbrev})  
    5.18 [Get playoff team statistics by year and specific rank](#playoff_team_statistics_{year}/rank/{rank})  
+   5.19 [Get playoff leaders by year and all stat](#playoff_leader_{year})  
+   5.20 [Get playoff leaders by year and specific stat](#playoff_leader_{year}/stat_abbrev/{stat_abbrev})  
+   5.21 [Get playoff leaders by year and specific rank](#playoff_leader_{year}/rank/{rank})  
+   5.22 [Get playoff leaders by year specific player ID](#playoff_leader_{year}/player_id/{player_id})  
+   5.23 [Get playoff leaders by year specific team](#playoff_leader_{year}/team_abbrev/{team_abbrev})  
 ---
 <a name="base-url"></a>
 ## 1. Base URL
@@ -5081,4 +5086,350 @@ crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_statistics_20242025/rank/3/
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/playoff_team_statistics_now/rank/3/
+```
+<a name="playoff_leader_{year}"></a>
+### 5.19 Get playoff leaders by year and all stat
+- **Endpoint:** `/playoff_leader_{year}/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (playoff) by year and all category.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    
+| Stat name                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_leader_20212022/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_leader_now/
+```
+<a name="playoff_leader_{year}/stat_abbrev/{stat_abbrev}"></a>
+### 5.20 Get playoff leaders by year and specific stat
+- **Endpoint:** `/league_leaders_{year}/stat_abbrev/{stat_abbrev}`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (playoff) by year and specific stat.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{stat_abbrev}`** (string) - Short abbreviation of categories.
+- **Response:** JSON format
+- **Schema table:**
+  - **`season_id`** (integer) - Unique identifier for the sports season.
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
+
+    
+| Stat name                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
+
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_leader_20212022/stat_abbrev/GPS/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_leader_now/stat_abbrev/GPS/
+```
+<a name="playoff_leader_{year}/rank/{rank}"></a>
+### 5.21 Get playoff leaders by year and specific rank
+- **Endpoint:** `/playoff_leader_{year}/rank/{rank}/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (playoff) by year and specific rank.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{rank}`** (integer) - Rank in the leaderboard, first place is the best.
+- **Response:** JSON format
+- **Schema table:**
+  - **`season_id`** (integer) - Unique identifier for the sports season.
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
+
+    
+| Stat name                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_leader_20212022/rank/3/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_leader_now/rank/3/
+```
+<a name="playoff_leader_{year}/player_id/{player_id}"></a>
+### 5.22 Get playoff leaders by year specific player ID
+- **Endpoint:** `/playoff_leader_{year}/player_id/{player_id}`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (playoff) by year and specific player ID.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{player_id}`** (string) - Unique identifier for each player, contains letters and numbers.
+- **Response:** JSON format
+- **Schema table:**
+  - **`season_id`** (integer) - Unique identifier for the sports season.
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:  
+    
+| Stat name                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_leader_20212022/player_id/draisle01/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_leader_now/player_id/draisle01/
+```
+<a name="playoff_leader_{year}/team_abbrev/{team_abbrev}"></a>
+### 5.23 Get playoff leaders by year specific team
+- **Endpoint:** `/playoff_leader_{year}/team_abbrev/{team_abbrev}`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (playoff) by year and specific team.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{team_abbrev}`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+- **Response:** JSON format
+- **Schema table:**
+  - **`season_id`** (integer) - Unique identifier for the sports season.
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL"). Sometimes you can see the values ​​2TM, 3TM, etc. 2TM means the player played for 2 teams, 3TM - for three teams, etc.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code: 
+    
+| Stat name                                   | Short code |  
+|---------------------------------------------|------------|  
+| Assists                                    | A          |  
+| Assists Per Game                           | APG        |  
+| Defensive Point Shares                     | DPS        |  
+| Even Strength Goals                        | EVSG       |  
+| Expected +/-                               | XPM        |  
+| Game-Winning Goals                         | GWG        |  
+| Games Played (Goalie)                      | GPG        |  
+| Goalie Point Shares                        | GPS        |  
+| Goals                                      | G          |  
+| Goals Against                              | GA         |  
+| Goals Against Average                      | GAA        |  
+| Goals Allowed Adjusted                     | GAAJ       |  
+| Goals Created                              | GCR        |  
+| Goals Created Per Game                     | GCPG       |  
+| Goals Per Game                             | GPGM       |  
+| Goals Saved Above Average                  | GSAA       |  
+| Hat Tricks                                 | HTR        |  
+| Losses                                     | L          |  
+| Minutes                                    | MIN        |  
+| Offensive Point Shares                     | OPS        |  
+| Penalties in Minutes                       | PIM        |  
+| Plus/Minus                                 | PLM        |  
+| Point Shares                               | PTS        |  
+| Points                                     | P          |  
+| Points Per Game                            | PPG        |  
+| Power Play Goals                           | PPGL       |  
+| Power Play Goals On-Ice Against            | PGAI       |  
+| Power Play Goals On-Ice For                | PGFI       |  
+| Save Percentage                            | SVP        |  
+| Saves                                      | SAV        |  
+| Shooting Percentage                        | SHP        |  
+| Short-Handed Goals                         | SHG        |  
+| Shots                                      | S          |  
+| Shots Against                              | SAG        |  
+| Shutouts                                   | SHO        |  
+| Ties plus OT/SO Losses                     | TOL        |  
+| Total Goals On-Ice Against                 | TGAI       |  
+| Total Goals On-Ice For                     | TGFI       |  
+| Wins                                       | W          |  
+
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_leader_20212022/team_abbrev/TOR/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_leader_now/team_abbrev/TOR/
 ```
