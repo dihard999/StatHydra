@@ -5610,9 +5610,9 @@ crashcrab.ddns.net/{YOUR_API_KEY}/playoff_goalie_stat_now/player_id/blackma01/
     
 ##### Example using by specific year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/playoff_goalie_stat_20242025/player_id/blackma01/
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_goalie_stat_20242025/rank/17/
 ```
 ##### Example using for the current year
 ```bash
-crashcrab.ddns.net/{YOUR_API_KEY}/playoff_goalie_stat_now/player_id/blackma01/
+crashcrab.ddns.net/{YOUR_API_KEY}/playoff_goalie_stat_now/rank/17/
 ```
