@@ -125,7 +125,7 @@ When you need more than one point of view, choose StatHydra!**
    5.20 [Get playoff leaders by year and specific stat](#playoff_leader_{year}/stat_abbrev/{stat_abbrev})  
    5.21 [Get playoff leaders by year and specific rank](#playoff_leader_{year}/rank/{rank})  
    5.22 [Get playoff leaders by year specific player ID](#playoff_leader_{year}/player_id/{player_id})  
-   5.23 [Get playoff leaders by year specific team](#playoff_leader_{year}/team_abbrev/{team_abbrev})
+   5.23 [Get playoff leaders by year specific team](#playoff_leader_{year}/team_abbrev/{team_abbrev})  
    5.24 [Get playoff goalie stat by year](#playoff_goalie_stat_{year})  
    5.25 [Get playoff goalie stat by year and specific team](#playoff_goalie_stat_{year}/team_abbrev/{team_abbrev})  
    5.26 [Get playoff goalie stat by year and specific player ID](#playoff_goalie_stat_{year}/player_id/{player_id})  
