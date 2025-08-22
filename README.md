@@ -47,7 +47,11 @@ When you need more than one point of view, choose StatHydra!**
    2.33 [Get skater time on ice stats by year and player ID](#skater_time_on_ice_stats_{year}/player_id/{player_id})  
    2.34 [Get skater time on ice stats by year and specific team](#skater_time_on_ice_stats_{year}/team_abbrev/{team_abbrev})  
    2.35 [Get skater time on ice stats by year and position](#skater_time_on_ice_stats_{year}/position/{position})  
-3. [Team](#team)  
+   2.36 [Get regular season goalie stat by year](#regular_season_goalie_stat_{year})  
+   2.37 [Get regular season goalie stat by year and specific team](#regular_season_goalie_stat_{year}/team_abbrev/{team_abbrev})  
+   2.38 [Get regular season goalie stat by year and specific player ID](#regular_season_goalie_stat_{year}/player_id/{player_id})  
+   2.39 [Get regular season goalie stat by year and specific rank](#regular_season_goalie_stat_{year}/rank/{rank})  
+4. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/team_abbrev/{team_abbrev})  
    3.3 [Get teams analytics 5 on 5 by year](#team_analytics_5_on_5_{year})  
@@ -70,7 +74,7 @@ When you need more than one point of view, choose StatHydra!**
    3.20 [Get shots (period) by year and specific team](#shots_by_period_{year}/team_abbrev/{team_abbrev})  
    3.21 [Get miscellaneous records teams by year](#records_team_{year})  
    3.22 [Get miscellaneous records teams by year and specific team](#records_team_{year}/team_abbrev/{team_abbrev})  
-4. [Season](#season)  
+5. [Season](#season)  
    4.1 [Get summary statistic season by year](#season_summary_{year})  
    4.2 [Get summary statistic season by year and specific team](#season_summary_{year}/team_abbrev/{team_abbrev})  
    4.3 [Get detail statistic season by year](#season_statistics_{year})  
@@ -92,7 +96,7 @@ When you need more than one point of view, choose StatHydra!**
    4.19 [Get regular season team gamelog by year and specific game](#regular_season_team_gamelog_{year}/game_id/{game_id})  
    4.20 [Get preseason odds team for season by year](#preseason_odds_{year})  
    4.21 [Get preseason odds team for season by year and specific team](#preseason_odds_{year}/team_abbrev/{team_abbrev})  
-5. [Playoff](#playoff)  
+6. [Playoff](#playoff)  
    5.1 [Get playoff result by year](#league_playoff_series_result_{year})  
    5.2 [Get playoff result by year and specific game](#league_playoff_series_result_{year}/game_id/{game_id})  
    5.3 [Get playoff result by year and specific date](#league_playoff_series_result_{year}/game_date/{game_date})  
@@ -2007,6 +2011,233 @@ crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_20212022/position/RW/
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/skater_time_on_ice_stats_now/position/RW/
+```
+<a name="regular_season_goalie_stat_{year}"></a>
+### 2.36 Get regular season goalie stat by year
+- **Endpoint:** `/regular_season_goalie_stat_{year}/`
+- **Method:** GET
+- **Description:** Contains statistics of goalie players (regular season) by year.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank player.
+  - **`player`** (string) - Full name player.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers
+  - **`age`** (integer) - Age player.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`posittion`** (string) - Position player (e.g., "G").
+  - **`goalie_games`** (integer) - Games Played.
+  - **`goalie_starts`** (integer) - Games Started.
+  - **`goalie_wins`** (integer) - Wins
+  - **`goalie_ties`** (integer) - Ties plus OT/SO Losses
+  - **`goalie_losses`** (integer) - Losses
+  - **`goalie_goals_against`** (integer) - Goals Against
+  - **`goalie_goals_against_per_game`** (number, decimal) - Goals Against per game
+  - **`shots_against_goalie`** (integer) - Shots Against
+  - **`shots_against_goalie_per_game`** (number, decimal) - Shots Against per game
+  - **`goalie_saves`** (integer) - Saves 
+  - **`goalie_saves_per_game`** (integer) - Saves per game
+  - **`save_pct_goalie`** (number, decimal) - Save Percentage
+  - **`goals_against_avg`** (number, decimal) - Goals Against Average
+  - **`goalie_shutouts`** (integer) - Shutouts
+  - **`goalie_min`** (string) - Minutes play  (e.g., "MMMM:SS").
+  - **`goalie_min_decimal`** (number, decimal) - Minutes play  (decimal).
+  - **`goalie_min_per_game`** (number, decimal) - Minutes play per game (e.g., "62.4").
+  - **`quality_starts`** (integer) - Quality Starts. Starts with SV% > average SV% for the year, or at least 88.5% on nights with 20 or fewer shots against.
+  - **`quality_starts_pct`** (number, decimal) - Quality Start Percentage. QS/GS > 60% Good, < 50% Bad, ~53% League Avg<br/>Developed by Rob Vollman in the Hockey Abstract.
+  - **`goalie_really_bad_starts`** (integer) - Really Bad Starts. Starts with a SV% below 85%.
+  - **`ga_pct_minus`** (integer) - GA Pct- is goals allowed % relative to league goals allowed %. Lower is better, 100 is exactly average, 0 means you have saved 100% of shots faced. Min. 4 shots faced per team game needed to qualify.
+  - **`gs_above_avg`** (number, decimal) - Goals Saved Above Average, the goals this goalie prevented given his save percentage and shots faced vs. the league average save percentage on the same number of shots. Min. 4 shots faced per team game needed to qualify.
+  - **`gs_above_avg_per_game`** (number, decimal) - Goals Saved Above Average per game
+  - **`goals`** (integer) - Goals
+  - **`goals_per_game`** (number, decimal) - Goals per game
+  - **`assists`** (integer) - Assists
+  - **`assists_per_game`** (number, decimal) - Assists per game
+  - **`points`** (integer) - Points
+  - **`points_per_game`** (number, decimal) - Points per game
+  - **`pen_min`** (integer) - Penalties in Minutes
+  - **`pen_min_per_game`** (number, decimal) - Penalties in Minutes per game
+  - **`awards`** (string) - Awards player
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_goalie_stat_20242025/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_goalie_stat_now/
+```
+<a name="regular_season_goalie_stat_{year}/team_abbrev/{team_abbrev}"></a>
+### 2.37 Get regular season goalie stat by year and specific team
+- **Endpoint:** `/regular_season_goalie_stat_{year}/team_abbrev/{team_abbrev}/`
+- **Method:** GET
+- **Description:** Contains statistics of goalie players (regular season) by year and specific team.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{team_abbrev}`** (string) - Unique identifier for each player, contains letters and numbers.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank player.
+  - **`player`** (string) - Full name player.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers
+  - **`age`** (integer) - Age player.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`posittion`** (string) - Position player (e.g., "G").
+  - **`goalie_games`** (integer) - Games Played.
+  - **`goalie_starts`** (integer) - Games Started.
+  - **`goalie_wins`** (integer) - Wins
+  - **`goalie_ties`** (integer) - Ties plus OT/SO Losses
+  - **`goalie_losses`** (integer) - Losses
+  - **`goalie_goals_against`** (integer) - Goals Against
+  - **`goalie_goals_against_per_game`** (number, decimal) - Goals Against per game
+  - **`shots_against_goalie`** (integer) - Shots Against
+  - **`shots_against_goalie_per_game`** (number, decimal) - Shots Against per game
+  - **`goalie_saves`** (integer) - Saves 
+  - **`goalie_saves_per_game`** (integer) - Saves per game
+  - **`save_pct_goalie`** (number, decimal) - Save Percentage
+  - **`goals_against_avg`** (number, decimal) - Goals Against Average
+  - **`goalie_shutouts`** (integer) - Shutouts
+  - **`goalie_min`** (string) - Minutes play  (e.g., "MMMM:SS").
+  - **`goalie_min_decimal`** (number, decimal) - Minutes play  (decimal).
+  - **`goalie_min_per_game`** (number, decimal) - Minutes play per game (e.g., "62.4").
+  - **`quality_starts`** (integer) - Quality Starts. Starts with SV% > average SV% for the year, or at least 88.5% on nights with 20 or fewer shots against.
+  - **`quality_starts_pct`** (number, decimal) - Quality Start Percentage. QS/GS > 60% Good, < 50% Bad, ~53% League Avg<br/>Developed by Rob Vollman in the Hockey Abstract.
+  - **`goalie_really_bad_starts`** (integer) - Really Bad Starts. Starts with a SV% below 85%.
+  - **`ga_pct_minus`** (integer) - GA Pct- is goals allowed % relative to league goals allowed %. Lower is better, 100 is exactly average, 0 means you have saved 100% of shots faced. Min. 4 shots faced per team game needed to qualify.
+  - **`gs_above_avg`** (number, decimal) - Goals Saved Above Average, the goals this goalie prevented given his save percentage and shots faced vs. the league average save percentage on the same number of shots. Min. 4 shots faced per team game needed to qualify.
+  - **`gs_above_avg_per_game`** (number, decimal) - Goals Saved Above Average per game
+  - **`goals`** (integer) - Goals
+  - **`goals_per_game`** (number, decimal) - Goals per game
+  - **`assists`** (integer) - Assists
+  - **`assists_per_game`** (number, decimal) - Assists per game
+  - **`points`** (integer) - Points
+  - **`points_per_game`** (number, decimal) - Points per game
+  - **`pen_min`** (integer) - Penalties in Minutes
+  - **`pen_min_per_game`** (number, decimal) - Penalties in Minutes per game
+  - **`awards`** (string) - Awards player
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_goalie_stat_20242025/team_abbrev/WPG/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_goalie_stat_now/team_abbrev/WPG/
+```
+<a name="regular_season_goalie_stat_{year}/player_id/{player_id}"></a>
+### 2.38 Get regular season goalie stat by year and specific player ID
+- **Endpoint:** `/regular_season_goalie_stat_{year}/player_id/{player_id}/`
+- **Method:** GET
+- **Description:** Contains statistics of goalie players (regular season) by year and specific player ID.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{player_id}`** (string) - Unique identifier for each player, contains letters and numbers
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank player.
+  - **`player`** (string) - Full name player.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers
+  - **`age`** (integer) - Age player.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`posittion`** (string) - Position player (e.g., "G").
+  - **`goalie_games`** (integer) - Games Played.
+  - **`goalie_starts`** (integer) - Games Started.
+  - **`goalie_wins`** (integer) - Wins
+  - **`goalie_ties`** (integer) - Ties plus OT/SO Losses
+  - **`goalie_losses`** (integer) - Losses
+  - **`goalie_goals_against`** (integer) - Goals Against
+  - **`goalie_goals_against_per_game`** (number, decimal) - Goals Against per game
+  - **`shots_against_goalie`** (integer) - Shots Against
+  - **`shots_against_goalie_per_game`** (number, decimal) - Shots Against per game
+  - **`goalie_saves`** (integer) - Saves 
+  - **`goalie_saves_per_game`** (integer) - Saves per game
+  - **`save_pct_goalie`** (number, decimal) - Save Percentage
+  - **`goals_against_avg`** (number, decimal) - Goals Against Average
+  - **`goalie_shutouts`** (integer) - Shutouts
+  - **`goalie_min`** (string) - Minutes play  (e.g., "MMMM:SS").
+  - **`goalie_min_decimal`** (number, decimal) - Minutes play  (decimal).
+  - **`goalie_min_per_game`** (number, decimal) - Minutes play per game (e.g., "62.4").
+  - **`quality_starts`** (integer) - Quality Starts. Starts with SV% > average SV% for the year, or at least 88.5% on nights with 20 or fewer shots against.
+  - **`quality_starts_pct`** (number, decimal) - Quality Start Percentage. QS/GS > 60% Good, < 50% Bad, ~53% League Avg<br/>Developed by Rob Vollman in the Hockey Abstract.
+  - **`goalie_really_bad_starts`** (integer) - Really Bad Starts. Starts with a SV% below 85%.
+  - **`ga_pct_minus`** (integer) - GA Pct- is goals allowed % relative to league goals allowed %. Lower is better, 100 is exactly average, 0 means you have saved 100% of shots faced. Min. 4 shots faced per team game needed to qualify.
+  - **`gs_above_avg`** (number, decimal) - Goals Saved Above Average, the goals this goalie prevented given his save percentage and shots faced vs. the league average save percentage on the same number of shots. Min. 4 shots faced per team game needed to qualify.
+  - **`gs_above_avg_per_game`** (number, decimal) - Goals Saved Above Average per game
+  - **`goals`** (integer) - Goals
+  - **`goals_per_game`** (number, decimal) - Goals per game
+  - **`assists`** (integer) - Assists
+  - **`assists_per_game`** (number, decimal) - Assists per game
+  - **`points`** (integer) - Points
+  - **`points_per_game`** (number, decimal) - Points per game
+  - **`pen_min`** (integer) - Penalties in Minutes
+  - **`pen_min_per_game`** (number, decimal) - Penalties in Minutes per game
+  - **`awards`** (string) - Awards player
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_goalie_stat_20242025/player_id/blackma01/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_goalie_stat_now/player_id/blackma01/
+```
+<a name="regular_season_goalie_stat_{year}/rank/{rank}"></a>
+### 2.39 Get regular season goalie stat by year and specific rank
+- **Endpoint:** `/regular_season_goalie_stat_{year}/rank/{rank}/`
+- **Method:** GET
+- **Description:** Contains statistics of goalie players (regular season) by year and specific rank.
+- **Parameters:**
+   - **`{year}`** (integer) - A dynamic prefix identifying a season or data set (e.g. "20112012", "20172018", "20232024"). This prefix is ​​part of the path and is used to identify the data table.
+   - **`{rank}`** (string) - Rank player.
+- **Response:** JSON format
+- **Schema table:**
+  - **`rank`** (integer) - Rank player.
+  - **`player`** (string) - Full name player.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers
+  - **`age`** (integer) - Age player.
+  - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
+  - **`posittion`** (string) - Position player (e.g., "G").
+  - **`goalie_games`** (integer) - Games Played.
+  - **`goalie_starts`** (integer) - Games Started.
+  - **`goalie_wins`** (integer) - Wins
+  - **`goalie_ties`** (integer) - Ties plus OT/SO Losses
+  - **`goalie_losses`** (integer) - Losses
+  - **`goalie_goals_against`** (integer) - Goals Against
+  - **`goalie_goals_against_per_game`** (number, decimal) - Goals Against per game
+  - **`shots_against_goalie`** (integer) - Shots Against
+  - **`shots_against_goalie_per_game`** (number, decimal) - Shots Against per game
+  - **`goalie_saves`** (integer) - Saves 
+  - **`goalie_saves_per_game`** (integer) - Saves per game
+  - **`save_pct_goalie`** (number, decimal) - Save Percentage
+  - **`goals_against_avg`** (number, decimal) - Goals Against Average
+  - **`goalie_shutouts`** (integer) - Shutouts
+  - **`goalie_min`** (string) - Minutes play  (e.g., "MMMM:SS").
+  - **`goalie_min_decimal`** (number, decimal) - Minutes play  (decimal).
+  - **`goalie_min_per_game`** (number, decimal) - Minutes play per game (e.g., "62.4").
+  - **`quality_starts`** (integer) - Quality Starts. Starts with SV% > average SV% for the year, or at least 88.5% on nights with 20 or fewer shots against.
+  - **`quality_starts_pct`** (number, decimal) - Quality Start Percentage. QS/GS > 60% Good, < 50% Bad, ~53% League Avg<br/>Developed by Rob Vollman in the Hockey Abstract.
+  - **`goalie_really_bad_starts`** (integer) - Really Bad Starts. Starts with a SV% below 85%.
+  - **`ga_pct_minus`** (integer) - GA Pct- is goals allowed % relative to league goals allowed %. Lower is better, 100 is exactly average, 0 means you have saved 100% of shots faced. Min. 4 shots faced per team game needed to qualify.
+  - **`gs_above_avg`** (number, decimal) - Goals Saved Above Average, the goals this goalie prevented given his save percentage and shots faced vs. the league average save percentage on the same number of shots. Min. 4 shots faced per team game needed to qualify.
+  - **`gs_above_avg_per_game`** (number, decimal) - Goals Saved Above Average per game
+  - **`goals`** (integer) - Goals
+  - **`goals_per_game`** (number, decimal) - Goals per game
+  - **`assists`** (integer) - Assists
+  - **`assists_per_game`** (number, decimal) - Assists per game
+  - **`points`** (integer) - Points
+  - **`points_per_game`** (number, decimal) - Points per game
+  - **`pen_min`** (integer) - Penalties in Minutes
+  - **`pen_min_per_game`** (number, decimal) - Penalties in Minutes per game
+  - **`awards`** (string) - Awards player
+    
+##### Example using by specific year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_goalie_stat_20242025/rank/17/
+```
+##### Example using for the current year
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_goalie_stat_now/rank/17/
 ```
 ---
 <a name="team"></a>
