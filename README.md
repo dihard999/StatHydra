@@ -51,6 +51,10 @@ When you need more than one point of view, choose StatHydra!**
    2.37 [Get regular season goalie stat by year and specific team](#regular_season_goalie_stat_{year}/team_abbrev/{team_abbrev})  
    2.38 [Get regular season goalie stat by year and specific player ID](#regular_season_goalie_stat_{year}/player_id/{player_id})  
    2.39 [Get regular season goalie stat by year and specific rank](#regular_season_goalie_stat_{year}/rank/{rank})  
+   2.40 [Get active leader for all time regular season](#all_time_regular_season_active_leader)  
+   2.41 [Get active leader for all time regular season and specific stat](#all_time_regular_season_active_leader/stat_abbrev/{stat_abbrev})  
+   2.42 [Get active leader for all time regular season and player ID](#all_time_regular_season_active_leader/player_id/{player_id})  
+   2.43 [Get active leader for all time regular season and rank](#all_time_regular_season_active_leader/rank/{rank})  
 4. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/team_abbrev/{team_abbrev})  
@@ -2238,6 +2242,217 @@ crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_goalie_stat_20242025/rank/17/
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/regular_season_goalie_stat_now/rank/17/
+```
+<a name="all_time_regular_season_active_leader"></a>
+### 2.40 Get active leader for all time regular season
+- **Endpoint:** `/all_time_regular_season_active_leader/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (regular season) who are currently playing and statistics for their entire career.
+- **Parameters:** No
+- **Response:** JSON format
+- **Schema table:**
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    
+| Stat name                       | Short code |  
+|---------------------------------|------------|  
+| Adjusted Assists                | AA         |  
+| Adjusted Goals                  | AG         |  
+| Adjusted Goals Created          | AGC        |  
+| Adjusted Points                 | AP         |  
+| Assists                         | A          |  
+| Assists Per Game                | APG        |  
+| Defensive Point Shares          | DPS        |  
+| Even Strength Goals             | EVSG       |  
+| Expected +/-                    | XPM        |  
+| Game-Winning Goals              | GWG        |  
+| Games Played                    | GP         |  
+| Goals                           | G          |  
+| Goals Created                   | GCR        |  
+| Goals Created Per Game          | GCPG       |  
+| Goals Per Game                  | GPGM       |  
+| Hat Tricks                      | HTR        |  
+| Offensive Point Shares          | OPS        |  
+| Penalties in Minutes            | PIM        |  
+| Plus/Minus                      | PLM        |  
+| Point Shares                    | PTS        |  
+| Points                          | P          |  
+| Points Per Game                 | PPG        |  
+| Power Play Goals                | PPGL       |  
+| Power Play Goals On-Ice Against | PGAI       |  
+| Power Play Goals On-Ice For     | PGFI       |  
+| Shooting Percentage             | SHP        |  
+| Shots                           | S          |  
+| Short-Handed Goals              | SHG        |  
+| Total Goals On-Ice Against      | TGAI       |  
+| Total Goals On-Ice For          | TGFI       | 
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/all_time_regular_season_active_leader/
+```
+<a name="all_time_regular_season_active_leader/stat_abbrev/{stat_abbrev}"></a>
+### 2.41 Get active leader for all time regular season and specific stat
+- **Endpoint:** `/all_time_regular_season_active_leader/stat_abbrev/{stat_abbrev}/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (regular season) who are currently playing and statistics for their entire career and filtering by specific stat.
+- **Parameters:**
+   - **`{stat_abbrev}`** (string) - Short abbreviation of categories (e.g., "Assists" - "A").
+- **Response:** JSON format
+- **Schema table:**
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    
+| Stat name                       | Short code |  
+|---------------------------------|------------|  
+| Adjusted Assists                | AA         |  
+| Adjusted Goals                  | AG         |  
+| Adjusted Goals Created          | AGC        |  
+| Adjusted Points                 | AP         |  
+| Assists                         | A          |  
+| Assists Per Game                | APG        |  
+| Defensive Point Shares          | DPS        |  
+| Even Strength Goals             | EVSG       |  
+| Expected +/-                    | XPM        |  
+| Game-Winning Goals              | GWG        |  
+| Games Played                    | GP         |  
+| Goals                           | G          |  
+| Goals Created                   | GCR        |  
+| Goals Created Per Game          | GCPG       |  
+| Goals Per Game                  | GPGM       |  
+| Hat Tricks                      | HTR        |  
+| Offensive Point Shares          | OPS        |  
+| Penalties in Minutes            | PIM        |  
+| Plus/Minus                      | PLM        |  
+| Point Shares                    | PTS        |  
+| Points                          | P          |  
+| Points Per Game                 | PPG        |  
+| Power Play Goals                | PPGL       |  
+| Power Play Goals On-Ice Against | PGAI       |  
+| Power Play Goals On-Ice For     | PGFI       |  
+| Shooting Percentage             | SHP        |  
+| Shots                           | S          |  
+| Short-Handed Goals              | SHG        |  
+| Total Goals On-Ice Against      | TGAI       |  
+| Total Goals On-Ice For          | TGFI       | 
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/all_time_regular_season_active_leader/stat_abbrev/SHG/
+```
+<a name="all_time_regular_season_active_leader/player_id/{player_id}"></a>
+### 2.42 Get active leader for all time regular season and player ID
+- **Endpoint:** `/all_time_regular_season_active_leader/player_id/{player_id}/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (regular season) who are currently playing and statistics for their entire career and filtering by player_id.
+- **Parameters:**
+   - **`{player_id}`** (string) - Unique identifier for each player, contains letters and numbers.
+- **Response:** JSON format
+- **Schema table:**
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    
+| Stat name                       | Short code |  
+|---------------------------------|------------|  
+| Adjusted Assists                | AA         |  
+| Adjusted Goals                  | AG         |  
+| Adjusted Goals Created          | AGC        |  
+| Adjusted Points                 | AP         |  
+| Assists                         | A          |  
+| Assists Per Game                | APG        |  
+| Defensive Point Shares          | DPS        |  
+| Even Strength Goals             | EVSG       |  
+| Expected +/-                    | XPM        |  
+| Game-Winning Goals              | GWG        |  
+| Games Played                    | GP         |  
+| Goals                           | G          |  
+| Goals Created                   | GCR        |  
+| Goals Created Per Game          | GCPG       |  
+| Goals Per Game                  | GPGM       |  
+| Hat Tricks                      | HTR        |  
+| Offensive Point Shares          | OPS        |  
+| Penalties in Minutes            | PIM        |  
+| Plus/Minus                      | PLM        |  
+| Point Shares                    | PTS        |  
+| Points                          | P          |  
+| Points Per Game                 | PPG        |  
+| Power Play Goals                | PPGL       |  
+| Power Play Goals On-Ice Against | PGAI       |  
+| Power Play Goals On-Ice For     | PGFI       |  
+| Shooting Percentage             | SHP        |  
+| Shots                           | S          |  
+| Short-Handed Goals              | SHG        |  
+| Total Goals On-Ice Against      | TGAI       |  
+| Total Goals On-Ice For          | TGFI       | 
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/all_time_regular_season_active_leader/player_id/ovechal01/
+```
+<a name="all_time_regular_season_active_leader/rank/{rank}"></a>
+### 2.43 Get active leader for all time regular season and rank
+- **Endpoint:** `/all_time_regular_season_active_leader/rank/{rank}/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (regular season) who are currently playing and statistics for their entire career and filtering by rank.
+- **Parameters:**
+   - **`{rank}`** (integer) - Rank in the leaderboard, first place is the best.
+- **Response:** JSON format
+- **Schema table:**
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    
+| Stat name                       | Short code |  
+|---------------------------------|------------|  
+| Adjusted Assists                | AA         |  
+| Adjusted Goals                  | AG         |  
+| Adjusted Goals Created          | AGC        |  
+| Adjusted Points                 | AP         |  
+| Assists                         | A          |  
+| Assists Per Game                | APG        |  
+| Defensive Point Shares          | DPS        |  
+| Even Strength Goals             | EVSG       |  
+| Expected +/-                    | XPM        |  
+| Game-Winning Goals              | GWG        |  
+| Games Played                    | GP         |  
+| Goals                           | G          |  
+| Goals Created                   | GCR        |  
+| Goals Created Per Game          | GCPG       |  
+| Goals Per Game                  | GPGM       |  
+| Hat Tricks                      | HTR        |  
+| Offensive Point Shares          | OPS        |  
+| Penalties in Minutes            | PIM        |  
+| Plus/Minus                      | PLM        |  
+| Point Shares                    | PTS        |  
+| Points                          | P          |  
+| Points Per Game                 | PPG        |  
+| Power Play Goals                | PPGL       |  
+| Power Play Goals On-Ice Against | PGAI       |  
+| Power Play Goals On-Ice For     | PGFI       |  
+| Shooting Percentage             | SHP        |  
+| Shots                           | S          |  
+| Short-Handed Goals              | SHG        |  
+| Total Goals On-Ice Against      | TGAI       |  
+| Total Goals On-Ice For          | TGFI       | 
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/all_time_regular_season_active_leader/rank/4/
 ```
 ---
 <a name="team"></a>
