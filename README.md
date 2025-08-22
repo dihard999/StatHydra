@@ -124,7 +124,7 @@ When you need more than one point of view, choose StatHydra!**
    5.29 [Get basic stats players playoff by year and specific rank](#basic_stats_players_playoff_{year}/rank/{rank})  
    5.30 [Get basic stats players playoff by year and specific team](#basic_stats_players_playoff_{year}/team_abbrev/{team_abbrev})  
    5.31 [Get basic stats players playoff by year and player ID](#basic_stats_players_playoff_{year}/player_id/{player_id})  
-   5.32 [Get basic stats players playoff by year and position](#basic_stats_players_playoff_{year}/position/{position})
+   5.32 [Get basic stats players playoff by year and position](#basic_stats_players_playoff_{year}/position/{position})  
    5.33 [Get miscellaneous stats players playoff by year](#miscellaneous_stats_players_playoff_{year})  
    5.34 [Get miscellaneous stats players playoff by year and specific rank](#miscellaneous_stats_players_playoff_{year}/rank/{rank})  
    5.35 [Get miscellaneous stats players playoff by year and specific team](#miscellaneous_stats_players_playoff_{year}/team_abbrev/{team_abbrev})  
