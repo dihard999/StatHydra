@@ -5451,27 +5451,39 @@ crashcrab.ddns.net/{YOUR_API_KEY}/playoff_leader_now/team_abbrev/TOR/
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers
   - **`age`** (integer) - Age player.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
-  - **`games_goalie`** (integer) - Games Played.
-  - **`starts_goalie`** (integer) - Games Started.
-  - **`wins_goalie`** (integer) - Wins
-  - **`losses_goalie`** (integer) - Losses
-  - **`goals_against`** (integer) - Goals Against
-  - **`shots_against`** (integer) - Shots Against
-  - **`saves`** (integer) - Saves
-  - **`save_pct`** (number, decimal) - Save Percentage
+  - **`posittion`** (string) - Position player (e.g., "G").
+  - **`goalie_games`** (integer) - Games Played.
+  - **`goalie_starts`** (integer) - Games Started.
+  - **`goalie_wins`** (integer) - Wins
+  - **`goalie_ties`** (integer) - Ties plus OT/SO Losses
+  - **`goalie_losses`** (integer) - Losses
+  - **`goalie_goals_against`** (integer) - Goals Against
+  - **`goalie_goals_against_per_game`** (number, decimal) - Goals Against per game
+  - **`shots_against_goalie`** (integer) - Shots Against
+  - **`shots_against_goalie_per_game`** (number, decimal) - Shots Against per game
+  - **`goalie_saves`** (integer) - Saves 
+  - **`goalie_saves_per_game`** (integer) - Saves per game
+  - **`save_pct_goalie`** (number, decimal) - Save Percentage
   - **`goals_against_avg`** (number, decimal) - Goals Against Average
-  - **`shutouts`** (integer) - Shutouts
-  - **`gps`** (number, decimal) - Goalie Point Shares; an estimate of the number of points contributed by a player due to his play in goal.
-  - **`min_goalie`** (integer) - Minutes play.
-  - **`quality_starts_goalie`** (integer) - Quality Starts. Starts with SV% > average SV% for the year, or at least 88.5% on nights with 20 or fewer shots against.
-  - **`quality_start_goalie_pct`** (number, decimal) - Quality Start Percentage. QS/GS > 60% Good, < 50% Bad, ~53% League Avg<br/>Developed by Rob Vollman in the Hockey Abstract.
-  - **`really_bad_starts_goalie`** (integer) - Really Bad Starts. Starts with a SV% below 85%.
+  - **`goalie_shutouts`** (integer) - Shutouts
+  - **`goalie_min`** (string) - Minutes play  (e.g., "MMMM:SS").
+  - **`goalie_min_decimal`** (number, decimal) - Minutes play  (decimal).
+  - **`goalie_min_per_game`** (number, decimal) - Minutes play per game (e.g., "62.4").
+  - **`quality_starts`** (integer) - Quality Starts. Starts with SV% > average SV% for the year, or at least 88.5% on nights with 20 or fewer shots against.
+  - **`quality_starts_pct`** (number, decimal) - Quality Start Percentage. QS/GS > 60% Good, < 50% Bad, ~53% League Avg<br/>Developed by Rob Vollman in the Hockey Abstract.
+  - **`goalie_really_bad_starts`** (integer) - Really Bad Starts. Starts with a SV% below 85%.
   - **`ga_pct_minus`** (integer) - GA Pct- is goals allowed % relative to league goals allowed %. Lower is better, 100 is exactly average, 0 means you have saved 100% of shots faced. Min. 4 shots faced per team game needed to qualify.
   - **`gs_above_avg`** (number, decimal) - Goals Saved Above Average, the goals this goalie prevented given his save percentage and shots faced vs. the league average save percentage on the same number of shots. Min. 4 shots faced per team game needed to qualify.
+  - **`gs_above_avg_per_game`** (number, decimal) - Goals Saved Above Average per game
   - **`goals`** (integer) - Goals
+  - **`goals_per_game`** (number, decimal) - Goals per game
   - **`assists`** (integer) - Assists
+  - **`assists_per_game`** (number, decimal) - Assists per game
   - **`points`** (integer) - Points
+  - **`points_per_game`** (number, decimal) - Points per game
   - **`pen_min`** (integer) - Penalties in Minutes
+  - **`pen_min_per_game`** (number, decimal) - Penalties in Minutes per game
+  - **`awards`** (string) - Awards player
     
 ##### Example using by specific year
 ```bash
@@ -5496,27 +5508,39 @@ crashcrab.ddns.net/{YOUR_API_KEY}/playoff_goalie_stat_now/
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers
   - **`age`** (integer) - Age player.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
-  - **`games_goalie`** (integer) - Games Played.
-  - **`starts_goalie`** (integer) - Games Started.
-  - **`wins_goalie`** (integer) - Wins
-  - **`losses_goalie`** (integer) - Losses
-  - **`goals_against`** (integer) - Goals Against
-  - **`shots_against`** (integer) - Shots Against
-  - **`saves`** (integer) - Saves
-  - **`save_pct`** (number, decimal) - Save Percentage
+  - **`posittion`** (string) - Position player (e.g., "G").
+  - **`goalie_games`** (integer) - Games Played.
+  - **`goalie_starts`** (integer) - Games Started.
+  - **`goalie_wins`** (integer) - Wins
+  - **`goalie_ties`** (integer) - Ties plus OT/SO Losses
+  - **`goalie_losses`** (integer) - Losses
+  - **`goalie_goals_against`** (integer) - Goals Against
+  - **`goalie_goals_against_per_game`** (number, decimal) - Goals Against per game
+  - **`shots_against_goalie`** (integer) - Shots Against
+  - **`shots_against_goalie_per_game`** (number, decimal) - Shots Against per game
+  - **`goalie_saves`** (integer) - Saves 
+  - **`goalie_saves_per_game`** (integer) - Saves per game
+  - **`save_pct_goalie`** (number, decimal) - Save Percentage
   - **`goals_against_avg`** (number, decimal) - Goals Against Average
-  - **`shutouts`** (integer) - Shutouts
-  - **`gps`** (number, decimal) - Goalie Point Shares; an estimate of the number of points contributed by a player due to his play in goal.
-  - **`min_goalie`** (integer) - Minutes play.
-  - **`quality_starts_goalie`** (integer) - Quality Starts. Starts with SV% > average SV% for the year, or at least 88.5% on nights with 20 or fewer shots against.
-  - **`quality_start_goalie_pct`** (number, decimal) - Quality Start Percentage. QS/GS > 60% Good, < 50% Bad, ~53% League Avg<br/>Developed by Rob Vollman in the Hockey Abstract.
-  - **`really_bad_starts_goalie`** (integer) - Really Bad Starts. Starts with a SV% below 85%.
+  - **`goalie_shutouts`** (integer) - Shutouts
+  - **`goalie_min`** (string) - Minutes play  (e.g., "MMMM:SS").
+  - **`goalie_min_decimal`** (number, decimal) - Minutes play  (decimal).
+  - **`goalie_min_per_game`** (number, decimal) - Minutes play per game (e.g., "62.4").
+  - **`quality_starts`** (integer) - Quality Starts. Starts with SV% > average SV% for the year, or at least 88.5% on nights with 20 or fewer shots against.
+  - **`quality_starts_pct`** (number, decimal) - Quality Start Percentage. QS/GS > 60% Good, < 50% Bad, ~53% League Avg<br/>Developed by Rob Vollman in the Hockey Abstract.
+  - **`goalie_really_bad_starts`** (integer) - Really Bad Starts. Starts with a SV% below 85%.
   - **`ga_pct_minus`** (integer) - GA Pct- is goals allowed % relative to league goals allowed %. Lower is better, 100 is exactly average, 0 means you have saved 100% of shots faced. Min. 4 shots faced per team game needed to qualify.
   - **`gs_above_avg`** (number, decimal) - Goals Saved Above Average, the goals this goalie prevented given his save percentage and shots faced vs. the league average save percentage on the same number of shots. Min. 4 shots faced per team game needed to qualify.
+  - **`gs_above_avg_per_game`** (number, decimal) - Goals Saved Above Average per game
   - **`goals`** (integer) - Goals
+  - **`goals_per_game`** (number, decimal) - Goals per game
   - **`assists`** (integer) - Assists
+  - **`assists_per_game`** (number, decimal) - Assists per game
   - **`points`** (integer) - Points
+  - **`points_per_game`** (number, decimal) - Points per game
   - **`pen_min`** (integer) - Penalties in Minutes
+  - **`pen_min_per_game`** (number, decimal) - Penalties in Minutes per game
+  - **`awards`** (string) - Awards player
     
 ##### Example using by specific year
 ```bash
@@ -5541,27 +5565,39 @@ crashcrab.ddns.net/{YOUR_API_KEY}/playoff_goalie_stat_now/team_abbrev/WPG/
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers
   - **`age`** (integer) - Age player.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
-  - **`games_goalie`** (integer) - Games Played.
-  - **`starts_goalie`** (integer) - Games Started.
-  - **`wins_goalie`** (integer) - Wins
-  - **`losses_goalie`** (integer) - Losses
-  - **`goals_against`** (integer) - Goals Against
-  - **`shots_against`** (integer) - Shots Against
-  - **`saves`** (integer) - Saves
-  - **`save_pct`** (number, decimal) - Save Percentage
+  - **`posittion`** (string) - Position player (e.g., "G").
+  - **`goalie_games`** (integer) - Games Played.
+  - **`goalie_starts`** (integer) - Games Started.
+  - **`goalie_wins`** (integer) - Wins
+  - **`goalie_ties`** (integer) - Ties plus OT/SO Losses
+  - **`goalie_losses`** (integer) - Losses
+  - **`goalie_goals_against`** (integer) - Goals Against
+  - **`goalie_goals_against_per_game`** (number, decimal) - Goals Against per game
+  - **`shots_against_goalie`** (integer) - Shots Against
+  - **`shots_against_goalie_per_game`** (number, decimal) - Shots Against per game
+  - **`goalie_saves`** (integer) - Saves 
+  - **`goalie_saves_per_game`** (integer) - Saves per game
+  - **`save_pct_goalie`** (number, decimal) - Save Percentage
   - **`goals_against_avg`** (number, decimal) - Goals Against Average
-  - **`shutouts`** (integer) - Shutouts
-  - **`gps`** (number, decimal) - Goalie Point Shares; an estimate of the number of points contributed by a player due to his play in goal.
-  - **`min_goalie`** (integer) - Minutes play.
-  - **`quality_starts_goalie`** (integer) - Quality Starts. Starts with SV% > average SV% for the year, or at least 88.5% on nights with 20 or fewer shots against.
-  - **`quality_start_goalie_pct`** (number, decimal) - Quality Start Percentage. QS/GS > 60% Good, < 50% Bad, ~53% League Avg<br/>Developed by Rob Vollman in the Hockey Abstract.
-  - **`really_bad_starts_goalie`** (integer) - Really Bad Starts. Starts with a SV% below 85%.
+  - **`goalie_shutouts`** (integer) - Shutouts
+  - **`goalie_min`** (string) - Minutes play  (e.g., "MMMM:SS").
+  - **`goalie_min_decimal`** (number, decimal) - Minutes play  (decimal).
+  - **`goalie_min_per_game`** (number, decimal) - Minutes play per game (e.g., "62.4").
+  - **`quality_starts`** (integer) - Quality Starts. Starts with SV% > average SV% for the year, or at least 88.5% on nights with 20 or fewer shots against.
+  - **`quality_starts_pct`** (number, decimal) - Quality Start Percentage. QS/GS > 60% Good, < 50% Bad, ~53% League Avg<br/>Developed by Rob Vollman in the Hockey Abstract.
+  - **`goalie_really_bad_starts`** (integer) - Really Bad Starts. Starts with a SV% below 85%.
   - **`ga_pct_minus`** (integer) - GA Pct- is goals allowed % relative to league goals allowed %. Lower is better, 100 is exactly average, 0 means you have saved 100% of shots faced. Min. 4 shots faced per team game needed to qualify.
   - **`gs_above_avg`** (number, decimal) - Goals Saved Above Average, the goals this goalie prevented given his save percentage and shots faced vs. the league average save percentage on the same number of shots. Min. 4 shots faced per team game needed to qualify.
+  - **`gs_above_avg_per_game`** (number, decimal) - Goals Saved Above Average per game
   - **`goals`** (integer) - Goals
+  - **`goals_per_game`** (number, decimal) - Goals per game
   - **`assists`** (integer) - Assists
+  - **`assists_per_game`** (number, decimal) - Assists per game
   - **`points`** (integer) - Points
+  - **`points_per_game`** (number, decimal) - Points per game
   - **`pen_min`** (integer) - Penalties in Minutes
+  - **`pen_min_per_game`** (number, decimal) - Penalties in Minutes per game
+  - **`awards`** (string) - Awards player
     
 ##### Example using by specific year
 ```bash
@@ -5586,27 +5622,39 @@ crashcrab.ddns.net/{YOUR_API_KEY}/playoff_goalie_stat_now/player_id/blackma01/
   - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers
   - **`age`** (integer) - Age player.
   - **`team_abbrev`** (string) - Three-letter team abbreviation (e.g., "TOR", "MTL").
-  - **`games_goalie`** (integer) - Games Played.
-  - **`starts_goalie`** (integer) - Games Started.
-  - **`wins_goalie`** (integer) - Wins
-  - **`losses_goalie`** (integer) - Losses
-  - **`goals_against`** (integer) - Goals Against
-  - **`shots_against`** (integer) - Shots Against
-  - **`saves`** (integer) - Saves
-  - **`save_pct`** (number, decimal) - Save Percentage
+  - **`posittion`** (string) - Position player (e.g., "G").
+  - **`goalie_games`** (integer) - Games Played.
+  - **`goalie_starts`** (integer) - Games Started.
+  - **`goalie_wins`** (integer) - Wins
+  - **`goalie_ties`** (integer) - Ties plus OT/SO Losses
+  - **`goalie_losses`** (integer) - Losses
+  - **`goalie_goals_against`** (integer) - Goals Against
+  - **`goalie_goals_against_per_game`** (number, decimal) - Goals Against per game
+  - **`shots_against_goalie`** (integer) - Shots Against
+  - **`shots_against_goalie_per_game`** (number, decimal) - Shots Against per game
+  - **`goalie_saves`** (integer) - Saves 
+  - **`goalie_saves_per_game`** (integer) - Saves per game
+  - **`save_pct_goalie`** (number, decimal) - Save Percentage
   - **`goals_against_avg`** (number, decimal) - Goals Against Average
-  - **`shutouts`** (integer) - Shutouts
-  - **`gps`** (number, decimal) - Goalie Point Shares; an estimate of the number of points contributed by a player due to his play in goal.
-  - **`min_goalie`** (integer) - Minutes play.
-  - **`quality_starts_goalie`** (integer) - Quality Starts. Starts with SV% > average SV% for the year, or at least 88.5% on nights with 20 or fewer shots against.
-  - **`quality_start_goalie_pct`** (number, decimal) - Quality Start Percentage. QS/GS > 60% Good, < 50% Bad, ~53% League Avg<br/>Developed by Rob Vollman in the Hockey Abstract.
-  - **`really_bad_starts_goalie`** (integer) - Really Bad Starts. Starts with a SV% below 85%.
+  - **`goalie_shutouts`** (integer) - Shutouts
+  - **`goalie_min`** (string) - Minutes play  (e.g., "MMMM:SS").
+  - **`goalie_min_decimal`** (number, decimal) - Minutes play  (decimal).
+  - **`goalie_min_per_game`** (number, decimal) - Minutes play per game (e.g., "62.4").
+  - **`quality_starts`** (integer) - Quality Starts. Starts with SV% > average SV% for the year, or at least 88.5% on nights with 20 or fewer shots against.
+  - **`quality_starts_pct`** (number, decimal) - Quality Start Percentage. QS/GS > 60% Good, < 50% Bad, ~53% League Avg<br/>Developed by Rob Vollman in the Hockey Abstract.
+  - **`goalie_really_bad_starts`** (integer) - Really Bad Starts. Starts with a SV% below 85%.
   - **`ga_pct_minus`** (integer) - GA Pct- is goals allowed % relative to league goals allowed %. Lower is better, 100 is exactly average, 0 means you have saved 100% of shots faced. Min. 4 shots faced per team game needed to qualify.
   - **`gs_above_avg`** (number, decimal) - Goals Saved Above Average, the goals this goalie prevented given his save percentage and shots faced vs. the league average save percentage on the same number of shots. Min. 4 shots faced per team game needed to qualify.
+  - **`gs_above_avg_per_game`** (number, decimal) - Goals Saved Above Average per game
   - **`goals`** (integer) - Goals
+  - **`goals_per_game`** (number, decimal) - Goals per game
   - **`assists`** (integer) - Assists
+  - **`assists_per_game`** (number, decimal) - Assists per game
   - **`points`** (integer) - Points
+  - **`points_per_game`** (number, decimal) - Points per game
   - **`pen_min`** (integer) - Penalties in Minutes
+  - **`pen_min_per_game`** (number, decimal) - Penalties in Minutes per game
+  - **`awards`** (string) - Awards player
     
 ##### Example using by specific year
 ```bash
