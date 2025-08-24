@@ -141,7 +141,11 @@ When you need more than one point of view, choose StatHydra!**
    5.34 [Get miscellaneous stats players playoff by year and specific rank](#miscellaneous_stats_players_playoff_{year}/rank/{rank})  
    5.35 [Get miscellaneous stats players playoff by year and specific team](#miscellaneous_stats_players_playoff_{year}/team_abbrev/{team_abbrev})  
    5.36 [Get miscellaneous stats players playoff by year and player ID](#miscellaneous_stats_players_playoff_{year}/player_id/{player_id})  
-   5.37 [Get miscellaneous stats players playoff by year and position](#miscellaneous_stats_players_playoff_{year}/position/{position}) 
+   5.37 [Get miscellaneous stats players playoff by year and position](#miscellaneous_stats_players_playoff_{year}/position/{position})
+   5.38 [Get active leader for all time playoff](#all_time_playoff_active_leader)  
+   5.39 [Get active leader for all time playoff and specific stat](#all_time_playoff_active_leader/stat_abbrev/{stat_abbrev})  
+   5.40 [Get active leader for all time playoff and player ID](#all_time_playoff_active_leader/player_id/{player_id})  
+   5.41 [Get active leader for all time playoff and rank](#all_time_playoff_active_leader/rank/{rank})
 ---
 <a name="base-url"></a>
 ## 1. Base URL
@@ -6264,4 +6268,179 @@ crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_20212022/p
 ##### Example using for the current year
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/miscellaneous_stats_players_playoff_now/position/RW/
+```
+<a name="all_time_playoff_active_leader"></a>
+### 5.38 Get active leader for all time playoff
+- **Endpoint:** `/all_time_playoff_active_leader/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (playoff) who are currently playing and statistics for their entire career.
+- **Parameters:** No
+- **Response:** JSON format
+- **Schema table:**
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    
+| Stat name                       | Short code |  
+|---------------------------------|------------|      
+| Assists                         | A          |  
+| Assists Per Game                | APG        |  
+| Defensive Point Shares          | DPS        |  
+| Even Strength Goals             | EVSG       |  
+| Game-Winning Goals              | GWG        |  
+| Games Played                    | GP         |  
+| Goals                           | G          |  
+| Goals Created                   | GCR        |  
+| Goals Created Per Game          | GCPG       |  
+| Goals Per Game                  | GPGM       |  
+| Hat Tricks                      | HTR        |  
+| Offensive Point Shares          | OPS        |  
+| Penalties in Minutes            | PIM        |  
+| Plus/Minus                      | PLM        |  
+| Point Shares                    | PTS        |  
+| Points                          | P          |  
+| Points Per Game                 | PPG        |  
+| Power Play Goals                | PPGL       |     
+| Shooting Percentage             | SHP        |  
+| Shots                           | S          |  
+| Short-Handed Goals              | SHG        |   
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/all_time_playoff_active_leader/
+```
+<a name="all_time_playoff_active_leader/stat_abbrev/{stat_abbrev}"></a>
+### 5.39 Get active leader for all time playoff and specific stat
+- **Endpoint:** `/all_time_playoff_active_leader/stat_abbrev/{stat_abbrev}/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (playoff) who are currently playing and statistics for their entire career and filtering by specific stat.
+- **Parameters:**
+   - **`{stat_abbrev}`** (string) - Short abbreviation of categories (e.g., "Assists" - "A").
+- **Response:** JSON format
+- **Schema table:**
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    
+| Stat name                       | Short code |  
+|---------------------------------|------------|      
+| Assists                         | A          |  
+| Assists Per Game                | APG        |  
+| Defensive Point Shares          | DPS        |  
+| Even Strength Goals             | EVSG       |  
+| Game-Winning Goals              | GWG        |  
+| Games Played                    | GP         |  
+| Goals                           | G          |  
+| Goals Created                   | GCR        |  
+| Goals Created Per Game          | GCPG       |  
+| Goals Per Game                  | GPGM       |  
+| Hat Tricks                      | HTR        |  
+| Offensive Point Shares          | OPS        |  
+| Penalties in Minutes            | PIM        |  
+| Plus/Minus                      | PLM        |  
+| Point Shares                    | PTS        |  
+| Points                          | P          |  
+| Points Per Game                 | PPG        |  
+| Power Play Goals                | PPGL       |     
+| Shooting Percentage             | SHP        |  
+| Shots                           | S          |  
+| Short-Handed Goals              | SHG        |  
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/all_time_playoff_active_leader/stat_abbrev/PPG/
+```
+<a name="all_time_playoff_active_leader/player_id/{player_id}"></a>
+### 5.40 Get active leader for all time playoff and player ID
+- **Endpoint:** `/all_time_playoff_active_leader/player_id/{player_id}/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (playoff) who are currently playing and statistics for their entire career and filtering by player_id.
+- **Parameters:**
+   - **`{player_id}`** (string) - Unique identifier for each player, contains letters and numbers.
+- **Response:** JSON format
+- **Schema table:**
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    
+| Stat name                       | Short code |  
+|---------------------------------|------------|      
+| Assists                         | A          |  
+| Assists Per Game                | APG        |  
+| Defensive Point Shares          | DPS        |  
+| Even Strength Goals             | EVSG       |  
+| Game-Winning Goals              | GWG        |  
+| Games Played                    | GP         |  
+| Goals                           | G          |  
+| Goals Created                   | GCR        |  
+| Goals Created Per Game          | GCPG       |  
+| Goals Per Game                  | GPGM       |  
+| Hat Tricks                      | HTR        |  
+| Offensive Point Shares          | OPS        |  
+| Penalties in Minutes            | PIM        |  
+| Plus/Minus                      | PLM        |  
+| Point Shares                    | PTS        |  
+| Points                          | P          |  
+| Points Per Game                 | PPG        |  
+| Power Play Goals                | PPGL       |     
+| Shooting Percentage             | SHP        |  
+| Shots                           | S          |  
+| Short-Handed Goals              | SHG        |
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/all_time_playoff_active_leader/player_id/mcdonry01/
+```
+<a name="all_time_playoff_active_leader/rank/{rank}"></a>
+### 5.41 Get active leader for all time playoff and rank
+- **Endpoint:** `/all_time_playoff_active_leader/rank/{rank}/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players (playoff) who are currently playing and statistics for their entire career and filtering by rank.
+- **Parameters:**
+   - **`{rank}`** (integer) - Rank in the leaderboard, first place is the best.
+- **Response:** JSON format
+- **Schema table:**
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    
+| Stat name                       | Short code |  
+|---------------------------------|------------|      
+| Assists                         | A          |  
+| Assists Per Game                | APG        |  
+| Defensive Point Shares          | DPS        |  
+| Even Strength Goals             | EVSG       |  
+| Game-Winning Goals              | GWG        |  
+| Games Played                    | GP         |  
+| Goals                           | G          |  
+| Goals Created                   | GCR        |  
+| Goals Created Per Game          | GCPG       |  
+| Goals Per Game                  | GPGM       |  
+| Hat Tricks                      | HTR        |  
+| Offensive Point Shares          | OPS        |  
+| Penalties in Minutes            | PIM        |  
+| Plus/Minus                      | PLM        |  
+| Point Shares                    | PTS        |  
+| Points                          | P          |  
+| Points Per Game                 | PPG        |  
+| Power Play Goals                | PPGL       |     
+| Shooting Percentage             | SHP        |  
+| Shots                           | S          |  
+| Short-Handed Goals              | SHG        |
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/all_time_playoff_active_leader/rank/4/
 ```
