@@ -55,6 +55,10 @@ When you need more than one point of view, choose StatHydra!**
    2.41 [Get active leader for all time regular season and specific stat](#all_time_regular_season_active_leader/stat_abbrev/{stat_abbrev})  
    2.42 [Get active leader for all time regular season and player ID](#all_time_regular_season_active_leader/player_id/{player_id})  
    2.43 [Get active leader for all time regular season and rank](#all_time_regular_season_active_leader/rank/{rank})  
+   2.44 [Get active leader (goalie) for all time regular season](#all_time_regular_season_active_leader_goalie)  
+   2.45 [Get active leader (goalie) for all time regular season and specific stat](#all_time_regular_season_active_leader_goalie/stat_abbrev/{stat_abbrev})  
+   2.46 [Get active leader (goalie) for all time regular season and player ID](#all_time_regular_season_active_leader_goalie/player_id/{player_id})  
+   2.47 [Get active leader (goalie) for all time regular season and rank](#all_time_regular_season_active_leader_goalie/rank/{rank})  
 4. [Team](#team)  
    3.1 [Get all season teams statistics summary(except for the current season)](#team_all_season_summary)  
    3.2 [Get all season teams statistics summary by specific team(except for the current season)](#team_all_season_summary/team_abbrev/{team_abbrev})  
@@ -2453,6 +2457,157 @@ crashcrab.ddns.net/{YOUR_API_KEY}/all_time_regular_season_active_leader/player_i
 ##### Example using
 ```bash
 crashcrab.ddns.net/{YOUR_API_KEY}/all_time_regular_season_active_leader/rank/4/
+```
+<a name="all_time_regular_season_active_leader_goalie"></a>
+### 2.44 Get active leader (goalie) for all time regular season
+- **Endpoint:** `/all_time_regular_season_active_leader_goalie/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players goalie (regular season) who are currently playing and statistics for their entire career.
+- **Parameters:** No
+- **Response:** JSON format
+- **Schema table:**
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    
+| Stat name                       | Short code |  
+|---------------------------------|------------|  
+| Games Played (Goalie)           | GPG         |  
+| Wins                            | W        |  
+| Losses                          | L        |  
+| Ties plus OT/SO Losses          | TOL         |  
+| Goals Against                         | GA         |  
+| Shots Against              | SAG       |  
+| Saves         | SAV        |  
+| Save Percentage            | SVP       |  
+| Goals Against Average                   | GAA        |  
+| Shutouts              | SHO        |  
+| Minutes                   | MIN         |  
+| Goals Saved Above Average                           | GSAA          |  
+| Goals Allowed Adjusted                 | GAAJ        |  
+| Adjusted Goals Against Average          | AGAA       |  
+| Goalie Point Shares                 | GPS       |   
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/all_time_regular_season_active_leader_goalie/
+```
+<a name="all_time_regular_season_active_leader_goalie/stat_abbrev/{stat_abbrev}"></a>
+### 2.45 Get active leader (goalie) for all time regular season and specific stat
+- **Endpoint:** `/all_time_regular_season_active_leader_goalie/stat_abbrev/{stat_abbrev}/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players goalie (regular season) who are currently playing and statistics for their entire career and filtering by specific stat.
+- **Parameters:**
+   - **`{stat_abbrev}`** (string) - Short abbreviation of categories (e.g., "Assists" - "A").
+- **Response:** JSON format
+- **Schema table:**
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    
+| Stat name                       | Short code |  
+|---------------------------------|------------|  
+| Games Played (Goalie)           | GPG         |  
+| Wins                            | W        |  
+| Losses                          | L        |  
+| Ties plus OT/SO Losses          | TOL         |  
+| Goals Against                         | GA         |  
+| Shots Against              | SAG       |  
+| Saves         | SAV        |  
+| Save Percentage            | SVP       |  
+| Goals Against Average                   | GAA        |  
+| Shutouts              | SHO        |  
+| Minutes                   | MIN         |  
+| Goals Saved Above Average                           | GSAA          |  
+| Goals Allowed Adjusted                 | GAAJ        |  
+| Adjusted Goals Against Average          | AGAA       |  
+| Goalie Point Shares                 | GPS       |   
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/all_time_regular_season_active_leader_goalie/stat_abbrev/SHO/
+```
+<a name="all_time_regular_season_active_leader_goalie/player_id/{player_id}"></a>
+### 2.46 Get active leader (goalie) for all time regular season and player ID
+- **Endpoint:** `/all_time_regular_season_active_leader_goalie/player_id/{player_id}/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players goalie (regular season) who are currently playing and statistics for their entire career and filtering by player_id.
+- **Parameters:**
+   - **`{player_id}`** (string) - Unique identifier for each player, contains letters and numbers.
+- **Response:** JSON format
+- **Schema table:**
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    
+| Stat name                       | Short code |  
+|---------------------------------|------------|  
+| Games Played (Goalie)           | GPG         |  
+| Wins                            | W        |  
+| Losses                          | L        |  
+| Ties plus OT/SO Losses          | TOL         |  
+| Goals Against                         | GA         |  
+| Shots Against              | SAG       |  
+| Saves         | SAV        |  
+| Save Percentage            | SVP       |  
+| Goals Against Average                   | GAA        |  
+| Shutouts              | SHO        |  
+| Minutes                   | MIN         |  
+| Goals Saved Above Average                           | GSAA          |  
+| Goals Allowed Adjusted                 | GAAJ        |  
+| Adjusted Goals Against Average          | AGAA       |  
+| Goalie Point Shares                 | GPS       |   
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/all_time_regular_season_active_leader_goalie/player_id/bobrose01/
+```
+<a name="all_time_regular_season_active_leader_goalie/rank/{rank}"></a>
+### 2.47 Get active leader (goalie) for all time regular season and rank
+- **Endpoint:** `/all_time_regular_season_active_leader_goalie/rank/{rank}/`
+- **Method:** GET
+- **Description:** Contains statistics of leading players goalie (regular season) who are currently playing and statistics for their entire career and filtering by rank.
+- **Parameters:**
+   - **`{rank}`** (integer) - Rank in the leaderboard, first place is the best.
+- **Response:** JSON format
+- **Schema table:**
+  - **`stat_name`** (string) - Category by which the indicators are compared (e.g., "Assists", "Defensive Point Shares").
+  - **`rank`** (integer) - Rank in the leaderboard, first place is the best.
+  - **`player`** (string) - Player's full name.
+  - **`player_id`** (string) - Unique identifier for each player, contains letters and numbers.
+  - **`score`** (number, decimal) - The number of points can be both whole and fractional numbers.
+  - **`stat_abbrev`** (string) - Short abbreviation of categories (e.g., "Assists" - "A"). Table short code:
+    
+| Stat name                       | Short code |  
+|---------------------------------|------------|  
+| Games Played (Goalie)           | GPG         |  
+| Wins                            | W        |  
+| Losses                          | L        |  
+| Ties plus OT/SO Losses          | TOL         |  
+| Goals Against                         | GA         |  
+| Shots Against              | SAG       |  
+| Saves         | SAV        |  
+| Save Percentage            | SVP       |  
+| Goals Against Average                   | GAA        |  
+| Shutouts              | SHO        |  
+| Minutes                   | MIN         |  
+| Goals Saved Above Average                           | GSAA          |  
+| Goals Allowed Adjusted                 | GAAJ        |  
+| Adjusted Goals Against Average          | AGAA       |  
+| Goalie Point Shares                 | GPS       |  
+
+##### Example using
+```bash
+crashcrab.ddns.net/{YOUR_API_KEY}/all_time_regular_season_active_leader_goalie/rank/4/
 ```
 ---
 <a name="team"></a>
