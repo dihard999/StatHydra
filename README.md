@@ -141,7 +141,7 @@ When you need more than one point of view, choose StatHydra!**
    5.34 [Get miscellaneous stats players playoff by year and specific rank](#miscellaneous_stats_players_playoff_{year}/rank/{rank})  
    5.35 [Get miscellaneous stats players playoff by year and specific team](#miscellaneous_stats_players_playoff_{year}/team_abbrev/{team_abbrev})  
    5.36 [Get miscellaneous stats players playoff by year and player ID](#miscellaneous_stats_players_playoff_{year}/player_id/{player_id})  
-   5.37 [Get miscellaneous stats players playoff by year and position](#miscellaneous_stats_players_playoff_{year}/position/{position})
+   5.37 [Get miscellaneous stats players playoff by year and position](#miscellaneous_stats_players_playoff_{year}/position/{position})  
    5.38 [Get active leader for all time playoff](#all_time_playoff_active_leader)  
    5.39 [Get active leader for all time playoff and specific stat](#all_time_playoff_active_leader/stat_abbrev/{stat_abbrev})  
    5.40 [Get active leader for all time playoff and player ID](#all_time_playoff_active_leader/player_id/{player_id})  
