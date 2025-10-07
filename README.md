@@ -10,6 +10,10 @@ When you need more than one point of view, choose StatHydra!**
 > **Any requests to make additional filters based on the data are also welcome.**
 ---
 ---
+# StatHydra | App Prediction Sport Mach
+## 1. Password and login
+Password and login is currently issued manually. [Get a subscription here](https://patreon.com/stathydra?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink)  
+
 # NHL API
 1. [Base URL](#base-url)
 2. [Player](#player)  
