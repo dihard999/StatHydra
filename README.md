@@ -14,7 +14,14 @@ When you need more than one point of view, choose StatHydra!**
 ## 1. Password and login
 Password and login is currently issued manually. [Get a subscription here](https://patreon.com/stathydra?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink)  
 ## 2. Login window  
-![Логотип](./1-login.png)
+![1](./1-login.png)  
+Login form, here you enter your username and password  
+## 3. Step 1  
+![2](./2-stel1.png)  
+Here you select the sport you want to analyze. Currently, only the NHL is available.  
+## 4. Step 2  
+![3](./3-step2.png) 
+At this stage, the number of matches to analyze is selected. The minimum number is 100 matches, the maximum is 1,500. We will increase this number later.
 # NHL API
 1. [Base URL](#base-url)
 2. [Player](#player)  
