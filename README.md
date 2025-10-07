@@ -11,7 +11,7 @@ When you need more than one point of view, choose StatHydra!**
 ---
 ---
 # Menu  
-## 1. StatHydra (App)(#stathydra)
+## 1. StatHydra (App)
 ## 2. NHL API
 ---
 ---
