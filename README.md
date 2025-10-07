@@ -155,7 +155,7 @@ When you need more than one point of view, choose StatHydra!**
 ## 1. Base URL
 All endpoints referenced in this section are relative to the following base URL:  
 ```bash
-crashcrab.ddns.net/nhl/{YOUR_API_KEY}/
+stathydra.com/nhl/{YOUR_API_KEY}/
 ```
 Your unique API Key required for accessing the API endpoints. Substitute YOUR_API_KEY with your actual key in the URL path.
 
