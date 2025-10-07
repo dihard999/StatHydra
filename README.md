@@ -21,7 +21,25 @@ Login form, here you enter your username and password
 Here you select the sport you want to analyze. Currently, only the NHL is available.  
 ## 4. Step 2  
 ![3](./3-step2.png) 
-At this stage, the number of matches to analyze is selected. The minimum number is 100 matches, the maximum is 1,500. We will increase this number later.
+At this stage, the number of matches to analyze is selected. The minimum number is 100 matches, the maximum is 1,500. We will increase this number later.  
+## 5. Step 3
+![2](./4-step3.png) 
+At this stage, you select the indicators you want to use to analyze teams. Two indicators are selected by default. Currently, there are 23. For easier searching, there is a filter for simple and more complex indicators.  
+## 6. Step 4
+![2](./5-step4.png) 
+Selecting an analysis method. Backtesting and live testing for future matches. Backtesting is currently in development.  
+## 7. Step 5
+![2](./6-step4.png) 
+We select the matches we want to analyze.  
+## 8. Step 6
+![2](./7-step5.png) 
+Summary information is the data you selected. The estimated processing time is indicated.  
+## 9. Step 7
+![2](./8-step.png) 
+Waiting for calculations with time counter.  
+## 10. Step 8
+![2](./9-step6.png) 
+The final calculation result. Hovering over each circle will show the winning percentage for each formula. Currently, three formulas are used. The average value for each formula is shown on the side. The "End" button will take you back to the beginning.   
 # NHL API
 1. [Base URL](#base-url)
 2. [Player](#player)  
