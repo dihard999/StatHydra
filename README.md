@@ -17,7 +17,7 @@ When you need more than one point of view, choose StatHydra!**
 ---
 <a name="stathydra"></a>
 # StatHydra | App Prediction Sport Mach
-It depends on how many matches you select for analysis and the number of indicators. Multiple indicators can be either numerous or few. This changes the calculation results. You create your own system for analyzing sports matches.
+Depending on how many matches you choose for analysis and the number of indicators. Too many indicators can be a lot or too few. This changes the result of the calculation. You create your own system for analyzing sports matches yourself.
 ## 1. Password and login
 Password and login is currently issued manually. [Get a subscription here](https://patreon.com/stathydra?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink)  
 ## 2. Login window  
